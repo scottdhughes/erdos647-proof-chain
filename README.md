@@ -135,6 +135,12 @@ lake build Erdos647ConditionalFiniteWindow
 bash ../scripts/axiom_audit.sh
 ```
 
+## License
+
+This repository is licensed under the Apache License 2.0, following the
+standard practice of public Lean repositories such as
+`teorth/equational_theories`, `teorth/analysis`, and `mathlib4`.
+
 ## References
 
 * T. F. Bloom, [Erdős Problem #647](https://www.erdosproblems.com/647)
