@@ -113,7 +113,7 @@ hits fail the full Erdős condition at small non-shape k ∈ {7, 11, 13, 14}.
 - Uses `native_decide`: yes (partition count computation)
 - Imports: `Erdos647SieveCertificate`
 - **Status:** superseded by the 91/5 reclassification. Retained
-  for historical continuity and as input to the barrier theorem.
+  for historical continuity and audit reproducibility.
 - Trusted core: **yes**
 
 ### Erdos647BarrierTheorem.lean
@@ -128,6 +128,9 @@ hits fail the full Erdős condition at small non-shape k ∈ {7, 11, 13, 14}.
 - `barrier_statement_form` proved by `Finset.induction` on `S`,
   applying `one_prime_escape` at each new prime and lifting via
   CRT (modular arithmetic in `ZMod`).
+- Role: retained as a supporting/legacy formal module, not as part of
+  the active Stage-1 no-solution frontier or the current public paper
+  lineage.
 - Trusted core: **yes**
 
 ### Erdos647BridgeV1.lean
