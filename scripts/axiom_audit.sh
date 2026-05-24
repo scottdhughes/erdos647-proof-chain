@@ -1,9 +1,9 @@
 #!/bin/bash
-# Axiom audit for the active Erdos647 Lean surface.
+# Axiom audit for the current Erdos647 Lean package.
 #
-# Keep this script aligned with the Stage-1 proof path. Obsolete Bridge-3
-# names such as hard_residues_no_solution and candidate_false_large_via_chain
-# are intentionally absent from the active audit.
+# Keep this script aligned with the forum-facing Stage-1 proof boundary.
+# Obsolete exact-v2 names such as hard_residues_no_solution and
+# candidate_false_large_via_chain are intentionally absent.
 set -e
 
 cd "$(dirname "$0")/../lean"
@@ -11,7 +11,7 @@ cd "$(dirname "$0")/../lean"
 TMP="$(mktemp -t erdos647_axiom_audit.XXXXXX.lean)"
 trap 'rm -f "$TMP"' EXIT
 
-echo "=== Axiom audit for active Erdos647 Lean files ==="
+echo "=== Axiom audit for current Erdos647 Lean package ==="
 
 run_module() {
   local module="$1"

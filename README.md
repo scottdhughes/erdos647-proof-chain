@@ -2,8 +2,8 @@
 
 **Maintainer:** Scott D. Hughes
 
-This repository contains the curated Lean 4 formalization and
-paper package for
+This repository contains the public Lean 4 formalization and main
+preprint package for
 Erdős Problem #647:
 
 > Does there exist `n > 24` such that
@@ -15,6 +15,11 @@ Equivalently:
 
 ## Current status
 
+This is the package referenced in the public #647 forum thread. The
+current result is **not** an unconditional solution; it is a
+Lean-verified structural reduction with the remaining gap isolated
+explicitly.
+
 | Item | Status | Location |
 |------|--------|----------|
 | Sieve reduction to `96` survivors | theorem-grade | [`lean/Erdos647SieveCertificate.lean`](lean/Erdos647SieveCertificate.lean) |
@@ -22,7 +27,6 @@ Equivalently:
 | Stage-1 open set `openResiduesStage1` | explicit complement, `41` residues | [`lean/Erdos647ResiduePartitionStage1.lean`](lean/Erdos647ResiduePartitionStage1.lean) |
 | Conditional reduction theorem | theorem-grade | [`lean/Erdos647ReductionChain.lean`](lean/Erdos647ReductionChain.lean) |
 | Stage-1 axiom wrapper | `1` intentional axiom | [`lean/Erdos647Stage1Axiom.lean`](lean/Erdos647Stage1Axiom.lean) |
-| Bridge 3 | retired from proof path | [`lean/Bridge3.lean`](lean/Bridge3.lean) |
 | Conditional finite-window theorem | theorem-grade, existence-direction | [`lean/Erdos647ConditionalFiniteWindow.lean`](lean/Erdos647ConditionalFiniteWindow.lean) |
 
 The active formal boundary is:
@@ -61,6 +65,9 @@ The main theorem surface is split cleanly:
 
 This split is deliberate. The conditional theorem is the proof-critical
 result; the wrapper only isolates the current open frontier.
+
+Older exploratory proof-engineering modules remain in `lean/` for audit
+history, but they are not the active proof boundary described above.
 
 ## What the repo does not prove
 
@@ -118,11 +125,10 @@ Useful entry points:
 ## Quick start
 
 ```bash
-cd lean
-lake exe cache get
-lake build
+./build.sh
 
 # Build the separate conditional finite-window theorem directly.
+cd lean
 lake build Erdos647ConditionalFiniteWindow
 
 # Audit theorem dependencies.

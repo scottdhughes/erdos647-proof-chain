@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this proof-chain package, please cite the repository."
+title: "Erdős #647 Proof Chain"
+authors:
+  - family-names: Hughes
+    given-names: Scott D.
+repository-code: "https://github.com/scottdhughes/erdos647-proof-chain"
+date-released: "2026-05-24"
+version: "0.1.0"
