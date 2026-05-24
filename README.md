@@ -2,7 +2,7 @@
 
 **Maintainer:** Scott D. Hughes
 
-This private repository contains the curated Lean 4 formalization and
+This repository contains the curated Lean 4 formalization and
 paper package for
 Erdős Problem #647:
 
