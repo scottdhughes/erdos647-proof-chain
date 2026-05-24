@@ -1,0 +1,3095 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsthm,amssymb,fullpage,longtable,array,microtype,xurl,hyperref}
+
+\emergencystretch=3em
+\Urlmuskip=0mu plus 2mu
+\let\origunderscore\_
+\renewcommand{\_}{\origunderscore\allowbreak}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Erd\H{o}s Problem \#647:\\
+A Lean-Verified Structural Reduction\\
+and a Conditional Dickson Dichotomy}
+\author{Scott D. Hughes}
+\date{May 24, 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Erd\H{o}s Problem~\#647 asks whether any $n>24$ satisfies
+$\max_{m<n}(m+\tau(m))\le n+2$. Building on earlier reductions,
+we show that any solution has the form $n=2520N$ with $N$ in one
+of $96$ residue classes modulo $M=46189=11\cdot 13\cdot 17\cdot 19$.
+Under exact-v2 closure semantics (which retires the prior peeled-cofactor
+bridge after it was shown unsound), we Lean~4-verify $55$ of these
+classes via explicit closure certificates ($42$ single-overlap branch
+contradictions and $13$ direct full-value arguments). The remaining
+$41$ unresolved residues decompose as the historical hard-$5$
+structural core $\{0,1716,4862,16302,17160\}$, nine additional hard
+residues $\{2431,9009,9867,17017,21164,24453,29315,31603,38896\}$
+reopened by the exact-v2 recertification audit, and $27$ residues
+whose closures under the Bridge-3 peeled-cofactor mechanism were
+invalidated by the exact-v2 audit (and remain formally open pending
+a sound replacement). The entire formal
+chain is stated conditional on a single intentional axiom
+\texttt{openResiduesStage1\_no\_solution} asserting that no $N$ with
+$N\bmod M$ in the open set yields a \#647 candidate.
+
+On each of the historical hard-$5$ classes, the divisor constraints
+reduce the problem to simultaneous primality of an explicit
+$13$-, $15$-, or $17$-term linear tuple in a parameter
+$t$: a mod-$11$ square obstruction upgrades the budget-$\le 3$ forms
+to primes, and residue-specific divisibility by $17$ or $19$ yields
+additional prime-quotient constraints. We prove a completeness
+theorem: at the budget bound $B_k\le 5$, the resulting list of
+forced prime-or-prime-quotient conditions consists of exactly one
+universal extension and six residue-specific triples, and this
+bound is sharp.
+
+We then prove that the operative local congruence program is
+exhausted: no higher-power obstruction arises at $17$ or $19$, and
+non-operative primes act only by residue translation. We introduce
+the \emph{offset atlas}, an exact per-prime branch classification
+of the affine forms $F_{r,k}(t)=2520(Mt+r)-k$; the atlas unifies
+the mod-$11$ square-kill and the residue-specific extensions under
+a single framework and provides machine-readable data against
+which the divisor-sum conditions at every integer offset $k$ can
+be tested. An empirical investigation of the
+Erd\H{o}s-inequality-failure pattern yields \emph{killer sets}:
+small sets $S_r\subseteq[1,100]$ such that every observed
+strong near-miss at residue $r$ fails the Erd\H{o}s inequality
+at some $k\in S_r$. Freezing the empirical claims to the audited
+$301$-record strong $r=0$ corpus (and the combined $303$-record
+strong corpus across $r\in\{0,1716,4862\}$), the size-$3$ set
+$\{15,16,27\}$ is the unique minimum cover at $r=0$ ($301/301$),
+while the empirical monitor $\{7,11,13,16\}$ covers the audited
+strong corpus completely. A confirmed $13$-prime hit at
+$t=11{,}741{,}230{,}040{,}310$ is consistent with
+Bateman--Horn's leading-order quantitative prediction at the current
+search range.
+
+We further identify the structural mechanism governing the
+empirical obstruction: on each atlas branch, the Erd\H{o}s
+inequality at offset $k$ reduces to a divisor-count constraint
+$\tau(Z_{r,k,\lambda}) \le B^{\mathrm{eff}}_{r,k,\lambda}$ on the
+primitive cofactor, where the branchwise effective budget
+$B^{\mathrm{eff}}_{r,k,\lambda} = \lfloor (k+2)/\tau(A_{r,k,\lambda})\rfloor$
+is computable from the atlas alone. The branchwise severity
+ordering induced by this criterion matches empirical pass-rate
+ordering across all $87$ offsets $k\le 100$ at $r=0$ with Spearman
+correlation $0.93$--$0.94$ under both empirical and neutral
+branch weights, stable under chronological splitting
+($\rho = 0.96$ between halves) and, for the neutral-prediction audit,
+bootstrap resampling (median $\rho = 0.93$, $95\%$ CI
+$[0.92,\,0.94]$). The monitor set $\{7,11,13,16\}$ has
+an explicit structural interpretation: $k=16$ is atlas-tight at
+every hard residue, while $k=7,11,13$ provide residue-specific
+tightness at the residues where their primes are in the atlas
+active set. A negative structural result is also reported: three
+tested finite-incompatibility programs (covering at small primes,
+pattern-rigidity, pairwise gcd identities) do not produce a
+contradiction in the killer-set system at $r=0$. The remaining
+gap is analytic: a density-level control on the budget-$\ge 4$
+tail along Dickson sets. The nearest literature-shaped proxy
+target is a tuple-restricted Titchmarsh-type divisor bound on
+Dickson sets. At the reference hardest residue $r=0$ (tuple
+rank~$13$) we establish the \emph{absolute form} of this proxy
+(Remark~\ref{rem:track2_absolute}):
+$\sum_{t\le X,\,t\in D_0(X)} \tau(L_{0,k_0}(t)) \ll X\,(\log X)^{-12}$
+via a Selberg $\Lambda^{2}$ upper-bound sieve combined with
+Shiu/Nair--Tenenbaum Brun--Titchmarsh. This absolute bound is
+unconditional. The bridge from the absolute form to a density-level
+statement inside the rank-$13$ Dickson set sits inside the same
+Dickson/Schinzel-Hypothesis-H conjectural frame that
+Proposition~\ref{prop:dichotomy} already uses to state the Track-$2$
+dichotomy; it is flagged in Remark~\ref{rem:track2_absolute} as a
+conditional outlook, not as a theorem of this paper. The analogous statements at
+the other four hard residues are expected to hold
+by the same composite but require residue-specific bookkeeping
+(rank~$15$ or~$17$ sieve integrals, per-residue admissibility,
+per-residue resultant support) which is not executed here.
+A separate Dirichlet-$L$
+pair-correlation route is secondary rather than load-bearing
+here: in the current project notes it gives a conditional
+asymptotic theorem under GRH plus a $\chi$-twisted
+Hardy--Littlewood hypothesis $H_\chi$, with a finite-$T^*$
+numerical corollary under an additional bookkeeping gate $B_\chi$;
+the strict GRH-only finite-$T^*$ individual-$\chi$ version is
+effectively red in the present framework. Thus the remaining
+content is reduced to five explicit admissibility problems whose
+small-offset obstruction profile is now structurally characterized
+by the atlas's branchwise effective budget distribution.
+\end{abstract}
+
+\tableofcontents
+
+%% ====================================================================
+\section{Problem statement}\label{sec:problem}
+%% ====================================================================
+
+Let $\tau(m)$ denote the number of positive divisors of~$m$.
+
+\begin{quote}
+\textbf{Erd\H{o}s Problem \#647.} Does there exist $n>24$ such that
+\[
+  \max_{1\le m<n}(m+\tau(m))\le n+2\,?
+\]
+\end{quote}
+
+Equivalently, $\tau(n-k)\le k+2$ for all $1\le k<n$. The known
+solutions for $n\le 24$ are $\{1,2,3,4,5,6,8,10,12,24\}$; none
+exist below $10^{10}$ (OEIS A087280). The problem remains open.
+
+Erd\H{o}s conjectured the stronger statement
+$\max_{m<n}(\tau(m)+m-n)\to\infty$ (recorded as
+\texttt{variants.lim} in the DeepMind formal conjectures
+repository~\cite{DeepMind}), which would imply at most finitely
+many solutions.
+
+A recent submission~\cite{Agbanwa} proposed a negative resolution via
+a record-holder domination framework; the unresolved step is the
+asymptotic claim that domination intervals eventually cover all
+sufficiently large~$n$. The companion Lean artifact
+axiomatized that asymptotic step rather than proving it, a
+structural gap that Tao~\cite{TaoForum647} flagged as yielding
+``no certificate of unconditional correctness.'' Our development
+avoids this failure mode in a specific sense: the Lean chain contains a
+single intentional axiom, \texttt{openResiduesStage1\_no\_solution},
+whose scope is exactly the $41$ residues in the explicit finite set
+\texttt{openResiduesStage1} (defined as the complement of the $55$
+Lean-closed residues inside the $96$-class sieve frontier; see
+Section~\ref{sec:formal}). That scope is computable and enumerable;
+it is not a blanket ``all sufficiently large $n$'' axiom.
+For four of the five historical hard residues
+$\{1716, 4862, 16302, 17160\}$ (a subset of
+\texttt{openResiduesStage1}), a $[1, 10^{15})$ exhaustive parity scan
+at $t \equiv r \pmod{M}$ provides empirical stopping certificates
+recording $0$ full-tuple witnesses.\footnote{Search methodology,
+summarized from
+\texttt{analysis/k12\_k13\_structure/findings/hard5\_stopping\_certificates\_20260423.md}:
+per-residue candidate iteration under \texttt{--restrict-modM}
+(only $t\equiv r\pmod{M}$), Eratosthenes sieve to limit $10^3$ with
+primes dividing $M$ auto-skipped, BPSW primality pre-test on
+sieve-survivors, then per-form deterministic Miller--Rabin with
+$12$ bases (valid up to $3.3\times 10^{24}$) on each $\alpha_i t +
+\beta_i$. Each residue processed $\approx 2.17\times 10^{10}$
+candidate $t$-values; combined across the four residues the campaign
+primality-tested on the order of $10^{5}$ sieve-survivors.}
+We do not claim these stopping certificates are proofs; they bound
+where counterexamples within those four classes could live and are
+reported as empirical evidence supporting the axiom's scope.
+
+Two elementary forum derivations (Dutta~\cite{Dutta} on 18 Jan 2026
+and Alexeev~\cite{Alexeev} on 19 Jan 2026) independently arrive at
+the same $n=2520N$ structure and the same tuple of forms
+$d_iN-1$ that our Section~\ref{sec:shapes} derives in full (modulo
+the subsequent refinements $315N-1\in\{p,2p\}$ and
+$105N-1\in\{p,p^{2},2p,4p\}$ from Dutta's 19 Jan follow-up). Our
+$n=2520N$ reduction and the forced-prime conditions at
+$k=1,\ldots$ are consistent with theirs, and our further reduction
+to $96$ classes modulo $M$ can be read as a formalization of
+Alexeev's conjecture $11\mid n$, $13\mid n$ into the explicit
+mod-$46189$ frame. The \emph{explicit near-witness}
+$n = 604{,}517{,}614{,}941{,}240$ ($N = 239{,}887{,}942{,}437$)
+exhibited by Alexeev satisfies $\tau(n-k)\le k+2$ for
+$1\le k\le 13$ and $k=24$, demonstrating that the pointwise
+tuple conditions alone are not contradictory; the analytic content
+of \#647 is concentrated in the uniformity across all shifts $k<n$.
+
+Our contribution is a structural reduction that localizes any
+failure of asymptotic coverage to the $41$ residues
+(decomposing as the historical hard-$14$ subset plus $27$ residues
+whose prior closures were invalidated by the exact-v2 audit's
+correction of the Bridge-3 peeled-cofactor mechanism).
+Section~\ref{sec:hard} analyses the historical hard-$5$ structural
+core in detail; Sections~\ref{sec:chain}--\ref{sec:formal} record
+the formal chain.
+
+%% ====================================================================
+\section{Verified reduction}\label{sec:reduction}
+%% ====================================================================
+
+\begin{enumerate}
+\item[\textbf{(R1)}] Every solution $n>84$ has $n=2520N$
+  (Lean-verified: \texttt{erdos647\_div\_2520}).
+\item[\textbf{(R2)}] Twelve shape constraints reduce
+  $N\bmod{46189}$ to exactly $96$ residue classes
+  (Lean-verified: \texttt{surviving\_card}).
+\item[\textbf{(R3)}] Under exact-v2 closure semantics, adopted after
+  the pointwise-unsound Bridge-3 peeled-cofactor transfer was retired
+  (see Section~\ref{sec:formal} and the post-retirement audit at
+  \texttt{docs/audits/55\_closed\_post\_bridge3\_audit\_20260424.md}),
+  $55$ of $96$ classes are eliminated by Lean-checked closure
+  certificates operating directly on the full value
+  $m=2520\cdot N-k$:
+  \begin{itemize}
+  \item $42$ residues by \emph{single-overlap} arguments combining
+    divisor monotonicity $\tau(d)\le\tau(m)$ when $d\mid m$ with
+    sound coprime-multiplicativity $\tau(m)\ge 2\tau(a)$ under an
+    explicit hypothesis $\gcd(p,a)=1$ (Lean-verified:
+    \texttt{singleOverlapResidues42});
+  \item $13$ residues by \emph{direct full-value} closure, the same
+    full-value toolkit specialised to fixed content
+    $g_{\mathrm{exact}}\in\{1729, 2584, 4522, 4845, 9690\}$
+    (Lean-verified: \texttt{directFullValueResidues13}).
+  \end{itemize}
+  The remaining $41$ residues form the proof-critical open set
+  \texttt{openResiduesStage1} $= \texttt{survivingResidues96}
+  \setminus\texttt{closedResiduesStage1}$.
+\item[\textbf{(R4)}] The $41$-residue open set decomposes as:
+  \begin{itemize}
+  \item the historical hard-$14$ core
+    \[
+      \{0,1716,2431,4862,9009,9867,16302,17017,17160,
+        21164,24453,29315,31603,38896\}
+    \]
+    (the original hard-$5$ structural subset
+    $\{0,1716,4862,16302,17160\}$ plus nine residues reopened by the
+    exact-v2 recertification audit);
+  \item the $27$ residues whose closures under the now-invalidated
+    Bridge-3 peeled-cofactor mechanism require a sound replacement.
+  \end{itemize}
+  The Stage-1 axiom \texttt{openResiduesStage1\_no\_solution}
+  asserts that no $N$ with $N\bmod M$ in this $41$-residue set
+  yields a \#647 candidate.
+\end{enumerate}
+
+%% ====================================================================
+\section{The 12-shape almost-prime package}\label{sec:shapes}
+%% ====================================================================
+
+\begin{proposition}[Extended shape package]
+If $n=2520N$ satisfies the hypothesis, then twelve linear forms $dN-1$
+($d\in\{105,140,210,252,280,315,420,504,630,840,1260,2520\}$) satisfy
+explicit almost-prime shape conditions with bounded exponents.
+\end{proposition}
+
+The six pure-prime shapes ($k=1,2,3,4,6,12$) and six almost-prime
+shapes ($k=5,8,9,10,18,24$) are derived by case analysis of
+$\tau(2520N-k)\le k+2$. Shape elimination promotes $k=20$ from
+budget-$3$ to budget-$2$, giving $13$ prime forms at $r=0$.
+The full derivation is formalized in \texttt{Erdos647BridgeV1.lean}
+(863~lines).
+
+At each hard residue $r\in\{0,1716,4862,16302,17160\}$, the
+budget-$\le 3$ prime tuple contains a universal $13$-form core
+indexed by $k\in\{1,2,3,4,5,6,8,9,10,12,18,20,24\}$ with
+coefficients $\alpha_i=d_i\cdot 46189$ for $d_i\in\{2520,1260,
+840,630,504,420,315,280,252,210,140,126,105\}$. Residue-specific
+extras extend the full tuple to sizes $13,17,15,15,17$ for
+$r\in\{0,1716,4862,16302,17160\}$ respectively; these extras
+arise when $\gcd(\alpha_k,\beta_k^{(r)})$ picks up residue-dependent
+factors of the sieve primes $\{11,13,17,19\}$ absent from the
+core. See \texttt{data/hard\_root\_forms\_r*.json} for the
+per-residue breakdown.
+
+%% ====================================================================
+\section{Closure mechanisms}\label{sec:closure}
+%% ====================================================================
+
+\subsection{Budget-$\le 1$ contradiction}
+
+For $72$ residues, some $k$-value produces a form whose total content
+$g=\gcd(2520\cdot 46189,\,|2520r-k|)$ satisfies $\tau(g)>k+2$,
+making the constraint $\tau(2520N-k)\le k+2$ impossible.
+
+\subsection{Budget-$2$ inadmissibility}
+
+For $5$ residues, the set of budget-$2$ forms (those requiring
+$\tau(\text{quotient})\le 2$, i.e., primality) covers all of
+$\mathbb{Z}/p\mathbb{Z}$ at some prime~$p$. Every $t$ has at
+least one budget-$2$ form divisible by~$p$, hence composite.
+
+\subsection{Budget-$2$/$3$ inadmissibility (b23 mechanism)}
+
+\begin{theorem}[b23 branch-closure, Lean-verified]
+Let $\{L_i(u)=a_i u+b_i\}$ be affine forms with budgets $2$ or~$3$.
+If a prime~$p$ covers all residues mod~$p$ via these forms, and every
+covering form satisfies $L_i(u)>p^2$ for $u\ge U$, then no $u\ge U$
+satisfies all budget constraints simultaneously.
+\end{theorem}
+
+\begin{proof}
+Fix $u\ge U$. Some covering form $L_i$ has $p\mid L_i(u)$.
+If $\text{budget}=2$: $L_i(u)>p$ forces $\tau(L_i(u))\ge 3>2$.
+If $\text{budget}=3$: $L_i(u)>p^2$ forces $\tau(L_i(u))\ge 4>3$
+(since $1,p,L_i(u)/p,L_i(u)$ are four distinct divisors when
+$L_i(u)/p>p$). Either contradicts the budget.
+\end{proof}
+
+For $10$ residues, the b23 mechanism applies at the $t$-level
+(without branching). For $4$ residues ($r\in\{858,2574,24310,25168\}$),
+branching $t=30u+c$ followed by b23 at the $u$-level closes all
+$30$ branches.
+
+%% ====================================================================
+\section{Structural characterization of the hard set}\label{sec:hard}
+%% ====================================================================
+
+\begin{proposition}[Necessary condition, Lean-verified]
+Every hard residue satisfies $143\mid r$, where $143=11\cdot 13$.
+\end{proposition}
+
+This has a clean structural consequence: since $11\cdot 13\mid r$
+and $7$ divides every $d$-coefficient, the forms
+$\alpha_i=d_i\cdot 46189$ satisfy $\alpha_i\equiv 0\pmod{q}$ for
+$q\in\{7,11,13\}$. Hence these three sieve primes contribute
+\emph{zero} forbidden residues, nullifying three of four operative
+sieve primes. Only $\{2,3,5,17,19\}$ remain.
+
+\begin{remark}
+The condition $143\mid r$ is necessary but not sufficient: $43$ of
+$48$ survivors with $143\mid r$ close via budget or inadmissibility
+mechanisms at the remaining primes. The $5$ hard residues are
+those where even primes $\{2,3,5\}$ fail to produce a covering
+or budget contradiction.
+\end{remark}
+
+\begin{remark}[Sieve affinity for $143$-divisibility]\label{rmk:sieve-affinity}
+Of the $96$ surviving residues mod $46189$, exactly $48$ (that is,
+$50\%$) are divisible by $143$. In the ambient space mod $46189$,
+only $323/46189\approx 0.70\%$ of residues are $143$-divisible.
+The $12$-shape sieve thus exhibits a $71.5\times$ affinity for
+$143$-divisible residues, consistent with the observation that
+$143$-divisibility nullifies the sieve's most aggressive primes
+($11$ and $13$). Hardness, once $143$-divisibility is present,
+is then decided among these $48$ residues by the behaviour at the
+residual operative primes $\{2,3,5,17,19\}$.
+\end{remark}
+
+\begin{proposition}[Operative-prime staticity at $17$ and $19$]\label{prop:staticity}
+For every shape $k$ in the $13$-form core tuple and every residue
+$r$ mod $46189$, the leading coefficient $\alpha_k = d_k\cdot 46189$
+satisfies $\alpha_k\equiv 0\pmod{17}$ and $\alpha_k\equiv 0\pmod{19}$.
+Consequently
+\[
+  L_{r,k}(t)\equiv\beta_k^{(r)}\pmod{17}
+  \qquad\text{and}\qquad
+  L_{r,k}(t)\equiv\beta_k^{(r)}\pmod{19}
+\]
+for every $t\in\mathbb{Z}$: divisibility of $L_{r,k}(t)$ by $17$ or
+$19$ is determined entirely by the constant term
+$\beta_k^{(r)}$, independently of the $t$-parameter.
+\end{proposition}
+
+Since $46189 = 11\cdot 13\cdot 17\cdot 19$ and every core
+$d$-coefficient is a multiple of $7$, the factorisation
+$\alpha_k = d_k\cdot 46189$ forces $\alpha_k\equiv 0$ modulo each of
+$\{7,17,19\}$ as a structural feature of the reduction itself,
+independent of $r$. The $143$-divisibility condition of the
+necessary-condition proposition adds $\{11,13\}$ to this list
+whenever $143\mid r$. Among the five operative sieve primes
+$\{2,3,5,17,19\}$ that remain after nullifying $\{7,11,13\}$,
+Proposition~\ref{prop:staticity} thus isolates $\{17,19\}$ as
+carrying no $t$-parameter information: their contribution to
+closure or hardness is determined \emph{rigidly} by the constants
+$\beta_k^{(r)}\bmod 17$ and $\beta_k^{(r)}\bmod 19$. This is the
+structural content that the CRT factorization
+(Proposition~\ref{prop:crt}) observes.
+
+\begin{proposition}[CRT factorization of hardness, Lean-verified]\label{prop:crt}
+Let $\pi\colon \mathbb{Z}/46189\mathbb{Z}\to
+(\mathbb{Z}/17\mathbb{Z})\times(\mathbb{Z}/19\mathbb{Z})$ be the
+natural CRT projection. Restricted to the $48$ surviving residues
+with $143\mid r$, the projection $\pi$ is injective on both the
+hard and closing subsets, and their images are disjoint:
+\[
+  \pi(\mathrm{hardResidues5}) \;=\; \mathcal{H}_{17,19} \;:=\;
+  \{(0,0),\,(16,6),\,(0,17),\,(16,0),\,(7,3)\},
+\]
+\[
+  \pi(\mathrm{closingResidues}) \cap \mathcal{H}_{17,19} \;=\; \emptyset.
+\]
+Consequently, for $r\in\mathrm{survivingResidues}$,
+\[
+  r\in\mathrm{hardResidues5}
+  \;\iff\;
+  143\mid r \;\text{and}\; \pi(r)\in\mathcal{H}_{17,19}.
+\]
+(Lean theorem \texttt{hard\_residue\_crt\_factorization},
+\texttt{native\_decide}.)
+\end{proposition}
+
+The content of Proposition~\ref{prop:crt} is the injectivity and
+disjointness, not the enumeration of $\mathcal{H}_{17,19}$: the
+statement is that the $(\bmod\,17,\bmod\,19)$ projection is
+sufficient statistics for hardness, given $143$-divisibility. Any
+future structural characterization of the historical hard-$5$ subset within the original $91/5$
+partition must factor through this projection. The hardness of the
+five residues therefore appears to arise from the simultaneous
+failure of all five operative closure mechanisms at
+$\{2,3,5,17,19\}$, rather than from a unifying structural property.
+Whether $\mathcal{H}_{17,19}$ admits a deeper arithmetic
+characterization is an open question we flag for the community.
+
+\begin{remark}[Axis overrepresentation in $\mathcal{H}_{17,19}$]\label{rmk:axes}
+Within $\mathcal{H}_{17,19}$, three of the five pairs lie on a
+coordinate axis — $(0,0)$, $(0,17)$, and $(16,0)$ — compared to
+only $17+19-1=35$ of $17\cdot 19 = 323$ pairs (roughly $10.8\%$)
+in the ambient space. The hard set is therefore about $5.5\times$
+overrepresented on the axes. Arithmetically, this says three of
+the five hard residues have an \emph{additional} divisibility by
+one of the residual sieve primes $17$ or $19$ on top of
+$143$-divisibility: $r=0$ is divisible by both $17$ and $19$,
+$r=4862$ is divisible by $17$, and $r=16302$ is divisible by $19$.
+The remaining two hard residues, $r=1716$ and $r=17160$, have
+neither additional divisibility but nonetheless project into
+$\mathcal{H}_{17,19}$ for reasons we have not characterized
+structurally.
+\end{remark}
+
+\begin{remark}[Jacobi-sign necessary condition]\label{rmk:jacobi}
+Complementing the axis pattern, a cross-Jacobi observation:
+for each of the $48$ surviving residues $r$ with $143\mid r$,
+form the pair of Jacobi symbols
+$\bigl(\tfrac{r}{17},\,\tfrac{r}{19}\bigr)$ and their product
+$\bigl(\tfrac{r}{17}\bigr)\cdot\bigl(\tfrac{r}{19}\bigr)\in\{-1,0,+1\}$.
+Of the $48$ surviving $143$-divisible residues, exactly $18$ have
+product $-1$ (the ``mixed QR/NR'' case, where one of
+$r\bmod 17, r\bmod 19$ is a quadratic residue and the other is a
+non-residue), and \emph{zero} of those $18$ are hard; the five hard
+residues all have product in $\{0, +1\}$. Explicitly:
+\[
+\Bigl(\tfrac{r}{17}\Bigr)\cdot\Bigl(\tfrac{r}{19}\Bigr)
+\;=\;\left\{
+\begin{array}{ll}
+0,     & r\in\{0,\,4862,\,16302\},\\
++1,    & r\in\{1716,\,17160\}.
+\end{array}
+\right.
+\]
+Hence a partial necessary condition: \emph{if
+$r\in\mathrm{survivingResidues}$, $143\mid r$, and the Jacobi
+product equals $-1$, then $r$ is closing}. The condition is not
+sufficient — $15$ of the $30$ surviving $143$-divisible residues
+with non-mixed Jacobi product are also closing — but it strictly
+reduces the search space for hardness by $60\%$ (from $48$ to $30$
+candidates). The observation is presently empirical; Lean
+formalization would require routine \texttt{native\_decide}-style
+enumeration. Data: \texttt{data/hard\_residue\_characterization.json}.
+\end{remark}
+
+\begin{proposition}[Branch-level hard set, Lean-verifiable]\label{prop:branch18}
+Among the $150$ nominal level-$1$ branch-states $(r,c)$ with
+$r\in\mathrm{hardResidues5}$ and $c\in\mathrm{Fin}\ 30$, exactly
+$18$ pairs genuinely resist closure at budget $\le 3$:
+\begin{align*}
+S_{18} \;=\; \{&(0,0),\,(0,8),\,(0,10),\,(0,18),\,(0,20),\,(0,28),\\
+                &(1716,6),\,(1716,16),\\
+                &(4862,12),\,(4862,22),\\
+                &(16302,0),\,(16302,2),\,(16302,10),\,(16302,12),\,(16302,20),\,(16302,22),\\
+                &(17160,0),\,(17160,18)\}.
+\end{align*}
+The remaining $132$ pairs admit a budget-$\le 3$ inadmissibility
+certificate covering some operative prime (budget-$\le 1$ directly,
+or covering of $\mathbb{Z}/p\mathbb{Z}$ at $p\in\{2,3,5\}$ by
+budget-$\le 2$ or budget-$\le 3$ forms). The cardinality claim
+$|S_{18}| = 18$ and the residue-distribution claim
+$6 + 2 + 2 + 6 + 2$ are Lean-verifiable
+(\texttt{hardBranches18\_card},
+\texttt{hardBranches18\_distribution} in
+\texttt{Erdos647ReductionChain.lean}, both by \texttt{decide}).
+\end{proposition}
+
+\begin{remark}[Distribution asymmetry]\label{rmk:asym}
+The $18$ tentative hard branches distribute asymmetrically across
+the $5$ hard residues: $6$ each at $r=0$ and $r=16302$, and $2$ each
+at $r=1716$, $r=4862$, $r=17160$. The tentative-covering prime and
+required budget cap break down as: $11$ branches at $(p=2$,
+budget $\le 6)$; $5$ branches at $(p=3$, budget $\le 4)$; $2$
+branches at $(p=2$, budget $\le 4)$. Whether the
+$r=0 / r=16302$ concentration reflects a deeper arithmetic feature
+distinguishing these two residues from the other three hard
+residues is an open question. Enumeration computed in
+\texttt{scripts/higher\_budget\_enumeration.py}; data recorded in
+\texttt{data/tentative\_hard\_branches.json}.
+\end{remark}
+
+\begin{remark}[Scope of pre-analytic methods]\label{rmk:pre-analytic}
+We tested three natural refinements that a sieve-theoretic attack
+might attempt against the $18$ tentative branches, each designed to
+extract additional structure from the reduction without introducing
+new analytic hypotheses. Each is ruled out; together they
+characterize the boundary of pre-analytic methods on this set.
+
+\emph{(i) Finer branching at primes beyond $\bmod 30$.} Moduli
+$M_{\mathrm{new}} \in \{210, 510, 570, 714, 798, 1938\}$
+(incorporating primes $7$, $17$, $19$ in various combinations) were
+tested on each of the $18$ tentative branches. Under no such
+$M_{\mathrm{new}}$ do all $M_{\mathrm{new}}/\gcd(M_{\mathrm{new}},30)$
+sub-branches close rigorously at budget $\le 3$. Richer branching
+produces partial closures — for example, $(r, c) = (17160, 0)$ under
+$M_{\mathrm{new}} = 1938$ closes $18$ of its $64$ sub-branches
+rigorously, but the remaining $46$ stay tentative. Consistent with
+the barrier theorem (Section~\ref{sec:barrier}): no finite
+prime-by-prime descent at primes greater than the clause count
+can eliminate a tentative branch.
+
+\emph{(ii) Shape restriction via square-elimination of budget-$3$
+forms.} A budget-$3$ form $L(u) = \alpha u + \beta$ admits two
+arithmetic shapes: $L = p$ (prime) or $L = p^2$ (prime square). The
+$p^2$ option can be ruled out uniformly in $u$ whenever there is a
+prime $q$ with $q \mid \alpha$, $q \nmid \beta$, and
+$\beta \bmod q$ a non-zero quadratic non-residue modulo $q$; then
+$L(u) \equiv \beta \pmod q$ is constant and a non-residue, hence
+never a square. For every budget-$3$ form in every one of the $18$
+tentative branches such a witness prime $q$ exists ($8/8$ through
+$12/12$ forms eliminated per branch, $100\%$ elimination rate in all
+$18$; see
+\texttt{scripts/qnr\_elimination\_prototype.py}). The effective form
+pool is thus reduced to budget $\le 2$ throughout; yet no branch
+closes, because the budget-$\le 2$ forms still fail to cover
+$\mathbb{Z}/p\mathbb{Z}$ at any operative prime in $\{2, 3, 5\}$.
+This rules out the entire family of square-based enhancements —
+QNR, Legendre symbol constraints, discriminant obstructions, any
+variant preventing $L$ from being $p^2$ — because even the strongest
+possible outcome of such an analysis leaves the budget-$\le 2$
+coverage deficit unchanged. The closure obstruction is localized to
+the budget-$2$ arithmetic itself.
+
+\emph{(iii) Sub-branching on the covering prime itself.} For each
+tentative branch with tentative covering prime
+$p \in \{2, 3\}$, sub-branching mod $30p$ (mod $60$ for $p = 2$,
+mod $90$ for $p = 3$) causes natural promotion of some forms to
+effective budget $1$ under the reduction pipeline, yielding direct
+contradictions in certain sub-branches. At $p = 3$ exactly $1$ of
+the $3$ sub-branches closes this way per parent; at $p = 2$, $0$ of
+the $2$ sub-branches close. Since parent closure requires all
+sub-branches to close, no parent closes
+(\texttt{scripts/subbranch\_promotion\_prototype.py},
+data in \texttt{data/subbranch\_promotion\_attempts.json}). This
+rules out the most natural "branch the deficit" attack as well.
+
+\emph{(iv) Residue-level closure rates under operative versus
+non-operative prime branching.} A finer-grained extension of~(i).
+At $M_\mathrm{new} = 30 \cdot 17 \cdot 19 = 9690$ (adding both
+operative primes dividing $M$), $488$ of the $5{,}814$ level-$2$
+sub-branches close ($8.39\%$), with a sharp residue-dependent
+hierarchy: $r=0$ at $0.00\%$, $r=16302$ at $5.88\%$, $r=1716$ at
+$10.84\%$, $r=4862$ at $18.73\%$, $r=17160$ at $28.33\%$. The
+immunity of $r=0$ has an arithmetic explanation: $2520r - k = -k$
+forces $\gcd(2520M, |2520r-k|) = \gcd(2520, k)$ (every $k$ in the
+$12$-shape set is at most $24$, hence coprime to
+$M = 11\cdot 13\cdot 17\cdot 19$), so the base gcd contains no
+factor of~$M$, $a_{\mathrm{orig}} = 2520M/g$ absorbs all of $M$, and
+the extra-gcd peeling step has no $M$-prime factors to absorb under
+refinement at primes dividing~$M$. Replacing the operative pair
+$\{17,19\}$ with non-operative $\{23,29\}$ bypasses the obstruction:
+at $M_\mathrm{new} = 30\cdot 23\cdot 29 = 20010$, $10{,}827$ of
+$12{,}006$ sub-branches close ($90.18\%$), and the per-residue
+hierarchy collapses to a tight $87.96\%$–$93.40\%$ band across all
+five hard residues (in particular $r=0$ rises from $0\%$ to
+$87.96\%$). The finding generalizes to other non-operative pairs: at
+$M_\mathrm{new} = 30\cdot 31\cdot 37 = 34{,}410$, $16{,}526$ of
+$20{,}646$ sub-branches close ($80.04\%$) with the per-residue range
+$75.62\%$–$83.70\%$. Smaller non-operative primes are more effective
+(each prime gives richer $\gcd(a_u, b_u)$ structure per unit $j$), but
+the mechanism is not specific to $\{23, 29\}$.
+
+This shows that the residue-level variation observable at mod-$9690$
+is a reflection of $M$-factor availability in the reduction pipeline,
+not an intrinsic hardness hierarchy among the five hard residues; the
+$(r \bmod 17, r\bmod 19)$ pair structure from
+Proposition~\ref{prop:crt} predicts the mod-$9690$
+response but not the mod-$20010$ or mod-$34410$ response.
+
+\emph{Residual structure at $M_\mathrm{new}{=}20010$.} The $1{,}179$
+open sub-branches left by non-operative branching have a sharp
+mod-$23$ signature: of the $23$ residue classes $j \bmod 23$ (where
+$j$ is the level-$2$ branching index), the class $j \equiv 8 \pmod{23}$
+has $65.5\%$ of its members universally-closing (closing at every one
+of the $18$ tentative $(r,c)$), while $j \equiv 7 \pmod{23}$ has $0\%$
+and is the unique class with no universally-closing member. The
+mechanism: $30 \equiv 7 \pmod{23}$, so the $23$-factor peeling in
+$\gcd(a_u, b_u) = \gcd(20010\,a_{\mathrm{orig}},
+a_{\mathrm{orig}}(30 j + c) + b_{\mathrm{orig}})$ fires iff $j$ lies
+in a specific class mod~$23$ determined by $(r, c, k)$; the class
+$j \equiv 7 \pmod{23}$ is precisely the one receiving no hit across
+the twelve shapes. The residual hardness of non-operative branching
+is thus a single CRT bottleneck, paralleling the $r=0$ immunity at
+mod-$9690$ but at the level-$2$ index rather than the residue.
+
+Consistent with~(i), no single $M_\mathrm{new}$ closes every
+sub-branch of any tentative~$(r,c)$, so no full tentative branch is
+eliminated by branching alone; (i)'s conclusion — that no finite
+prime-by-prime descent at primes greater than the clause count can
+eliminate a tentative branch — is reaffirmed. Experimental details:
+\texttt{scripts/a1\_branch\_323.py},
+\texttt{scripts/a1b\_branch\_667.py},
+\texttt{scripts/a1d\_branch\_1147.py},
+\texttt{scripts/a1b\_residual\_structure.py};
+memos \texttt{docs/a1\_branch323\_result.md},
+\texttt{docs/a1b\_branch667\_result.md},
+\texttt{docs/c1\_pair\_partition.md},
+\texttt{docs/a1b\_residual\_structure.md}.
+
+Together, (i)–(iv) exhaust the natural pre-analytic routes to
+closing the $18$ tentative branches. The closure obstruction
+localizes to the budget-$\le 2$ coverage at operative primes
+$\{2, 3, 5\}$, which no combination of finer branching (at operative
+or non-operative primes), form-shape restriction, or sub-branching
+on the covering prime can affect.
+Further progress on this set appears to require analytic input,
+specifically results of the form discussed in
+Section~\ref{sec:conditional} — a density-level control on the
+budget-$\ge 4$ Dickson-set tail, with a tuple-uniform
+Titchmarsh-type divisor bound as the nearest proxy target, or a
+prime-core-relative analog of Matthiesen's affine-linear
+correlation estimates on the $13$-form Dickson set.
+\end{remark}
+
+%% ====================================================================
+\section{The mod-$11$ square-kill and divisor-extension theorem}\label{sec:div_ext}
+%% ====================================================================
+
+The hard-set characterization of Section~\ref{sec:hard} leaves a
+congruential residue of open content: for each hard
+$r\in\{0,1716,4862,16302,17160\}$ we know the $12$-shape package is
+budget-$\le 3$-admissible on the progression $N=Mt+r$, but the package
+is not pinned to primality until we close the mod-$11$ shape
+classification. This section supplies that pinning via a standalone
+arithmetic lemma on integers $x\equiv -1\pmod{11}$, derives a
+divisor-extension corollary that applies to Erd\H{o}s $\#647$
+candidates on hard residues, and proves a completeness theorem:
+under the budget bound $B_k\le 5$, the resulting list of forced
+primality constraints consists of exactly one universal extension
+and six residue-specific quotient-prime extensions.
+
+\subsection{The mod-$11$ arithmetic lemma}
+
+Throughout, write $M=46189=11\cdot 13\cdot 17\cdot 19$ and, for
+$k\mid 2520$, set $d_k := 2520/k$ and
+\[
+  x_k(N) \;:=\; d_k\cdot N - 1,
+  \qquad
+  B_k \;:=\; \bigl\lfloor (k+2)/\tau(k) \bigr\rfloor.
+\]
+
+\begin{lemma}[Mod-$11$ rigidity]\label{lem:mod11}
+Let $x>1$ be an integer with $x\equiv -1\pmod{11}$.
+\begin{enumerate}
+\item If $\tau(x)\le 3$, then $x$ is prime.
+\item If $q\in\{17,19\}$, $q\mid x$, and $\tau(x)\le 5$, then
+$v_q(x)=1$ and $x/q$ is prime.
+\end{enumerate}
+\end{lemma}
+
+\begin{proof}
+(i) An integer with $\tau\le 3$ has shape in $\{1,p,p^2\}$. The
+quadratic residues mod~$11$ are $\{1,3,4,5,9\}$; the class
+$-1\equiv 10\pmod{11}$ is a non-residue. Hence $x$ is never a
+perfect square, ruling out $p^2$, while $x>1$ excludes $1$. So
+$x=p$ is prime.
+
+(ii) An integer with $\tau\le 5$ divisible by $q\in\{17,19\}$ has
+shape $q^e$ for some $1\le e\le 4$, or $q\cdot p$ with $p$ prime and
+$p\ne q$. Direct computation gives
+\[
+  17^e \pmod{11}:\;\; 6,\,3,\,7,\,9 \qquad (e=1,2,3,4),
+\]
+\[
+  19^e \pmod{11}:\;\; 8,\,9,\,6,\,4 \qquad (e=1,2,3,4);
+\]
+none of these equals $10\equiv -1$. The shapes $q^e$ ($1\le e\le 4$)
+are therefore excluded by $x\equiv -1\pmod{11}$. The only remaining
+possibility is $x=q\cdot p$, whence $v_q(x)=1$ and $x/q=p$ is prime.
+\end{proof}
+
+\subsection{Divisor-extension on Erd\H{o}s candidates}
+
+Write $K_{\text{pure}}:=\{1,2,3,4,6,12\}$ for the divisors of $2520$
+with $v_p(k)<v_p(2520)$ for every prime $p\mid k$.
+
+\begin{corollary}[Divisor-extension at hard residues]\label{cor:div_ext}
+Fix a hard residue
+\[
+  r\in\{0,1716,4862,16302,17160\},
+\]
+and let $N=Mt+r$ for some $t\ge 0$. Suppose $n=2520N$ is an
+Erd\H{o}s $\#647$ candidate.
+\begin{enumerate}
+\item For $k\in K_{\text{pure}}$, $\gcd(k,x_k(N))=1$
+unconditionally; hence $\tau(n-k)=\tau(k)\cdot\tau(x_k(N))$ and the
+Erd\H{o}s inequality at $k$ rewrites as $\tau(x_k(N))\le B_k$.
+\item $x_k(N)\equiv -1\pmod{11}$ for every $k\mid 2520$.
+\item For $k\in K_{\text{pure}}$ with $B_k\le 3$, $x_k(N)$ is
+prime. These are the six core budget-$\le 3$ forms with
+$d\in\{2520,1260,840,630,420,210\}$.
+\item For $k\not\in K_{\text{pure}}$, coprimality can fail and the
+budget constraint combined with the per-prime case analysis of
+Section~\ref{sec:shapes} gives the shape conditions recorded there.
+\item For $k=20$ ($d_{20}=126=2\cdot 3^2\cdot 7$), coprimality
+$\gcd(20,x_{20}(N))=1$ holds except on the sub-progression
+$N\equiv 1\pmod 5$ (Case~B), where $5\mid x_{20}(N)$. Case~A
+($N\not\equiv 1\pmod 5$) forces $x_{20}(N)$ prime; Case~B forces
+$x_{20}(N)=5\cdot q$ with $q$ prime and $q\equiv 2\pmod{11}$.
+\end{enumerate}
+\end{corollary}
+
+\begin{remark}[Erd\H{o}s candidacy is a genuine hypothesis]
+The candidate assumption in Corollary~\ref{cor:div_ext} is necessary.
+At $N=M=46189$ (a hard-residue survivor with $r=0$ that is not an
+Erd\H{o}s candidate) the form
+$x_2(N)=1260\cdot 46189-1=58{,}198{,}139=5297\cdot 10987$
+has $\tau(x_2)=4>2=B_2$. Survivorship alone gives the mod-$11$
+congruence but not the $\tau$-bound; candidacy supplies the bound.
+\end{remark}
+
+\subsection{Tightness of the budget bound}
+
+\begin{proposition}[Tightness of $B_k\le 5$]\label{prop:tight}
+The budget bound $B_k\le 5$ in Corollary~\ref{cor:div_ext}(v) and
+in Theorem~\ref{thm:complete} below is sharp: there exist
+hard-residue integers $N$ and divisors $k\mid 2520$
+with $B_k=6$ for which $x_k(N)$ is divisible by $q\in\{17,19\}$
+yet $x_k(N)/q$ is composite, while the local Erd\H{o}s inequality at
+that single offset $k$ is still satisfied.
+\end{proposition}
+
+\begin{proof}
+Take $r=1716$, $k=72$, $d_k=35$, $B_{72}=\lfloor 74/\tau(72)\rfloor=\lfloor 74/12\rfloor=6$, and $t=42$. Then
+$N=Mt+r=46189\cdot 42+1716=1{,}941{,}654$, and
+$x_{72}(N)=35N-1=67{,}957{,}889=19^2\cdot 188{,}249$ with
+$188{,}249$ prime. Thus $\tau(x_{72})=6=B_{72}$, $x_{72}\equiv 10\pmod{11}$, and the Erd\H{o}s inequality at $k=72$ is satisfied
+($\tau(n-72)=\tau(72)\tau(x_{72})=12\cdot 6=72\le 74=k+2$). Yet
+$v_{19}(x_{72})=2$, so $x_{72}/19=19\cdot 188{,}249$ is composite,
+violating the conclusion of Corollary~\ref{cor:div_ext} if it were
+extended to $B_k\le 6$.
+
+The failure is structural. At $\tau(x)=6$ two new shapes appear
+beyond those admitted at $\tau(x)\le 5$: $p^5$ and $p^2q$. (The
+shape $pqr$ has $\tau=8$ and is not in play.) Both new shapes are
+compatible with $x\equiv -1\pmod{11}$: direct computation yields
+$17^5\equiv 19^5\equiv -1\pmod{11}$ (admitting $p^5$ for
+$p\in\{17,19\}$), and $q\cdot s^2\equiv -1\pmod{11}$ has solutions
+in $s$ for each $q\in\{17,19\}$. So mod-$11$ no longer forces the
+prime-quotient conclusion at $B_k=6$.
+\end{proof}
+
+\subsection{Completeness at $B_k\le 5$}
+
+\begin{theorem}[Completeness of the divisor-extension list]\label{thm:complete}
+Among the $48$ divisors $d\mid 2520$:
+\begin{enumerate}
+\item Exactly thirteen divisors $d$ satisfy $B_{2520/d}\le 3$:
+\[
+  d\in
+  \{105,140,210,252,280,315,420,504,630,840,1260,2520\}
+  \cup\{126\}.
+\]
+The first twelve are the $12$-shape sieve set (Section~\ref{sec:shapes});
+$d=126$ (from $k=20$, $B_{20}=3$) is the universal extension.
+\item Exactly ten divisors $d$ satisfy $B_{2520/d}\in\{4,5\}$:
+$d\in\{42,60,63,70,84,90,120,168,180,360\}$.
+Among all pairs $(r,d)$ with $r$ hard and $d$ in this list, the
+congruence $d\cdot r\equiv 1\pmod q$ (for $q\in\{17,19\}$) holds
+in exactly the following six cases:
+\[
+  \renewcommand{\arraystretch}{1.15}
+  \begin{array}{l|l|l|c}
+    r & d & k & \text{forced by}\\ \hline
+    1716  & 84  & 30 & 17 \\
+    1716  & 168 & 15 & 19 \\
+    4862  & 180 & 14 & 19 \\
+    16302 & 84  & 30 & 17 \\
+    17160 & 70  & 36 & 19 \\
+    17160 & 90  & 28 & 17 \\
+  \end{array}
+\]
+For each such $(r,d,q)$ and any hard-residue Erd\H{o}s candidate $N$
+with $N\equiv r\pmod M$, the form $x_k(N)=d\cdot N-1$ is divisible
+by $q$ and the quotient $x_k(N)/q$ is prime (possibly modulo a
+Case-B-type sub-progression analog of Corollary~\ref{cor:div_ext}(v)
+at a prime other than $q$).
+\item No divisor-extension constraint arises for any $(r,d)$ outside
+the thirteen universal and six residue-specific cases above.
+\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+Part (i) is arithmetic: the thirteen divisors listed are those with
+$B_{2520/d}\le 3$. Part (ii) enumerates the divisors $d\mid 2520$
+with $B_{2520/d}\in\{4,5\}$ and tests $dr\equiv 1\pmod{17}$ and
+$dr\equiv 1\pmod{19}$ across the $50$ candidate pairs
+$(r,d)\in\mathrm{hardResidues5}\times\{42,60,\ldots,360\}$; the six
+cases tabulated are the complete list. Part (iii) follows from the
+exhaustion of $B_k\le 5$: at $B_k\ge 6$ the conclusion can fail
+(Proposition~\ref{prop:tight}), and divisors with $B_{2520/d}\le 5$
+are covered by (i) and (ii). The computational content is
+enumerated in \texttt{scripts/verify\_omitted\_forms.py}.
+\end{proof}
+
+\begin{remark}[BH-friendly formulation]\label{rem:bhfriendly}
+Expanding $N=Mt+r$ in each forced-prime form and clearing the
+denominator where applicable, the Case~A pure-primality constraints
+of Theorem~\ref{thm:complete} can each be written as ``$L(t)$ prime''
+for an explicit integer-valued linear form $L\in\mathbb{Z}[t]$.
+On the Case~A sub-progression (complementary to $N\equiv 1\pmod 5$
+at $r=0$, and analogously elsewhere), the Erd\H{o}s $\#647$
+candidate condition reduces on the hard residues to simultaneous
+primality of an explicit tuple of linear forms in $t$: $13$ forms
+at $r=0$, $14$ at $r=4862$, $14$ at $r=16302$, $15$ at $r=1716$,
+and $15$ at $r=17160$. This is the Bateman--Horn-friendly
+formulation used in Section~\ref{sec:BH}.
+\end{remark}
+
+%% ====================================================================
+\section{The offset atlas}\label{sec:atlas}
+%% ====================================================================
+
+The Case-A/Case-B structure of Corollary~\ref{cor:div_ext} and the
+residue-specific extensions of Theorem~\ref{thm:complete} become
+transparent under a single coordinatization of the affine forms
+$F_{r,k}(t):=2520(Mt+r)-k$, which we call the \emph{offset atlas}.
+
+\begin{definition}[Atlas objects]
+Write $A:=2520\cdot M$, $C_{r,k}:=2520\cdot r-k$, $P_0:=\{2,3,5,7,11,13,17,19\}$,
+and $a_p:=v_p(A)$, $c_p(r,k):=v_p(C_{r,k})$. A prime $p\in P_0$ is
+\emph{active} at $(r,k)$ iff $c_p\ge a_p$; otherwise \emph{passive}.
+Write $S(r,k)$ for the set of active primes.
+\end{definition}
+
+For each active prime $p\in S(r,k)$, Hensel lifting produces a
+unique residue class $t_{p,j}\pmod{p^j}$ at each level $j\ge 1$ on
+which $v_p(F_{r,k}(t))\ge a_p+j$. A \emph{branch} is an exact-valuation
+specification $\lambda=(\lambda_p)_{p\in S(r,k)}$: at $\lambda_p=j$,
+we require $t\equiv t_{p,j}\pmod{p^j}$ and $t\not\equiv t_{p,j+1}\pmod{p^{j+1}}$
+(so $v_p(F_{r,k}(t))=a_p+\lambda_p$ exactly). Combining across active
+primes via CRT pins $t$ modulo $m_\lambda:=\prod_{p\in S(r,k)}p^{\lambda_p}$.
+After reparameterizing $t=t_\lambda+m_\lambda u$, we obtain the
+\emph{primitive cofactor} $Z_{r,k,\lambda}(u)=\alpha u+\beta\in\mathbb{Z}[u]$
+with $\gcd(\alpha\cdot u+\beta,A)=1$ for $u$ in the branch.
+
+\begin{proposition}[Atlas factorization]\label{prop:atlas_factorization}
+On branch $\lambda$ of $(r,k)$,
+\[
+  F_{r,k}(t)
+  \;=\;
+  \Bigl(\prod_{p\notin S}p^{c_p}\Bigr)
+  \cdot
+  \Bigl(\prod_{p\in S}p^{a_p+\lambda_p}\Bigr)
+  \cdot
+  Z_{r,k,\lambda}(u),
+\]
+and
+\[
+  \tau(F_{r,k,\lambda}(t))
+  \;=\;
+  T^{\mathrm{fix}}_{r,k}\cdot\Bigl(\prod_{p\in S}(a_p+\lambda_p+1)\Bigr)\cdot\tau(Z_{r,k,\lambda}(u)),
+\]
+where $T^{\mathrm{fix}}_{r,k}:=\prod_{p\notin S}(c_p+1)$. Consequently
+the branch budget
+\[
+  B_{r,k,\lambda}
+  \;:=\;
+  \Bigl\lfloor (k+2)\bigl/\bigl(T^{\mathrm{fix}}_{r,k}\prod_{p\in S}(a_p+\lambda_p+1)\bigr)\Bigr\rfloor
+\]
+bounds $\tau(Z_{r,k,\lambda}(u))$ whenever $N$ is an Erd\H{o}s
+$\#647$ candidate.
+\end{proposition}
+
+The atlas is finite: restricting to $(r,k,\lambda)$ with
+$B_{r,k,\lambda}\ge 2$, for $r$ hard and $k\in[1,100]$, produces
+$500$ $(r,k)$ entries with a total of $3{,}471$ branches. At each
+branch the atlas also records the residues $Z_{r,k,\lambda}(u)\pmod p$
+for $p\in P_0$ (fixed when $\alpha\equiv 0\pmod p$, otherwise
+varying with $u$), and the list of exponent-patterns of
+$Z_{r,k,\lambda}(u)$ compatible with these residues via the
+order-subgroup realizability criterion in $(\mathbb{Z}/p)^{\times}$.
+The machine-readable dataset is in \texttt{data/offset\_atlas.json}.
+
+\begin{remark}[Case~A vs Case~B at $k=20$]
+At $(r,k)=(0,20)$, Proposition~\ref{prop:atlas_factorization} yields
+$S=\{5\}$, $T^{\mathrm{fix}}=3$, and two admissible branches with
+$\lambda_5\in\{0,1\}$. Case~A ($\lambda_5=0$) has budget~$3$ and
+unique surviving pattern $[1]$; Case~B ($\lambda_5=1$) has budget~$2$
+and $Z\equiv 2\pmod{11}$. This reproduces
+Corollary~\ref{cor:div_ext}(v) directly from the atlas.
+\end{remark}
+
+%% ====================================================================
+\section{Empirical killer sets}\label{sec:killer_sets}
+%% ====================================================================
+
+The atlas classification (Section~\ref{sec:atlas}) together with the
+Erd\H{o}s inequality at each $k\ge 1$ suggests an empirical
+investigation: for each hard residue~$r$, is there a small set
+$S_r\subseteq[1,K_{\max}]$ such that every candidate $N$ with
+$N\equiv r\pmod M$ fails the Erd\H{o}s inequality at some $k\in S_r$?
+
+\begin{definition}[Base-enriched offsets]\label{def:baseenriched}
+For residue $r$, the base-enriched $k$-set is the set of $k$-values
+whose affine form participates in the enriched tuple of
+Theorem~\ref{thm:complete}; explicitly,
+\[
+  \begin{array}{l|l}
+    r & \text{base-enriched } k\text{-set}\\ \hline
+    0    & \{1,2,3,4,5,6,8,9,10,12,18,20,24\}\\
+    1716 & \{1,2,3,4,5,6,8,9,10,12,15,18,20,24,30\}\\
+    4862 & \{1,2,3,4,5,6,8,9,10,12,14,18,20,24\}\\
+    16302 & \{1,2,3,4,5,6,8,9,10,12,18,20,24,30\}\\
+    17160 & \{1,2,3,4,5,6,8,9,10,12,18,20,24,28,36\}
+  \end{array}
+\]
+The \emph{killer universe} at residue~$r$ is $[1,100]$ minus the
+base-enriched $k$-set.
+\end{definition}
+
+\begin{definition}[Strong near-miss]\label{def:strong_near_miss}
+For residue~$r$ with enriched-tuple size~$m_r$, a sample $N=Mt+r$
+is a \emph{strong near-miss} iff at least $m_r-2$ of the $m_r$
+enriched-tuple forms are prime at~$N$. The corresponding threshold
+values are $11,13,12,12,13$ for
+$r\in\{0,1716,4862,16302,17160\}$ respectively.
+\end{definition}
+
+\begin{definition}[Killer set]\label{def:killer_set}
+For residue~$r$, the \emph{minimum killer set} $S_r$ is the smallest
+subset of the killer universe at $r$ such that for every observed
+strong near-miss $N$ at~$r$, some $k\in S_r$ satisfies
+$\tau(2520N-k)>k+2$.
+\end{definition}
+
+\begin{proposition}[Small-cover phenomenon at $r=0$]\label{prop:killer_sets}
+Let $r=0$ with the strong threshold of
+Definition~\ref{def:strong_near_miss} (primes $\ge 11$ of $13$
+enriched forms). Freezing the empirical claims to the audited
+$301$-record strong corpus used by
+\texttt{data/two\_views\_analysis.json} and
+\texttt{data/robustness\_audits.json}, one has:
+\begin{enumerate}
+\item there exists a minimum killer set of size~$3$ covering
+all $301$ records — specifically $\{15,16,27\}$ is the unique
+3-element cover;
+\item no $2$-element cover exists;
+\item the monitor set
+$S_{\mathrm{mon}}=\{7,11,13,16\}$ covers all $301/301$ records.
+Across the combined strong-threshold corpus
+($n=303$ pooled $r=0$, $r=1716$, $r=4862$), the monitor set
+still covers every record, and the $\{15,16,27\}$ cover remains
+universal on the $r=0$ slice.
+\end{enumerate}
+\end{proposition}
+
+\begin{remark}[Exact minima are data-dependent; small-cover and monitor phenomena are stable]\label{rem:unstable_minima}
+Three corpus-growth events demonstrate that specific minimum covers
+shift while the small-cover phenomenon persists.  At an earlier
+snapshot with $n=228$ strong near-misses, the unique size-$3$ cover
+was $\{14,15,16\}$. At the $n=301$ snapshot, $\{14,15,16\}$ covered
+$300/301$ (outlier at $t=3{,}336{,}277{,}668{,}150$), so the minimum
+shifted to $\{15,16,27\}$.  We freeze the paper's empirical
+statements at this audited $n=301$ / combined $n=303$ snapshot to
+avoid mixing later telemetry into the theorem-facing text.  The
+robust structural claim is not the
+identity of any specific minimum cover but the persistence of
+\emph{some} small cover together with $\{7,11,13,16\}$
+monitor coverage on the frozen audited corpus.  We do not treat either $\{14,15,16\}$ or
+$\{15,16,27\}$ as a theorem target; the theorem-shaped analog is a
+branch-dichotomy (see Remark~\ref{rem:dichotomy}).
+\end{remark}
+
+\begin{remark}[Cross-residue data: pilot only]\label{rem:crossres_pilot}
+At $r=1716$ and $r=4862$, the current strong-threshold corpus
+contains $1$ record each (from Hetzner searches on $t\in[1,10^9]$).
+At $r=16302$ and $r=17160$, the strong-threshold corpus is
+currently empty. We do not state per-residue minimum killer sets
+at these residues as formal propositions; the available data are
+pilot-level only. The monitor-coverage claim in
+Proposition~\ref{prop:killer_sets}(iii) includes these residues
+and remains $1/1$ at each, consistent with (but not statistically
+equivalent to) the $r=0$ result.
+\end{remark}
+
+\begin{remark}[Conditioning layer, diagnostic observation, and structural target]\label{rem:dichotomy}
+The outlier $t=3{,}336{,}277{,}668{,}150$ is at the
+\emph{strong near-miss} layer ($11$ of $13$ enriched forms prime;
+enriched failures at $k=18,20$), not the \emph{true base-pass}
+layer ($13$ of $13$ enriched forms prime). The distinct
+conditioning layers form distinct stochastic regimes; the two
+should not be conflated.
+
+At the strong near-miss layer, branch classification of the $301$
+records (\texttt{data/branch\_classification.json}) shows exactly
+one record passes $\{14,15,16\}$ simultaneously; this
+record is killed by $\{7,11,13,27\}$. Empirically at this layer,
+\[
+\mathrm{NearBasePass}_{11/13}(N)\wedge\bigwedge_{k\in\{14,15,16\}}\tau(2520N-k)\le k+2
+\]
+has observed density $1/301\approx 0.3\%$, and in the one observed
+instance failure occurs at smaller offsets rather than at
+$\{14,15,16\}$. This is a diagnostic observation at the strong
+near-miss layer, not a theorem-shaped claim about true candidates.
+
+At the true base-pass layer ($13/13$), the observed hit at
+$t=11{,}741{,}230{,}040{,}310$ is killed by $\{14,15,16\}$ at every
+offset. The outlier gives no direct evidence at this layer.
+
+The natural structural target is therefore not a finite-cover
+statement but a \emph{conditioned divisor-distribution model}: for
+each omitted offset $k$ and each prime $\ell$, the local
+probability
+\[
+\rho_{\ell,k}\;:=\;\Pr\bigl(\ell\mid Z_{0,k}(t)\,\big|\,\mathcal{B}\text{ locally passes mod }\ell\bigr),
+\]
+where $\mathcal{B}$ denotes the enriched $r=0$ base system and
+$Z_{0,k}$ is the primitive cofactor from the atlas of
+Section~\ref{sec:atlas}, together with the pairwise correlations
+$\mathrm{Corr}(\omega(Z_{0,k}),\omega(Z_{0,j}))$. By an Euler-product
+over $\ell\le Y$, this determines a conditioned
+Erd\H{o}s--Kac-type distribution for $\omega(Z_{0,k}(t))$, whose
+marginal and joint tails govern the Erd\H{o}s-inequality pass
+probabilities. We leave the computation and consequences of this
+model to future work; the outlier is one calibration point.
+
+We do not promote $\{14,15,16\}$ as structurally sufficient. Its
+observed strength ($99.67\%$ empirical dominance at the strong
+near-miss layer) appears to come from high conditional failure
+probability of omitted offsets with small divisor budgets, not
+from forced incompatibility.
+\end{remark}
+
+\begin{remark}[Threshold normalization]
+The strong-threshold choice (miss-count $\le 2$ relative to the
+enriched tuple) is important: at looser thresholds the minimum
+killer set becomes polluted by offsets $k$ that correspond to
+base-enriched forms, artifacts of the incomplete base constraint
+rather than genuine killers. In particular, at threshold
+$\ge 10/15$ at $r=1716$, the minimum cover $\{1,13,42,72\}$
+includes $k=1$; since $2520N-1$ is already one of the $15$
+enriched forms at $r=1716$, samples failing at $k=1$ are precisely
+samples that are not candidates at all. Filtering the killer
+universe to exclude base-enriched $k$-values and restricting to
+strong near-misses yields the clean estimates of
+Proposition~\ref{prop:killer_sets}.
+\end{remark}
+
+\begin{remark}[Status: empirical, not theorem]\label{rem:emp_only}
+Proposition~\ref{prop:killer_sets} is an empirical statement about
+observed records. We tested three finite-incompatibility programs
+for a proof of ``every candidate at $r=0$ fails the Erd\H{o}s
+inequality at some $k\in\{14,15,16\}$'': a local-covering solver
+at primes $p\le 200$ not in $P_0$; an extension adding core-form
+primality constraints at $p\le 1000$; a further extension adding
+the pairwise-gcd identities
+$\gcd(n-a,n-b)\mid |a-b|$ (for $a,b\in\{14,15,16\}$, these give
+$\gcd=1$ or $\gcd\mid 2$). Across all $54$ atlas branch triples at
+$r=0$, none of the three programs produced a contradiction. This
+is a strong negative result on three specific finite-combinatorial
+vectors; it does not rule out other finite proofs, and it locates
+the natural next step for a proof in the analytic direction — a
+density-level control on the budget-$\ge 4$ Dickson-set tail,
+with a tuple-restricted Titchmarsh-type bound as the nearest
+proxy target, which we discuss in
+Section~\ref{sec:conditional}. See
+\texttt{docs/theorem\_sprint\_conclusion.md} for the full record.
+\end{remark}
+
+\begin{remark}[Triage pipeline and trigger events]\label{rem:triage}
+Proposition~\ref{prop:killer_sets} is maintained as a live empirical
+claim by a four-stage triage pipeline applied to every new
+witness-search record: (i) base-enriched filter (drop any record
+failing the enriched tuple at its residue, i.e., below strong
+threshold); (ii) monitor filter against $S_{\mathrm{mon}}=\{7,11,13,16\}$;
+(iii) full killer-universe scan over $[1,100]$ minus base-enriched
+offsets; (iv) deep-survivor classification. A \emph{trigger event} is
+any record that passes stages (i) and (ii) — a strong near-miss
+that is not killed by the monitor. On the frozen audited combined
+strong corpus (total $n=303$ records across $r=0$, $r=1716$, and
+$r=4862$), the number of trigger events is zero: every strong-threshold
+record at every residue fails the Erd\H{o}s inequality at some
+$k\in S_{\mathrm{mon}}$. A single trigger event would require revisiting
+the paper's empirical framing; continued null returns tighten it.
+Details in \texttt{scripts/analyze\_two\_views.py} and
+\texttt{docs/holding\_pattern\_rules.md}.
+\end{remark}
+
+\subsection{Branchwise effective budgets explain the small-offset obstruction profile}\label{subsec:beff_mechanism}
+
+We now identify the structural mechanism governing the small-offset
+obstruction profile documented above. The claim is that the empirical
+pass/fail behavior at each offset $k$ is controlled by an
+atlas-derived quantity, the \emph{branchwise effective budget}, and
+that this quantity predicts the pass-rate ordering across the entire
+killer universe $k\le 100$ at $r=0$ and explains the cross-residue
+universality of the monitor set $\{7,11,13,16\}$.
+
+\begin{definition}[Branchwise effective budget]\label{def:beff}
+On each atlas branch $\lambda$ of $(r,k)$ (Section~\ref{sec:atlas}),
+the atlas factorization
+\[
+  2520N - k \;=\; A_{r,k,\lambda}(t)\cdot Z_{r,k,\lambda}(t),
+\]
+with $A_{r,k,\lambda}(t) = \bigl(\prod_{p\notin S}p^{c_p}\bigr)\cdot\bigl(\prod_{p\in S}p^{a_p+\lambda_p}\bigr)$
+the fixed--and--active divisor content and $Z_{r,k,\lambda}$ the
+primitive cofactor coprime to $A = 2520M$, defines the
+\emph{branchwise effective budget}
+\[
+  B^{\mathrm{eff}}_{r,k,\lambda}
+  \;:=\;
+  \bigl\lfloor (k+2)/\tau(A_{r,k,\lambda})\bigr\rfloor.
+\]
+\end{definition}
+
+\begin{lemma}[Branch criterion for Erd\H{o}s pass/fail]\label{lem:branch_criterion}
+For an Erd\H{o}s $\#647$ candidate $N = Mt + r$ lying on atlas branch
+$\lambda$ at $(r,k)$, the Erd\H{o}s inequality
+$\tau(2520N - k)\le k+2$ holds if and only if
+\[
+  \tau\bigl(Z_{r,k,\lambda}(t)\bigr) \;\le\; B^{\mathrm{eff}}_{r,k,\lambda}.
+\]
+In particular: $B^{\mathrm{eff}}=0$ forces automatic failure;
+$B^{\mathrm{eff}}=1$ forces $Z=1$, impossible for sufficiently
+large $N$; $B^{\mathrm{eff}}=2$ forces $Z$ prime or $Z=1$;
+$B^{\mathrm{eff}}=3$ forces $Z$ prime, $Z = p^2$, or $Z=1$;
+$B^{\mathrm{eff}}\ge 4$ admits multiple squarefree and prime-power
+shapes.
+\end{lemma}
+
+\begin{proof}
+Immediate from multiplicativity of $\tau$ applied to the atlas
+factorization in Definition~\ref{def:beff} together with
+$\gcd(A_{r,k,\lambda}, Z_{r,k,\lambda}) = 1$.
+\end{proof}
+
+The first-order conditioned Euler-product model
+(computational check in
+\texttt{scripts/conditioned\_divisor\_model.py}) shows that the
+primitive cofactors $Z_{r,k}$ are nearly exchangeable under local
+base conditioning at ordinary primes: one has
+$\mu_k(Y=10^4)\approx 1.23$ and $\sigma_k\approx 1.10$ uniformly for
+the test offsets $k\in\{7,11,13,14,15,16,27\}$ at $r=0$. Thus the
+observed asymmetry of the small-offset obstruction profile is not
+explained by first-order local divisibility. The asymmetry enters
+through the branchwise fixed content $A_{r,k,\lambda}$ in
+Definition~\ref{def:beff}.
+
+\begin{proposition}[Audited effective-budget distribution at $r=0$]\label{prop:beff_r0}
+For the $301$-record strong-near-miss corpus at $r=0$ (primes
+$\ge 11$ of the $13$ enriched forms), the branchwise effective-budget
+distribution at each test offset is:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{c|rrrrrrr|c}
+\hline
+$k$ & $B^{\mathrm{eff}}{=}1$ & $2$ & $3$ & $4$ & $5$ & $6$ & $7$ & total \\
+\hline
+$7$ & $3$ & $7$ & $32$ & $259$ & $0$ & $0$ & $0$ & $301$ \\
+$11$ & $0$ & $0$ & $0$ & $23$ & $0$ & $278$ & $0$ & $301$ \\
+$13$ & $0$ & $0$ & $0$ & $0$ & $16$ & $0$ & $285$ & $301$ \\
+$14$ & $1$ & $53$ & $0$ & $247$ & $0$ & $0$ & $0$ & $301$ \\
+$15$ & $5$ & $161$ & $0$ & $135$ & $0$ & $0$ & $0$ & $301$ \\
+$16$ & $7$ & $59$ & $234$ & $0$ & $0$ & $0$ & $0$ & $300^\ast$ \\
+$27$ & $0$ & $0$ & $5$ & $27$ & $71$ & $0$ & $198$ & $301$ \\
+\hline
+\end{tabular}
+\end{center}
+\noindent{\footnotesize $^\ast$ one additional record at $k=16$ has
+$B^{\mathrm{eff}}=0$ — fixed-content divisor count already exceeds
+$k+2$, so Erd\H{o}s inequality automatically fails on that branch.}
+
+In this corpus: every branch at $k=16$ has $B^{\mathrm{eff}}\le 3$
+(so $Z$ must lie in $\{1, \text{prime}, p^2\}$);
+$55\%$ of branches at $k=15$ have $B^{\mathrm{eff}}\le 2$
+(so $Z$ must lie in $\{1, \text{prime}\}$);
+$18\%$ of branches at $k=14$ have $B^{\mathrm{eff}}\le 2$;
+and no branches at $k\in\{11,13\}$ have $B^{\mathrm{eff}}\le 4$.
+\end{proposition}
+
+\begin{proposition}[Severity ordering across $k\le 100$ at $r=0$]\label{prop:beff_ordering}
+Let $p_k^{\mathrm{pred}}$ denote the branch-averaged prediction
+\[
+  p_k^{\mathrm{pred}}
+  \;=\;
+  \sum_{\lambda} w_{k,\lambda}\cdot
+  F\bigl(B^{\mathrm{eff}}_{r,k,\lambda}\bigr),
+\]
+where $F$ is a Landau-order $\tau$-pass approximation and $w_{k,\lambda}$
+is a branch-weight measure. Let $p_k^{\mathrm{emp}}$ denote the
+empirical pass rate on the $301$-record strong corpus at $r=0$.
+Across all $87$ offsets $k\in[1,100]$ not in the $r=0$
+base-enriched set, the Spearman rank correlations are:
+\[
+  \rho(p^{\mathrm{pred}}, p^{\mathrm{emp}})
+  \;=\;
+  0.9386\ \text{(empirical branch weights)},
+  \quad
+  0.9330\ \text{(neutral-sampled branch weights)}.
+\]
+Empirical and neutral predictions themselves agree at
+$\rho = 0.9780$. Chronological splitting of the corpus into halves
+gives between-halves $\rho = 0.9639$, with neutral-prediction-vs-half
+correlations of $0.9385$ and $0.9205$ respectively.
+A bootstrap of $200$ resamples for the neutral-prediction audit gives
+median $\rho = 0.9301$ with
+$95\%$ confidence interval $[0.9218,\ 0.9375]$.
+\end{proposition}
+
+\begin{remark}[Scope of validation]
+Proposition~\ref{prop:beff_ordering} validates the effective-budget
+mechanism at the $\mathcal{N}_{11/13}$ strong-near-miss layer across
+all offsets $k\le 100$ in the frozen audited $r=0$ corpus, under both
+empirical and neutral branch weights, and robustly to chronological
+partitioning and bootstrap. At the true base-pass layer
+$\mathcal{B}_{13/13}$ only the single confirmed witness at
+$t=11{,}741{,}230{,}040{,}310$ exists, so this layer is not
+independently validated. The absolute magnitudes of the Landau
+prediction are approximately a factor of $1.5$--$2$ below empirical
+rates, reflecting the crudeness of the first-order tail law; the
+ordering is stable. The main residuals occur at $k=30,36$, where a
+$B^{\mathrm{eff}}=4$ branch with surviving pattern $[1,1]$ (semiprime)
+dominates the empirical distribution while the Landau approximation
+underweights the semiprime contribution. This indicates that
+effective budget is the first-order mechanism; pattern-level
+cofactor modeling is the natural second-order correction.
+\end{remark}
+
+\begin{proposition}[Cross-residue atlas tightness of $k=16$]\label{prop:k16_universal}
+Neutral-sampled effective-budget statistics across all five hard
+residues give the following values for $k=16$:
+\begin{center}
+\renewcommand{\arraystretch}{1.05}
+\begin{tabular}{c|cccc}
+\hline
+$r$ & mean $B^{\mathrm{eff}}$ & fraction with $B^{\mathrm{eff}}\le 3$ & rank among $87$-$86$ non-base offsets \\
+\hline
+$0$      & $3.38$ & $49\%$ & $1$ \\
+$1716$   & $3.35$ & $51\%$ & $3$ \\
+$4862$   & $3.35$ & $51\%$ & $2$ \\
+$16302$  & $3.37$ & $49\%$ & $2$ \\
+$17160$  & $3.37$ & $49\%$ & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+At every hard residue, $k=16$ lies among the three atlas-tightest
+offsets. The $k=16$ atlas branches at each residue have no
+$B^{\mathrm{eff}}>4$ entries (the active prime is $2$ with $a_2 = 3$,
+constraining the branch exponent contribution to a narrow range).
+The independence-product pass-rate scan of
+Proposition~\ref{prop:case_a_density} independently identifies
+$k=16$ as a top-3 bottleneck at every residue: empirical per-$k$
+pass rates at $k=16$ are $0.336, 0.358, 0.351, 0.351, 0.348$
+for $r\in\{0,1716,4862,16302,17160\}$ respectively, confirming the
+atlas-geometric prediction at the observational level.
+\end{proposition}
+
+\begin{remark}[Moving-$K$ window empirical scan]\label{rem:moving_k_empirical}
+Per-$k$ empirical pass rates at $n=1{,}000$ samples per $(r, k)$
+(Hetzner cpx51, 16-worker parallel run) reveal that the tight
+obstruction is concentrated at $k\le 100$.  Mean per-$k$ pass rates
+at each hard residue, by $K$-block:
+
+\begin{center}
+\begin{tabular}{c|cccc}
+\hline
+$r$ & $[1, 100]$ & $[101, 200]$ & $[201, 500]$ & $[501, 1000]$ \\
+\hline
+$0$     & $0.806$ & $0.958$ & $0.992$ & $0.999$ \\
+$1716$  & $0.810$ & $0.954$ & $0.991$ & $0.998$ \\
+$4862$  & $0.805$ & $0.959$ & $0.991$ & $0.999$ \\
+$16302$ & $0.810$ & $0.956$ & $0.991$ & $0.999$ \\
+$17160$ & $0.808$ & $0.954$ & $0.991$ & $0.998$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Very-tight offsets (per-$k$ pass rate $<0.3$) appear only in
+$[1, 100]$ ($0$--$2$ per residue) and \emph{never} in $[101, 1000]$.
+The deepest rate in $[101, 1000]$ is at $k=120$ ($\approx 0.50$ at
+every residue).  The fixed $k\le 100$ screen captures the
+\emph{sharp marginal} obstruction pressure; the moving tail at
+$k>100$ does not introduce new individual lethal offsets.
+
+\emph{Joint block survival.} A complementary per-$t$ experiment
+(Hetzner, $n=500$ samples per residue, $16$-worker parallel)
+tests the joint event $\bigcap_k \{\text{pass at }k\}$ within each
+$K$-block:
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+\hline
+$K$-block & $r=0$ & $r=1716$ & $r=4862$ & $r=16302$ & $r=17160$ \\
+\hline
+$[1, 100]$     & $0.000$ & $0.000$ & $0.000$ & $0.000$ & $0.000$ \\
+$[101, 200]$   & $0.006$ & $0.004$ & $0.008$ & $0.004$ & $0.012$ \\
+$[201, 500]$   & $0.070$ & $0.040$ & $0.040$ & $0.040$ & $0.054$ \\
+$[501, 1000]$  & $0.526$ & $0.422$ & $0.456$ & $0.470$ & $0.348$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Marginal per-$k$ rates near $1$ compound to meaningful
+joint suppression: mean per-$k$ rate $0.958$ at $[101, 200]$ gives
+naive product $0.958^{100}\approx 0.014$, matching observed
+$0.004$--$0.012$; rate $0.999$ at $[501, 1000]$ gives $0.999^{500}\approx 0.61$,
+matching observed $0.35$--$0.53$.  \emph{Cumulative}
+$P(\text{pass all }k\in[1, K])$ is $0/500$ at every $K\in\{100,
+200, 500, 1000\}$ across all residues.
+
+\emph{Interpretation.}  The case-A screen at $k\le 100$ captures
+the sharp marginal obstruction pressure; the moving tail at
+$k>100$ contributes compound multiplicative suppression via
+many mild constraints, not via new individual lethal offsets.
+Both components are empirically non-trivial.  See
+\texttt{scripts/moving\_k\_window\_experiment.py},
+\texttt{scripts/joint\_block\_survival\_experiment.py},
+\texttt{data/joint\_block\_survival\_experiment.json}, and
+\texttt{docs/joint\_block\_survival\_result.md}.
+\end{remark}
+
+\begin{remark}[$k=14$ is a second stratum-invariant universal wall]\label{rem:k14_wall}
+An analogous stratum-invariance analysis to Remark~\ref{rem:k7_stable}
+reveals that $k=14$ shares the structural-wall property of $k=7$:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+stratum & sampled $n$ & $k=14$ pass rate & dominant $B^{\mathrm{eff}}$ \\
+\hline
+$C_{\ge 9}$  & $500$ & $31.6\%$ & $B=4$ ($85\%$) \\
+$C_{\ge 10}$ & $500$ & $39.4\%$ & $B=4$ ($84\%$) \\
+$C_{\ge 11}$ & $375$ & $33.9\%$ & $B=4$ ($83\%$) \\
+$C_{\ge 12}$ & $23$  & $21.7\%^*$ & $B=4$ ($70\%$) \\
+$C_{\ge 13}$ & $1$   & $0\%^*$  & $B=2$ \\
+Monitor escapes & $143$ & $32.9\%$ & $B=4$ ($87\%$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Sieve-weighted ratio $R_{14}(y)$ for
+$y\in\{7,11,17,29,47,97\}$ evaluates to
+\[
+  \{1.052, 1.052, 1.052, 0.994, 0.975, 0.983\},
+\]
+essentially flat at $1$.  Base-tuple quality does not raise $k=14$
+survival.  When $k=14$ fails, dominant $Z_{14}$-shape is $3$-distinct-primes
+($\approx 45\%$ of fails), same as $k=7$.
+
+The joint structure is notable: at monitor-escape records, $k=14$ pass
+rate is $32.9\%$, which equals the unconditional rate — confirming
+$k=14$ is TRANSVERSE to monitor passage.  Combined with the $k=7$
+result, we have TWO independent stratum-invariant universal walls.  See
+\texttt{scripts/k14\_transversality.py}.
+\end{remark}
+
+\begin{remark}[Monitor-escape family structure and $k=14$ backup bottleneck]\label{rem:monitor_escape_family}
+Of the $29{,}290$ records in the $r=0$ near-miss corpus
+($C_{\ge 9}$), $143$ pass the monitor $\{7,11,13,16\}$.  Their
+first-fail distribution concentrates heavily at $k=14$:
+
+\begin{center}
+\begin{tabular}{c|c}
+\hline
+first-fail $k$ & count (of $143$) \\
+\hline
+$14$ & $96\ (67.1\%)$ \\
+$15$ & $38\ (26.6\%)$ \\
+$21$ & $4$ \\
+$17$ & $3$ \\
+$19, 22$ & $1$ each \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent At first-fail, the $B^{\mathrm{eff}}$ distribution is
+dominated by $B=4$ ($97/143 = 67.8\%$) and $B=2$ ($36/143 = 25.2\%$).
+At $B=2$ the branch forces $Z$ prime and the record fails because
+$Z$ is semiprime or larger; at $B=4$ the record's $Z$ is a
+$3$- or $4$-prime integer exceeding budget $\tau\le 4$.  The
+dominant $Z$-shape at first-fail is $3$-distinct-primes
+($65/143 = 45.5\%$).
+
+\emph{Secondary monitor coverage.}  Across the $143$ monitor-escape
+records, empirical catch rates are:
+\begin{itemize}
+\item $\{14, 15, 27\}$: $138/143 = 96.5\%$.
+\item $\{15, 16, 27\}$: $129/143 = 90.2\%$.
+\item $\{14, 16\}$: $96/143 = 67.1\%$.
+\item $\{27\}$ alone: $87/143 = 60.8\%$.
+\end{itemize}
+
+\noindent The combined network $\{7,11,13,14,15,16,27\}$ catches
+$138/143$ monitor-escapes at low $k$; the remaining $5$ pass the
+entire network and first-fail at slightly higher $k$ (primarily
+$k=17$, $k=21$, or at $k\in[101, 1000]$).  The emergent structural
+statement is therefore:
+\emph{the robust monitor is a low-offset network, not any single
+minimum cover}.  Specific $3$-element covers continue to drift with
+corpus growth; the network $\{7,11,13,14,15,16,27\}$ has been stable
+across the $n=301,330,375$ snapshots.  See
+\texttt{scripts/monitor\_escape\_family\_classification.py},
+\texttt{scripts/batch\_autopsy\_143\_escapes.py} and
+\texttt{data/batch\_autopsy\_143\_escapes.json}.
+\end{remark}
+
+\begin{remark}[Moving-tail is MORE suppressive conditional on monitor-escape]\label{rem:conditional_tail}
+The unconditional moving-tail block survival of
+Remark~\ref{rem:moving_k_empirical} measures
+$\Pr(\text{pass block}\mid\text{raw } t)$.  The sharper conditional
+question is:
+\[
+  \Pr(\text{pass block }[K_{\text{lo}}, K_{\text{hi}}]\mid \text{passes monitor }\{7,11,13,16\}).
+\]
+Using the $143$ observed monitor-escape records as a conditional
+sample:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+$K$-block & raw $\Pr$ & $S_1$ (monitor-escape) $\Pr$ & ratio $S_1/{\rm raw}$ \\
+\hline
+$[101, 200]$  & $0.006$ & $0.000$ & $0.00$ \\
+$[201, 500]$  & $0.070$ & $0.014$ & $0.20$ \\
+$[501, 1000]$ & $0.526$ & $0.294$ & $0.56$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Conditioning on monitor-escape makes the moving-tail block
+survival \emph{lower}, not higher: by factor $0.00$--$0.56$ across
+$K$-blocks.  Monitor-escape records are not tail-friendly; if anything,
+they carry additional modular structure that suppresses survival at
+$k>100$ as well.
+
+Further, among the $143$ monitor-escape records, only $5$ pass the
+full network
+\[
+  \{7,11,13,14,15,16,27\}.
+\]
+All $5$ first-fail at
+$k\in\{17, 21\}$, all within $[1, 100]$; the full $k\le 100$ screen
+therefore catches all $143$ monitor-escapes (no record in the
+current corpus requires the moving tail for catching).  The
+moving-tail analysis above provides additional multiplicative
+suppression beyond the screen, not the first catch.  See
+\texttt{scripts/conditional\_moving\_tail\_on\_escapes.py} and
+\texttt{scripts/deep\_escape\_ledger.py}.
+\end{remark}
+
+\begin{remark}[Deep-network escape ledger and $k=21$ as a third wall]\label{rem:deep_escape_ledger}
+The $5$ records passing the full network
+$\{7,11,13,14,15,16,27\}$ are:
+
+\begin{center}
+\begin{tabular}{c|c|c|c|c}
+\hline
+$t$ & primes & first-fail $k$ & $\tau$ & bound \\
+\hline
+$256{,}333{,}196{,}208$ & $9$ & $21$ & $48$ & $23$ \\
+$314{,}789{,}936{,}208$ & $9$ & $17$ & $192$ & $19$ \\
+$508{,}200{,}324{,}660$ & $9$ & $17$ & $64$ & $19$ \\
+$2{,}441{,}574{,}485{,}160$ & $9$ & $21$ & $32$ & $23$ \\
+$56{,}750{,}755{,}674{,}480$ & $9$ & $21$ & $32$ & $23$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent The deep escapes concentrate at $k=21$ ($3/5$) and $k=17$
+($2/5$).  Analogous transversality analysis to
+Remarks~\ref{rem:k7_stable} and~\ref{rem:k14_wall} gives:
+
+\begin{center}
+\begin{tabular}{c|cccccc}
+\hline
+$k$ & $C_{\ge 9}$ & $C_{\ge 10}$ & $C_{\ge 11}$ & Monitor & Network & note \\
+\hline
+$7$  & $38.8\%$ & $36.8\%$ & $36.7\%$ & $36.5\%$ & $40\%$ & wall, $B=4$ \\
+$14$ & $31.6\%$ & $39.4\%$ & $33.9\%$ & $32.9\%$ & $60\%$ & wall, $B=4$ \\
+$21$ & $36.4\%$ & $36.6\%$ & $33.6\%$ & $30.8\%$ & $20\%$ & wall, $B=5$ \\
+$17$ & $69.8\%$ & $68.8\%$ & $71.2\%$ & $71.3\%$ & $60\%$ & not a wall, $B=9$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Three stratum-invariant walls: $k=7$, $k=14$, $k=21$, each
+with pass rate $\approx 33$--$37\%$ and $B^{\mathrm{eff}}$ dominated
+by $B=4$ or $B=5$.  $k=17$ is loose ($\sim 70\%$ pass rate,
+$B^{\mathrm{eff}}=9$ dominant) and serves as an occasional
+escape-catcher via rare $B=6$ branches rather than as a wall.
+
+The extended low-offset network
+$\{7,11,13,14,15,16,17,21,27\}$ catches all $143$ monitor-escapes and
+all $5$ deep-network escapes in the current corpus.  See
+\texttt{scripts/deep\_escape\_ledger.py} and
+\texttt{scripts/k17\_k21\_transversality.py}.
+\end{remark}
+
+%% ====================================================================
+%% L2A theorem — asymptotic wall thinning
+%% ====================================================================
+
+\begin{lemma}[Shape decomposition]\label{lem:shape_decomp}
+Let $n\ge 1$.  If $\tau(n)\le 4$, then
+\[
+  n\in\{1,\,p,\,p^{2},\,p^{3},\,pq\},
+\]
+with $p,q$ prime and, in the last case, $p<q$.  Conversely, each of
+these forms has $\tau(n)\le 4$.
+\end{lemma}
+
+\begin{proof}
+Write $n=\prod_{i=1}^{r}p_{i}^{e_{i}}$.  Then
+$\tau(n)=\prod(e_{i}+1)\le 4$ forces either $r=0$
+($n=1$); or $r=1$ with $e_{1}\in\{1,2,3\}$ ($n\in\{p,p^{2},p^{3}\}$);
+or $r=2$ with $e_{1}=e_{2}=1$ ($n=pq$, $p\ne q$).
+\end{proof}
+
+\begin{theorem}[L2A wall asymptotic thinning]\label{thm:l2a}
+Fix an affine form $L(u)=\alpha u+\beta$ with $\alpha\ge 1$,
+$(\alpha,\beta)=1$, and prime support of $\alpha$ contained in
+$\{2,3,5,11,13,17,19\}$.  In particular the statement applies uniformly
+to the three cases
+$(\alpha,\beta)\in\{(8{,}314{,}020,\,-1),\,(16{,}628{,}040,\,-1),\,(5{,}542{,}680,\,-1)\}$,
+which are the dominant-branch primitive cofactors at $k\in\{14,7,21\}$
+respectively at the residue $r=0$, and to their residue-translated
+analogues at the other four hard residues.  Let
+\[
+  S(U)\;:=\;\#\{u\in[1,U]:\tau(\alpha u+\beta)\le 4\}.
+\]
+Then
+\[
+  S(U)\;\ll_{\alpha,\beta}\;U\cdot\frac{\log\log U}{\log U}
+  \qquad(U\to\infty),
+\]
+and in particular $S(U)=o(U)$.  There exists an effective
+$U_{0}=U_{0}(\alpha,\beta)$ such that $S(U)\le U/2$ for every
+$U\ge U_{0}$.  Explicitly, one may take $U_{0}=\lceil e^{300}\rceil
+<2\cdot 10^{130}$ uniformly for the three listed $\alpha$.
+\end{theorem}
+
+\begin{proof}
+Write $X:=\alpha U+|\beta|$.  By Lemma~\ref{lem:shape_decomp} every $u$
+contributing to $S(U)$ satisfies $\alpha u+\beta\in\{1,p,p^{2},p^{3},pq\}$.
+Accordingly
+\[
+  S(U)\;\le\;1+N_{p}(U)+N_{p^{2}}(U)+N_{p^{3}}(U)+N_{pq}(U),
+\]
+where $N_{\bullet}(U)$ counts $u\le U$ such that $\alpha u+\beta$
+takes the corresponding shape.
+
+\emph{Perfect-power branches.}  If $\alpha u+\beta=p^{2}$ or $p^{3}$,
+then $\alpha u+\beta\le X$ forces $p\le X^{1/2}$ or $p\le X^{1/3}$
+respectively, and each such $p$ determines at most one $u$.  Hence
+\[
+  N_{p^{2}}(U)\le X^{1/2}\ll_{\alpha,\beta}U^{1/2},
+  \qquad
+  N_{p^{3}}(U)\le X^{1/3}\ll_{\alpha,\beta}U^{1/3},
+\]
+both $o(U)$.
+
+\emph{Prime branch.}  The condition $\alpha u+\beta=p$ is equivalent to
+$p\in[2,\,\alpha U+\beta]$ and $p\equiv\beta\pmod{\alpha}$.  Since
+$(\alpha,\beta)=1$ this is a reduced residue class.  By PNT in AP for
+fixed modulus~$\alpha$,
+\[
+  N_{p}(U)=\frac{\operatorname{Li}(\alpha U)}{\varphi(\alpha)}
+  +o_{\alpha}\!\left(\frac{U}{\log U}\right)
+  \sim c_{\alpha}\frac{U}{\log U},
+  \quad c_{\alpha}=\frac{\alpha}{\varphi(\alpha)}.
+\]
+
+\emph{Semiprime branch.}  If $\alpha u+\beta=pq$ with $p<q$, then
+$p\le\sqrt{X}$, and $p\nmid\alpha$ (since $p\mid\alpha$ combined with
+$p\mid pq=\alpha u+\beta$ would give $p\mid\beta$, contradicting
+$(\alpha,\beta)=1$).  For each such~$p$ the remaining prime~$q$ lies
+in the residue class $\beta p^{-1}\pmod{\alpha}$.  Hence
+\[
+  N_{pq}(U)\;\le\;\sum_{\substack{p\le\sqrt{X}\\p\nmid\alpha}}
+  \pi\!\left(\frac{X}{p};\,\alpha,\,\beta p^{-1}\right).
+\]
+By PNT in AP uniformly over the finitely many reduced residue classes
+$\bmod\,\alpha$,
+\[
+  \pi\!\left(\frac{X}{p};\alpha,a\right)
+  =
+  \frac{\operatorname{Li}(X/p)}{\varphi(\alpha)}
+  +o_{\alpha}\!\left(\frac{X/p}{\log(X/p)}\right).
+\]
+For $p\le\sqrt{X}$ one has $\log(X/p)\ge\tfrac12\log X$, so
+$\operatorname{Li}(X/p)\ll X/(p\log X)$.  Inserting and using Mertens
+\[
+  \sum_{\substack{p\le\sqrt{X}\\p\nmid\alpha}}\frac{1}{p}
+  =\log\log X+B_{\alpha}+o(1)
+\]
+(with $B_{\alpha}=B_{1}-\sum_{p\mid\alpha}1/p$) yields
+\[
+  N_{pq}(U)\;\ll_{\alpha}\;
+  \frac{X}{\varphi(\alpha)}\cdot\frac{\log\log X}{\log X}
+  \;\asymp\;
+  c_{\alpha}\,U\,\frac{\log\log U}{\log U}.
+\]
+
+\emph{Summation.}  Combining,
+\[
+  S(U)\;\le\;
+  1+N_{p}(U)+N_{p^{2}}(U)+N_{p^{3}}(U)+N_{pq}(U)
+  \;\ll_{\alpha,\beta}\;
+  U\,\frac{\log\log U}{\log U}=o(U).
+\]
+
+\emph{Effective $U_{0}$.}  Replacing PNT in AP by the effective
+Montgomery--Vaughan Brun--Titchmarsh inequality
+$\pi(y;\alpha,a)\le 2y/(\varphi(\alpha)\log(y/\alpha))$, which holds
+for every $y>\alpha$ with no exceptional-zero dependence, and
+retracing Steps~1--3 at $\log U\ge 300$, one verifies that
+$S(U)/U<0.463$ for all $U\ge e^{300}$ uniformly in the three listed
+$\alpha$.  Thus $U_{0}=\lceil e^{300}\rceil<2\cdot 10^{130}$ suffices.
+The constant is deliberately not optimised; sharper explicit
+Brun--Titchmarsh or PNT-in-AP inputs (Bennett--Martin--O'Bryant--
+Rechnitzer for $q\le 10^{5}$, Ramar\'e for wider ranges at
+correspondingly larger $x_{0}$) lower $U_{0}$, but the resulting
+threshold remains well beyond corpus scale.  This is the analytic
+content of \emph{Level~2A}; the corpus-scale effective version
+(\emph{Level~2B}) is discussed in Remark~\ref{rem:analytic_wall_program}.
+\end{proof}
+
+\begin{theorem}[L2B partial credit]\label{thm:l2b_partial}
+Under the hypotheses of Theorem~\ref{thm:l2a}, the sharper envelope
+\[
+  S(U)\;\le\;c_{\alpha}\,U\,\frac{\log\log(\alpha U)+3}{\log(\alpha U)}
+\]
+holds for all $U\ge 2\cdot 10^{20}$.  Consequently
+\[
+  S(U)\;\le\;\tfrac{1}{2}U\qquad\text{for every }U\ge U_{0}^{\ast}
+  \text{ with }
+  U_{0}^{\ast}=6.6446042099\cdot 10^{24}.
+\]
+\end{theorem}
+
+\begin{proof}[Proof sketch]
+Replace classical Brun--Titchmarsh with the Yamada (2023) explicit
+interval form
+\[
+  \pi(x+y;k,\ell)-\pi(x;k,\ell)
+  <\frac{2y}{\varphi(k)(\log(y/k)+0.8601)},
+  \qquad y>k,
+\]
+and retrace Steps~2--3 of the proof of Theorem~\ref{thm:l2a} with the
+finite-range Mertens-in-AP bound
+\[
+  \left|\sum_{\substack{p\le y\\p\nmid\alpha}}\frac{1}{p}
+    -\log\log y-B_{\alpha}\right|\le \varepsilon,\qquad
+  \varepsilon=3.88\cdot 10^{-4}\;(y\ge 10^{5}),
+\]
+derivable by direct sieving up to $y=10^{8}$ and Dusart's
+$|r(y)|\le 0.2/\log^{3}y$ for $y\ge 2{,}278{,}383$.  The prime
+branch contributes
+\[
+  K_{\mathrm{prime}}(U)=\frac{2\log(\alpha U)}{\log U+0.8601},
+\]
+and the semiprime branch contributes
+\[
+  K_{\mathrm{semi}}(U)\le\log(\alpha U)\cdot T_{0.8601}(U)-\log\log(\alpha U),
+\]
+with $T_{\delta}(U)$ the Yamada-kernel hyperbola sum.  Direct
+computation at $U=2\cdot 10^{20}$ gives
+$K_{\mathrm{prime}}=2.6333$, $K_{\mathrm{semi}}\le 0.3434$,
+$K_{\mathrm{cube}}<10^{-10}$, totalling $K\le 2.9767<3$.  Both
+branches are monotonically decreasing for $U>2\cdot 10^{20}$.  The
+threshold $U_{0}^{\ast}$ is the numerical root of
+$c_{\alpha}(\log\log(\alpha U)+3)/\log(\alpha U)=1/2$.
+Full numerical details are in
+\texttt{docs/level2b\_partial\_credit\_codex.md}.
+\end{proof}
+
+\begin{remark}[Why the corpus-scale $U_{0}\le 10^{13}$ is still open]\label{rem:l2b_corpus_obstruction}
+At $U=10^{13}$, the Yamada sharpening gives
+$K_{\mathrm{prime}}=2.979$ and $K_{\mathrm{semi}}=1.149$, total
+$K=4.128$, well above the threshold $K\le 0.75$ required for
+$S(U)\le U/2$.  Maynard's $\eta$-gain for the Brun--Titchmarsh
+constant is triggered only when $\log x/\log q\ge 8$, i.e.\
+$x\ge \alpha^{8}$; for the prime branch this requires
+$U\ge\alpha^{7}\approx 2.75\cdot 10^{48}$, and for the worst
+semiprime inner range $U\ge\alpha^{15}\approx 10^{104}$.  Both
+are out of reach at corpus scale.  Closing the corpus-scale
+gap thus requires a technique beyond the Maynard/Yamada
+Brun--Titchmarsh family --- see Remark~\ref{rem:analytic_wall_program}
+for the surveyed alternatives.
+\end{remark}
+
+\begin{remark}[Analytic wall program: shape decomposition and rigour levels]\label{rem:analytic_wall_program}
+The three stratum-invariant walls $W=\{7,14,21\}$ admit a clean
+analytic reduction.  On the dominant branch $\lambda=(7:0)$, the
+primitive cofactor satisfies
+$Z_{r,k,(7:0)}(u)=\alpha u+\beta$ with
+$\alpha=A/k$, $\gcd(\alpha,\beta)=1$.  The corresponding $B^{\mathrm{eff}}$
+is $4$ for $k\in\{7,14\}$ and $5$ for $k=21$.  Passing the wall
+requires $\tau(Z)\le B^{\mathrm{eff}}$.  Since Proposition~\ref{prop:b3_qnr_squarekill}
+extends to the dominant $B^{\mathrm{eff}}=4$ branch by the same
+residue obstruction on $\beta$ modulo the small primes, the shape
+$Z=p^{2}$ is excluded, and the target reduces to the
+\emph{shape-decomposition lemma}:
+\[
+  \tau(Z)\le 4,\;Z\ne p^{2}\;\Longrightarrow\;Z\in\{1,p,p^{3},pq\},
+\]
+which yields the explicit decomposition
+\[
+  S_{k}(U)\;\le\;\pi(\alpha U+|\beta|;\,\alpha,\beta)
+  \;+\;(\alpha U)^{1/3}
+  \;+\!\!\sum_{\substack{p\text{ prime}\\p\le\sqrt{\alpha U}\\\gcd(p,\alpha)=1}}\pi\!\left(\frac{\alpha U+|\beta|}{p};\,\alpha,\beta p^{-1}\right)\!.
+\]
+
+The remaining analytic question is the \emph{rigorous constant}
+controlling the semiprime sum.  Numerical experiments
+(\texttt{scripts/wall\_decomposition\_k14.py},
+\texttt{scripts/wall\_empirical\_sample.py} and
+\texttt{scripts/mertens\_correction\_test.py}) at
+$\alpha=8{,}314{,}020$ give:
+\begin{itemize}
+  \item Prime-density heuristic matches empirical to $<3\%$; the
+        Euler-product factor $c_{\alpha}=\alpha/\varphi(\alpha)\approx 5.01$
+        is correct.
+  \item The empirical semiprime constant at corpus scale fits at
+        $c_{\mathrm{fit}}(U)\approx 3.32$, i.e.\
+        $c_{\mathrm{fit}}/c_{\alpha}\approx 0.66$.  This \emph{is not}
+        an asymptotic Selberg--Delange leading constant; it is the
+        finite-range effect of excluding the small primes dividing
+        $\alpha$ from the semiprime harmonic sum.  The cleanest
+        statement uses the $\alpha$-restricted prime-harmonic
+        function
+        \[
+          H_{\alpha}(y)\;:=\;\sum_{\substack{p\le y\\p\nmid\alpha}}\frac{1}{p}.
+        \]
+        Within a standard Mertens expansion
+        $\sum_{p\le y}1/p=\log\log y+M_{\mathrm{Mertens}}+o(1)$, the
+        subtraction $\sum_{p\mid\alpha}1/p=M_{\alpha}$ is dominant at
+        our scales, giving the approximation
+        \[
+          \frac{c_{\mathrm{eff}}(U)}{c_{\alpha}}
+          \;\approx\;
+          1-\frac{M_{\alpha}}{\log\log(\alpha U)},
+          \qquad
+          M_{\alpha}\;=\;\sum_{p\mid\alpha}\frac{1}{p}
+          \;=\;\tfrac12+\tfrac13+\tfrac15+\tfrac1{11}+\tfrac1{13}+\tfrac1{17}+\tfrac1{19}
+          \;\approx\;1.313.
+        \]
+        The simple first-order prediction
+        $1-M_{\alpha}/\log\log(\alpha U)$ sits roughly $6$--$9\%$
+        \emph{below} the empirically-measured ratio across
+        $U\in[10^{8},10^{17}]$ (measured on a full
+        $k\times r\times\log_{10}U$ matrix at $10^{5}$ samples per
+        cell using a Pollard-Rho shape classifier).  The directional
+        agreement --- identical across the three walls
+        $k\in\{7,14,21\}$ and matching the Mertens-correction
+        prediction that all three walls share a structural
+        constant --- is the important content.  The residual
+        $6$--$9\%$ gap is expected: the simple formula captures the
+        dominant $\alpha$-dependent subtraction $M_{\alpha}$ but
+        omits lower-order Mertens/AP/boundary corrections.  The
+        exact analytic object is the finite prime-harmonic sum
+        $H_{\alpha}(\sqrt{\alpha U})$ inside a one-sided semiprime
+        envelope; the first-order expression is a leading
+        approximation.
+  \item Classical Brun--Titchmarsh with $c_{\mathrm{mult}}=2$ gives
+        $U_{0}\sim 10^{54}$ --- unusable at corpus scale.
+  \item Under the empirical finite-range Mertens-corrected envelope,
+        the decomposition upper bound drops below $U/2$ (both
+        pointwise and cumulatively) at $U_{0}\approx 10^{8}$, well
+        within the corpus scale.  The analytic target consists of an
+        \emph{explicit one-sided upper envelope} for the semiprime
+        sum of the form
+        \[
+          N_{pq}(U;\alpha,\beta)
+          \;\le\;
+          \frac{\alpha U}{\varphi(\alpha)}
+          \sum_{\substack{p\le\sqrt{\alpha U}\\p\nmid \alpha}}
+          \frac{1}{p\log(\alpha U/p)}
+          \cdot(1+\text{explicit error})
+        \]
+        together with Brun--Titchmarsh-level bounds for $N_{p}$ and the
+        trivial bound for $N_{p^{3}}$.  We do not claim this as a
+        theorem; we state the target envelope and record that the
+        empirical data support it at $U_{0}\approx 10^{8}$ for all
+        three walls.
+\end{itemize}
+
+We structure the rigour roadmap into five sub-levels:
+\begin{description}
+  \item[\textbf{Level 1}] Empirical wall (achieved): pass rate
+        $\approx 1/3$ at each $k\in W$, stratum-invariant to $\pm 4$~pp.
+  \item[\textbf{Level 2A}] Unconditioned asymptotic thinning:
+        $\#\{u\le U:\tau(\alpha u+\beta)\le 4\}=o(U)$.  Reachable by
+        fixed-modulus prime-number-theorem-in-AP plus the shape
+        decomposition.  Existence of $U_{0}$ follows but the explicit
+        value is not controlled.
+  \item[\textbf{Level 2B}] Effective corpus-scale thinning:
+        $\#\{u\le U:\tau(\alpha u+\beta)\le 4\}\le U/2$ for all
+        $U\ge U_{0}$ with explicit $U_{0}\le 10^{13}$.  Blocked by
+        the Brun--Titchmarsh factor-$2$ in classical upper-bound
+        sieves.  Using the character decomposition
+        $\pi(y;\alpha,a)=\varphi(\alpha)^{-1}\sum_{\chi}\overline{\chi(a)}\pi_{\chi}(y)$,
+        the principal contribution at $X=\alpha U\approx 8\cdot10^{19}$
+        ($U=10^{13}$) is
+        $P_{2}^{(0)}(X)\approx 3.13\cdot10^{12}$, already within the
+        $c_{\mathrm{bt}}\le 1.25$ budget
+        ($D_{\mathrm{semi}}\approx 2.75\cdot10^{12}$, giving
+        principal-only $c_{\mathrm{eff}}^{(0)}=1.140$).  The theorem
+        therefore reduces to bounding the nonprincipal contribution
+        $|E_{\alpha}(X)|$ by $\approx 3.03\cdot10^{11}$.  We
+        surveyed the standard candidate methods: large-sieve
+        aggregate ($\approx 1.86\cdot10^{16}$; misses by
+        $\sim\!6\cdot10^{4}$), P\'olya--Vinogradov / Burgess on
+        primes ($\approx 3.83\cdot10^{13}$; misses by $\sim\!126$),
+        dispersion method (no explicit finite-scale bound
+        available), unconditional zero-density estimates (unable to
+        rule out the exceptional-zero contribution at the required
+        strength), and sharper Brun--Titchmarsh of Maynard and
+        Yamada type (gives $\approx 8.8\cdot10^{12}$; misses by
+        $\sim\!29$).  None supplies the required one-sided
+        AP-semiprime envelope with constant $\lesssim 1.25$ at this
+        $X$.  We therefore do not pursue Level~2B unconditionally
+        in this paper.  A speculative bespoke approach --- an
+        explicit weighted $\Lambda\!*\!\Lambda$ character expansion,
+        or certified segmented sieving over the
+        $\varphi(\alpha)=1{,}658{,}880$ invertible residue classes
+        mod~$\alpha$, using the fact that
+        $\alpha=2^{2}\cdot 3^{2}\cdot 5\cdot 11\cdot 13\cdot 17\cdot 19$
+        has only $12$ primitive-conductor divisors exceeding
+        Platt's $q\le 400{,}000$ verified range --- might yield the
+        required finite constant as a computational project; we
+        flag it as future work.
+  \item[\textbf{Level 3}] Conditional wall lemma under the
+        \emph{base-conditioned local equidistribution} hypothesis
+        $\mathrm{BCLE}_{r}(Y)$: level-of-distribution $Y=U^{\theta}$
+        for some $\theta>0$ on the base-tuple-conditioned set
+        $\mathcal{B}_{r}(U)$ (no known plug-in theorem; cf.\ Maynard's
+        dense-cluster hypothesis and Benatar's subset-BV framework;
+        analogous in role to Elliott--Halberstam).
+  \item[\textbf{Level 4}] Multi-wall cascade: combine Level-3 bounds
+        at all three $k\in W$ with a controlled cross-offset
+        correlation hypothesis; this is the level at which the
+        escape-ladder heuristic approaches a conditional finiteness
+        statement.
+\end{description}
+
+None of Levels~2--4 is claimed in this paper; the remark records
+the target structure and the empirical constants that make it
+plausible.  See \texttt{docs/analytic\_wall\_k14.md},
+\texttt{docs/bcle\_hypothesis\_formalization.md} and
+\texttt{docs/heuristic\_finiteness\_sketch\_v2.md} for the detailed
+programme.
+\end{remark}
+
+\begin{remark}[$k=7$ is a stable bottleneck under conditioning]\label{rem:k7_stable}
+A complementary empirical finding at the $r=0$ near-miss corpus:
+the per-$k$ pass rate at $k=7$ is approximately constant across
+conditioning strata $C_{\ge 9}, C_{\ge 10}, C_{\ge 11}$ (primes~$\ge 9,
+10, 11$ of the $13$ enriched forms respectively).  Sample rates:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+stratum & sampled $n$ & $k=7$ pass rate & dominant $B^{\mathrm{eff}}$ at $k=7$ \\
+\hline
+$C_{\ge 9}$  & $500$ & $38.8\%$ & $B^{\mathrm{eff}}=4$ ($87\%$) \\
+$C_{\ge 10}$ & $500$ & $36.8\%$ & $B^{\mathrm{eff}}=4$ ($83\%$) \\
+$C_{\ge 11}$ & $330$ & $36.7\%$ & $B^{\mathrm{eff}}=4$ ($86\%$) \\
+$C_{\ge 12}$ & $21$  & $57.1\%^*$ & $B^{\mathrm{eff}}=4$ ($90\%$) \\
+$C_{\ge 13}$ & $1$   & $0\%^*$  & $B^{\mathrm{eff}}=4$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent $^*$Small-sample rates (binomial-compatible with the
+uniform $\sim 37\%$ seen in large strata; not separately informative
+at $n=21$ and $n=1$).  The $B^{\mathrm{eff}}$-branch distribution at
+$k=7$ is also stable: dominated by $B^{\mathrm{eff}}=4$ with $\approx
+10\%$ at $B^{\mathrm{eff}}=3$ and $\approx 2\%$ at $B^{\mathrm{eff}}=2$.
+Mean $\tau(2520N-7)$ is $\approx 20$ across strata.  When $k=7$ fails,
+the dominant $Z_7(t)$-shape is a $3$-distinct-prime integer ($\approx
+50\%$ of fail cases), followed by $4$-prime and $5$-prime shapes.
+
+This empirical stability of $k=7$ across conditioning explains why
+the single confirmed $13$-tuple witness at
+$t=11{,}741{,}230{,}040{,}310$ fails at $k=7$: the witness is
+$C_{\ge 13}$, but the $k=7$ obstruction does not weaken with
+stronger base-tuple primality.
+
+A complementary sieve-weighted surrogate confirms the transversality:
+define the base-quality score
+$Q_y(t) = \#\{d\in\mathcal B : dN-1\text{ has no prime factor}\le y\}$,
+where $\mathcal B$ is the $13$-form enriched tuple at $r=0$; sample
+$n=2{,}000$ at $t\in[10^8,10^9]$ and compute the ratio
+$R_7(y) = \Pr(k=7\text{ pass}\mid Q_y\ge Q_y^{(75\%)})/
+\Pr(k=7\text{ pass}\mid\text{raw})$.
+Staged across $y\in\{7,11,17,29,47,97\}$, $R_7(y)$ takes values
+$\{0.971, 0.971, 0.971, 0.942, 0.936, 0.922\}$, all in $[0.92, 0.97]$.
+High base-quality samples have, if anything, a slightly \emph{lower}
+$k=7$ pass rate than raw; there is no evidence that base-tuple
+conditioning raises $k=7$ survival.  This is a positive
+falsification of the hypothesis that caveat (b) could close the
+remaining gap in the density model at $k=7$.  See
+\texttt{scripts/k7\_sieve\_weighted\_surrogate.py},
+\texttt{data/k7\_sieve\_weighted\_surrogate.json},
+\texttt{scripts/monitor\_escape\_k7\_autopsy.py},
+\texttt{data/monitor\_escape\_k7\_autopsy.json}.
+\end{remark}
+
+\begin{remark}[$k=16$ at the strongest-near-miss subset]\label{rem:k16_strong_layer}
+At the $r=0$ strong threshold with $12$ or more primes of the $13$
+enriched forms ($n = 21$ records in the current corpus), $k=16$ alone
+fails the Erd\H{o}s inequality in every case: $\tau(2520N-16) > 18$
+for all $21$ records at this threshold.  At the broader $r=0$
+strong-near-miss telemetry snapshot (primes $\ge 11$, $n = 375$), $k=16$ alone
+kills $\approx 87\%$ of records, with the monitor $\{7, 11, 13, 16\}$
+required to cover the remaining $44$.  The $21/21$ rate at the
+$k\ge 12$ subset is consistent with — though a stronger observation
+than — the atlas-tightness of
+Proposition~\ref{prop:k16_universal}.  Sample size at the
+$k\ge 12$ layer is small; we report this as an empirical observation
+from a later telemetry snapshot, not as a universal claim.
+\end{remark}
+
+\begin{remark}[Structural explanation of the monitor $\{7,11,13,16\}$]\label{rem:monitor_structural}
+The universality of the monitor $\{7,11,13,16\}$ decomposes into
+residue-generic and residue-specific components:
+\begin{enumerate}
+\item \emph{Residue-generic:} $k=16$ is atlas-tight at every
+residue (Proposition~\ref{prop:k16_universal}); $k=7$ ranks
+within the top $8$--$10$ tightest offsets at every residue (mean
+$B^{\mathrm{eff}}\approx 3.83$ across all $r$).
+\item \emph{Residue-specific extreme-tightness:}
+$k=13$ becomes extreme-tight at $r=1716$ and $r=16302$ (mean
+$B^{\mathrm{eff}}\approx 2.85$, $100\%$ of branches with
+$B^{\mathrm{eff}}\le 3$, rank $1$--$2$), reflecting the active-prime
+$13$ content at those residues; $k=11$ becomes extreme-tight at
+$r=17160$ (rank $2$, $100\%$ with $B^{\mathrm{eff}}\le 3$),
+reflecting the analogous active-prime $11$ content.
+\end{enumerate}
+Thus at every hard residue, at least one member of $\{7,11,13,16\}$
+lies in the top three atlas-tightest offsets. The monitor's
+empirical coverage is consistent with this branch-budget geometry,
+though the formal coverage claim remains empirical.
+\end{remark}
+
+\begin{remark}[Alternate universal-tight sets and empirical universality]\label{rem:alt_monitor}
+Audit~4 identifies $\{7,16,40,72\}$ as the universal atlas-tight-top-$10$
+intersection across all five hard residues — a candidate alternate
+monitor family.  However, on the expanded strong-near-miss corpus
+of $330$ records at $r=0$ (primes $\ge 11$, updated 2026-04-18),
+$\{7,16,40,72\}$ misses one record at $t=2{,}445{,}307{,}576{,}020$
+($99.70\%$ empirical coverage), while the empirically-motivated
+monitor $\{7,11,13,16\}$ still achieves $100\%$.  A second
+three-element universal monitor, $\{15,16,27\}$, also achieves
+$100\%$ coverage on the expanded corpus and is a candidate
+simplification; $\{7,11,13,16\}$ remains the base monitor used
+throughout the paper because $k=16$ alone covers $86.67\%$ and
+each of $\{7,11,13\}$ contributes residue-specific lethality
+(see Remark~\ref{rem:monitor_structural}).  We flag these
+alternatives for subsequent analysis; none replaces the
+empirically-validated monitor here.
+\end{remark}
+
+\begin{remark}[Interpretation and scope]\label{rem:beff_interpretation}
+The branchwise severity ordering of omitted offsets is a
+theorem-shaped consequence of atlas arithmetic
+(Lemma~\ref{lem:branch_criterion}); the empirical pass-rate
+distribution at each offset reflects this ordering under a Landau
+tail law for primitive cofactors. The empirical killer-set
+phenomenon and the cross-residue monitor universality follow from
+the branch-budget geometry. We do not claim that the monitor
+$\{7,11,13,16\}$ provably covers every Erd\H{o}s candidate, nor
+that the effective-budget mechanism constitutes a proof of
+finiteness for $\#647$. What we claim is:
+\begin{itemize}
+\item the branch criterion of Lemma~\ref{lem:branch_criterion} is
+exact;
+\item the severity ordering it induces matches empirical pass-rate
+ordering at $r=0$ across $87$ offsets with Spearman correlation
+$0.93$--$0.94$ on the frozen audited corpus, robustly;
+\item the monitor's coverage has a specific structural
+explanation, though its formal universality remains an empirical
+observation.
+\end{itemize}
+Computation scripts: \texttt{scripts/cofactor\_tail\_model.py},
+\texttt{scripts/cofactor\_tail\_model\_v3.py},
+\texttt{scripts/robustness\_audits.py},
+\texttt{scripts/audit4\_cross\_residue.py}.
+Data: \texttt{data/cofactor\_tail\_model.json},
+\texttt{data/robustness\_audits.json},
+\texttt{data/audit4\_cross\_residue.json}.
+\end{remark}
+
+\subsection{Rigorous-elimination layer and the survivor corridor}\label{subsec:beff_covering}
+
+The effective-budget hierarchy of Lemma~\ref{lem:branch_criterion}
+admits a natural deterministic/heuristic split at $B^{\mathrm{eff}}=1$.
+
+\begin{proposition}[Automatic-failure layer is noncovering]\label{prop:ble1_noncover}
+Let $\mathcal E_{r}^{\le 1}
+:=\bigcup_{k\le 100,\;\lambda:\,B^{\mathrm{eff}}_{r,k,\lambda}\le 1}
+  \mathcal C_{r,k,\lambda}$
+denote the union of all atlas branch-constraint classes at which the
+effective budget forces an automatic Erd\H{o}s failure.  Then for
+every hard residue $r\in\{0,1716,4862,16302,17160\}$, the set
+$\mathcal E_{r}^{\le 1}$ has positive complement in $\mathbb Z$.
+\end{proposition}
+\begin{proof}
+For $r\in\{0,4862,16302,17160\}$, the measure-sum bound
+\[
+  \mathbb P(t\in\mathcal E_{r}^{\le 1})
+  \le
+  \sum_{(k,\lambda):\,B^{\mathrm{eff}}_{r,k,\lambda}\le 1}
+  \frac{|\mathcal C_{r,k,\lambda}|}{\mathrm{cm}_{r,k,\lambda}}
+\]
+evaluates to $\{0.17,0.45,0.18,0.46\}$ respectively (computed over all
+$(k,\lambda)$ with $B^{\mathrm{eff}}\le 1$), all strictly less than~$1$.
+Pigeonhole then gives a positive-density complement.
+
+For $r=1716$, the measure-sum bound is $1.14>1$, so the pigeonhole
+argument does not directly apply.  We instead exhibit explicit
+uncovered witnesses.  The $50$ values of $t$ in
+\texttt{data/b\_le1\_uncovered\_certificates.json} at $r=1716$ (e.g.\
+$t=314{,}985{,}525$, giving $N=14{,}548{,}866{,}415{,}941$;
+$t=495{,}450{,}098$, giving $N=22{,}884{,}344{,}578{,}238$;
+$t=422{,}888{,}998$, giving $N=19{,}532{,}819{,}930{,}338$) each have
+minimum $B^{\mathrm{eff}}_{1716,k,\lambda(t)}\ge 2$ across all
+$k\in[1,100]\setminus K_{\mathrm{base-enriched}}(1716)$, verified
+independently by \texttt{scripts/verify\_r1716\_uncovered\_witness.py}.
+Each such witness certifies that its arithmetic progression
+$\{N\equiv 1716\pmod M: t\ge t_0\}$ lies outside $\mathcal E_{1716}^{\le 1}$.
+\end{proof}
+\begin{remark}[Quantitative escape rates]\label{rem:ble1_mc}
+Monte Carlo estimates of $\mathbb P(t\in\mathcal E_{r}^{\le 1})$ at
+$N=10^5$ random $t\in[0,L_r)$, where $L_r$ is the lcm of branch moduli,
+give per-residue coverage fractions in the range $10$--$38\%$ (see
+\texttt{scripts/covering\_analysis.py}).  The rigorous automatic-failure
+layer does not by itself imply finiteness of Erd\H{o}s candidates at any
+hard residue; for that, the sparse-shape layer $B\in\{2,3\}$ is
+required (Proposition~\ref{prop:b3_qnr_squarekill} and
+Remark~\ref{rem:survivor_corridor}).
+\end{remark}
+
+\begin{remark}[Survivor corridor and the $B\le 3$ sparse-shape layer]\label{rem:survivor_corridor}
+The Erd\H{o}s candidate set at a hard residue $r$ survives
+$\mathcal E_{r}^{\le 1}$ with probability $10\%$--$90\%$
+(Proposition~\ref{prop:ble1_noncover}); the survivors are further
+constrained by the next tightness layer
+$B^{\mathrm{eff}}\in\{2,3\}$, each of which forces the primitive
+cofactor $Z_{r,k,\lambda}(t)$ to lie in $\{1,p,p^2\}$ (or, after
+Proposition~\ref{prop:b3_qnr_squarekill}, in $\{1,p\}$ at $k\le 100$).
+Conditioning further on actual-primality of these shape-forced $Z$'s,
+Monte Carlo at $N=3{,}000$ random $t\in[10^8,10^9]$ per residue
+gives ``E3Q survivor'' rates of $2.00\%, 0.17\%, 0.33\%, 0.53\%, 0.10\%$
+for $r\in\{0,1716,4862,16302,17160\}$, reductions of $50$--$1600\times$
+from the $B^{\mathrm{eff}}\le 1$ rates.  The distribution of forced-prime
+constraint counts among E3Q survivors per residue is:
+
+\begin{center}
+\begin{tabular}{c|rrrrrr|r}
+\hline
+$r$ & $0$ & $1$ & $2$ & $3$ & $4$ & $5$ & total \\
+\hline
+$0$      & $19$ & $19$ & $19$ & $2$ & $1$ & $0$ & $60$ \\
+$1716$   & $0$  & $0$  & $0$  & $4$ & $0$ & $1$ & $5$ \\
+$4862$   & $0$  & $3$  & $5$  & $2$ & $0$ & $0$ & $10$ \\
+$16302$  & $0$  & $6$  & $5$  & $2$ & $2$ & $1$ & $16$ \\
+$17160$  & $0$  & $0$  & $0$  & $2$ & $1$ & $0$ & $3$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent At $r=0$, $31.7\%$ of E3Q survivors carry \emph{zero} forced-prime
+$B\le 3$ constraints: they land on $B^{\mathrm{eff}}\ge 4$ branches at
+every omitted $k$ and bypass the forced-prime layer entirely.  These
+``loose corridors'' dominate the residual E3Q density at $r=0$ and
+$r\in\{4862,16302\}$, and must be modeled separately from the tight
+corridors at $r\in\{1716,17160\}$ where every E3Q survivor carries
+$\ge 3$ forced-prime constraints.  See
+\texttt{scripts/e3q\_forced\_prime\_histogram.py} and
+\texttt{data/e3q\_forced\_prime\_histogram.json}.
+\end{remark}
+
+\begin{remark}[Structural primitivity of the cofactor form]\label{rem:Z_primitive}
+At every atlas branch $(r,k,\lambda)$, the primitive cofactor
+$Z_{r,k,\lambda}(u) = \alpha\cdot u + \beta$ has
+$\gcd(\alpha,\beta)=1$ where the slope
+\[
+  \alpha = \prod_{p\not\in S_{r,k}} p^{a_p - c_p(r,k)}
+\]
+is a product of the non-active small primes (with $S_{r,k}$ the
+active-prime set and $a_p=v_p(A_{\mathrm{const}})$, $c_p(r,k)=v_p(C_{r,k})$,
+and $a_p > c_p(r,k)$ for $p\not\in S_{r,k}$).  Empirically verified at
+all $1{,}175$ branches with $B^{\mathrm{eff}}=2$ and all $760$ branches
+with $B^{\mathrm{eff}}=3$ at $k\le 100$, and agreeing with the
+structural derivation.  Consequently $Z$ admits no fixed-divisor
+obstruction beyond the atlas factorization itself, ruling out the
+simplest class of rigorous branch contradictions.  See
+\texttt{scripts/b23\_shape\_contradiction\_scan.py} and
+\texttt{data/b23\_shape\_contradictions.json}.
+\end{remark}
+
+\begin{proposition}[QNR square-kill certificate theorem at $k\le 100$]\label{prop:b3_qnr_squarekill}
+For every atlas branch $(r,k,\lambda)$ with $r\in\{0,1716,4862,16302,17160\}$,
+$k\in[1,100]\setminus K_{\mathrm{base-enriched}}(r)$, and
+$B^{\mathrm{eff}}_{r,k,\lambda}=3$, there exists a prime $q$ dividing
+$\alpha_{r,k,\lambda}$ such that $\beta_{r,k,\lambda}$ is a quadratic
+non-residue modulo $q$ (or $q=2$ with $v_2(\alpha)\ge 2$ and
+$\beta\not\equiv 1\pmod 4$).  Consequently $Z_{r,k,\lambda}(u)$ is
+never a perfect square, and the branch shape requirement
+$\tau(Z)\le 3$ collapses to ``$Z$ prime or $Z=1$''.
+\end{proposition}
+
+\begin{proof}
+Finite certificate verification.  For each of the $1{,}242$ branches
+$(r,k,\lambda)$ with $B^{\mathrm{eff}}_{r,k,\lambda}=3$ at
+$k\le 100$, the accompanying data file
+\texttt{data/b3\_qnr\_certificates\_k100.json} records
+$(\alpha,\beta,q,\beta\bmod q,(\beta/q))$ with either
+(i) $q$ an odd prime, $q\mid\alpha$, $(\beta/q)=-1$, or
+(ii) $q=2$, $v_2(\alpha)\ge 2$, $\beta\bmod 4\ne 1$ (or, when
+$v_2(\alpha)\ge 3$, $\beta\bmod 8\ne 1$).  In case (i),
+$Z(u)\equiv\beta\pmod q$ is a quadratic non-residue for all $u$, so
+$Z$ is not a perfect square.  In case (ii), $p^2\equiv 1\pmod 4$
+(resp.\ $\pmod 8$) for all odd primes $p$, so $Z\ne p^2$.  Since
+$\gcd(\alpha,\beta)=1$ by Remark~\ref{rem:Z_primitive}, $q\nmid\beta$,
+closing the $p=q$ loophole.  Exhaustiveness (saturation lemma).  If $B^{\mathrm{eff}}_{r,k,\lambda}=3$
+then $(k+2)/\tau(A_{r,k,\lambda})\ge 3$, so
+$\tau(A_{r,k,\lambda})\le (k+2)/3\le 34$ for $k\le 100$.
+Each active prime $p\in S$ contributes a factor $a_p+\lambda_p+1\ge 2$
+to $\tau(A_{r,k,\lambda})$, so
+$a_p+\lambda_p+1\le 34$ for every $p\in S$, forcing $\lambda_p\le 32$.
+The enumeration of $B=3$ branches at cutoff $\lambda\le 50$ is therefore
+rigorously saturated, and indeed the branch count agrees at cutoffs
+$\lambda\le 30$ and $\lambda\le 50$ (both give $1{,}242$). See
+\texttt{scripts/b3\_qnr\_certificate\_k100.py} and
+\texttt{scripts/verify\_b3\_qnr\_certificates\_k100.py}.
+\end{proof}
+
+\begin{remark}[Extension at $k\le 1000$]\label{rem:b3_qnr_k1000}
+The analogous scan at $k\le 1000$ produces QNR-certificate coverage
+$\{100.00, 98.20, 98.83, 98.79, 97.77\}\%$ for
+$r\in\{0,1716,4862,16302,17160\}$; overall $98.70\%$ of $12{,}495$
+branches.  The $1.30\%$ residual is consistent with the
+$2^{-\omega(\alpha)}$ random-QR exception rate given the typical
+number of distinct prime factors of $\alpha$.  The extension is
+therefore an empirical density regularity, not a finite-certificate
+theorem.  Scripts and data:
+\texttt{scripts/b23\_qnr\_deep.py}, \texttt{data/b23\_qnr\_deep.json}.
+\end{remark}
+
+\begin{remark}[Interpretation: where a deterministic proof can still live]\label{rem:beff_frontier}
+Remark~\ref{rem:survivor_corridor},
+Proposition~\ref{prop:b3_qnr_squarekill} and
+Remark~\ref{rem:b3_qnr_k1000} together describe the current proof
+frontier.  The $B^{\mathrm{eff}}\le 1$ layer is deterministic but
+non-covering.  The $B^{\mathrm{eff}}=2,3$ layer is uniformly
+shape-collapsed to ``$Z$ prime or $Z=1$'' at $k\le 100$ (by
+Proposition~\ref{prop:b3_qnr_squarekill}), and heuristically
+collapsed at $98.70\%$ of $B^{\mathrm{eff}}=3$ branches at $k\le 1000$;
+but the collapsed layer does not yield a rigorous per-branch
+contradiction (since ``$Z$ prime'' is not structurally excluded).  A deterministic-finiteness route from this framework
+would need to combine (i) pairwise $\gcd$-at-$t$ constraints on
+simultaneous prime cofactors, (ii) covering-system arguments on the
+linear forms $Z_{r,k,\lambda}$, or (iii) shape obstructions beyond
+QNR (cubic/quartic characters).  The current paper does not pursue
+these; conditional thinning statements follow from
+Proposition~\ref{prop:beff_ordering} combined with Bateman--Horn on
+the resulting shape conditions.
+\end{remark}
+
+%% ====================================================================
+\section{Universal admissibility}\label{sec:admissibility}
+%% ====================================================================
+
+\begin{theorem}[Universal admissibility of the core sub-tuple, Lean-verified]
+For each $r\in\{0,1716,4862,16302,17160\}$, the $13$-form core
+sub-tuple \texttt{hardRootCoeffs} is admissible at every prime~$p$.
+\end{theorem}
+
+\begin{proof}
+For $p>13$: each of the $13$ forms contributes at most one forbidden
+residue mod~$p$; pigeonhole gives a surviving residue.
+For $p\le 13$: discharged by \texttt{native\_decide} independently
+at each hard residue (each generating its own computational
+verification axiom; no sharing between residues).
+\end{proof}
+
+\begin{remark}[Full-tuple admissibility, Lean-verified]
+The full budget-$\le 3$ tuples, of sizes $13,17,15,15,17$ respectively,
+are admissible at every prime~$p$. Small primes ($p$ up to the tuple
+length) are discharged by \texttt{native\_decide} per residue; larger
+primes follow by the same pigeonhole bound used in the core-sub-tuple
+proof (\texttt{numForbiddenAtFull\_le\_length} + a per-residue length
+equality). See \texttt{hard\_root\_r\_\{0,1716,4862,16302,17160\}\_full\_admissible\_all}
+in \texttt{Erdos647HardRootAdmissibility.lean}. The underlying
+coefficient data is in \texttt{data/hard\_root\_forms\_r*.json} and
+\texttt{data/admissibility\_new\_hard\_residues.json}.
+\end{remark}
+
+%% ====================================================================
+\section{Barrier theorem}\label{sec:barrier}
+%% ====================================================================
+
+\begin{theorem}[Barrier theorem, Lean-verified including CRT]
+For any budgeted affine state with $m$ active clauses and any
+finite set $S$ of regular primes each greater than~$m$, there
+exists a residue avoiding all clause divisibilities simultaneously.
+\end{theorem}
+
+\begin{proof}
+Induction on $|S|$ via Finset.induction. At each step,
+\texttt{one\_prime\_escape} gives a good residue at the new prime;
+CRT-composition (proved via ZMod arithmetic) combines with the
+inductive hypothesis.
+\end{proof}
+
+%% ====================================================================
+\section{Conditional prime-core resolution}\label{sec:conditional}
+%% ====================================================================
+
+\begin{theorem}[Conditional, under Dickson]
+Under Dickson's conjecture for each of the $5$ specific admissible
+tuples, the budget-$\le 3$ prime core is infinitely often solvable.
+\end{theorem}
+
+The passage from ``prime core solvable'' to ``full \#647 witness''
+requires controlling the infinite family of budget-$\ge 4$ constraints.
+Section~\ref{sec:killer_sets} records the empirical content at the
+finite end of this family: for every strong-threshold record observed
+to date (at any residue), some $k\in\{14,15,16\}\cup\{7,11,13\}$
+witnesses an Erd\H{o}s-inequality failure, and the minimum killer
+set $S_0=\{14,15,16\}$ covers all $228$ strong-threshold records at
+$r=0$. However, Remark~\ref{rem:emp_only} shows that the three
+finite-incompatibility programs we tested fail to produce a proof of
+this phenomenon; the natural next step is a density-level control on
+the budget-$\ge 4$ Dickson-set tail, with an analytic bound on the
+tuple-restricted Titchmarsh-divisor problem on the Dickson set as the
+nearest proxy target. A proxy bound of this form would be a major
+step toward closing the Dickson-to-\#647 gap, but a separate bridge
+from the divisor proxy to the density-level statement remains open
+(direct Markov/Chebyshev on fixed-threshold divisor moments does not
+suffice). We do not establish either bound here and flag both as
+principal open questions for future work.
+
+We also record, for context, a separate Dirichlet-$L$
+pair-correlation / Stage-3B route pursued in parallel project
+notes. That route is not an input to the Dickson-based conditional
+statement of this section. In its current form it gives a
+conditional asymptotic theorem under GRH for primitive $L(s,\chi)$
+with $q\mid \alpha$, together with a $\chi$-twisted
+Hardy--Littlewood hypothesis $H_\chi$, and a finite-$T^*$
+numerical corollary under an additional bookkeeping gate $B_\chi$.
+The strict GRH-only finite-$T^*$ individual-$\chi$ version is
+stronger, and the completed recon treats it as effectively red in
+the present framework after two explicit failed subroutes.
+
+A positive Dickson-conditional resolution of the hard-tuple prime
+core would stand in tension with the \texttt{variants.lim}
+intuition of Erd\H{o}s (Section~\ref{sec:problem}).
+
+\begin{proposition}[Dickson--$\#647$ dichotomy, localized]\label{prop:dichotomy}
+Assume Dickson's conjecture holds for at least one admissible
+hard-tuple tuple at $r\in\mathcal{R}^\star:=\{0,1716,4862,16302,17160\}$.
+Then for some such $r$ there exist infinitely many $t\in\mathbb{N}$
+with every budget-$\le 3$ prime form at $r$ simultaneously prime;
+call such $t$ a \emph{Dickson solution at $r$}. Exactly one of the
+following holds along any such sequence of Dickson solutions:
+\begin{enumerate}
+\item[\emph{(A)}] All but finitely many Dickson solutions $t$ at $r$
+  fail some budget-$\ge 4$ constraint at $n=2520(46189t+r)$.
+  Consequently $\#647$ has at most finitely many solutions.
+\item[\emph{(B)}] Infinitely many Dickson solutions $t$ at $r$
+  satisfy all budget constraints simultaneously at
+  $n=2520(46189t+r)$. Equivalently, $\#647$ admits infinitely many
+  solutions.
+\end{enumerate}
+\end{proposition}
+
+The dichotomy is a statement about the cardinality of $\#647$'s
+solution set. Two structural consequences deserve separate
+emphasis.
+\emph{(i) Relation to \texttt{variants.lim}.} The Erd\H{o}s
+\texttt{variants.lim} strengthening asserts
+$\max_{m<n}(\tau(m)+m-n)\to\infty$. Case (B) directly contradicts
+\texttt{variants.lim} (infinitely many $\#647$ solutions witness
+a bounded supremum at arbitrarily large $n$). Case (A) is
+\emph{consistent with but strictly weaker than}
+\texttt{variants.lim}: finitely many solutions imply the bound is
+achieved only finitely often, but \texttt{variants.lim} further
+requires unbounded growth, which (A) alone does not guarantee.
+\emph{(ii) Localization.} The reduction does not settle which of
+(A), (B) holds; but it pins the unresolved content to a precise
+arithmetic phenomenon — the budget-$\ge 4$ behaviour along Dickson
+solutions at the $5$ specific hard-tuple tuples — that a
+sieve-theoretic or analytic result could in principle address. In
+particular, the reduction is not merely a partial resolution: it
+localizes the \emph{entire} incompatibility between Dickson-type
+conjectures and Erd\H{o}s's \texttt{variants.lim} intuition to
+these $5$ specific arithmetic witnesses.
+\emph{(iii) Target hypothesis.} A natural paper-primary analytic
+target is a density-level control on the budget-$\ge 4$ tail along the
+Dickson set. The nearest literature-shaped proxy target is a
+\emph{tuple-uniform Titchmarsh-type} control on the Dickson set: an
+upper bound for divisor moments on a tail form $L_{r,k_0}$ averaged
+over the simultaneous-prime-tuple set
+$D_r(X)=\{t: L_{r,k}\,\text{prime for all core }k\}$. Existing project
+notes freeze that proxy as a uniform upper bound of the shape
+\[
+  \sum_{t\le X,\ t\in D_r(X)} \tau(L_{r,k_0}(t))
+  \;\ll\; |D_r(X)|\log X
+\]
+for $k_0$ in the finite tail family. Remark~\ref{rem:track2_absolute}
+records the current unconditional state of the art on this proxy and
+isolates the two remaining conjectural inputs. The proxy alone would
+still not settle the full Track~2 tail statement, because fixed-
+threshold Markov/Chebyshev on moments of $\tau(L_{r,k_0}(t))$ does
+not directly upper-bound the good-set density on the Dickson set.
+At the reference residue $r=0$, the bridge now closes conditionally as recorded
+in Remark~\ref{rem:track2_absolute}; for the other four hard residues and for
+residue-uniform versions, the direct tail-density statement and this tuple-restricted divisor proxy remain open analytic targets. A natural conceptual framework for the proxy bound would be a prime-core-relative analog of Matthiesen's correlation
+estimates for multiplicative functions on affine-linear systems
+(Matthiesen, \emph{Correlations of the divisor function},
+Proc.\ London Math.\ Soc.\ (3) 104 (2012), 827--858;
+\emph{Linear correlations of multiplicative functions},
+Proc.\ London Math.\ Soc.\ (3) 121 (2020), 372--425), controlling
+divisor moments on the $13$-form Dickson set rather than on the
+ambient integers.
+
+\begin{remark}[Absolute-form tuple-restricted $\tau$ bound at $r=0$ (unconditional); conditional outlook]\label{rem:track2_absolute}
+At the reference hardest residue $r=0$ (tuple rank~$13$), the
+proxy bound of \emph{(iii)} has a clean \emph{unconditional}
+form; the bridge from the proxy to a Dickson-set density-level
+statement sits inside the same Dickson/Schinzel conjectural frame
+used for the dichotomy in Proposition~\ref{prop:dichotomy} and is
+flagged here as a \emph{conditional outlook}, not as a result of
+this paper. Analogous statements at the other four hard residues
+$r\in\{1716,4862,16302,17160\}$ (ranks~$15$ or $17$) are expected
+to hold by the same composite but require residue-specific
+bookkeeping not executed here; we state this Remark only at $r=0$.
+
+\emph{(a) Unconditional absolute form at $r=0$.} For every tail
+offset $k_0$ in the finite budget-$\ge 4$ family,
+\[
+  \sum_{t\le X,\,t\in D_0(X)} \tau(L_{0,k_0}(t))
+  \;\ll_{k_0}\; X\,(\log X)^{-12}
+\]
+unconditionally. The proof is a composition of known published
+tools at rank~$13$: a Selberg $\Lambda^{2}$ upper-bound sieve on
+the $13$-form Dickson indicator $\mathbf{1}_{D_0(X)}$ (in the
+Maynard 2015 normalization; the $\Lambda^{2}$ weight majorizes
+$\mathbf{1}_{D_0(X)}$ pointwise on $W$-tricked residues at
+admissibility, which is verified for $r=0$ at $p\le 19$ via the
+factorization $46189=11\cdot 13\cdot 17\cdot 19$ and the
+divisibility $7\mid d_k$ for every $d_k$ in the $r=0$ divisor
+set); CRT reduction of the joint divisibility constraints to a
+single arithmetic progression via the $W$-trick (Maynard 2015
+equations (5.1)--(5.2)), with the cross-form resultant prime
+support $\{2,3,5,7,11,13,17,19,23\}$ absorbed at $w(N)\ge 23$;
+and Shiu/Nair--Tenenbaum Brun--Titchmarsh for $\tau$ on a linear
+form in an arithmetic progression (Shiu, \emph{A Brun--Titchmarsh
+theorem for multiplicative functions}, J.\ reine angew.\ Math.\
+313 (1980), 161--170; Nair and Tenenbaum, \emph{Short sums of
+certain arithmetic functions}, Acta Math.\ 180 (1998), 119--144;
+Henriot, \emph{Nair--Tenenbaum bounds uniform with respect to the
+discriminant}, Math.\ Proc.\ Camb.\ Phil.\ Soc.\ 152 (2012),
+405--424). The rank-$13$ sieve integral is tabulated in the
+Polymath8b range
+(\emph{Variants of the Selberg sieve, and bounded intervals
+containing many primes}, Res.\ Math.\ Sci.\ 1 (2014)).
+
+\emph{(b) Conditional outlook: Dickson-set density at $r=0$.}
+Converting the unconditional absolute bound in~(a) into a statement
+about the density of the $\tau$-exceptional set \emph{inside} the
+rank-$13$ Dickson set $D_0(X)$ requires a quantitative lower bound
+of the shape $|D_0(X)|\gg X(\log X)^{-13}$. This is the quantitative
+form of the rank-$13$ case of Dickson's conjecture (equivalently, a
+specialisation of Schinzel's Hypothesis~H at the $r=0$ $13$-tuple),
+and it sits within the same named-conjecture framework already
+invoked by Erd\H{o}s himself as the conditional premise under which
+the infinitude-variant adjacent to \#647 would follow~\cite{Bloom647}.
+Proposition~\ref{prop:dichotomy} already conditions the Track-2
+dichotomy on a qualitative form of Dickson (existence of infinitely
+many $t\in D_0(X)$); the quantitative lower bound above is a
+strictly stronger hypothesis in the same conjectural frame.
+
+Under this quantitative Dickson-type hypothesis, a Dickson-set
+Tur\'an--Kubilius concentration bound for $\omega(L_{0,k_0}(t))$
+on $D_0(X)$ --- specifically, a second-moment Selberg variance
+estimate
+$\sum_{t\in D_0(X)} (\omega(L_{0,k_0}(t))-\log\log X)^{2}
+ \ll |D_0(X)|\,\log\log X$
+--- implies by Chebyshev that
+$\{t\in D_0(X):\omega(L_{0,k_0}(t))\le C\}$ has Dickson-set
+density $o(1)$ for every fixed $C$, hence the $r=0$ Track-$2$
+conclusion $E_0(X)/|D_0(X)|=o(1)$. This is a conditional corollary
+of the reduction, not a theorem of the present paper; its status
+and the conditional framework are recorded here to make the
+analytic content explicit and to distinguish it from the
+unconditional proxy in~(a).
+\end{remark}
+
+%% ====================================================================
+\section{Quantitative predictions and witness search}\label{sec:BH}
+%% ====================================================================
+
+The Bateman--Horn singular series for the $13$-tuple at $r=0$ is
+$C_{\mathrm{BH}}\approx 2.3179\times 10^8$ (primes $\le 500{,}000$;
+convergence ratio $0.999949$).
+
+Using the leading-order Bateman--Horn asymptotic, the expected
+witness count is
+\[
+\#\{t\le X:\text{all 13 prime}\}
+  \;\approx\; \frac{C_{\mathrm{BH}}\cdot X}
+  {\prod_{i=1}^{13}\log(\alpha_i X)}\,.
+\]
+At $X=10^{13}$: ${\approx}\,0.48$ expected witnesses.
+At $X=10^{14}$: ${\approx}\,2.5$ expected witnesses. The figures
+reported are the leading-order Bateman--Horn prediction assuming full
+independence across the 13 forms; refinements that account for
+residue-dependent correlation among the forms (specifically, the
+common divisibility structure induced by $d_i \mid 2520$) typically
+reduce the leading-order prediction by $30$--$40\%$ in comparable
+settings, but we do not attempt a full correlation-corrected prediction
+here. Recomputable from \texttt{scripts/paper\_numerical\_audit.py}.
+
+A computational search is in progress at $r=0$. Phase~1
+($t\le 10^{13}$) and two parallel Phase~2 ranges partitioning
+$[10^{13}, 10^{14}]$ run concurrently; interim results are
+synced to the public repository and refreshed regularly.
+
+\paragraph{Near-miss distribution (snapshot 2026-04-17).}
+At this snapshot (Phase~1 at $\sim 17\%$; Phase~2 ranges at
+$\sim 2\%$ each), the combined search has observed $9$ distinct
+$12/13$ near-misses, $129$ at $11/13$, and $1{,}355$ at $10/13$;
+no $13/13$ witness has been found. The $9$ near-misses at $12/13$
+span $t = 8{,}618{,}618{,}190$ (the smallest, with composite form
+$d=210$, composite factor $1109$, above sieve limit) up to
+$t = 55{,}386{,}505{,}208{,}280$.
+
+Across the full corpus of $40{,}984$ composite form-values observed
+in the $10{,}526$ near-miss records (at $k\in\{9,10,11,12\}$), the
+per-form composite rate is essentially uniform: $19.6\%$ to $20.8\%$
+across the $13$ forms, with no form significantly over- or
+under-represented. At the extreme $12/13$ tail ($N=9$), the
+composite is distributed as $2$ hits each at $d\in\{1260, 2520\}$
+(the two largest) and $0$ hits at $d\in\{105, 140\}$ (the two
+smallest); we flag this as a preliminary observation pending
+larger $N$ from continued search, noting that a $4/9$ concentration
+in the two largest of thirteen forms is not statistically distinguishable
+from the uniform null at this sample size. The broader uniformity
+across $40{,}984$ form-values is the primary observation; the $N=9$
+tail pattern is reported as empirical data but not as a structural
+claim.
+
+Under naive Bateman--Horn the expected number of $13/13$
+witnesses through $X=10^{14}$ is $\approx 2.5$. The current
+corpus reaches $X\approx 1.01\times 10^{14}$ and contains exactly
+one $13/13$ hit (at $t=11{,}741{,}230{,}040{,}310$); see
+Section~\ref{sec:killer_sets} and
+Remark~\ref{rem:emp_only} for the empirical context. The
+observed-to-predicted ratio at that horizon is $\approx 0.62$,
+consistent with BH leading-order density to within a factor of
+two. Results are recomputable from
+\texttt{data/all\_phases\_merged.jsonl} and
+\texttt{docs/near\_miss\_snapshot\_20260417.md}; the full
+quantitative refresh is in
+\texttt{docs/d2\_bh\_validation\_result.md}.
+
+\begin{proposition}[Per-residue Bateman--Horn predictions]\label{prop:perBH}
+The leading-order Bateman--Horn predictions across the $5$ hard
+residues differ substantially due to tuple-size variation:
+
+\begin{center}
+\begin{tabular}{cccccc}
+\hline
+$r$ & $K$ & $C_{\mathrm{BH}}$ &
+  pred.\ at $10^{13}$ & pred.\ at $10^{14}$ & pred.\ at $10^{16}$ \\
+\hline
+$0$      & $13$ & $2.32\times 10^{8}$  & $0.47$              & $2.54$               & $78.68$ \\
+$1716$   & $17$ & $6.83\times 10^{10}$ & $2\times 10^{-5}$   & $1.4\times 10^{-4}$  & $3.0\times 10^{-3}$ \\
+$4862$   & $15$ & $2.53\times 10^{9}$  & $2.6\times 10^{-3}$ & $1.2\times 10^{-2}$  & $3.2\times 10^{-1}$ \\
+$16302$  & $15$ & $5.42\times 10^{9}$  & $5.1\times 10^{-3}$ & $2.5\times 10^{-2}$  & $6.4\times 10^{-1}$ \\
+$17160$  & $17$ & $1.15\times 10^{11}$ & $4\times 10^{-5}$   & $2.2\times 10^{-4}$  & $5.1\times 10^{-3}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+Computed at prime bound $10^{6}$ via
+\texttt{scripts/compute\_bh\_all\_residues.py}; full data in
+\texttt{data/bh\_all\_residues.json}.
+\end{proposition}
+
+\begin{proposition}[Case-A screen density: pointwise pass probability and cumulative expected count]\label{prop:case_a_density}
+In this proposition, \emph{case-A} refers to the fixed-offset
+truncated screen $\tau(2520N - k) \le k+2$ at every
+$k\in[1,100]\setminus K_{\mathrm{base-enriched}}(r)$.  Any true
+Erd\H{o}s~$\#647$ counterexample on residue $r$ must satisfy this
+screen as a \emph{necessary} condition (the full problem demands
+$\tau(n-k)\le k+2$ for all $1\le k<n$, a condition with $k$ growing
+with $n$).  We do \emph{not} claim that the truncated screen alone
+implies \#647-finiteness; it is the finite-horizon instrument used to
+bound what modeling can currently verify.  The offsets $k>100$ and
+the moving-tail regime $k\to\infty$ are not treated in this
+proposition.  A moving-$K$ window scan (see
+Remark~\ref{rem:moving_k_empirical} and
+\texttt{scripts/moving\_k\_window\_experiment.py}) shows that for
+$k\in[101, 1000]$, per-$k$ empirical pass rates are $\ge 0.50$ at
+every residue with means converging to $1$ as $K$ grows (mean
+$0.96$ at $[101, 200]$, $0.99$ at $[201, 500]$, $0.999$ at
+$[501, 1000]$).  No very-tight offsets ($<0.3$) appear at $k>100$;
+the tight pressure is concentrated at $k\le 100$.
+
+We separate two distinct quantities that were conflated in an earlier
+draft.
+
+\emph{(A) Pointwise omitted-offset pass probability $p_r(t)$.}  The
+probability that $\tau(2520N - k)\le k+2$ holds at every
+$k\in[1,100]\setminus K_{\mathrm{base-enriched}}(r)$ for $t$ sampled
+uniformly at scale $t$.  Directly measured at $t\sim 10^{8.5}$ via
+per-$k$-independence product (calibration (ii) below), extrapolated to
+other scales via per-$B^{\mathrm{eff}}$ pass-rate drift observed in
+the scale-stability experiment.  This quantity \emph{decreases} with $t$
+(primes and low-$\tau$ integers become rarer as affine forms grow).
+
+\emph{(B) Expected cumulative case-A count $E_r([T_0, X])$.}
+\[
+  E_r([T_0, X]) \;\approx\; \int_{T_0}^X \rho_r(t)\, p_r(t)\,dt,
+\]
+where $\rho_r(t) = C_{\mathrm{BH}}/(\log(\alpha\cdot t))^{m_r}$ is the
+Bateman--Horn base-tuple hit-density at scale $t$ and $T_0$ is the
+lower integration limit.  We report results with $T_0 = 10^8$ (the
+floor of the scale-stability calibration range); integrating from
+$T_0 = 2$ gives values $10^2$--$10^6$ times larger per residue but
+relies on the scale model extrapolated below its fitted range, so we
+do not treat it as load-bearing.  The horizon $X$ is the $t$-horizon
+throughout this proposition ($X = X_t$), not the $N$- or $n$-horizon.
+This quantity is non-decreasing in $X$.
+
+\emph{Two active calibrations plus a legacy heuristic.} Each is
+computational or heuristic; none is a proved density theorem.
+Calibrations (i) and (ii) are active; (iii) is a retired
+historical placeholder retained only for transparency.
+\begin{enumerate}
+\item[(i.a)] \emph{Raw random-$t$ empirical upper bound.}  A case-A
+pass scan at $t\in[10^8, 10^9]$ with $n=1{,}000$ samples per
+residue (5{,}000 pooled) gives $0/1000$ per residue, $0/5000$
+pooled.  One-sided $95\%$ Clopper--Pearson on the raw IID sample:
+$P(\text{full pass})\le 1-0.05^{1/1000}\approx 3.0\times 10^{-3}$
+per residue, pooled $\le 1-0.05^{1/5000}\approx 6.0\times 10^{-4}$.
+This is a statistical confidence bound on the raw-$t$ distribution
+at $t\sim 10^{8.5}$.
+
+\item[(i.b)] \emph{Recorded near-miss corpus diagnostic.}  The
+full $r=0$ witness-search corpus recorded to $t\sim 10^{14}$
+contains $26{,}253$ logged near-miss records (all primes $\ge 9$
+enriched forms).  All $26{,}253$ fail case-A; in particular, the
+single $13/13$ shape-pass (the confirmed witness at
+$t=11{,}741{,}230{,}040{,}310$) fails case-A at $k=7$ because
+$\tau(2520N - 7) = 16 > 9 = k+2$ (direct computation).
+Interpreting the corpus as a sample from the recorded-near-miss
+distribution, one-sided $95\%$ Clopper--Pearson upper bounds per
+stratum are:
+
+\begin{center}
+\begin{tabular}{c|cc}
+\hline
+stratum & sample $n$ & UB on $P(\text{full pass}\mid\text{stratum})$ \\
+\hline
+$C_{\ge 9}$  & $26{,}253$ & $1.1\times 10^{-4}$ \\
+$C_{\ge 11}$ & $330$      & $9.0\times 10^{-3}$ \\
+$C_{\ge 12}$ & $21$       & $0.133$ \\
+$C_{\ge 13}$ & $1$        & $0.951$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent The $C_{\ge 13}$ row is a single observation and is
+diagnostic rather than estimatory: the sole $13$-tuple shape-pass
+fails case-A at $k=7$, falsifying the implicit assumption that
+shape-pass implies near-full-pass, without yielding a useful
+conditional probability estimate.  The corpus-wide $C_{\ge 9}$
+bound is a statistical statement about the \emph{recorded-near-miss
+layer}, not the raw-$t$ distribution; combining with (i.a) for a
+full per-$t$ bound requires an explicit model of the recorded
+layer's density within the search range.
+
+\item[(ii)] \emph{Atlas-derived independence-product estimate
+(pointwise).}  From $n=2{,}000$-sample per-$k$ pass rates at
+$t\in[10^8,10^9]$, the per-$k$-independence product evaluates to:
+$3.11\times 10^{-10}$ ($r=0$), $1.66\times 10^{-10}$ ($r=1716$),
+$1.16\times 10^{-10}$ ($r=4862$), $1.92\times 10^{-10}$ ($r=16302$),
+$1.60\times 10^{-10}$ ($r=17160$).  These are values of $p_r$ at
+$t\sim 10^{8.5}$.  The scale-stability experiment at three $t$-scales
+spanning four orders of magnitude fits
+$p_r(t) \approx p_r(10^{8.5})\cdot 10^{\gamma_r\cdot(\log_{10} t - 8.5)}$
+with per-residue slopes $\gamma_r\in[-3.4,-2.0]$.
+
+\item[(iii)] \emph{Legacy witness-scale heuristic (not a measurement).}
+Earlier drafts used $P(\text{full case-A pass}\mid \text{shape hit})
+\approx 10^{-14}$ as a calibration anchor, rationalized by dividing
+the one confirmed shape hit by the search range $\sim 10^{14}$.  The
+per-$t$ verification in (i.b) shows that shape-pass does not imply
+near-full-pass: the witness fails at $k=7$.  The $10^{-14}$ figure is
+therefore a legacy order-of-magnitude placeholder, not a direct
+measurement; we retain it only as historical context and do not use
+it in the quantitative synthesis below.
+Combined with $\rho_r(t)$, yields a cumulative estimate
+$E_r(X)\approx 10^{-14}\cdot N_{\mathrm{BH}, r}(X)$ where
+$N_{\mathrm{BH},r}$ is the expected shape-hit count.
+\end{enumerate}
+
+\emph{Table of pointwise probabilities $p_r(t)$} (calibration (ii) with
+scale extrapolation):
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+\hline
+$\log_{10} t$ & $r=0$ & $r=1716$ & $r=4862$ & $r=16302$ & $r=17160$ \\
+\hline
+$8.5$  & $3.1\times 10^{-10}$ & $1.7\times 10^{-10}$ & $1.2\times 10^{-10}$ & $1.9\times 10^{-10}$ & $1.6\times 10^{-10}$ \\
+$10.5$ & $5.4\times 10^{-12}$ & $2.0\times 10^{-13}$ & $1.7\times 10^{-13}$ & $8.8\times 10^{-13}$ & $1.8\times 10^{-13}$ \\
+$12.5$ & $9.3\times 10^{-14}$ & $2.5\times 10^{-16}$ & $2.5\times 10^{-16}$ & $4.1\times 10^{-15}$ & $2.1\times 10^{-16}$ \\
+$14.5$ & $1.6\times 10^{-15}$ & $3.1\times 10^{-19}$ & $3.8\times 10^{-19}$ & $1.9\times 10^{-17}$ & $2.3\times 10^{-19}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent\emph{Table of cumulative expected counts $E_r([10^8, X])$}
+(integral density model, calibration (ii); integration floor
+$T_0 = 10^8$ at the scale-stability calibration lower bound):
+
+\begin{center}
+\begin{tabular}{c|ccccc}
+\hline
+$X$ & $r=0$ & $r=1716$ & $r=4862$ & $r=16302$ & $r=17160$ \\
+\hline
+$10^{14}$ & $1.2\times 10^{-13}$ & $2.3\times 10^{-17}$ & $6.0\times 10^{-16}$ & $1.1\times 10^{-15}$ & $2.2\times 10^{-17}$ \\
+$10^{17}$ & $1.3\times 10^{-13}$ & $2.3\times 10^{-17}$ & $6.0\times 10^{-16}$ & $1.1\times 10^{-15}$ & $2.2\times 10^{-17}$ \\
+$10^{19}$ & $1.3\times 10^{-13}$ & $2.3\times 10^{-17}$ & $6.0\times 10^{-16}$ & $1.1\times 10^{-15}$ & $2.2\times 10^{-17}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent Most residues saturate quickly within the calibration range
+because $p_r(t)$ decays faster than $\rho_r(t)$ grows (per-residue
+slope $\gamma_r\in[-3.4,-2.0]$). At $r=0$ the slope $\gamma_0 = -2.03$
+is shallowest and $E_0([10^8,X])$ grows modestly from
+$1.0\times 10^{-13}$ at $X=10^{12}$ to $1.3\times 10^{-13}$ at
+$X=10^{19}$.  This saturation is the sharpest quantitative
+consequence of the density model: for $r\in\{1716, 4862, 16302,
+17160\}$ the integrated expected counterexample count
+$E_r([10^8, X])$ is essentially constant for all $X\ge 10^{13}$,
+and for $r=0$ it grows by at most $\sim 30\%$ between $X=10^{12}$
+and $X=10^{19}$.  Under the current calibration the integrated
+case-(A) counterexample risk is therefore approximately
+scale-independent at large $X_t$, with total expected count bounded
+above by $1.3\times 10^{-13}$ (or $8.1\times 10^{-13}$ under the
+anchored log-law) at $r=0$ and by smaller values at the other four
+residues, across all $X_t$ in the modeled range.
+
+\emph{Sensitivity envelope} (integral under $\gamma_r\pm 0.5$) at
+$X=10^{19}$: for $r=0$ with $\gamma_0=-2.03$,
+$E_0([10^8, 10^{19}])$ evaluates to $1.0\times 10^{-12}$ at
+$\gamma+0.5$ (less-negative slope, slower decay, larger tail
+integral), $1.3\times 10^{-13}$ at the fitted value, and
+$7.6\times 10^{-14}$ at $\gamma-0.5$ (more-negative slope, faster
+decay, smaller integral).  Total range factor $\sim 14$; other
+residues vary by $<3\times$ under the same envelope.
+
+\emph{Calibration-floor caveat.} Integrating from $T_0 = 2$ rather
+than $T_0 = 10^8$ yields values $10^2$--$10^6$ times larger per
+residue, but relies on the scale model extrapolated below its fitted
+range and is not load-bearing.  The $[T_0, X]$ framing is the
+credible form.
+
+\emph{Comparison with log-law tail model and witness-calibrated (iii).}
+Calibration family (ii) has two variants: (ii.a) the local power-law
+fit $p_r(t)\propto t^{\gamma_r}$, and (ii.b) an anchored Landau-Sathe
+log-law tail $F_B(x)\propto (\log\log x)^{s-1}/(\log x)$.  The
+Landau model is calibrated from the scale-stability data for the
+decay \emph{shape} and anchor-normalized at $t_0 = 10^{8.5}$ to the
+empirical independence product (correcting a factor-$\sim 6$--$653$
+per-residue normalization offset in the raw Landau fit).  At
+$X=10^{19}$ the cumulative estimates are:
+
+\begin{center}
+\begin{tabular}{c|ccc}
+\hline
+$r$ & (ii.a) power-law & (ii.b) anchored log-law & (iii) witness-calibrated \\
+\hline
+$0$     & $1.3\times 10^{-13}$ & $8.1\times 10^{-13}$ & $3.3\times 10^{-9}$ \\
+$1716$  & $2.3\times 10^{-17}$ & $2.7\times 10^{-16}$ & $1.7\times 10^{-12}$ \\
+$4862$  & $6.0\times 10^{-16}$ & $7.7\times 10^{-15}$ & $7.6\times 10^{-11}$ \\
+$16302$ & $1.1\times 10^{-15}$ & $1.1\times 10^{-14}$ & $7.6\times 10^{-11}$ \\
+$17160$ & $2.2\times 10^{-17}$ & $2.8\times 10^{-16}$ & $1.7\times 10^{-12}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\noindent The anchored log-law (ii.b) gives values $6$--$13\times$
+larger than the power-law (ii.a) per residue, consistent with the
+Landau asymptotic decaying more slowly than a local power-law fit.
+Both variants of family (ii) predict negligible expected counts at
+the modeled horizons, and are consistent with the empirical upper
+bounds of (i.a) and (i.b).  The legacy heuristic (iii) gives larger
+values ($10^3$--$10^4\times$ compared with (ii)), but the witness
+verification in (i.b) shows (iii) was never a direct measurement;
+its numerical value is retained only for historical comparison.
+See \texttt{scripts/loglaw\_tail\_model.py} and
+\texttt{data/loglaw\_tail\_model.json}.
+
+\emph{Modeling caveats.}  Four specific sources contribute to the
+gap between (ii) and (iii): (a) the independence-product assumption
+in (ii) (cross-$k$ correlations may change (ii) by several orders of
+magnitude in either direction; for omitted offsets $n-a,n-b$ with
+primes $q>|a-b|$ the two divisibility indicators cannot simultaneously
+vanish, giving a negative covariance at each such prime, while local
+Bateman--Horn factors can contribute positively — the sign and size of
+the net effect on joint low-$\tau$ pass events is not yet modeled);
+(b) the marginal-over-$t$ versus per-shape-hit framework mismatch;
+(c) the single-data-point variance in (iii); and (d) the power-law
+scale extrapolation $p_r(t)\propto t^{\gamma_r}$ used in (ii).
+Regarding (d): per-$B^{\mathrm{eff}}$ pass rates are asymptotically
+governed by Landau / PNT-type log-law probabilities
+$F_b(Z)\propto (\log\log Z)^{b-2}/(\log Z)$, not by power laws in $t$.
+The anchored log-law variant (ii.b) above uses the Landau-Sathe decay
+shape anchored to the empirical independence product at $t=10^{8.5}$.
+At $X=10^{19}$ the anchored log-law gives values $6$--$13\times$
+larger than the power-law, consistent with a slower-decaying
+asymptotic.  This is a modest correction relative to the overall
+$10^3$--$10^4\times$ gap between family (ii) and the witness
+heuristic (iii): the tail-law choice is not a first-order source of
+the remaining uncertainty.  We consider caveat (d) substantially
+tested and demoted.
+
+Regarding (a): we tested the independence-product assumption by
+computing direct block ratios
+$R_S = \Pr(\bigcap_{k\in S}\mathrm{Pass}_k) / \prod_{k\in S}\Pr(\mathrm{Pass}_k)$
+for four block families at each hard residue: the monitor
+$\{7,11,13,16\}$, the empirical minimum cover $\{15,16,27\}$, the top-$5$
+bottleneck offsets from calibration (ii.a), and the union of monitor
+and top-$5$ bottlenecks.  At $n = 5{,}000$ samples per residue and
+$t\in[10^8,10^9]$, all twenty $R_S$ values fall in $[0.63, 1.80]$, with
+$\max|\log R_S|\approx 0.59$.  Independence holds empirically to
+within factor $\sim 2$ at the block level.  The $10^3$--$10^4\times$
+gap between (ii) and (iii) is therefore \emph{not} attributable to
+cross-$k$ dependence; caveat (a) is substantially tested and
+demoted.
+
+The remaining primary source of modeling uncertainty is caveat (b),
+the marginal-over-raw-$t$ versus per-shape-hit conditioning mismatch.
+Calibration (ii) samples $t$ uniformly while calibration (iii) is
+conditional on a base-tuple prime hit.  A weighted base-tuple
+conditional surrogate is the next natural refinement.
+Neither calibration is a proved bound; all are extrapolated models
+with documented uncertainties.
+
+See \path{scripts/density_integral_model.py},
+\path{data/density_integral_model.json},
+\path{scripts/scale_stability_test.py}, and
+\path{data/scale_stability_test.json}.
+
+The largest single-$k$ bottleneck in (ii) is $k=16$ (per-$k$ pass
+rate $\approx 0.35$ at every residue), consistent with
+Proposition~\ref{prop:k16_universal}.  See
+\path{scripts/case_a_density_factored.py} and
+\path{data/case_a_density_factored.json} for the full per-$k$
+rate tables; \path{docs/case_a_density_model.md} for caveats.
+\end{proposition}
+
+\begin{remark}[Tuple-size convention and divisor-extension sizes]\label{rem:tupleconv}
+Proposition~\ref{prop:perBH} uses the hard-root tuple sizes
+$K\in\{13,17,15,15,17\}$ at which the singular series were
+originally computed. The divisor-extension tuple sizes from
+Section~\ref{sec:div_ext} and Theorem~\ref{thm:complete} are
+$\{13,15,14,14,15\}$ at $r\in\{0,1716,4862,16302,17160\}$. The two
+conventions agree at $r=0$, so the r=0 entry of the table is
+directly comparable to the divisor-extension framework used
+elsewhere in the paper. At nonzero residues, the divisor-extension
+convention has smaller $K$ by $1$ or $2$; at $X=10^{14}$ this
+shifts the predicted density upward by a factor of
+$\log(\alpha X)^{K_\text{old}-K_\text{new}}\approx 10^{1.5}$ to
+$10^{3}$, which does not change the order-of-magnitude picture
+(nonzero residues remain effectively zero at current search horizons).
+Proper recomputation of the singular series on the
+divisor-extension tuples is deferred to follow-up work; for the
+paper's structural conclusions (the empirical killer-set
+discussion of Section~\ref{sec:killer_sets} and the conditional
+resolution of Section~\ref{sec:conditional}) the effect is
+within existing order-of-magnitude statements.
+\end{remark}
+
+\begin{remark}[Informational focus of the $r=0$ search]
+The $r=0$ residue is by far the most informative computational
+target. At $X=10^{14}$, the two $17$-form residues ($r\in\{1716,
+17160\}$) have expected witness counts roughly $10^{4}$ below
+$r=0$, while the two $15$-form residues ($r\in\{4862,16302\}$) are
+roughly $10^{2}$ below $r=0$. The separation arises from the
+tuple-size factor in the denominator product
+$\prod\log(\alpha_i X)$: each additional form incurs a $\log X$
+penalty, and at $\log 10^{14}\approx 32$, even two extra forms
+reduce the predicted density by a factor of $\approx 10^{3}$. The
+asymmetry is robust in its direction to refined-formula corrections
+(correlation adjustments to the singular series typically move
+predictions by factors of a few to at most an order of magnitude,
+not by the four orders separating the $17$-form residues from
+$r=0$); we have not, however, computed the refined predictions for
+the non-$r=0$ residues.
+
+The practical consequence: a null result from the witness search at
+$r=0$ (Phases~1 and~2) is informative — at $X=10^{14}$ the
+probability of observing zero witnesses under leading-order
+Bateman--Horn is $e^{-2.5}\approx 8\%$. Null results at the other
+four hard residues at any feasible $X\le 10^{14}$ are, by contrast,
+fully consistent with Bateman--Horn and carry little evidence
+against witness existence. The search strategy's focus on $r=0$
+reflects this informational asymmetry; extending the search to
+$r\in\{1716,4862,16302,17160\}$ would not be a productive use of
+computational resources in the near term.
+\end{remark}
+
+%% ====================================================================
+\section{The reduction chain}\label{sec:chain}
+%% ====================================================================
+
+The Lean formalization packages the large-$n$ conclusion as a pair of
+theorems. The conditional reduction
+\[
+\texttt{erdos647\_conditional\_on\_openResiduesStage1}:\;
+\forall\, n,\; 24<n \;\to\; \lnot\,\texttt{Candidate}\;n,
+\]
+quantified over any hypothesis asserting that no $N$ with
+$N\bmod M\in\texttt{openResiduesStage1}$ yields an Erd\H{o}s~\#647
+candidate, captures the entire structural reduction.
+The full (unquantified) theorem
+\[
+\texttt{erdos647\_with\_stage1\_axiom}:\;
+\forall\, n,\; 24<n \;\to\; \lnot\,\texttt{Candidate}\;n
+\]
+applies the single intentional Stage-1 axiom
+\texttt{openResiduesStage1\_no\_solution} to the conditional form.
+Its current dependency profile is:
+
+\begin{center}
+\begin{tabular}{@{}>{\raggedright\arraybackslash}p{0.30\textwidth}
+                >{\raggedright\arraybackslash}p{0.45\textwidth}
+                >{\raggedright\arraybackslash}p{0.18\textwidth}@{}}
+\hline
+\textbf{Step} & \textbf{Theorem} & \textbf{Status} \\
+\hline
+Finite coverage ($25\le n\le 84$)
+  & \texttt{candidate\_false\_finite} & proved (\texttt{native\_decide}) \\
+Candidate $\to$ IsErdos647
+  & \texttt{bridge\_candidate\_to\_isErdos647} & proved \\
+$2520$-divisibility
+  & \texttt{erdos647\_div\_2520} & proved \\
+Sieve reduction (Bridge~2)
+  & \texttt{bridge\_isErdos647\_to\_sieve} & proved \\
+$55$-residue closure
+  & $\texttt{singleOverlapResidues42}\cup
+     \texttt{directFullValueResidues13}$ & proved \\
+Admissibility ($\times 5$)
+  & \texttt{hard\_root\_r\_*\_admissible\_all} & proved \\
+Open residues ($\times 41$)
+  & \texttt{openResiduesStage1\_no\_solution} & axiom \\
+\hline
+\end{tabular}
+\end{center}
+
+No source-level \texttt{sorry} remains in \texttt{lean/}. The prior
+Bridge~3 budget-transfer lane has been retired (the peeled-cofactor
+implication was shown to be pointwise unsound; see
+\texttt{docs/bridge3\_design\_memo\_20260421.md}) and
+\texttt{Bridge3.lean} is now a $16$-line placeholder stub. The
+operative closure surface is the Stage-1 partition
+\begin{align*}
+\texttt{closedResiduesStage1}
+&= \texttt{singleOverlapResidues42}\cup\texttt{directFullValueResidues13},\\
+\texttt{openResiduesStage1}
+&= \texttt{survivingResidues96}\setminus\texttt{closedResiduesStage1},
+\end{align*}
+with \texttt{closedResiduesStage1\_card = 55} and
+\texttt{openResiduesStage1\_card = 41}, both proved by
+\texttt{native\_decide}. Bridge~2 is closed in \texttt{Bridge2.lean};
+the substantive sub-lemma \texttt{tau\_ge\_large\_noncoprime} is proved
+across all six non-trivial coefficient values.
+
+The narrow axiom \texttt{openResiduesStage1\_no\_solution} is confined
+to the $41$ residues in the exact-v2 open set and represents the
+genuinely open content of Problem~\#647. It subsumes both the
+historical hard-$14$ core (five original plus nine exact-v2-reopened
+residues) and the twenty-seven residues whose closures under the
+invalidated Bridge-3 peeled-cofactor mechanism require a sound
+replacement. A post-retirement audit of the $55$ Lean-closed residues
+(\texttt{docs/audits/55\_closed\_post\_bridge3\_audit\_20260424.md})
+confirms none of the $55$ depends on the Bridge-3 transfer; the
+single-overlap and direct full-value arguments work directly at the
+full-value level $2520\cdot N-k$ and rely only on divisor
+monotonicity and sound coprime-multiplicativity with explicit
+coprimality hypotheses.
+
+\begin{remark}[$v_{23}$ Hensel-rootline uniformity of the
+sieve-surviving residues]\label{rem:v23_uniformity}
+The $55$-closed / $41$-open partition in the Stage-$1$ axiom reflects
+the structural reach of this paper's closure mechanisms
+(\texttt{SingleOverlapClosure}, \texttt{DirectFullValueClosure}),
+not a fundamental hardness gradient between the two classes. A
+uniform cycle-$3$-style partial-closure mechanism applies to every
+one of the $96$ sieve survivors via the prime~$23$: for each
+residue $r\in\texttt{survivingResidues96}$, there exist
+shift $k\in\{1,\dots,95\}$ and a sub-AP
+$\{N\equiv b_r\pmod{23^3\cdot M}\}$ of density $23^{-3}=1/12167$
+on which $2520\cdot N-k = d(r,k)\cdot(\alpha\cdot s + c_0)$ algebraically
+with $c_0\ge 2$ and $\tau(d\cdot p)>k+2$ for every prime $p$, so that
+no $N$ on the sub-AP is $\texttt{goodOn}$ at~$k$. The structural
+basis is $\gcd(23,2520)=\gcd(23,M)=1$, so $23$ is free of both the
+divisor budget $2520=2^3\cdot3^2\cdot5\cdot7$ and the sieve modulus
+$M=46189=11\cdot13\cdot17\cdot19$; the $23$-adic Hensel tower is
+therefore available at every residue class. An empirical scan
+verified positive-margin closures at $136$/$136$ tested residues
+(the $41$ open, the $55$ closed, and $40$ sampled non-surviving
+residues outside \texttt{survivingResidues96}). Consequently the
+present paper's $55$/$41$ split is an artifact of \emph{which}
+mechanisms are formalized in the $55$ closures and not a structural
+claim about the $41$ being harder; a multi-shift primitive
+combining several such per-residue sub-AP closures (design in
+\texttt{docs/lean\_design/multishift\_primitive\_design\_20260424.md})
+would discharge \texttt{openResiduesStage1\_no\_solution} uniformly.
+Per-residue certificate data are tabulated in
+\texttt{data/all41\_v23\_hensel\_certificates\_20260424.json};
+full findings are recorded in
+\texttt{docs/audits/all41\_hensel\_v23\_unified\_20260424.md} and
+\texttt{docs/audits/v23\_universal\_pattern\_20260424.md}.
+\end{remark}
+
+%% ====================================================================
+\section{Formal verification summary}\label{sec:formal}
+%% ====================================================================
+
+\begin{center}
+\begin{tabular}{lcc}
+\hline
+\textbf{File} & \textbf{Sorry} & \textbf{Lines} \\
+\hline
+\texttt{Erdos647Main} & 0 (legacy wrapper retired) & 88 \\
+\texttt{Erdos647SieveCertificate} & 0 & 64 \\
+\texttt{Erdos647HardRootAdmissibility} & 0 & 314 \\
+\texttt{Erdos647Closure92\_Legacy} (historical) & 0 & 94 \\
+\texttt{Erdos647BarrierTheorem} & 0 & 252 \\
+\texttt{Erdos647BridgeV1} & 0 & 904 \\
+\texttt{Erdos647B23Closure} & 0 & 316 \\
+\texttt{Erdos647ClosureCerts} & 0 & 267 \\
+\texttt{Erdos647ClosureData} & 0 & 2837 \\
+\texttt{Erdos647BranchForms} & 0 & 1212 \\
+\texttt{Erdos647ReductionChain} & 0 & 118 \\
+\texttt{Erdos647ResiduePartitionStage1} & 0 & 124 \\
+\texttt{Erdos647Stage1Axiom} & 0 + 1 narrow axiom & 27 \\
+\texttt{Erdos647ConditionalFiniteWindow} & 0 & 152 \\
+\texttt{Bridge2} & 0 & 1044 \\
+\texttt{Bridge3} (stub, retired) & 0 & 16 \\
+\hline
+\textbf{Total (proof-critical subset)} & \textbf{0 sorry + 1 axiom} & \textbf{7829} \\
+\hline
+\end{tabular}
+\end{center}
+
+All finite-computational claims are discharged via Lean's
+\texttt{native\_decide}. The proof-critical chain is conditional on the
+Stage-1 axiom wrapper:
+\texttt{Erdos647ReductionChain.erdos647\_conditional\_on\_openResiduesStage1}
+states the theorem relative to the open residue set, and
+\texttt{Erdos647Stage1Axiom.erdos647\_with\_stage1\_axiom} applies the
+single intentional axiom
+\texttt{openResiduesStage1\_no\_solution} to yield the full result.
+Bridge~3 is retired as a stub; no source-level \texttt{sorry} remains
+in \texttt{lean/}. The complete Lean development spans $49$ files; the
+above table records the proof-critical subset. The non-definitional
+dependency profile is:
+\texttt{propext}, \texttt{Classical.choice}, \texttt{Quot.sound},
+\texttt{Lean.ofReduceBool} (from \texttt{native\_decide}),
+\texttt{openResiduesStage1\_no\_solution}.
+
+\paragraph{Trust chain and reproducibility.}
+All residue closures, shape decompositions, sieve enumerations,
+cofactor factorisations, and arithmetic verifications in this paper
+are discharged inside the Lean~4 kernel. Finite computational claims
+(residue-list cardinalities, divisibility checks, primality over
+fixed small ranges, enumeration of surviving residues mod~$M$) use
+Lean's \texttt{native\_decide}, which compiles the relevant
+decidable proposition to native code and trusts the result via the
+\texttt{Lean.ofReduceBool} axiom listed above. No step of the
+verified chain depends on externally-computed data ingested from
+outside Lean, on unsafe Lean features (\texttt{unsafe}, \texttt{extern}),
+or on trusted code outside the Lean source tree.
+The residue-list literals \texttt{closedResiduesStage1},
+\texttt{singleOverlapResidues42}, \texttt{directFullValueResidues13},
+\texttt{openResiduesStage1}, and \texttt{survivingResidues96} are
+Lean-internal \texttt{Finset~\ensuremath{\mathbb{N}}} definitions,
+and the partition equalities and cardinality claims are proved by
+\texttt{native\_decide} on those definitions.
+The post-retirement audit at
+\texttt{docs/audits/55\_closed\_post\_bridge3\_audit\_20260424.md}
+further verifies that the $55$ closures do not depend on
+Bridge-3-adjacent reasoning: all multiplicativity uses in
+\texttt{Bridge2} and downstream files carry an explicit
+\texttt{Nat.Coprime} hypothesis, so the pointwise-unsound
+peeled-cofactor identity never appears in the closure proofs.
+
+\begin{thebibliography}{9}
+\bibitem{Bloom647} T.\,F. Bloom, \emph{Erd\H{o}s Problem \#647},
+\url{https://www.erdosproblems.com/647}.
+\bibitem{BatemanHorn} P.\,T. Bateman, R.\,A. Horn, \emph{A heuristic
+asymptotic formula concerning the distribution of prime numbers},
+\emph{Math.\ Comp.}\ \textbf{16} (1962), 363--381.
+\bibitem{Ingham} A.\,E. Ingham, \emph{Mean-value theorems in the theory
+of the Riemann zeta-function}, Proc.\ London Math.\ Soc.\ (1927).
+\bibitem{TaoParity} T. Tao, \emph{The parity problem in sieve theory},
+What's New blog (2007).
+\bibitem{DeepMind} DeepMind, FormalConjectures/ErdosProblems/647.lean,
+\url{https://github.com/google-deepmind/formal-conjectures} (specifically the theorem \texttt{erdos\_647.variants.lim} in \texttt{FormalConjectures/ErdosProblems/647.lean}).
+\bibitem{Dutta} S.~Dutta, comments on Erd\H{o}s Problem \#647,
+\url{https://www.erdosproblems.com/647}: initial derivation at
+13:40 on 18~Jan 2026 (modular constraints $n=2520N$ with
+$d_iN-1$ prime or almost-prime for $d_i\in\{1260,840,630,420,
+315,210,105\}$), and refined form at 17:49 on 19~Jan 2026
+($315N-1\in\{p,2p\}$, $105N-1\in\{p,p^{2},2p,4p\}$;
+$2520N-1$ upgraded to prime after the mod-$4$ observation).
+\bibitem{Alexeev} B.~Alexeev, comment on Erd\H{o}s Problem \#647
+at 00:50 on 19~Jan 2026,
+\url{https://www.erdosproblems.com/647}: flags coprimality gap in
+Dutta's $k\in\{8,24\}$ step, upgrades $2520N-1$ to prime via
+$2520N-1\equiv 3\pmod 4$, conjectures $11\mid n$ and $13\mid n$,
+and exhibits the explicit near-witness
+$n = 604{,}517{,}614{,}941{,}240$ (with $N=239{,}887{,}942{,}437$)
+for which $\tau(n-k)\le k+2$ holds for $1\le k\le 13$ and $k=24$.
+\bibitem{Agbanwa} J.~Agbanwa, submission on Erd\H{o}s Problem \#647,
+\url{https://www.erdosproblems.com/647} forum comment at 15:18 on
+28~Jan 2026, with companion Lean formalization at
+\url{https://zenodo.org/records/18390414}. Flagged as incorrect in
+subsequent forum review.
+\bibitem{TaoForum647} T.~Tao, comments on Erd\H{o}s Problem \#647,
+\url{https://www.erdosproblems.com/647}: forum comment at 22:41 on
+2~Oct 2025 (curated description update on the $\tau/\omega$
+hierarchy) and at 16:10 on 28~Jan 2026 (response to~\cite{Agbanwa}).
+\bibitem{TaoTeravainen2025} T.~Tao, J.~Ter\"av\"ainen,
+\emph{Quantitative correlations and some problems on prime factors
+of consecutive integers}, preprint arXiv:2512.01739 (1 Dec 2025).
+Establishes a general two-point correlation estimate for bounded
+multiplicative functions with logarithmic savings (via Pilatte
+correlations), a Maynard-type sieve argument for
+$\omega(n+k)\le\Omega(n+k)\ll k$ infinitely often (resolving Erd\H{o}s
+\#248), and an asymptotic for $\#\{n\le x:\omega(n)=\omega(n+1)\}$ at
+almost all $x$. Remark~1.2 of the preprint explicitly flags
+Erd\H{o}s~\#647 as ``beyond the capability of our methods,'' noting
+that the small-$k$ barrier-case variant is of ``comparable difficulty
+to the prime tuples conjecture.''
+\bibitem{Lau2026} C.\,F. Lau, \emph{On the Number of Prime Factors of
+Consecutive Integers}, preprint arXiv:2604.15042 (16 Apr 2026).
+Refines~\cite{TaoTeravainen2025} to $\omega(n+k)\ll\log k$ for
+$k\ge 2$ on an infinite sequence; cited on the curated Bloom~\#647
+page~\cite{Bloom647}.
+\end{thebibliography}
+
+\end{document}

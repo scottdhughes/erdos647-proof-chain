@@ -1,0 +1,33 @@
+{
+  "description": "Budget-2 admissibility check for 5 new hard residues",
+  "date": "2026-04-16",
+  "max_prime_checked": 500,
+  "results": {
+    "0": {
+      "admissible": true,
+      "budget2_forms": 6,
+      "total_b3_forms": 13
+    },
+    "1716": {
+      "admissible": true,
+      "budget2_forms": 8,
+      "total_b3_forms": 17
+    },
+    "4862": {
+      "admissible": true,
+      "budget2_forms": 7,
+      "total_b3_forms": 15
+    },
+    "16302": {
+      "admissible": true,
+      "budget2_forms": 7,
+      "total_b3_forms": 15
+    },
+    "17160": {
+      "admissible": true,
+      "budget2_forms": 8,
+      "total_b3_forms": 17
+    }
+  },
+  "conclusion": "All 5 hard residues are admissible at every prime <= 500. Combined with pigeonhole for primes > max(forms), all are universally admissible. The 91/5 partition is confirmed."
+}

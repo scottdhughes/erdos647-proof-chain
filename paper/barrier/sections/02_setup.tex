@@ -1,0 +1,106 @@
+% =============================================================================
+% Section 2: Setup and notation
+% Stubbed; populated as needed for §3 + downstream sections.
+% =============================================================================
+
+\section{Setup and notation}
+\label{sec:setup}
+
+\subsection{The divisor function and the framework constants}
+
+\begin{notation}
+We write $\tauf(n) = \#\{d \in \N : d \mid n\}$ for the number of
+divisors of $n$, and $v_p(n)$ for the $p$-adic valuation of $n$. The
+modulus
+\[
+M \;=\; 11 \cdot 13 \cdot 17 \cdot 19 \;=\; 46189
+\]
+is the squarefree composite of the four smallest primes that do
+\emph{not} divide $\bigA / M = 2520 = 2^3 \cdot 3^2 \cdot 5 \cdot 7$.
+We set $\Acap = 2520 \cdot M$ throughout.
+
+The Stage-1 sieve (cf.\ \cite{ErdosGraham1980,GuyB8}) reduces the
+$\tauf$-barrier search to $|\Ropen| = 96$ residue classes modulo $M$,
+of which 55 have additional Lean-verified per-residue closure
+certificates produced to date, with 41 remaining as the operational
+frontier (cf.\ \cref{rem:5541-not-structural} on the artifact nature
+of the $55/41$ split). We label this 41-element subset
+$\Ropen \subset \Z/M\Z$ throughout.
+\end{notation}
+
+\subsection{The 143-collapse normalization}
+
+\begin{notation}
+By \cref{thm:143-collapse} every $r \in \Ropen$ satisfies
+$143 \mid r$. We work in the equivalent normalized variables
+\[
+n \;=\; 143 \cdot Y , \qquad Y \in \N , \qquad Y \bmod 323 \in \Uset ,
+\]
+where $\Uset = \{r/143 \bmod 323 : r \in \Ropen\}$ is the explicit
+41-element subset of $\Z/323\Z$ enumerated in \cref{thm:143-collapse}.
+The shift form is
+\[
+2520 \cdot n - k \;=\; 360360 \cdot Y - k , \qquad
+360360 \;=\; \lcm(1, 2, \ldots, 15) ,
+\]
+and we abbreviate $F_k(s) = 2520(Ms + r) - k = \Acap s + 2520 r - k$ for
+$s \in \Z$ and $k \ge 1$.
+\end{notation}
+
+\subsection{Hensel-balanced kernel structure}
+
+\begin{notation}
+A \emph{Hensel-balanced kernel} for residue $r \in \Ropen$ is a CRT
+class $s \equiv a \pmod{\Lcap}$ such that for every $1 \le k \le K$:
+\[
+F_k(s) \;=\; D_k(a) \cdot Q_k(t) , \qquad
+Q_k(t) = \alpha_k + \beta_k \cdot t \in \Z[t] , \qquad
+s = a + \Lcap \cdot t,
+\]
+where $D_k(a)$ is the forced divisor at $a$ and $\beta_k > 0$. The
+kernel is \emph{admissible} if for every $k \le K_0$ (the
+\emph{protected window}, typically $K_0 = 95$ or $K_0 = 1021$)
+\[
+2 \cdot \tauf(D_k(a)) \;\le\; k + 2 \quad \text{(Conjecture B)} .
+\]
+
+The kernel modulus $\Lcap$ is constructed as $\prod_p p^{E_p}$ for an
+explicit cap structure; the cap formula is verified by direct enumeration in our internal Hensel-admissibility audit.
+\end{notation}
+
+\subsection{Pointwise-local-existential primitives}
+
+The class \PLEclass\ of pointwise-local-existential forced-divisor
+methods is defined in \cref{def:ple}. We additionally use the
+following:
+
+\begin{notation}
+For a kernel $(a, \Lcap)$ and an auxiliary prime $\ell \le B$,
+the \emph{safe set} at $\ell$ is
+\[
+S_\ell \;=\; \bigl\{ t \bmod \ell \,:\, Q_k(t) \not\equiv 0 \pmod \ell
+\text{ for all } 1 \le k \le K_0 \bigr\} \,.
+\]
+A \emph{full safe-set CSP} chooses $a$ subject to admissibility and
+$y_\ell \in S_\ell$ for each aux prime, and verifies that no shift
+$k \in (K_0, K_{\rm scan}]$ produces a forced-divisor kill.
+\end{notation}
+
+\subsection{Divisor sieve and analytic NT references}
+
+We use standard notation for sieves
+(Iwaniec--Kowalski \cite{IwaniecKowalski2004}), Bombieri--Vinogradov,
+the Bateman--Horn singular series \cite{BatemanHorn1962}, and
+Schinzel's Hypothesis~H \cite{SchinzelSierpinski1958}. The
+multidimensional Selberg weight of Maynard \cite{Maynard2013} and the
+short-interval correlation framework of
+Tao--Ter\"av\"ainen \cite{TaoTeravainen2025} and
+Matom\"aki--Radziwi\l{}\l --Tao \cite{MRT2019} are reviewed in
+\cref{sec:obstructions} for the obstruction analysis. The Hardy--
+Tenenbaum normal order $\tauf(n) = (\log n)^{\log 2 + o(1)}$
+\cite{HardyTenenbaum2008} is used in the analytic K-effective
+calculations.
+
+% =============================================================================
+% End of section 2
+% =============================================================================

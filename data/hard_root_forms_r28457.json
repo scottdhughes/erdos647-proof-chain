@@ -1,0 +1,153 @@
+{
+  "description": "Hard root prime forms at r=28457 for the 16-form budget-<= 3 tuple",
+  "generated_by": "generate_hard_root_forms.py",
+  "r": 28457,
+  "L": 46189,
+  "form_count": 16,
+  "forms": [
+    {
+      "k": 1,
+      "d": 2520,
+      "alpha": 116396280,
+      "beta": 71711639,
+      "content": 1,
+      "tau_content": 1,
+      "budget": 3
+    },
+    {
+      "k": 2,
+      "d": 1260,
+      "alpha": 58198140,
+      "beta": 35855819,
+      "content": 2,
+      "tau_content": 2,
+      "budget": 2
+    },
+    {
+      "k": 3,
+      "d": 840,
+      "alpha": 38798760,
+      "beta": 23903879,
+      "content": 3,
+      "tau_content": 2,
+      "budget": 2
+    },
+    {
+      "k": 4,
+      "d": 630,
+      "alpha": 29099070,
+      "beta": 17927909,
+      "content": 4,
+      "tau_content": 3,
+      "budget": 2
+    },
+    {
+      "k": 5,
+      "d": 504,
+      "alpha": 23279256,
+      "beta": 14342327,
+      "content": 5,
+      "tau_content": 2,
+      "budget": 3
+    },
+    {
+      "k": 6,
+      "d": 420,
+      "alpha": 19399380,
+      "beta": 11951939,
+      "content": 6,
+      "tau_content": 4,
+      "budget": 2
+    },
+    {
+      "k": 8,
+      "d": 315,
+      "alpha": 14549535,
+      "beta": 8963954,
+      "content": 8,
+      "tau_content": 4,
+      "budget": 2
+    },
+    {
+      "k": 9,
+      "d": 280,
+      "alpha": 12932920,
+      "beta": 7967959,
+      "content": 9,
+      "tau_content": 3,
+      "budget": 3
+    },
+    {
+      "k": 10,
+      "d": 252,
+      "alpha": 11639628,
+      "beta": 7171163,
+      "content": 10,
+      "tau_content": 4,
+      "budget": 3
+    },
+    {
+      "k": 12,
+      "d": 210,
+      "alpha": 9699690,
+      "beta": 5975969,
+      "content": 12,
+      "tau_content": 6,
+      "budget": 2
+    },
+    {
+      "k": 13,
+      "d": 2520,
+      "alpha": 116396280,
+      "beta": 71711627,
+      "content": 221,
+      "tau_content": 4,
+      "budget": 3
+    },
+    {
+      "k": 16,
+      "d": 315,
+      "alpha": 14549535,
+      "beta": 8963953,
+      "content": 152,
+      "tau_content": 8,
+      "budget": 2
+    },
+    {
+      "k": 18,
+      "d": 140,
+      "alpha": 6466460,
+      "beta": 3983979,
+      "content": 18,
+      "tau_content": 6,
+      "budget": 3
+    },
+    {
+      "k": 20,
+      "d": 126,
+      "alpha": 5819814,
+      "beta": 3585581,
+      "content": 20,
+      "tau_content": 6,
+      "budget": 3
+    },
+    {
+      "k": 24,
+      "d": 105,
+      "alpha": 4849845,
+      "beta": 2987984,
+      "content": 24,
+      "tau_content": 8,
+      "budget": 3
+    },
+    {
+      "k": 30,
+      "d": 84,
+      "alpha": 3879876,
+      "beta": 2390387,
+      "content": 510,
+      "tau_content": 16,
+      "budget": 2
+    }
+  ]
+}

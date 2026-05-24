@@ -1,0 +1,172 @@
+{
+  "description": "Monitor-escape autopsy + k=7 special analysis per stratum",
+  "monitor_escape_records": [
+    {
+      "t": 2125200420,
+      "primes": 9,
+      "first_fail_k": 15,
+      "total_fails": 16
+    },
+    {
+      "t": 2659603620,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 21
+    },
+    {
+      "t": 33521045400,
+      "primes": 10,
+      "first_fail_k": 15,
+      "total_fails": 15
+    },
+    {
+      "t": 86152295598,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 19
+    },
+    {
+      "t": 90595719660,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 17
+    },
+    {
+      "t": 154496799198,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 23
+    },
+    {
+      "t": 167794002390,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 21
+    },
+    {
+      "t": 217598822178,
+      "primes": 10,
+      "first_fail_k": 14,
+      "total_fails": 20
+    },
+    {
+      "t": 256333196208,
+      "primes": 9,
+      "first_fail_k": 21,
+      "total_fails": 16
+    },
+    {
+      "t": 268316498520,
+      "primes": 9,
+      "first_fail_k": 14,
+      "total_fails": 14
+    }
+  ],
+  "k7_stats_per_stratum": {
+    "C_9": {
+      "total_corpus": 26253,
+      "sampled": 500,
+      "k7_pass_count": 194,
+      "k7_pass_rate": 0.388,
+      "B_eff_at_k7_distribution": {
+        "4": 437,
+        "3": 55,
+        "2": 8
+      },
+      "Z_shape_when_pass": {
+        "pq": 136,
+        "prime": 58
+      },
+      "Z_shape_when_fail_top5": {
+        "3-prime": 155,
+        "4-prime": 99,
+        "5-prime": 28,
+        "pq": 21,
+        "6-prime": 3
+      },
+      "mean_tau_at_k7": 20.252
+    },
+    "C_10": {
+      "total_corpus": 3620,
+      "sampled": 500,
+      "k7_pass_count": 184,
+      "k7_pass_rate": 0.368,
+      "B_eff_at_k7_distribution": {
+        "4": 417,
+        "3": 68,
+        "2": 11,
+        "1": 4
+      },
+      "Z_shape_when_pass": {
+        "pq": 136,
+        "prime": 48
+      },
+      "Z_shape_when_fail_top5": {
+        "3-prime": 174,
+        "4-prime": 82,
+        "5-prime": 29,
+        "pq": 22,
+        "6-prime": 7
+      },
+      "mean_tau_at_k7": 21.572
+    },
+    "C_11": {
+      "total_corpus": 330,
+      "sampled": 330,
+      "k7_pass_count": 121,
+      "k7_pass_rate": 0.36666666666666664,
+      "B_eff_at_k7_distribution": {
+        "4": 284,
+        "3": 36,
+        "2": 7,
+        "1": 3
+      },
+      "Z_shape_when_pass": {
+        "pq": 91,
+        "prime": 30
+      },
+      "Z_shape_when_fail_top5": {
+        "3-prime": 106,
+        "4-prime": 57,
+        "5-prime": 24,
+        "pq": 17,
+        "6-prime": 4
+      },
+      "mean_tau_at_k7": 22.933333333333334
+    },
+    "C_12": {
+      "total_corpus": 21,
+      "sampled": 21,
+      "k7_pass_count": 12,
+      "k7_pass_rate": 0.5714285714285714,
+      "B_eff_at_k7_distribution": {
+        "4": 19,
+        "3": 2
+      },
+      "Z_shape_when_pass": {
+        "prime": 7,
+        "pq": 5
+      },
+      "Z_shape_when_fail_top5": {
+        "3-prime": 5,
+        "4-prime": 3,
+        "5-prime": 1
+      },
+      "mean_tau_at_k7": 16.285714285714285
+    },
+    "C_13": {
+      "total_corpus": 1,
+      "sampled": 1,
+      "k7_pass_count": 0,
+      "k7_pass_rate": 0.0,
+      "B_eff_at_k7_distribution": {
+        "4": 1
+      },
+      "Z_shape_when_pass": {},
+      "Z_shape_when_fail_top5": {
+        "3-prime": 1
+      },
+      "mean_tau_at_k7": 16.0
+    }
+  }
+}
