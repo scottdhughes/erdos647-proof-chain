@@ -1,0 +1,763 @@
+{
+  "description": "Sub-branching promotion (Plan A) on 18 tentative branches",
+  "generated_by": "scripts/subbranch_promotion_prototype.py",
+  "mechanism": "Sub-branch each tentative (r, c) mod-30 branch on u mod p_cover (the tentative covering prime). This gives p_cover sub-branches mod (30 * p_cover). For the parent branch to close rigorously at budget <= 3, every sub-branch must close individually. The natural reduction inside compute_forms handles the \"promotion\" of forms whose leading term gains a factor of p_cover in the sub-branch, lowering their effective budget.",
+  "n_branches_tested": 18,
+  "n_closed": 0,
+  "results": [
+    {
+      "r": 0,
+      "c": 0,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 0,
+          "branch_mod": 60,
+          "n_forms": 14,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 6,
+            "b3": 8
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 30,
+          "branch_mod": 60,
+          "n_forms": 15,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 6,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 0,
+      "c": 8,
+      "p_cover": 3,
+      "new_branch_mod": 90,
+      "n_sub_branches": 3,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 8,
+          "branch_mod": 90,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 38,
+          "branch_mod": 90,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 1,
+            "b2": 8,
+            "b3": 11
+          },
+          "closes_b1_direct": true,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": true
+        },
+        {
+          "sub_c": 68,
+          "branch_mod": 90,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 0,
+      "c": 10,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 10,
+          "branch_mod": 60,
+          "n_forms": 16,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 8
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 40,
+          "branch_mod": 60,
+          "n_forms": 16,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 8
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 0,
+      "c": 18,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 18,
+          "branch_mod": 60,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 48,
+          "branch_mod": 60,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 0,
+      "c": 20,
+      "p_cover": 3,
+      "new_branch_mod": 90,
+      "n_sub_branches": 3,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 20,
+          "branch_mod": 90,
+          "n_forms": 15,
+          "budget_dist": {
+            "b1": 1,
+            "b2": 6,
+            "b3": 8
+          },
+          "closes_b1_direct": true,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": true
+        },
+        {
+          "sub_c": 50,
+          "branch_mod": 90,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 80,
+          "branch_mod": 90,
+          "n_forms": 16,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 7,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 0,
+      "c": 28,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 28,
+          "branch_mod": 60,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 11,
+            "b3": 7
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 58,
+          "branch_mod": 60,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 11,
+            "b3": 8
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 1716,
+      "c": 6,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 6,
+          "branch_mod": 60,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 36,
+          "branch_mod": 60,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 1716,
+      "c": 16,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 16,
+          "branch_mod": 60,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 46,
+          "branch_mod": 60,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 4862,
+      "c": 12,
+      "p_cover": 3,
+      "new_branch_mod": 90,
+      "n_sub_branches": 3,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 12,
+          "branch_mod": 90,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 42,
+          "branch_mod": 90,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 72,
+          "branch_mod": 90,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 2,
+            "b2": 6,
+            "b3": 9
+          },
+          "closes_b1_direct": true,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": true
+        }
+      ]
+    },
+    {
+      "r": 4862,
+      "c": 22,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 22,
+          "branch_mod": 60,
+          "n_forms": 16,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 7,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 52,
+          "branch_mod": 60,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 7,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 0,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 0,
+          "branch_mod": 60,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 30,
+          "branch_mod": 60,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 2,
+      "p_cover": 3,
+      "new_branch_mod": 90,
+      "n_sub_branches": 3,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 2,
+          "branch_mod": 90,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 32,
+          "branch_mod": 90,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 62,
+          "branch_mod": 90,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 1,
+            "b2": 8,
+            "b3": 9
+          },
+          "closes_b1_direct": true,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": true
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 10,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 10,
+          "branch_mod": 60,
+          "n_forms": 21,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 12,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 40,
+          "branch_mod": 60,
+          "n_forms": 20,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 12,
+            "b3": 8
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 12,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 12,
+          "branch_mod": 60,
+          "n_forms": 16,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 7,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 42,
+          "branch_mod": 60,
+          "n_forms": 17,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 7,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 20,
+      "p_cover": 3,
+      "new_branch_mod": 90,
+      "n_sub_branches": 3,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 20,
+          "branch_mod": 90,
+          "n_forms": 22,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 11,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 50,
+          "branch_mod": 90,
+          "n_forms": 22,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 12
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 80,
+          "branch_mod": 90,
+          "n_forms": 21,
+          "budget_dist": {
+            "b1": 1,
+            "b2": 9,
+            "b3": 11
+          },
+          "closes_b1_direct": true,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": true
+        }
+      ]
+    },
+    {
+      "r": 16302,
+      "c": 22,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 22,
+          "branch_mod": 60,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 52,
+          "branch_mod": 60,
+          "n_forms": 18,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 9
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 17160,
+      "c": 0,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 0,
+          "branch_mod": 60,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 9,
+            "b3": 10
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 30,
+          "branch_mod": 60,
+          "n_forms": 19,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 8,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    },
+    {
+      "r": 17160,
+      "c": 18,
+      "p_cover": 2,
+      "new_branch_mod": 60,
+      "n_sub_branches": 2,
+      "all_close": false,
+      "sub_results": [
+        {
+          "sub_c": 18,
+          "branch_mod": 60,
+          "n_forms": 22,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 12
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        },
+        {
+          "sub_c": 48,
+          "branch_mod": 60,
+          "n_forms": 21,
+          "budget_dist": {
+            "b1": 0,
+            "b2": 10,
+            "b3": 11
+          },
+          "closes_b1_direct": false,
+          "closes_b2": null,
+          "closes_b3": null,
+          "closes": false
+        }
+      ]
+    }
+  ]
+}

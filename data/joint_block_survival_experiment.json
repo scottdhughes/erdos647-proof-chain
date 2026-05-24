@@ -1,0 +1,313 @@
+{
+  "description": "Joint block survival (per-t) \u2014 sharper moving-tail test",
+  "n_sample_per_residue": 500,
+  "t_range": [
+    100000000,
+    1000000000
+  ],
+  "K_blocks": [
+    [
+      1,
+      100
+    ],
+    [
+      101,
+      200
+    ],
+    [
+      201,
+      500
+    ],
+    [
+      501,
+      1000
+    ]
+  ],
+  "per_residue": {
+    "0": {
+      "n": 500,
+      "per_block": {
+        "1-100": {
+          "block_pass_count": 0,
+          "block_pass_rate": 0.0,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "7": 253,
+            "11": 117,
+            "13": 64,
+            "14": 30,
+            "15": 20
+          }
+        },
+        "101-200": {
+          "block_pass_count": 3,
+          "block_pass_rate": 0.006,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "120": 79,
+            "104": 68,
+            "102": 63,
+            "105": 59,
+            "108": 50
+          }
+        },
+        "201-500": {
+          "block_pass_count": 35,
+          "block_pass_rate": 0.07,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "210": 64,
+            "216": 44,
+            "252": 43,
+            "240": 38,
+            "280": 25
+          }
+        },
+        "501-1000": {
+          "block_pass_count": 263,
+          "block_pass_rate": 0.526,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "504": 35,
+            "720": 24,
+            "840": 18,
+            "630": 18,
+            "540": 14
+          }
+        }
+      }
+    },
+    "1716": {
+      "n": 500,
+      "per_block": {
+        "1-100": {
+          "block_pass_count": 0,
+          "block_pass_rate": 0.0,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "7": 266,
+            "13": 115,
+            "11": 101,
+            "16": 10,
+            "14": 7
+          }
+        },
+        "101-200": {
+          "block_pass_count": 2,
+          "block_pass_rate": 0.004,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "110": 105,
+            "104": 86,
+            "108": 65,
+            "105": 62,
+            "120": 56
+          }
+        },
+        "201-500": {
+          "block_pass_count": 20,
+          "block_pass_rate": 0.04,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "234": 69,
+            "224": 66,
+            "210": 62,
+            "240": 40,
+            "216": 40
+          }
+        },
+        "501-1000": {
+          "block_pass_count": 211,
+          "block_pass_rate": 0.422,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "540": 61,
+            "504": 40,
+            "528": 38,
+            "756": 18,
+            "560": 16
+          }
+        }
+      }
+    },
+    "4862": {
+      "n": 500,
+      "per_block": {
+        "1-100": {
+          "block_pass_count": 0,
+          "block_pass_rate": 0.0,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "7": 248,
+            "11": 112,
+            "13": 68,
+            "15": 33,
+            "16": 23
+          }
+        },
+        "101-200": {
+          "block_pass_count": 4,
+          "block_pass_rate": 0.008,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "104": 80,
+            "120": 72,
+            "105": 71,
+            "108": 60,
+            "102": 55
+          }
+        },
+        "201-500": {
+          "block_pass_count": 20,
+          "block_pass_rate": 0.04,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "204": 70,
+            "210": 61,
+            "280": 49,
+            "216": 47,
+            "240": 45
+          }
+        },
+        "501-1000": {
+          "block_pass_count": 228,
+          "block_pass_rate": 0.456,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "504": 43,
+            "660": 38,
+            "546": 24,
+            "720": 17,
+            "630": 12
+          }
+        }
+      }
+    },
+    "16302": {
+      "n": 500,
+      "per_block": {
+        "1-100": {
+          "block_pass_count": 0,
+          "block_pass_rate": 0.0,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "7": 263,
+            "11": 110,
+            "13": 101,
+            "14": 13,
+            "15": 8
+          }
+        },
+        "101-200": {
+          "block_pass_count": 2,
+          "block_pass_rate": 0.004,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "104": 86,
+            "105": 72,
+            "120": 71,
+            "108": 70,
+            "112": 40
+          }
+        },
+        "201-500": {
+          "block_pass_count": 20,
+          "block_pass_rate": 0.04,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "234": 70,
+            "210": 65,
+            "216": 42,
+            "240": 38,
+            "252": 28
+          }
+        },
+        "501-1000": {
+          "block_pass_count": 235,
+          "block_pass_rate": 0.47,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "540": 59,
+            "504": 41,
+            "720": 18,
+            "880": 16,
+            "560": 12
+          }
+        }
+      }
+    },
+    "17160": {
+      "n": 500,
+      "per_block": {
+        "1-100": {
+          "block_pass_count": 0,
+          "block_pass_rate": 0.0,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "7": 236,
+            "11": 222,
+            "13": 18,
+            "14": 10,
+            "15": 6
+          }
+        },
+        "101-200": {
+          "block_pass_count": 6,
+          "block_pass_rate": 0.012,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "112": 116,
+            "104": 76,
+            "105": 75,
+            "108": 57,
+            "120": 51
+          }
+        },
+        "201-500": {
+          "block_pass_count": 27,
+          "block_pass_rate": 0.054,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "264": 60,
+            "210": 54,
+            "216": 53,
+            "240": 47,
+            "252": 36
+          }
+        },
+        "501-1000": {
+          "block_pass_count": 174,
+          "block_pass_rate": 0.348,
+          "cumulative_pass_count": 0,
+          "cumulative_pass_rate": 0.0,
+          "top5_first_fail": {
+            "504": 159,
+            "720": 45,
+            "840": 17,
+            "630": 15,
+            "572": 8
+          }
+        }
+      }
+    }
+  }
+}

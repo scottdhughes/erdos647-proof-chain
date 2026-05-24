@@ -1,0 +1,149 @@
+% =============================================================================
+% Section 1: Introduction
+% Stubbed; theorem-first drafting per directive. Full prose pass after §3-§9 lock.
+% =============================================================================
+
+\section{Introduction}
+\label{sec:intro}
+
+\subsection{Erd\H{o}s Problem \#647 and the $\tauf$-barrier inequality}
+
+In his 1979 paper \emph{Some unconventional problems in number theory}
+\cite{Erdos1979}, P. Erd\H{o}s introduced the following problem:
+
+\begin{problem}[Erd\H{o}s \#647]
+\label{prob:e647}
+Let $\tauf(n)$ denote the number of divisors of $n$. Does there exist
+$n > 24$ with
+\[
+\max_{1 \le m < n} \bigl( m + \tauf(m) \bigr) \;\le\; n + 2 \;?
+\]
+\end{problem}
+
+The case $n = 24$ holds: among $1 \le m \le 23$, the maximum of
+$m + \tauf(m)$ is $25$, achieved at $m = 23$ (with $\tauf(23) = 2$),
+satisfying $25 \le 26 = n + 2$. Erd\H{o}s noted that no further
+example is known, and conjectured that the difference
+$\max_{m<n}(m + \tauf(m)) - n$ tends to infinity.
+
+Substituting $m = n - k$ yields the equivalent
+\emph{$\tauf$-barrier inequality}:
+\[
+\tauf(n - k) \;\le\; k + 2 \qquad \text{for all } 1 \le k \le n - 1.
+\]
+Erd\H{o}s remarked of this formulation that it is ``hopeless with
+our present methods,'' and that infinitely many such $n$ would
+follow from Schinzel's Hypothesis~H \cite{SchinzelSierpinski1958}.
+
+\subsection{Contribution preview}
+
+This paper does \emph{not} resolve \cref{prob:e647}. We do not
+prove that any $n > 24$ exists, nor that none does. The contribution
+is structural and methodological:
+
+\begin{enumerate}[leftmargin=*]
+\item \textbf{A Lean-certified structural reduction.} Any
+counterexample to \cref{prob:e647} satisfies $n \equiv r \pmod M$
+where $M = 46189 = 11 \cdot 13 \cdot 17 \cdot 19$ and $r$ lies in an
+explicit set of 41 residue classes (\cref{thm:stage1-reduction});
+moreover every such $r$ satisfies $143 \mid r$, yielding the
+canonical normalization $n = 143 \cdot Y$ with $Y \bmod 323$ in an
+explicit 41-element set $\Uset \subset \Z/323\Z$
+(\cref{thm:143-collapse}). Both reductions are formally verified in
+Lean.
+
+\item \textbf{A finite-local audit chain with three closure-incapable
+theorems.} Within precisely-defined classes of finite-local
+forced-divisor methods, no closure of the residual frontier exists at
+the parameter regimes tested:
+\begin{itemize}[leftmargin=*]
+\item \emph{Pointwise-local-existential moving-window cover}
+  (\cref{def:ple}, \cref{thm:ple-insufficiency}): the SAT instance is
+  verified by \texttt{cake\_lpr} and importable into Lean via
+  \texttt{Std.Tactic.BVDecide}.
+\item \emph{Branch-gluing at the restricted B1 closure-capable level}
+  (\cref{sec:branch-gluing-phaseB}): clean witnesses for the sentinel
+  residues $r \in \{1716, 4862\}$ satisfy the necessary protected
+  condition $\tau(D_k) \le k+2$ for all $k \le 1021$, the diagonal
+  $\tau(D_{k_\Delta}) \le k_\Delta + 2$ at $k_\Delta = 2520\, r$, and
+  the structural scan to $K_{\rm scan} = 10^7$. By
+  restricted-SAT~$\Rightarrow$~unrestricted-SAT, branch-gluing is
+  negative as a closure mechanism on these sentinels.
+\item \emph{Composite / non-prime-power forced-divisor covers}
+  (\cref{sec:composite-cover}): adversary-SAT escape on four sentinels
+  $r \in \{0, 1716, 4862, 37752\}$ at $P_{\max} = 199$,
+  $K_{\max} = 5000$. The encoding is mathematically a generalized
+  DivisorMask at composite moduli with disjunctive cover semantics;
+  every clause reduces to a valuation pattern, strengthening the
+  L1--L3 DivisorMask negative result.
+\end{itemize}
+A diagnostic structural identity emerged from the audit
+(\cref{sec:diagonal-megashift}): $F_{r, k_\Delta}(s) = A \cdot s$ at
+$k_\Delta = 2520\, r$ for every residue $r$, which produces a
+class-specific mega-shift kill when the chosen kernel base forces
+sufficient prime divisors into $a$. Phase B shows this is
+\emph{not} by itself a base-AP closure --- alternative clean kernel
+bases for the sentinel residues avoid the diagonal while satisfying
+the protected constraints --- but the identity unifies the
+mega-shift behavior observed across all four sentinels
+$r \in \{858, 1716, 2431, 4862\}$.
+
+\item \textbf{A conditional barrier theorem under Schinzel's
+Hypothesis~H.} Under H, the residual 41 classes are infinite-survivor
+classes with positive Bateman--Horn singular-series density
+(\cref{thm:conditional-barrier}). This makes the barrier explicit:
+no \PLEclass\ finite-local forced-divisor closure of the residual
+frontier exists under H, since the survivor set is genuinely infinite
+at every $K$. This is consistent with Erd\H{o}s' 1979 ``hopeless with
+our present methods'' assessment.
+
+\item \textbf{An empirical floor.} No counterexample exists at the
+principal residue $r = 0$ contiguously for $n \le 3.34 \times 10^{21}$,
+with non-contiguous islands extending to $n \approx 1.34 \times 10^{22}$
+(\cref{prop:empirical-r0}).
+
+\item \textbf{An obstruction analysis.} The natural averaged-sieve
+attacks (Selberg upper bounds, Shiu/Nair--Tenenbaum lower bounds,
+multi-point $\tauf$-correlation) are blocked by four convergent
+obstructions analyzed in \cref{sec:obstructions}: Selberg upper-bound
+divergence, the $L_1$-vs-$L_\infty$ gap, the $k \le 2$ correlation
+ceiling, and the wrong-polarity issue
+\cite{TaoTeravainen2025, MRT2019, MSTT2024_I, MSTT2024_II,
+Maynard2013, Maynard2014}.
+\end{enumerate}
+
+\subsection{Honest scope statement}
+
+The 41 open-frontier residue classes remain open at the base-AP level. We
+do not claim to have closed any residue. The 4 per-kernel-class
+certificates produced by the structural-kill detector at
+$K_{\rm scan} \le 10^7$ are class-specific and do not lift to base-AP
+closures (per the quantifier audit, \cref{rem:per-kernel-class}). The
+empirical floor $n \le 3.34 \times 10^{21}$ is at the principal
+residue only; the 40 non-principal classes are not yet exhaustively
+verified.
+
+The contribution is best understood as a
+\emph{structural barrier theorem in the spirit of the parity barrier
+of Selberg \cite{Selberg1949}}: a precise
+characterization of why the natural finite-local
+and averaged-sieve methods cannot close \cref{prob:e647}, paired
+with a concrete reduction to a small frontier and a Lean-certified
+audit chain.
+
+\subsection{Outline}
+
+\Cref{sec:setup} fixes notation and defines the framework.
+\Cref{sec:main} states the six main theorems. \Cref{sec:structural-reduction}
+proves the 96~$\to$~41 Stage-1 reduction and the 143-collapse
+(\cref{thm:stage1-reduction,thm:143-collapse}). \Cref{sec:csp-audit}
+proves the finite-local insufficiency theorem
+(\cref{thm:ple-insufficiency}) and exhibits the SAT-certified audit
+chain. \Cref{sec:empirical-detail} details the empirical floor.
+\Cref{sec:obstructions} analyzes the analytic obstructions.
+\Cref{sec:lean} describes the Lean formalization.
+\Cref{sec:open} lists open problems.
+
+% =============================================================================
+% End of section 1
+% =============================================================================

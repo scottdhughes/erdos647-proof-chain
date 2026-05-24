@@ -1,0 +1,144 @@
+{
+  "description": "Hard root prime forms at r=858 for the 15-form budget-<= 3 tuple",
+  "generated_by": "generate_hard_root_forms.py",
+  "r": 858,
+  "L": 46189,
+  "form_count": 15,
+  "forms": [
+    {
+      "k": 1,
+      "d": 2520,
+      "alpha": 116396280,
+      "beta": 2162159,
+      "content": 1,
+      "tau_content": 1,
+      "budget": 3
+    },
+    {
+      "k": 2,
+      "d": 1260,
+      "alpha": 58198140,
+      "beta": 1081079,
+      "content": 2,
+      "tau_content": 2,
+      "budget": 2
+    },
+    {
+      "k": 3,
+      "d": 840,
+      "alpha": 38798760,
+      "beta": 720719,
+      "content": 3,
+      "tau_content": 2,
+      "budget": 2
+    },
+    {
+      "k": 4,
+      "d": 630,
+      "alpha": 29099070,
+      "beta": 540539,
+      "content": 4,
+      "tau_content": 3,
+      "budget": 2
+    },
+    {
+      "k": 5,
+      "d": 504,
+      "alpha": 23279256,
+      "beta": 432431,
+      "content": 5,
+      "tau_content": 2,
+      "budget": 3
+    },
+    {
+      "k": 6,
+      "d": 420,
+      "alpha": 19399380,
+      "beta": 360359,
+      "content": 6,
+      "tau_content": 4,
+      "budget": 2
+    },
+    {
+      "k": 8,
+      "d": 315,
+      "alpha": 14549535,
+      "beta": 270269,
+      "content": 8,
+      "tau_content": 4,
+      "budget": 2
+    },
+    {
+      "k": 9,
+      "d": 280,
+      "alpha": 12932920,
+      "beta": 240239,
+      "content": 9,
+      "tau_content": 3,
+      "budget": 3
+    },
+    {
+      "k": 10,
+      "d": 252,
+      "alpha": 11639628,
+      "beta": 216215,
+      "content": 10,
+      "tau_content": 4,
+      "budget": 3
+    },
+    {
+      "k": 12,
+      "d": 210,
+      "alpha": 9699690,
+      "beta": 180179,
+      "content": 12,
+      "tau_content": 6,
+      "budget": 2
+    },
+    {
+      "k": 15,
+      "d": 168,
+      "alpha": 7759752,
+      "beta": 144143,
+      "content": 255,
+      "tau_content": 8,
+      "budget": 2
+    },
+    {
+      "k": 18,
+      "d": 140,
+      "alpha": 6466460,
+      "beta": 120119,
+      "content": 18,
+      "tau_content": 6,
+      "budget": 3
+    },
+    {
+      "k": 20,
+      "d": 126,
+      "alpha": 5819814,
+      "beta": 108107,
+      "content": 20,
+      "tau_content": 6,
+      "budget": 3
+    },
+    {
+      "k": 24,
+      "d": 105,
+      "alpha": 4849845,
+      "beta": 90089,
+      "content": 24,
+      "tau_content": 8,
+      "budget": 3
+    },
+    {
+      "k": 36,
+      "d": 70,
+      "alpha": 3233230,
+      "beta": 60059,
+      "content": 684,
+      "tau_content": 18,
+      "budget": 2
+    }
+  ]
+}

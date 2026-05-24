@@ -1,0 +1,69 @@
+{
+  "description": "B=2/B=3 shape-contradiction scan",
+  "residues": {
+    "0": {
+      "counts": {
+        "B3_B3_p2_excluded": 161,
+        "B3_p2_excluded_detail": 161,
+        "B2_B2_no_rigorous_kill": 236
+      },
+      "total_B2": 236,
+      "total_B3": 322,
+      "rigorous_kills": [],
+      "g_prime_finite": [],
+      "g_prime_finite_count": 0
+    },
+    "1716": {
+      "counts": {
+        "B3_B3_p2_excluded": 160,
+        "B3_p2_excluded_detail": 160,
+        "B2_B2_no_rigorous_kill": 252
+      },
+      "total_B2": 252,
+      "total_B3": 320,
+      "rigorous_kills": [],
+      "g_prime_finite": [],
+      "g_prime_finite_count": 0
+    },
+    "4862": {
+      "counts": {
+        "B3_B3_p2_excluded": 142,
+        "B3_p2_excluded_detail": 142,
+        "B2_B2_no_rigorous_kill": 219
+      },
+      "total_B2": 219,
+      "total_B3": 284,
+      "rigorous_kills": [],
+      "g_prime_finite": [],
+      "g_prime_finite_count": 0
+    },
+    "16302": {
+      "counts": {
+        "B3_B3_p2_excluded": 166,
+        "B3_p2_excluded_detail": 166,
+        "B2_B2_no_rigorous_kill": 253
+      },
+      "total_B2": 253,
+      "total_B3": 332,
+      "rigorous_kills": [],
+      "g_prime_finite": [],
+      "g_prime_finite_count": 0
+    },
+    "17160": {
+      "counts": {
+        "B3_B3_p2_excluded": 131,
+        "B3_p2_excluded_detail": 131,
+        "B2_B2_no_rigorous_kill": 215
+      },
+      "total_B2": 215,
+      "total_B3": 262,
+      "rigorous_kills": [],
+      "g_prime_finite": [],
+      "g_prime_finite_count": 0
+    }
+  },
+  "global": {
+    "B3_B3_p2_excluded": 760,
+    "B2_B2_no_rigorous_kill": 1175
+  }
+}

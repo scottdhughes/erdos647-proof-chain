@@ -1,0 +1,530 @@
+% =============================================================================
+% Section 6: The finite-local audit chain
+% Negative-program backbone. Highest-risk for overclaiming — kept tight on scope.
+% =============================================================================
+
+\section{The finite-local audit chain}
+\label{sec:csp-audit}
+
+This section establishes the negative content of the paper. We
+characterize the family of \emph{finite-local forced-divisor
+certificate primitives} we have tested against the residual frontier
+of \cref{thm:143-collapse}, summarize the experimental and structural
+results across each layer, and conclude with a precise statement of
+what the audit chain does and does not rule out.
+
+\subsection{What counts as a finite-local certificate}
+\label{sec:ple-formal}
+
+\begin{definition}[Finite-local forced-divisor certificate]
+\label{def:finite-local-cert}
+Fix a residue class $r \in \Ropen$. A \emph{finite-local
+forced-divisor certificate} for $r$ is a finite-data proof that for
+every integer $n \equiv r \pmod M$ with $n > n_0$ (an explicit
+threshold), there exists $1 \le k \le K$ with
+\[
+\tauf\bigl( n - k \bigr) \;>\; k + 2 ,
+\]
+established from local valuation data at a finite set of primes
+$P$. The proof must be combinatorial and exhibit, for each $n$ in the
+class, an explicit such $k$ together with a divisor $d \mid (n - k)$
+with $d \le \prod_{p \in P} p^{E_p}$ and $\tauf(d) > k + 2$.
+\end{definition}
+
+The class \PLEclass\ of \cref{def:ple} is the natural completion of
+\cref{def:finite-local-cert} under all primitives that can be
+expressed as decidable Boolean combinations of local valuation
+constraints. The audit chain below tests \PLEclass\ at increasing
+expressive power.
+
+\subsection{Cycle-3 valuation leaves}
+\label{sec:cycle3-audit}
+
+The earliest closure primitive in the project, the
+\emph{cycle-3 valuation leaf}, attempts to certify that for some
+small fixed $k$ the forced divisor mass at three specific primes
+already exceeds $k + 2$. For
+$k \le K_0 = 95$ the available budget $k + 2$ allows at most
+$\tauf(D_k) \le (k+2)/2$ on the kernel-forced divisor (Conjecture B
+form), and the cycle-3 enumeration shows no triple of primes
+$(p, q, r)$ in the residue's structure suffices to exceed the budget
+at any of the protected shifts. The cycle-3 framework is therefore
+\emph{insufficient} for closure: it produces no certificate.
+
+\subsection{DivisorMask levels 1--3}
+\label{sec:divisormask-audit}
+
+The DivisorMask family generalizes cycle-3 by allowing arbitrary
+prime support for the forced divisor. We tested:
+
+\begin{itemize}[leftmargin=*]
+\item \textbf{L1 (squarefree free-prime DivisorMask):} forced divisor
+  of squarefree shape, primes ranging in a free set
+  $P \setminus \{2, 3, 5, 7\}$.
+\item \textbf{L2 (joint $p$-adic DivisorMask):} arbitrary $p$-adic
+  valuations $v_p$ on a fixed prime set, with combinatorial
+  constraints across shifts.
+\item \textbf{L3 (exact-valuation $\mu$-DivisorMask):} exact (rather
+  than lower-bound) valuations, with $\mu$-tracking of free vs.\
+  forced contributions.
+\end{itemize}
+
+Each of L1--L3 was encoded as a CP-SAT instance with the
+\PLEclass\ structure of \cref{def:ple} and tested on representative
+residues from $\Ropen$, including the sentinels $r \in \{1716, 4862\}$
+where the strongest finite-local pressure was observed. \emph{Each
+level yielded SAT escapes at the parameters tested}; no closure
+certificate was produced. The escape patterns at L1--L3 informed
+the design of the prime-residual kernel framework below.
+
+\subsection{Prime-residual and Hensel-balanced kernels}
+\label{sec:hensel-kernel-audit}
+
+The prime-residual kernel framework (Levels~4--6) introduces an
+algebraic structure rather than enumerating divisor patterns
+combinatorially. For each residue $r$ and each fixed window length
+$K_0$, the Hensel-complete kernel construction produces a CRT class
+$s \equiv a \pmod{\Lcap}$ such that
+\[
+F_k(s) \;=\; D_k(a) \cdot Q_k(t), \qquad
+Q_k(t) = \alpha_k + \beta_k \cdot t, \quad \beta_k > 0,
+\]
+for every $1 \le k \le K_0$, with $D_k(a) \mid \Acap \cdot \Lcap$
+and the admissibility condition $2 \tauf(D_k(a)) \le k + 2$
+(\emph{Conjecture B}). The kernel verifier (cf.\
+\cref{sec:lean}) confirms admissibility via six independent checks
+including $p$-adic admissibility for every $p \le K_0$ and structural
+admissibility for $p > K_0$.
+
+We summarize the empirical state through $K_0 \in \{95, 200, 1021\}$:
+\emph{Hensel-complete kernels exist for every residue
+$r \in \Ropen$ at every tested $K_0$}, with the prime-residual
+factorization and Conjecture B both holding throughout. This is the
+\emph{barrier}: rather than ruling out a counterexample, the kernel
+framework exhibits a survivor-compatible algebraic structure for
+every shift in the protected window.
+
+\begin{remark}[Class-specific structural certificates do not extend]
+\label{rem:class-specific-struct-certs}
+At parameters $K_{\rm scan} \le 10^7$ a structural-kill detector
+(an internal audit instrument verifying that named residues fail
+under the prime-tuple admissibility constraints) identifies four
+residues with kills: $r \in \{858, 1716, 2431, 4862\}$, the latter two at
+$k = 132$ and $k = 280$ respectively (\emph{small-shift sparse-prime
+kills}), and the former two at $k = 2520 r$ (\emph{mega-shift dense-prime
+artifacts}; $F_k(s) = \Acap \cdot s$ when $c = 0$). \emph{None of
+these certificates extend to a base-AP-universal closure}; the
+kernel-space CSP exhibits escaping kernel bases for the small-shift
+cases, and the mega-shift artifacts apply only to the JSON kernel
+CRT class chosen by the solver, not to all $n$ in the residue class
+(per a separate quantifier audit confirming no $\forall \exists$ inversions in the closure proof).
+\end{remark}
+
+\subsection{Moving-window interval-cover audit}
+\label{sec:interval-cover-audit}
+
+The strongest finite-local primitive we tested combines the kernel
+framework above with auxiliary safe-set residues at primes beyond
+the kernel cap structure.
+
+\begin{definition}[Full safe-set CSP]
+\label{def:full-safe-set-csp}
+Fix $r \in \Ropen$, a kernel $(a, \Lcap)$ for $r$, a protected
+window $K_0$, an auxiliary prime bound $B$, and a scan bound
+$K_{\rm scan}$. The \emph{full safe-set CSP} $\Phi_r(K_0, B,
+K_{\rm scan})$ has variables:
+\begin{itemize}[leftmargin=*]
+\item $a_p \in \Z / p^{E_p}\Z$ for each prime $p$ in the kernel
+  cap structure, varying the kernel CRT base subject to Hensel
+  admissibility;
+\item $y_\ell \in S_\ell \subset \Z / \ell\Z$ for each auxiliary
+  prime $\ell$ with $89 < \ell \le B$, where $S_\ell$ is the safe
+  set of \cref{sec:setup}.
+\end{itemize}
+The CSP is \emph{satisfiable} iff there is a joint assignment such
+that for every shift $k$ in $(K_0, K_{\rm scan}]$, the forced
+divisor $D_k$ extracted from the local data does not satisfy
+$\tauf(D_k) > k + 2$.
+\end{definition}
+
+\begin{theorem}[Interval-cover insufficiency; SAT-certified]
+\label{thm:interval-cover-insufficiency}
+For sentinel residues $r \in \{1716, 4862\}$ and parameters
+$(K_0, B, K_{\rm scan})$ with $K_0 \in \{95, 200, 1021\}$,
+$B \le 1000$, $K_{\rm scan} \le 10^5$, the full safe-set CSP
+$\Phi_r(K_0, B, K_{\rm scan})$ of
+\cref{def:full-safe-set-csp} is satisfiable. The satisfiability is
+witnessed by an explicit assignment, certified by a CaDiCaL-generated
+LRAT proof, and verified by the \texttt{cake\_lpr} CakeML checker.
+\end{theorem}
+
+The certificate files and verifier output are described in
+\cref{sec:lean}. We emphasize that the same audit was extended to a
+\emph{nested} formulation in which the protected and scan windows
+overlap (verified by direct enumeration of the nested-survivor tree at depth $1021$); the nested CSP
+collapses to the depth-$1021$ CSP for every kernel structure that
+satisfies $v_p(F_k(a)) \le v_p(\Acap \cdot \Lcap)$ at all kernel
+primes, and produces identical SAT escapes at the same iteration
+counts.
+
+\subsection{Audit summary table}
+\label{sec:audit-summary}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{lllc}
+\toprule
+\textbf{Layer} & \textbf{Primitive family} & \textbf{Result} & \textbf{Status} \\
+\midrule
+cycle-3 & valuation leaves at three primes
+        & forced budget below $k+2$
+        & insufficient \\
+L1 & squarefree free-prime DivisorMask
+        & SAT escapes
+        & insufficient \\
+L2 & joint $p$-adic DivisorMask
+        & SAT escapes
+        & insufficient \\
+L3 & exact-valuation $\mu$-DivisorMask
+        & SAT escapes
+        & insufficient \\
+L4--L6 & Hensel prime-residual kernels
+        & survivor-compatible
+        & barrier \\
+Hensel $K=10000$ extension
+        & constructive smart-lift witnesses
+        & $41 / 41$ open-frontier residues satisfy
+          $2\tauf(D_k(a)) \le k+2$ for all $k \le 10000$
+        & barrier (not closure) \\
+struct-kill & fixed-kernel structural shift
+        & 4 per-kernel-class certs
+        & not base-AP \\
+kernel-space & kernel-base CSP
+        & SAT escapes at $K_0 \le 1021$
+        & closed-negative \\
+full safe-set & kernel + aux $S_\ell$ CSP
+        & SAT escapes at $B \le 1000$
+        & closed-negative \\
+nested CSP & overlap protected + scan
+        & equivalent to depth-$1021$
+        & no new info \\
+\midrule
+diagonal mega-shift audit
+        & identity $F_{r,2520r}(s) = A\cdot s$
+        & selected kernel branches for four sentinels are killed at $k_\Delta = 2520r$
+        & class-specific, not base-AP \\
+branch-gluing Phase B (B1)
+        & nested survivor compatibility with diagonal constraint
+        & restricted B1 witnesses for $r \in \{1716, 4862\}$ survive protected, diagonal, and scan to $10^7$
+        & negative for the tested mechanism \\
+diagonal-B1 all-41 triage
+        & B1 necessary mode + diagonal at $k_\Delta = 2520\,r$, no scan
+        & $40 / 41$ SAT, $1 / 41$ ($r = 0$, $k_\Delta = 0$) is a degenerate edge case
+        & closure-incapable on all 41 open residues \\
+composite-cover audit
+        & composite / non-prime-power forced-divisor clauses
+        & $41 / 41$ SAT at $P_{\max} = 199, K_{\max} = 5000$
+        & closure-incapable on all 41 open residues \\
+small-$k$ quotient-shape compatibility
+        & abstract shape of $Q_k = F_k / D_k$ subject to
+          multi-shift compatibility $F_i - F_j = j - i$
+        & $41 / 41$ SAT for all $K_{\rm small} \le 1021$ via fresh-prime
+          assignment $Q_k =$ distinct fresh prime per $k$
+        & subsumed by Hensel admissibility ($2\tau(D_k) \le k+2$) \\
+\bottomrule
+\end{tabular}
+\caption{Layers of the finite-local audit chain. ``Insufficient''
+denotes a primitive whose forced budget cannot exceed $k+2$ on the
+residual frontier; ``barrier'' denotes a primitive that exhibits a
+survivor-compatible structure rather than a closure certificate;
+``closed-negative'' denotes a SAT-verified failure of the primitive
+to close the frontier within the tested caps; ``not base-AP'' and
+``class-specific'' denote kernel-class certificates that do not lift
+to base-AP closure; ``negative for the tested mechanism'' denotes a
+SAT escape under restricted B1 (which proves SAT for the unrestricted
+problem) and a witness that survives the structural scan to $K_{\rm scan} = 10^7$.}
+\label{tab:audit-summary}
+\end{table}
+
+\subsection{Diagonal mega-shift identity (diagnostic)}
+\label{sec:diagonal-megashift}
+
+A useful diagnostic emerged from the branch-gluing audit. For any
+residue $r$, the shift $k_\Delta = 2520\, r$ gives
+\[
+F_{r, k_\Delta}(s)
+\;=\; 2520(M s + r) - 2520\, r
+\;=\; 2520\, M s
+\;=\; A\, s.
+\]
+Thus a kernel class $s \equiv a \pmod{L}$ can be killed at the
+diagonal shift if the class forces sufficiently many prime divisors
+into $a$: the forced divisor $D_{k_\Delta}(a, L) = \gcd(A\, a, A\, L)$
+inherits all prime contributions of $A$ together with all
+contributions of the chosen $a$ within the kernel modulus $L$. This
+explains the large ``mega-shift'' kills observed in the audit when
+the chosen kernel base happens to be divisible by many primes.
+
+The phenomenon is \emph{not}, by itself, a base-AP closure: Phase B
+(below) found alternative clean kernel bases for the sentinel
+residues $r \in \{1716, 4862\}$ satisfying the protected
+constraints, avoiding the diagonal, and surviving the structural
+scan to $10^7$. The diagonal mega-shift is therefore a
+\emph{class-specific} structural artifact tied to the particular
+kernel base chosen by the SAT solver, not a residue-level closure
+mechanism.
+
+\subsection{Branch-gluing Phase B (B1 closure-capable mode)}
+\label{sec:branch-gluing-phaseB}
+
+The branch-gluing experiment tested whether independent survivor
+kernels at increasing depths were merely incompatible artifacts.
+Selected $K = 1021$ branches for $r \in \{1716, 4862\}$ are
+diagonal-killed (\cref{sec:diagonal-megashift}), but the
+closure-capable B1 search found alternative clean witnesses for
+both sentinels. Specifically, under the necessary mode
+$\tau(D_k) \le k + 2$ at protected $k \le 1021$ together with
+$\tau(D_{k_\Delta}) \le k_\Delta + 2$, with the restriction
+$v_p(a) = 0$ for $p \mid A$ and $v_p(a) \le 1$ for cap-2 free primes
+$p \in \{23, 29, 31\}$, the adversary CSP returns SAT for both
+sentinels. The witnesses satisfy the protected-window constraints,
+avoid the diagonal mega-shift, and survive the structural scan to
+$10^7$ with the full $172$-prime detector.
+
+Per the standard interpretation (restricted SAT $\Rightarrow$
+unrestricted SAT), the branch-gluing mechanism, in the tested
+restricted B1 form, does \emph{not} produce a residue closure for
+$r \in \{1716, 4862\}$. We do not claim a refutation of all nonlocal
+coupling; only that the tested branch-gluing closure mechanism is
+negative on the chosen sentinels.
+
+\subsection{Composite-cover audit}
+\label{sec:composite-cover}
+
+Finally, we tested whether composite or non-prime-power covering
+moduli produce a genuinely new finite-local certificate. The
+adversary-SAT \emph{CompositeCoverCert} search asks: does there
+exist a finite valuation-pattern cover such that every CRT class
+$s \pmod{L}$ is killed by some shift $k \le K_{\max}$? An UNSAT
+result would correspond to a finite cover and a closure candidate;
+SAT would mean the adversary escapes.
+
+The search returned SAT escapes on four sentinels
+$r \in \{0, 1716, 4862, 37752\}$, first at
+$(P_{\max}, K_{\max}) = (113, 1000)$ and again at
+$(P_{\max}, K_{\max}) = (199, 5000)$. Every generated obstruction
+clause reduced to a valuation-pattern clause over prime powers in
+the kernel structure. This supports the view that, for the present
+framework, composite covering systems do not add closure power
+beyond generalized DivisorMask-style valuation covers: the composite
+cover encoding is mathematically a generalized DivisorMask at
+composite moduli with disjunctive cover semantics, and a SAT escape
+strengthens the L1--L3 DivisorMask negative result rather than
+competing with it.
+
+\subsection{Small-$k$ quotient-shape compatibility (subsumed)}
+\label{sec:small-k-shape-compatibility}
+
+A natural extension of the audit chain considers the
+\emph{abstract shape} of the unknown quotient
+$Q_k(Y) := F_k(Y) / D_k(a)$ across small shifts $k \le K_{\rm small}$,
+subject to the multi-shift difference identity
+$F_i(Y) - F_j(Y) = j - i$ and to the per-shift $\tauf$-budget
+$\tauf(F_k(Y)) \le k + 2$. The question is whether the abstract
+factorization shapes of $Q_1, Q_2, \ldots, Q_{K_{\rm small}}$ can
+coexist; an UNSAT result on such an abstract-shape CSP would be a
+closure candidate.
+
+The attack is, however, \emph{subsumed by Hensel admissibility}.
+For every residue $r \in \Ropen$, the prime-residual Hensel kernel
+of \cref{sec:hensel-kernel-audit} satisfies the Conjecture B
+condition $2\, \tauf(D_k(a)) \le k + 2$ for all $k \le 1021$. This
+directly implies $\tauf(D_k) \le (k+2)/2$, and the abstract
+assignment ``$Q_k(Y) = $ a fresh large prime, distinct across
+shifts'' satisfies the per-shift $\tauf$-budget:
+\[
+\tauf(D_k \cdot Q_k) = \tauf(D_k) \cdot \tauf(\text{prime})
+= 2 \, \tauf(D_k) \le k + 2.
+\]
+Fresh large primes with $P > K_{\rm small}$ are automatically
+distinct across shifts, since $P \mid F_i$ and $P \mid F_j$ would
+force $P \mid (j - i)$, contradicting $|j - i| \le K_{\rm small} < P$.
+Multi-shift compatibility is therefore satisfied at the abstract
+level by this assignment. We verified this directly: the
+fresh-prime assignment produces a valid SAT witness for the
+shape-CSP at every $r \in \Ropen$ for every
+$K_{\rm small} \in \{16, 32, 64, 1021\}$ (data:
+\texttt{data/fresh\_prime\_shape\_witness\_check\_20260425.json}).
+
+The small-$k$ quotient-shape attack therefore adds no closure
+power beyond the existing Hensel admissibility data; it confirms
+the Schinzel-pattern barrier rather than producing closure.
+
+\subsection{Audit-chain close-out theorem}
+\label{sec:audit-chain-closeout}
+
+We collect the negative results assembled in this section into a
+single named theorem.
+
+\begin{theorem}[Audit-chain close-out: finite-local forced-divisor
+closure-incapability]
+\label{thm:audit-chain-closeout}
+Within the class of finite-local forced-divisor closure mechanisms
+tested in this paper --- comprising:
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+\item single-shift forced-divisor primitives (cycle-3 valuation
+  leaves and the DivisorMask L1--L3 family;
+  \cref{sec:cycle3-audit,sec:divisormask-audit});
+\item single-base multi-shift CSP encodings (the prime-residual
+  Hensel-balanced kernel framework, the kernel-space CSP, and the
+  full safe-set CSP;
+  \cref{sec:hensel-kernel-audit,sec:interval-cover-audit});
+\item disjunctive multi-shift cover encodings (composite /
+  non-prime-power covering certificates, mathematically a
+  generalized DivisorMask at composite moduli with disjunctive cover
+  semantics; \cref{sec:composite-cover}); and
+\item branch-gluing extensions of the single-base CSPs to the
+  nested-survivor closure-capable form (Phase B / B1 mode with
+  diagonal $\tau(D_{k_\Delta}) \le k_\Delta + 2$ at
+  $k_\Delta = 2520\, r$, protected $\tau(D_k) \le k + 2$ at all
+  $k \le 1021$, and structural scan to $K_{\rm scan} = 10^7$;
+  \cref{sec:branch-gluing-phaseB});
+\end{enumerate}
+each tested mechanism admits an adversary-SAT survivor configuration
+on at least one open residue $r \in \Ropen$, at the parameter
+regimes specified in \cref{tab:audit-summary}. Two of the mechanisms
+have the strongest possible coverage in this work:
+\begin{itemize}[leftmargin=*]
+\item the disjunctive multi-shift cover (composite-cover certificate)
+  is closure-incapable on \emph{all} 41 residues at
+  $P_{\max} = 199$, $K_{\max} = 5000$;
+\item the diagonal-B1 mechanism (B1 necessary mode plus diagonal at
+  $k_\Delta = 2520\,r$, no scan window) is closure-incapable on $40$ of
+  the $41$ residues; the remaining residue $r = 0$ has $k_\Delta = 0$,
+  which makes the diagonal constraint $\tau(D_0) \le 2$ degenerate
+  (since $\tau(A) = 768 \gg 2$ for any kernel base) and therefore an
+  edge case rather than a closure signal.\footnote{The diagonal
+  mega-shift identity $F_{r, k_\Delta}(s) = A \cdot s$ requires
+  $k_\Delta \ge 1$ to be a valid $\tauf$-barrier shift. At $r = 0$,
+  $k_\Delta = 2520 \cdot 0 = 0$ is not a witness shift in the
+  $\tauf$-barrier framework. The standard $s \ge 1$ argument applies
+  at $r = 0$ in exactly the same way as at the sentinels: the
+  $s = 0$ case (corresponding to $n = 2520 \cdot r = 0$, well below
+  the $n > 24$ threshold of \cref{prob:e647}) is automatically
+  excluded; the diagonal mechanism is parameterized by $s \ge 1$
+  for which $n = 2520 \cdot M \cdot s + 2520 \cdot r$ exceeds the
+  threshold and the standard analysis applies. The $r = 0$ entry in
+  the all-41 triage is therefore an algorithmic artifact at the
+  $k_\Delta = 0$ boundary, not an open closure question.}
+\end{itemize}
+Equivalently: no mechanism in this scope class produces a closure of
+the residual frontier $\Ropen$ at the scales tested in this work.
+
+Within this scope class, the audit chain has reached saturation:
+every closure-capable mechanism enumerated has been tested at all
+$41$ open residues (or, where computational budget permitted only
+sentinel coverage, at sentinels chosen for structural
+representativeness) and refuted. Closure of the open frontier via
+methods within this scope class is therefore ruled out at the
+scales tested. Methods outside this scope class --- asymptotic
+density, sieve-theoretic pointwise control, conditional analytic
+resolution --- are deferred to future work and are addressed
+separately by the four convergent obstructions of
+\cref{sec:obstructions}.
+
+A diagnostic structural identity
+$F_{r, 2520\, r}(s) = A \cdot s$ (\cref{sec:diagonal-megashift})
+produces a class-specific kill at $k_\Delta = 2520\, r$ when the
+chosen kernel base forces sufficient prime divisors into $a$, but
+Phase B exhibits clean alternative kernel bases avoiding the
+diagonal for the sentinel residues $r \in \{1716, 4862\}$. The
+identity is therefore a uniform structural constraint on admissible
+kernel bases, not by itself a closure mechanism.
+\end{theorem}
+
+\begin{remark}[Scope of the close-out]
+\label{rem:closeout-scope}
+\Cref{thm:audit-chain-closeout} concerns the finite-local
+forced-divisor scope class enumerated above. It does not address:
+\begin{itemize}[leftmargin=*]
+\item joint-constraint refinements via cross-shift gcd identities
+  $\gcd(F_i(s), F_j(s)) \mid (j - i)$. For any honest CRT class
+  $s \equiv a \pmod L$, the identity $F_i(s) - F_j(s) = j - i$ is
+  structural, so the resulting pair-level forced-divisor constraint
+  $\gcd(D_i, D_j) \mid (j - i)$ is automatically satisfied by
+  per-shift valuation constraints.\footnote{Empirically confirmed
+  by a pair-subsumption audit on ten witnesses (Phase B SAT
+  escapes, composite-cover SAT escapes, and the K=1021
+  Hensel-balanced kernel bases): $0$ violations across $\sim 199{,}000$
+  pairs per witness, with $\sim 7{,}700$ entangled pairs per witness
+  ($\gcd(D_i, D_j) > 1$) all satisfying the divisibility constraint.
+  Audit data: \texttt{data/pair\_csp\_subsumption\_audit\_20260425.json}.}
+  A non-tautological pair- or multi-shift CSP would need to encode
+  joint $\tau$-profile or quotient-shape constraints rather than
+  mere forced-divisor compatibility;
+\item averaged-sieve methods (Selberg upper bounds,
+  Shiu / Nair--Tenenbaum lower bounds, GPY / Maynard /
+  Tao--Ter\"av\"ainen multi-point correlation), which operate on
+  density rather than pointwise local data; addressed separately by
+  the four convergent obstructions of \cref{sec:obstructions};
+\item analytic-NT inputs at $q = M$ (effective zero-density
+  estimates for $L(s, \chi)$, Conrey--Gonek--Keating asymptotics);
+\item methods exploiting global multiplicative or additive structure
+  not visible to per-prime valuation analysis.
+\end{itemize}
+The close-out is thus a precise negative statement within a
+precisely-defined scope class, not a refutation of all finite-local
+methods.
+\end{remark}
+
+\subsection{What the audit does and does not rule out}
+\label{sec:audit-scope}
+
+The interpretation of \cref{thm:ple-insufficiency,thm:interval-cover-insufficiency}
+requires care.
+
+\begin{remark}[Scope of the audit chain]
+\label{rem:audit-scope}
+The audit chain rules out the finite-local forced-divisor certificate
+families described in this section, at the parameter regimes tested.
+Concretely, no \PLEclass\ primitive of the form enumerated in
+\cref{def:ple,def:full-safe-set-csp} produces a closure certificate
+for any residue $r \in \Ropen$ at the parameter regimes
+$K_0 \in \{95, 200, 1021\}$, $B \le 1000$, $K_{\rm scan} \le 10^5$.
+
+\emph{These results do not rule out arbitrary analytic or nonlocal
+methods.} They rule out the finite-local forced-divisor certificate
+families described in this section. In particular, the audit chain
+does not address:
+\begin{itemize}[leftmargin=*]
+\item averaged-sieve methods of Selberg, Shiu, Nair--Tenenbaum,
+  GPY, Maynard, or Tao--Ter\"av\"ainen type, which operate on
+  density rather than pointwise local data;
+\item Erd\H{o}s covering systems with non-prime-power moduli, when
+  the moduli are not subsumed by the CRT decomposition of the
+  prime-residual kernel framework;
+\item analytic-NT inputs derived from effective zero-density
+  estimates for $L(s, \chi)$ at $q = M$, including potential outputs
+  of a re-targeted Platt verification;
+\item methods that produce a deterministic finite cover of the
+  residual frontier rather than a per-shift forced-divisor
+  certificate;
+\item non-local primitives with a global multiplicative or additive
+  structure not visible to per-prime valuation analysis.
+\end{itemize}
+
+\Cref{sec:obstructions} addresses the first three of these
+explicitly and shows that all are also blocked, but by separate
+analytic obstructions rather than by the finite-local audit.
+\end{remark}
+
+The combination of the finite-local audit chain
+(\cref{sec:audit-summary}) and the analytic obstruction analysis
+(\cref{sec:obstructions}) constitutes the barrier of the title:
+under any of the standard pointwise-local-existential or
+density-averaged sieve approaches, no closure of the residual
+frontier follows from the data assembled in this paper.
+
+% =============================================================================
+% End of section 6
+% =============================================================================

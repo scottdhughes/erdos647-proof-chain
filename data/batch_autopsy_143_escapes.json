@@ -1,0 +1,2153 @@
+{
+  "total_monitor_escapes": 143,
+  "distinct_pass_patterns": 8,
+  "top10_pass_patterns": [
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": false
+        },
+        {
+          "k": 15,
+          "pass": false
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": false
+        }
+      ],
+      "count": 44
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": false
+        },
+        {
+          "k": 15,
+          "pass": false
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": true
+        }
+      ],
+      "count": 30
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": true
+        },
+        {
+          "k": 15,
+          "pass": false
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": false
+        }
+      ],
+      "count": 26
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": false
+        },
+        {
+          "k": 15,
+          "pass": true
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": false
+        }
+      ],
+      "count": 13
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": true
+        },
+        {
+          "k": 15,
+          "pass": false
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": true
+        }
+      ],
+      "count": 12
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": false
+        },
+        {
+          "k": 15,
+          "pass": true
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": true
+        }
+      ],
+      "count": 9
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": true
+        },
+        {
+          "k": 15,
+          "pass": true
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": true
+        }
+      ],
+      "count": 5
+    },
+    {
+      "pattern": [
+        {
+          "k": 7,
+          "pass": true
+        },
+        {
+          "k": 11,
+          "pass": true
+        },
+        {
+          "k": 13,
+          "pass": true
+        },
+        {
+          "k": 14,
+          "pass": true
+        },
+        {
+          "k": 15,
+          "pass": true
+        },
+        {
+          "k": 16,
+          "pass": true
+        },
+        {
+          "k": 27,
+          "pass": false
+        }
+      ],
+      "count": 4
+    }
+  ],
+  "first_fail_B_eff_distribution": {
+    "k14_B4": 79,
+    "k15_B2": 20,
+    "k15_B4": 18,
+    "k14_B2": 16,
+    "k27_B7": 3,
+    "k14_B1": 1,
+    "k27_B5": 1
+  },
+  "top10_B_eff_profiles": [
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        4,
+        3,
+        7
+      ],
+      "count": 31
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        2,
+        3,
+        7
+      ],
+      "count": 24
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        4,
+        2,
+        7
+      ],
+      "count": 12
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        4,
+        3,
+        5
+      ],
+      "count": 11
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        2,
+        3,
+        5
+      ],
+      "count": 10
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        2,
+        2,
+        3,
+        7
+      ],
+      "count": 8
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        2,
+        2,
+        7
+      ],
+      "count": 4
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        4,
+        2,
+        5
+      ],
+      "count": 4
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        4,
+        2,
+        4
+      ],
+      "count": 3
+    },
+    {
+      "network_k": [
+        7,
+        11,
+        13,
+        14,
+        15,
+        16,
+        27
+      ],
+      "B_profile": [
+        4,
+        6,
+        7,
+        4,
+        2,
+        2,
+        5
+      ],
+      "count": 3
+    }
+  ],
+  "network_k": [
+    7,
+    11,
+    13,
+    14,
+    15,
+    16,
+    27
+  ],
+  "n_details_saved": 30,
+  "details_sample": [
+    {
+      "t": 2125200420,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 2659603620,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 5,
+          "tau_F": 40,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 33521045400,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 12,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        }
+      }
+    },
+    {
+      "t": 86152295598,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 16,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 90595719660,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 5,
+          "tau_F": 20,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 154496799198,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 24,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 18,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 167794002390,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 14,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 217598822178,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 96,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 256333196208,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 5,
+          "tau_F": 20,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 268316498520,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 314789936208,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        }
+      }
+    },
+    {
+      "t": 321274219488,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 128,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 380987723448,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 508200324660,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 528142634388,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 128,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 688234566048,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "11": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 6,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 24,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 96,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 750559875060,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 5,
+          "tau_F": 12,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 224,
+          "Z_omega": 5,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 837265111908,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 32,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 96,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 852052751730,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 951446049840,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 997789868280,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "11": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 12,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1063896146418,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 768,
+          "Z_omega": 7,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 5,
+          "tau_F": 80,
+          "Z_omega": 4,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1065467806020,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1301803186398,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 24,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 18,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 128,
+          "Z_omega": 5,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1343759997480,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1459238998908,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 96,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 5,
+          "tau_F": 10,
+          "Z_omega": 1,
+          "Z_prime": true
+        }
+      }
+    },
+    {
+      "t": 1566949637370,
+      "primes": 10,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 6,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 5,
+          "tau_F": 160,
+          "Z_omega": 5,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1568245139418,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 2,
+          "tau_F": 48,
+          "Z_omega": 3,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": true,
+          "B": 5,
+          "tau_F": 20,
+          "Z_omega": 2,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1584982521930,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 64,
+          "Z_omega": 4,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 3,
+          "tau_F": 12,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 5,
+          "tau_F": 40,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    },
+    {
+      "t": 1640633400150,
+      "primes": 9,
+      "sig_compact": {
+        "7": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "11": {
+          "pass": true,
+          "B": 6,
+          "tau_F": 4,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "13": {
+          "pass": true,
+          "B": 7,
+          "tau_F": 8,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "14": {
+          "pass": false,
+          "B": 4,
+          "tau_F": 256,
+          "Z_omega": 6,
+          "Z_prime": false
+        },
+        "15": {
+          "pass": true,
+          "B": 4,
+          "tau_F": 16,
+          "Z_omega": 2,
+          "Z_prime": false
+        },
+        "16": {
+          "pass": true,
+          "B": 2,
+          "tau_F": 14,
+          "Z_omega": 1,
+          "Z_prime": true
+        },
+        "27": {
+          "pass": false,
+          "B": 7,
+          "tau_F": 32,
+          "Z_omega": 3,
+          "Z_prime": false
+        }
+      }
+    }
+  ]
+}

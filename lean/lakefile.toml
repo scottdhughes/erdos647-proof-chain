@@ -1,0 +1,105 @@
+name = "Erdos647"
+version = "0.1.0"
+keywords = ["math", "formalization", "erdos", "number-theory"]
+defaultTargets = [
+  "Erdos647Main",
+  "Erdos647SieveCertificate",
+  "Erdos647HardRootAdmissibility",
+  "Erdos647Closure92_Legacy",
+  "Erdos647BarrierTheorem",
+  "Erdos647BridgeV1",
+  "Erdos647B23Closure",
+  "Erdos647ClosureCerts",
+  "Erdos647ClosureData",
+  "Erdos647BranchForms",
+  "Erdos647ResidueSets",
+  "Erdos647ValuationCore",
+  "Erdos647SingleOverlap_4199_13_draft",
+  "Erdos647SingleOverlap_14535_45_draft",
+  "Erdos647SingleOverlapClosure",
+  "Erdos647DirectFullValueClosure",
+  "Erdos647ResiduePartitionStage1",
+  "Erdos647ReductionChain",
+  "Erdos647Stage1Axiom",
+  "Erdos647ConditionalFiniteWindow",
+  "Bridge2",
+  "Bridge3",
+  "ShapeDecomposition",
+]
+
+[leanOptions]
+pp.unicode.fun = true
+relaxedAutoImplicit = false
+
+[[require]]
+name = "mathlib"
+scope = "leanprover-community"
+
+[[lean_lib]]
+name = "Erdos647Main"
+
+[[lean_lib]]
+name = "Erdos647SieveCertificate"
+
+[[lean_lib]]
+name = "Erdos647HardRootAdmissibility"
+
+[[lean_lib]]
+name = "Erdos647Closure92_Legacy"
+
+[[lean_lib]]
+name = "Erdos647BarrierTheorem"
+
+[[lean_lib]]
+name = "Erdos647BridgeV1"
+
+[[lean_lib]]
+name = "Erdos647B23Closure"
+
+[[lean_lib]]
+name = "Erdos647ClosureCerts"
+
+[[lean_lib]]
+name = "Erdos647ClosureData"
+
+[[lean_lib]]
+name = "Erdos647BranchForms"
+
+[[lean_lib]]
+name = "Erdos647ResidueSets"
+
+[[lean_lib]]
+name = "Erdos647ValuationCore"
+
+[[lean_lib]]
+name = "Erdos647SingleOverlap_4199_13_draft"
+
+[[lean_lib]]
+name = "Erdos647SingleOverlap_14535_45_draft"
+
+[[lean_lib]]
+name = "Erdos647SingleOverlapClosure"
+
+[[lean_lib]]
+name = "Erdos647DirectFullValueClosure"
+
+[[lean_lib]]
+name = "Erdos647ResiduePartitionStage1"
+
+[[lean_lib]]
+name = "Erdos647ReductionChain"
+
+[[lean_lib]]
+name = "Erdos647Stage1Axiom"
+
+[[lean_lib]]
+name = "Erdos647ConditionalFiniteWindow"
+
+[[lean_lib]]
+name = "Bridge2"
+
+[[lean_lib]]
+name = "Bridge3"
+
+[[lean_lib]]
+name = "ShapeDecomposition"
