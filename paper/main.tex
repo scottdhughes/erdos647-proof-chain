@@ -1,0 +1,274 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\C}{\mathcal{C}}
+\newcommand{\tu}{\tau}
+\newcommand{\Om}{\Omega}
+
+\title{Erd\H{o}s problem 647: reductions, density bounds,\\ and the prime-tuples barrier}
+\author{Scott D. Hughes\\ \normalsize Independent researcher}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+Let $\tu$ be the divisor function. Erd\H{o}s problem 647 asks whether there is an
+integer $n>24$ with $\tu(n-k)\le k+2$ for all $1\le k<n$; Erd\H{o}s expected the
+answer to be no. Write $\C(x)$ for the number of such candidates $n\le x$. We give
+a reduction of the candidate set, the modular part of which is formally verified in
+Lean 4: every candidate $n>84$ satisfies $2520\mid n$ and, writing $n=2520N$, the
+class of $N$ modulo $46189$ lies in an explicit set of $41$; and every candidate
+$n>24$ lies in one of two explicit prime-chain families. The families give, by an
+elementary Brun sieve, $|\C(x)|\ll x/(\log x)^{7}$; a separate growing-window
+argument gives $|\C(x)|\le x\exp(-(\log\log x)^{2-o(1)})$. Both are proved in the
+companion manuscripts. We then show why density methods stop here. The relaxation
+that drives them does not collapse, and its optimal output $x^{1-o(1)}$ cannot give
+finiteness; in the computed range, the genuine condition leaves only the known
+solution $24$, and the deepest near-misses are prime chains. A uniform bound
+excluding arbitrarily long prime-chain near-misses would imply finiteness; such a
+bound appears to require input of prime-tuples type. The results are density-zero,
+not a resolution of the problem.
+\end{abstract}
+
+\section{The problem}
+
+For a positive integer $m$ let $\tu(m)$ be the number of its divisors. Erd\H{o}s
+problem 647~\cite{ErdosProblems647Forum} asks:
+\begin{quote}
+is there an integer $n>24$ such that $\displaystyle\max_{m<n}\bigl(m+\tu(m)\bigr)\le n+2$?
+\end{quote}
+Equivalently, is there $n>24$ with $\tu(n-k)\le k+2$ for every $1\le k<n$. The bound
+$n+2$ is best possible, and $n=24$ works; Erd\H{o}s offered a prize for an example
+$n>24$ and wrote that it is ``extremely doubtful'' that infinitely many exist,
+suggesting in fact that $\max_{m<n}(\tu(m)+m-n)\to\infty$. Call an integer $n>24$
+satisfying the condition a \emph{candidate}, and let
+\[
+  \C(x)=\#\{\,n\le x: n\text{ is a candidate}\,\}.
+\]
+
+This note collects, in one place, what the reduction of the candidate set buys. Two
+density bounds on $\C(x)$ are stated and attributed to the companion manuscripts
+\cite{HughesChains,HughesWindow}; the modular reduction underlying them is formally
+verified \cite{ProofChain}. The remaining sections then locate the obstruction to
+proving finiteness. None of this resolves the problem: every bound below is
+density-zero, and the step from density-zero to finiteness is traced to a
+prime-tuples-type obstruction.
+
+\section{The reduction}
+
+\subsection*{Stage 1: modular constraints}
+
+The divisor conditions at the shifts $k$ with small $\gcd(2520,k)$ force divisibility
+and exclude residue classes. The following is checked over the explicit finite search
+and is formally verified in Lean 4 against Mathlib; the verification artifact is the
+release \texttt{v0.1.0} of \cite{ProofChain}.
+
+\begin{theorem}[Stage-1 reduction; formally verified]\label{thm:stage1}
+Every candidate $n>84$ satisfies $2520\mid n$. Writing $n=2520N$, the residue of $N$
+modulo $M=11\cdot13\cdot17\cdot19=46189$ lies in an explicit set of $41$ classes.
+\end{theorem}
+
+The sieve modulo $11,13,17,19$ first leaves $96$ surviving classes; small-shift
+divisor-budget arguments close $55$ of them, leaving the stated $41$. The full
+deduction and its formalization are in \cite{ProofChain}; the open $41$-class set is
+listed there.
+
+\subsection*{Stage 2: prime-chain families}
+
+\begin{theorem}[Prime-chain reduction]\label{thm:stage2}
+Every candidate $n>24$ lies in one of the two families
+\[
+  n=8s+8,\quad s,\ 2s+1,\ 4s+3,\ 8s+7\ \text{all prime},
+\]
+or
+\[
+  n=16s+8,\quad s,\ 4s+1,\ 8s+3,\ 16s+7\ \text{all prime}.
+\]
+\end{theorem}
+
+\begin{proof}[Sketch]
+The conditions at $k=1,2$ force $n=2q+2$ with $q$ and $2q+1$ prime. Writing
+$q-1=2^a m$ with $m$ odd, the condition at $k=4$ forces $q=2p+1$ with
+$p,2p+1,4p+3$ prime. The condition at $k=8$, with $p-1=2^b s$, leaves exactly $b=1$
+and $b=2$, the two displayed branches; the remaining cases are eliminated by the
+finite divisor-budget check carried out in \cite{HughesChains}.
+\end{proof}
+
+\section{Density bounds}
+
+Both families are admissible tuples of linear forms, so Brun's upper-bound sieve
+applies. Once $2520\mid n$ (Theorem~\ref{thm:stage1}) the factor $3\mid n$ is
+available, and the three further shifts $k\in\{3,6,12\}$ — whose $2520$-forced part is
+exactly $k$ — adjoin three more prime forms to each family. The seven prime-forcing
+shifts $\{1,2,3,4,6,8,12\}$ give, in each branch, an admissible seven-tuple
+(root-union $1,2,4,6$ modulo $2,3,5,7$, and at most $7<p$ classes for $p>7$).
+
+\begin{theorem}[Seven-form bound \cite{HughesChains}]\label{thm:seven}
+$|\C(x)|\ll x/(\log x)^{7}$, unconditionally, with an effective absolute implied
+constant.
+\end{theorem}
+
+The candidate condition can also be used only through the elementary implication
+$\tu(N)\ge\Om(N)+1$, where $\Om$ counts prime factors with multiplicity. For a
+window of length $H$ this gives $\Om\!\bigl(\prod_{k=1}^{H}(n-k)\bigr)\le H(H+3)/2$
+for every candidate, and a Rankin moment together with the upper-bound
+$\beta$-sieve fundamental lemma yields a bound that improves on every fixed power of
+$\log x$. The companion growing-window manuscript proves the following.
+
+\begin{theorem}[Growing-window bound \cite{HughesWindow}]\label{thm:t3}
+$|\C(x)|\le x\exp\!\bigl(-(\log\log x)^{2-o(1)}\bigr)$.
+\end{theorem}
+
+\begin{remark}
+Theorem~\ref{thm:t3} supersedes Theorem~\ref{thm:seven} and the earlier
+$x/(\log x)^{k}$ bounds: $\exp(-(\log\log x)^{2-o(1)})$ is smaller than
+$(\log x)^{-A}$ for every fixed $A$. We keep Theorem~\ref{thm:seven} because its
+proof is elementary and self-contained.
+\end{remark}
+
+\section{The finiteness barrier}
+
+Theorems~\ref{thm:seven} and~\ref{thm:t3} are density-zero results. We now explain
+why no refinement of this kind reaches finiteness, and where the genuine difficulty
+lies.
+
+\subsection*{The density method cannot reach finiteness}
+
+The growing-window bound of Theorem~\ref{thm:t3} uses the candidate condition only
+through $\Om(n-k)\le k+1$. For a window length $H$ set
+\[
+  N_{\Om,H}(x)=\#\{\,n\le x: \Om(n-k)\le k+1\ \text{for }1\le k\le H\,\}\ \ge\ |\C(x)|.
+\]
+Even a bound as strong as
+$x\exp(-c(\log\log x)^2)$, the natural frontier suggested by this relaxation, would
+still not imply finiteness.
+
+\begin{proposition}\label{prop:ceiling}
+$x\exp(-c(\log\log x)^2)=x^{1-o(1)}\to\infty$ for every $c>0$. Hence no bound of this
+form, however sharp, implies $\C(x)=O(1)$.
+\end{proposition}
+
+\begin{proof}
+$(\log\log x)^2=o(\log x)$, so $c(\log\log x)^2/\log x\to0$ and the exponent of $x$
+tends to $1$.
+\end{proof}
+
+Direct enumeration confirms that the relaxation itself does not collapse:
+$N_{\Om,24}(10^7)=208828$, and the count shows no sign of thinning to a finite set,
+whereas the genuine condition is far more rigid.
+
+\subsection*{Enumeration of the genuine condition}
+
+Let $D(n)$ be the largest $D$ with $\tu(n-k)\le k+2$ for all $1\le k\le D$ (the depth
+of the longest run of satisfied conditions starting at $n$). A candidate is exactly
+an $n>24$ with $D(n)\ge n-1$. Enumeration to $10^7$ gives the following, computed
+independently with two divisor-function implementations.
+
+\begin{center}
+\begin{tabular}{rl}
+\hline
+$D$ & $\#\{24<n\le 10^7: D(n)\ge D\}$\\
+\hline
+$1$ & $665014$\\
+$2$ & $30653$\\
+$4$ & $159$\\
+$6$ & $2$\\
+$7$ & $1$\\
+$8$ & $0$\\
+\hline
+\end{tabular}
+\end{center}
+
+No $n>24$ up to $10^7$ survives eight consecutive conditions. The record depths grow
+far more slowly than $n$: the deepest runs below $10^7$ reach
+\[
+  D(n)=4,\,5,\,6,\,7\quad\text{at}\quad n=720,\ 58680,\ 7224840,\ 9339120,
+\]
+the integer attaining each new depth being far larger than the last. A candidate
+needs $D(n)\ge n-1$, whereas the deepest run anywhere below $10^7$ has $D=7$. The gap
+between the required depth and the observed record widens with $n$, the numerical
+form of Erd\H{o}s's $\max_{m<n}(\tu(m)+m-n)\to\infty$.
+
+\subsection*{What finiteness requires}
+
+The deepest near-misses are prime chains. At each record above, $n-1$ is prime,
+$n-2=2p$, $n-3=3p'$ and $n-4=2^2p''$ with $p,p',p''$ prime; deeper shifts admit other
+low-divisor shapes, and the run ends when a forced quotient first carries too many
+divisors. So large depth at these near-misses is governed by simultaneous prime-chain
+conditions of the type in Theorem~\ref{thm:stage2}.
+
+This places the two directions of the problem on closely related prime-pattern
+objects. The existence of arbitrarily deep near-misses is naturally explained by
+prime-tuples heuristics, and Schinzel-type hypotheses predict such finite-window
+behaviour. Finiteness would require the opposite kind of input: a uniform obstruction
+preventing these prime-chain patterns from extending far enough. Such an obstruction
+is not supplied by the density estimates above, and appears to lie in the same
+prime-tuples barrier discussed for related divisor problems by Tao and
+Ter\"av\"ainen~\cite{TaoTeravainen2025}. The reduction here makes that barrier
+visible; it does not cross it.
+
+\section{Formal verification and reproducibility}
+
+Theorem~\ref{thm:stage1} is formalized in Lean 4 against Mathlib in the public
+repository \cite{ProofChain}, release \texttt{v0.1.0}. The build is free of
+\texttt{sorry}; an axiom audit accompanies the release, recording the single
+project-level axiom and the standard foundations on which the verified statements
+depend. The enumeration of Section 4 and the admissibility checks of Section 3 are
+reproduced by the scripts in the same repository.
+
+\section*{Acknowledgments}
+
+The partial modular observations behind Theorem~\ref{thm:stage1} are due to
+S.~Dutta and B.~Alexeev in the erdosproblems.com discussion of the
+problem~\cite{ErdosProblems647Forum}, and the clean shift $k=3$ underlying the
+seven-form bound (Theorem~\ref{thm:seven}) is due to K.~Kitamura. The formal
+verification uses Lean 4 and Mathlib; numerical and symbolic checks used PARI/GP,
+Wolfram, and SymPy. AI-based tools assisted with drafting and exploratory checking,
+and all mathematical content was verified independently.
+
+\begin{thebibliography}{9}
+
+\bibitem{ErdosProblems647Forum}
+T.~F.~Bloom,
+\emph{Erd\H{o}s problem \#647},
+\url{https://www.erdosproblems.com/647}, accessed 2026-06-03.
+
+\bibitem{HughesChains}
+S. D. Hughes,
+\emph{Erd\H{o}s problem 647 and prime chains: an unconditional density-zero bound},
+submitted for publication, 2026.
+
+\bibitem{HughesWindow}
+S. D. Hughes,
+\emph{An unconditional density bound for Erd\H{o}s problem 647},
+submitted for publication, 2026.
+
+\bibitem{ProofChain}
+S. D. Hughes,
+\emph{Erd\H{o}s 647 proof chain} (Lean 4 formalization), release \texttt{v0.1.0},
+\url{https://github.com/scottdhughes/erdos647-proof-chain}.
+
+\bibitem{TaoTeravainen2025}
+T. Tao and J. Ter\"av\"ainen,
+\emph{Quantitative correlations and some problems on prime factors of consecutive
+integers}, arXiv:2512.01739 (2025).
+
+\end{thebibliography}
+
+\bigskip
+\noindent
+Scott D. Hughes\\
+Independent researcher\\
+Email: \href{mailto:v@deltagray.com}{\texttt{v@deltagray.com}}
+
+\end{document}

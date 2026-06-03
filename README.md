@@ -1,17 +1,25 @@
-# Erdős #647 Proof Chain
+# Erdős Problem 647
 
-**Maintainer:** Scott D. Hughes
+**Scott D. Hughes**
 
-This repository contains the public Lean 4 formalization and main
-preprint package for
-Erdős Problem #647:
+Erdős problem 647 asks whether there is an integer `n > 24` with
+`max_{m < n} (m + τ(m)) ≤ n + 2`, equivalently `τ(n − k) ≤ k + 2` for all
+`1 ≤ k < n`. The value `n = 24` works, and Erdős expected no larger example to exist.
 
-> Does there exist `n > 24` such that
-> `max_{1 ≤ m < n} (m + τ(m)) ≤ n + 2`?
+This repository contains a reduction of the candidate set, the modular part of which
+is verified in Lean 4, together with the unconditional density bounds it yields and
+an analysis of why those bounds stop short of finiteness. The short paper
+[`paper/main.pdf`](paper/main.pdf) is the entry point; the Lean development is in
+[`lean/`](lean/), with the formal boundary recorded in
+[AXIOM_AUDIT.md](AXIOM_AUDIT.md). The results are density-zero, not a resolution of
+the problem.
 
-Equivalently:
-
-`τ(n - k) ≤ k + 2` for every `1 ≤ k < n`.
+The strongest density bound, `|C(x)| ≤ x·exp(−(log log x)^{2−o(1)})`, and the
+elementary `|C(x)| ≪ x/(log x)^7` bound, are proved in companion manuscripts
+(submitted; see the paper's references). The Lean development here formalizes the
+modular (Stage-1) reduction — the constraint `2520 | n` and the 41 residue classes
+mod 46189; the prime-chain reduction and the density bounds are established in the
+paper and its companion manuscripts, not in Lean.
 
 ## Current status
 
@@ -111,7 +119,7 @@ lean/             Lean 4 formalizations and proof-chain support modules
 docs/             theorem map, frontier notes, and related memos
 scripts/          reproducible computations and audits for this package
 data/             compact machine-readable artifacts cited by this package
-paper/            main preprint source and rendered PDF
+paper/            consolidation paper (main.tex, main.pdf); archive/ holds the earlier preprint
 ```
 
 Useful entry points:
