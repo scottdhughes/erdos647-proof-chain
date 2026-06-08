@@ -302,7 +302,7 @@ theorem family_4199_13_closes (N : ℕ)
           rw [divisors_card_54587] at hge
           omega
         · -- eval = 13^s for some s; CASE B
-          push_neg at hpow
+          push Not at hpow
           obtain ⟨s, hs⟩ := hpow
           -- exclude s = 0 (eval = 1 contradicts h_eval_gt_one)
           -- exclude s = 1 (modular impossibility)
