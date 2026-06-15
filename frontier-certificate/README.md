@@ -150,11 +150,6 @@ and the §3 closures: Layer A handles `24 < n ≤ 84`; every candidate with
 open pair (killed at `u = 0` by `verify.py`, at `u = 1…10⁷` by the scan). Hence
 **no `n` with `24 < n ≤ N₀ = 6.1573632120 × 10¹⁷` satisfies #647.**
 
-**Partial deeper probe.** A subset of **336** sub-APs (of 15 140) was additionally
-pushed to `U = 10⁸` (`≈ 6.16 × 10¹⁸`), a further `3.35 × 10¹⁰` cells, again with
-**0 survivors**. This is *not* a complete frontier at `10⁸` and is reported only
-as corroboration; the certified bound is `N₀`.
-
 ## 6. Independent verification (`verify.py`)
 
 `verify.py` uses **only the Python standard library** — its own
