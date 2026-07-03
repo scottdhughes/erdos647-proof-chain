@@ -1,0 +1,2818 @@
+{
+  "entries": [
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS0_9AtomList.lean",
+      "atomlist_route_theorem": "s0_9_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS0_9.lean",
+      "full_slice_file_sha256": "bd83bd8dd2c33d20f13e3a7362986a2c7cf24f64ed125949f9082435bf0746fe",
+      "full_slice_source_commit": "78f16008d4a77e10be8092c52f98d716c791feba",
+      "full_slice_theorem": "s0_9_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S0_9.lean",
+      "local_index_equiv": "s0_9ConcreteIndexEquiv",
+      "local_index_file_sha256": "f138d5b44a12b26cc061e32891b20417ebaf46d50490cbd82061ec15b819f070",
+      "local_index_ordinal_theorem": "s0_9ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "97a88482ff141a69ee2aa57c223a867338c0c6c2bc17c373dbe1fa48d7726dd7",
+        "smallcofactor": "e37608a27f8c77f2b9d7fde27ed23d50540362ff740c36d3445b66075cd0b740"
+      },
+      "row_count": 17084,
+      "slice_id": "s0_9",
+      "slice_max": 9,
+      "slice_min": 0,
+      "slice_range": "s=0..9",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS0_9SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s0_9_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS10_19AtomList.lean",
+      "atomlist_route_theorem": "s10_19_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS10_19.lean",
+      "full_slice_file_sha256": "43a7f72fbd29a2cfb8d8ab5ca8b84c6e4001305b7b1c1014ad18e44a0ceffccf",
+      "full_slice_source_commit": "b438540fd63f080f58f0fc3db1231d8176a79e0e",
+      "full_slice_theorem": "s10_19_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S10_19.lean",
+      "local_index_equiv": "s10_19ConcreteIndexEquiv",
+      "local_index_file_sha256": "42f5b82c9d7db54a52aebb0348f4155ba845b7ebd5a400c9c2731e519d666758",
+      "local_index_ordinal_theorem": "s10_19ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "9185e514c0d6e5953119bd1322929e7197ecd5e16891fc147ecec2479309bf98",
+        "smallcofactor": "36a20fbf14fb2c900dbdcf2c6b0824163d2161b9ffe8e2594ce0f1d140d4412d"
+      },
+      "row_count": 17138,
+      "slice_id": "s10_19",
+      "slice_max": 19,
+      "slice_min": 10,
+      "slice_range": "s=10..19",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS10_19SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s10_19_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS20_29AtomList.lean",
+      "atomlist_route_theorem": "s20_29_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS20_29.lean",
+      "full_slice_file_sha256": "e565fb5e11ba67368b05ac057932a3b5a22e59d2ca807d1ce7e1c85291032c47",
+      "full_slice_source_commit": "3f9325b4d4c605ebec89a4c65930f3d7bfdfb910",
+      "full_slice_theorem": "s20_29_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S20_29.lean",
+      "local_index_equiv": "s20_29ConcreteIndexEquiv",
+      "local_index_file_sha256": "e479e903893198508dd6caf38c5ec962ba14b28931604c364be04fbcbea0490b",
+      "local_index_ordinal_theorem": "s20_29ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "df7279abb47674a2e3b5c05968a279cd34a2e886a2c028480df85ac8ee65de34",
+        "smallcofactor": "532dd2af98a050318a8cb96d2e372d3588e723e459c070a29e7e9b41ca77758f"
+      },
+      "row_count": 17052,
+      "slice_id": "s20_29",
+      "slice_max": 29,
+      "slice_min": 20,
+      "slice_range": "s=20..29",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS20_29SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s20_29_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS30_39AtomList.lean",
+      "atomlist_route_theorem": "s30_39_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS30_39.lean",
+      "full_slice_file_sha256": "226285b2866ce8af0676639f16daec84f0bda047915121f4675cc5e4043ad7a8",
+      "full_slice_source_commit": "09e4f144683ff1edb29f80730c4fc5141a852d0b",
+      "full_slice_theorem": "s30_39_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S30_39.lean",
+      "local_index_equiv": "s30_39ConcreteIndexEquiv",
+      "local_index_file_sha256": "5b2ea0e05f9e71e591db003c35e933fe6c05fbb66fd7c656937aea9aca484f7f",
+      "local_index_ordinal_theorem": "s30_39ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "b39aa75e7818aec745aa6b433ec87be8b5c8e4b4e7ac22c254ea176472e891ae",
+        "smallcofactor": "58382dc5905115ca132dfc606d085731f5d3e5ecbe0cc793127ae796f93b9e14"
+      },
+      "row_count": 17236,
+      "slice_id": "s30_39",
+      "slice_max": 39,
+      "slice_min": 30,
+      "slice_range": "s=30..39",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS30_39SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s30_39_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS40_49AtomList.lean",
+      "atomlist_route_theorem": "s40_49_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS40_49.lean",
+      "full_slice_file_sha256": "01ef53e9e599ea14d256859964ff91f30aa5db48bccde5bdaa4431d5c81c1294",
+      "full_slice_source_commit": "d93e4fd2f3b3b443d447d1ca7d96469c50da3621",
+      "full_slice_theorem": "s40_49_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S40_49.lean",
+      "local_index_equiv": "s40_49ConcreteIndexEquiv",
+      "local_index_file_sha256": "8300778d58ab87b0ae05de9522e8ba7b63250e13378784d898f5a1d2a4d0a0d0",
+      "local_index_ordinal_theorem": "s40_49ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "95f1127e8b36830fdb4b0b027a09246f617935d9c4c63ae53e780e5fa8851ef7",
+        "smallcofactor": "bb6677380f3a5dab877adcd04657b36e5ea38ab207c477668eb83badd7bad2a5"
+      },
+      "row_count": 17060,
+      "slice_id": "s40_49",
+      "slice_max": 49,
+      "slice_min": 40,
+      "slice_range": "s=40..49",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS40_49SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s40_49_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS50_59AtomList.lean",
+      "atomlist_route_theorem": "s50_59_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS50_59.lean",
+      "full_slice_file_sha256": "2c5579a678ec3ce85b3fe31043b1f264a6eeb7544043d885704d01db60a664ab",
+      "full_slice_source_commit": "660634bbbf2037f950d37385b7019f7763991651",
+      "full_slice_theorem": "s50_59_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S50_59.lean",
+      "local_index_equiv": "s50_59ConcreteIndexEquiv",
+      "local_index_file_sha256": "0db740ee4ef06b48fad854c3a678280878c64a92c39046f1df2eb09b65438c93",
+      "local_index_ordinal_theorem": "s50_59ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "e13244e3a3590cb6b4f6294c9aeb040e50cbb2160af3939f0ef359de48cfa794",
+        "smallcofactor": "34ec2b10e16e6645fe1883510c95b7739c1b84d1488d9f43d27791ce148f9b8c"
+      },
+      "row_count": 16824,
+      "slice_id": "s50_59",
+      "slice_max": 59,
+      "slice_min": 50,
+      "slice_range": "s=50..59",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS50_59SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s50_59_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS60_69AtomList.lean",
+      "atomlist_route_theorem": "s60_69_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS60_69.lean",
+      "full_slice_file_sha256": "6aae81ca33b705661595081513cbdc26c7144773f7143f17082c6853025f97d5",
+      "full_slice_source_commit": "5bd1195fce777254699c83ab40ef9aa063b2769a",
+      "full_slice_theorem": "s60_69_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S60_69.lean",
+      "local_index_equiv": "s60_69ConcreteIndexEquiv",
+      "local_index_file_sha256": "6749905948b57af350d2708750fea97802f8c71103a3d83b96b679f624733267",
+      "local_index_ordinal_theorem": "s60_69ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "af63756dce28552ff4398047a09208b338a290234095b0f044c4266d8b44d8a8",
+        "smallcofactor": "4891c0d43f9d51f048897cf526062277031c52994503aa2897a2b9ed4d1be59f"
+      },
+      "row_count": 17112,
+      "slice_id": "s60_69",
+      "slice_max": 69,
+      "slice_min": 60,
+      "slice_range": "s=60..69",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS60_69SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s60_69_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS70_79AtomList.lean",
+      "atomlist_route_theorem": "s70_79_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS70_79.lean",
+      "full_slice_file_sha256": "c0c652cefd5b2d1e9f42fc5dbfdf7bcbec4635f001c0f161fcfb4f5d7c296559",
+      "full_slice_source_commit": "b66bed7e84f3c1f18220e4e0ac3069bcaaa62d39",
+      "full_slice_theorem": "s70_79_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S70_79.lean",
+      "local_index_equiv": "s70_79ConcreteIndexEquiv",
+      "local_index_file_sha256": "412172539ef00fd55a469daefdb4908276a41b5ca6a1302fb7a95fccea1720c0",
+      "local_index_ordinal_theorem": "s70_79ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "29d1bf76ee8d96402cfd0ec1c882c4c68962045b28816efe73145f8a9691919b",
+        "smallcofactor": "99195f135e96b2cf76b11f263edbe6938cc908b09b629a1720074feea711f982"
+      },
+      "row_count": 17396,
+      "slice_id": "s70_79",
+      "slice_max": 79,
+      "slice_min": 70,
+      "slice_range": "s=70..79",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS70_79SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s70_79_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS80_89AtomList.lean",
+      "atomlist_route_theorem": "s80_89_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS80_89.lean",
+      "full_slice_file_sha256": "9d1e42e03bd1b6f137fbf6eed3ac366d795c4d0e5b69f0d8f0567c57918d1917",
+      "full_slice_source_commit": "2387f96c565a0f7ecc9dfcdd4c63e9839ef78b81",
+      "full_slice_theorem": "s80_89_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S80_89.lean",
+      "local_index_equiv": "s80_89ConcreteIndexEquiv",
+      "local_index_file_sha256": "086db81b2f19fb2986a25f1579da7ea3d0d1622f69df69c7632307a3c020b960",
+      "local_index_ordinal_theorem": "s80_89ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "8fadaddc854f7e91de1c8e0fe7d8e10e26df44ee474af9fedad013d0ad163e51",
+        "smallcofactor": "8c8b5be912680aa89e4de4ef53cd91a281d2a280ae83a972b2121f2f60d33ff3"
+      },
+      "row_count": 17166,
+      "slice_id": "s80_89",
+      "slice_max": 89,
+      "slice_min": 80,
+      "slice_range": "s=80..89",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS80_89SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s80_89_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS90_99AtomList.lean",
+      "atomlist_route_theorem": "s90_99_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS90_99.lean",
+      "full_slice_file_sha256": "5a3044d5bede13b141f4f21832c895144048bf2fdb7126675ec6a28d68138524",
+      "full_slice_source_commit": "60f3da35e80a711c74a53d80523cefedd2f0b312",
+      "full_slice_theorem": "s90_99_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S90_99.lean",
+      "local_index_equiv": "s90_99ConcreteIndexEquiv",
+      "local_index_file_sha256": "123fa0fc3858d3c404c455ff1842c7b769c0d03c9c16f9bfbab9b8044cc2904c",
+      "local_index_ordinal_theorem": "s90_99ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "7e2654f4ffcea2f6250db9acd9a613b09923d76e48fd7a707979905c0811357f",
+        "smallcofactor": "8f571cae337a6334fcfd1dddc36448f40a65bafd5dff3a7aef177d3416bb2642"
+      },
+      "row_count": 16942,
+      "slice_id": "s90_99",
+      "slice_max": 99,
+      "slice_min": 90,
+      "slice_range": "s=90..99",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS90_99SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s90_99_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS100_109AtomList.lean",
+      "atomlist_route_theorem": "s100_109_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS100_109.lean",
+      "full_slice_file_sha256": "6566e0fbd5c76e8d007eb953416f166d7f681c5374be00aa7975f5170bfc4df6",
+      "full_slice_source_commit": "9e6fab242be072675536187e5a118fbeac2c2daa",
+      "full_slice_theorem": "s100_109_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S100_109.lean",
+      "local_index_equiv": "s100_109ConcreteIndexEquiv",
+      "local_index_file_sha256": "da73501aa806085ad0d2a4e4bf899952773f2884e30206aaf367783a58669a41",
+      "local_index_ordinal_theorem": "s100_109ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "296a5c6cf3799feded8e40759c5710d94571fb4111013c9f162c5a969c2bd600",
+        "smallcofactor": "1743ea796da5095eeae0f450c02fcbb1aa3f3392d26377e4591f5283254404d8"
+      },
+      "row_count": 17440,
+      "slice_id": "s100_109",
+      "slice_max": 109,
+      "slice_min": 100,
+      "slice_range": "s=100..109",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS100_109SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s100_109_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS110_119AtomList.lean",
+      "atomlist_route_theorem": "s110_119_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS110_119.lean",
+      "full_slice_file_sha256": "a0623c94c2438cf75d639a32ebff814561a39759447715153770a2917267ba46",
+      "full_slice_source_commit": "dacc4ab46b6f868eb2e52cd10d18c120aac58e30",
+      "full_slice_theorem": "s110_119_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S110_119.lean",
+      "local_index_equiv": "s110_119ConcreteIndexEquiv",
+      "local_index_file_sha256": "695cb8f03155626ad57a1b08bb12ebc03d5dcca7075de0246b53533012f0d13c",
+      "local_index_ordinal_theorem": "s110_119ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "d48b04df7faa40f01671c299fd53296f8a184bbc3906dd06c4f1282d019da2ab",
+        "smallcofactor": "eb12ddae9f00a9a28479c79446c1f0cf8c2bcd1e512fb7bd4afe3ca7978d009c"
+      },
+      "row_count": 17020,
+      "slice_id": "s110_119",
+      "slice_max": 119,
+      "slice_min": 110,
+      "slice_range": "s=110..119",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS110_119SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s110_119_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS120_129AtomList.lean",
+      "atomlist_route_theorem": "s120_129_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS120_129.lean",
+      "full_slice_file_sha256": "945daac665f9f850e34b9409cb13366ea9004a3a87842b202a43a906cac8b919",
+      "full_slice_source_commit": "2fe972c981c97f0a99a291e34598598eabd2dafe",
+      "full_slice_theorem": "s120_129_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S120_129.lean",
+      "local_index_equiv": "s120_129ConcreteIndexEquiv",
+      "local_index_file_sha256": "9869f74ce05d8c82632bfb7a58d964a7553035d8133a768cbfda9a348da5ae87",
+      "local_index_ordinal_theorem": "s120_129ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "3b61967c8ce7db5eb8cf904186e24a15c91b165eebe8a156f0e1c6e6791cabb9",
+        "smallcofactor": "12334b0f2cb742a2175b696240f8f57c708ec20f207996aebc2fb8168bf9ec5d"
+      },
+      "row_count": 17068,
+      "slice_id": "s120_129",
+      "slice_max": 129,
+      "slice_min": 120,
+      "slice_range": "s=120..129",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS120_129SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s120_129_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS130_139AtomList.lean",
+      "atomlist_route_theorem": "s130_139_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS130_139.lean",
+      "full_slice_file_sha256": "2f381397fd2d89ec5a0e9bcda6660c5022761a3e0be24423ad42273ab7783a6f",
+      "full_slice_source_commit": "1d908800911229960c7f3e553c58e4e47c4fe5f7",
+      "full_slice_theorem": "s130_139_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S130_139.lean",
+      "local_index_equiv": "s130_139ConcreteIndexEquiv",
+      "local_index_file_sha256": "8f38a7e88fd31e4ad410a8745134e7e22aaa140a807d1f65478c82dea9e421c6",
+      "local_index_ordinal_theorem": "s130_139ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "f62382cb36d03b7ffa5273929b9bcb75a3f015deff862b524457d3c0fc659765",
+        "smallcofactor": "2b4a63ff3333e6bd767e2255ea3d013970d2ab8f70346102c0f8471ab8a9537d"
+      },
+      "row_count": 16940,
+      "slice_id": "s130_139",
+      "slice_max": 139,
+      "slice_min": 130,
+      "slice_range": "s=130..139",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS130_139SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s130_139_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS140_149AtomList.lean",
+      "atomlist_route_theorem": "s140_149_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS140_149.lean",
+      "full_slice_file_sha256": "5e5fa3bc646ac72742e61acb80f05faacb07006b2342883ee9d6cc2781bfc96f",
+      "full_slice_source_commit": "99fd9b545a471ad148a9cc88b6b5a53129a9dc12",
+      "full_slice_theorem": "s140_149_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S140_149.lean",
+      "local_index_equiv": "s140_149ConcreteIndexEquiv",
+      "local_index_file_sha256": "f7acb201712831676a972eb5cb20824fc55be826452452fa55de7a33f7cbb58c",
+      "local_index_ordinal_theorem": "s140_149ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "62a976e2deb92394f96d3d93bd711b87bc8a214a88c8ee6a2d9c9684ebb3ec91",
+        "smallcofactor": "f104f2de9e4c60654bf0cf08b0338f7e01efd5da37732b9d3bbb8f5b25e64190"
+      },
+      "row_count": 17170,
+      "slice_id": "s140_149",
+      "slice_max": 149,
+      "slice_min": 140,
+      "slice_range": "s=140..149",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS140_149SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s140_149_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS150_159AtomList.lean",
+      "atomlist_route_theorem": "s150_159_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS150_159.lean",
+      "full_slice_file_sha256": "83be708a2fa707fffe0c3997e405db86a0d1fa833c24d27f36141c508e6c2aeb",
+      "full_slice_source_commit": "fbc405a86990c7685a6e3eaef56c7ff95e1bf1d3",
+      "full_slice_theorem": "s150_159_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S150_159.lean",
+      "local_index_equiv": "s150_159ConcreteIndexEquiv",
+      "local_index_file_sha256": "9192641d69abb6c9fb04949f94bec633875eaf373943fd51418623210236c955",
+      "local_index_ordinal_theorem": "s150_159ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "7b1000afff60a2232971664c5f894001d6bfdc7dd8bff48bd39a3de2de2c0e2a",
+        "smallcofactor": "da2262ed1943eb65e1f199dd7cac2e49a64f1310d7652a6d2a20a89a79f8a179"
+      },
+      "row_count": 16944,
+      "slice_id": "s150_159",
+      "slice_max": 159,
+      "slice_min": 150,
+      "slice_range": "s=150..159",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS150_159SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s150_159_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS160_169AtomList.lean",
+      "atomlist_route_theorem": "s160_169_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS160_169.lean",
+      "full_slice_file_sha256": "b965326dc9a3be2e6fc18688650e09774f3d194f1011bee4ebf02134a1c1b62e",
+      "full_slice_source_commit": "903e162f9c54ad7590442df5875a65a65deb85a9",
+      "full_slice_theorem": "s160_169_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S160_169.lean",
+      "local_index_equiv": "s160_169ConcreteIndexEquiv",
+      "local_index_file_sha256": "a0ba8b755f6dc6693464a843e1342709993e21de6ae046b7653227895bc77115",
+      "local_index_ordinal_theorem": "s160_169ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "19ec525e7102412fd62a40d497c70fb1e3e8eb8840eed39c83e8985d6d033f8a",
+        "smallcofactor": "30be17e039ccd88d830d18375b07106e722220ae7b1af4d992a37ab93314b8db"
+      },
+      "row_count": 17084,
+      "slice_id": "s160_169",
+      "slice_max": 169,
+      "slice_min": 160,
+      "slice_range": "s=160..169",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS160_169SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s160_169_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS170_179AtomList.lean",
+      "atomlist_route_theorem": "s170_179_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS170_179.lean",
+      "full_slice_file_sha256": "28e7bfc1e7ea818c726094d7c69a6aa8b50523d806c80e7405ec64d83f1611a5",
+      "full_slice_source_commit": "cbdf07ea34dba3bd4c8c64e577dcb2cf5ca94240",
+      "full_slice_theorem": "s170_179_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S170_179.lean",
+      "local_index_equiv": "s170_179ConcreteIndexEquiv",
+      "local_index_file_sha256": "74a2d220879062b4b55d9c00932b01fb91f807aa0005293da31cd026a8ef86ae",
+      "local_index_ordinal_theorem": "s170_179ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "224e60a1ca7561e75a5093f653f8af3873feaba0accdd76a623c28c3c1fbde77",
+        "smallcofactor": "8b19a96206188d7fcafefe9e0091c76470c1251a3d215742031adc09827ea30c"
+      },
+      "row_count": 17120,
+      "slice_id": "s170_179",
+      "slice_max": 179,
+      "slice_min": 170,
+      "slice_range": "s=170..179",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS170_179SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s170_179_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS180_189AtomList.lean",
+      "atomlist_route_theorem": "s180_189_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS180_189.lean",
+      "full_slice_file_sha256": "fffb5fe8bd2ef0ea4762f4a1f61444b81bda9069014a1f21edaa35130dec943d",
+      "full_slice_source_commit": "342f21c6a3467621d4ecb5767fe8affa8cfd3cec",
+      "full_slice_theorem": "s180_189_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S180_189.lean",
+      "local_index_equiv": "s180_189ConcreteIndexEquiv",
+      "local_index_file_sha256": "d56983bb21a7081d070d9e9b4e1300ee295c00cf3860a9ddb8eeb8548b9f6709",
+      "local_index_ordinal_theorem": "s180_189ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "4aec4f4e84f6104a582981414b62d6e781be131871036fd5d94ce0589adcfba3",
+        "smallcofactor": "6dc259521c0f6a72c5d82c30001d8e8e8fdb0ff7fe2a1bc5704813db5d7b0974"
+      },
+      "row_count": 17048,
+      "slice_id": "s180_189",
+      "slice_max": 189,
+      "slice_min": 180,
+      "slice_range": "s=180..189",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS180_189SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s180_189_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS190_199AtomList.lean",
+      "atomlist_route_theorem": "s190_199_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS190_199.lean",
+      "full_slice_file_sha256": "6bf3689c8eb1fcf31517bd852b77c627c2ea284fcdd9263dfe2647f43f4856e8",
+      "full_slice_source_commit": "9e1dd5405dc964612f1e749b9b47b6059345b139",
+      "full_slice_theorem": "s190_199_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S190_199.lean",
+      "local_index_equiv": "s190_199ConcreteIndexEquiv",
+      "local_index_file_sha256": "9c61405792284cf5ca70e2b58d1425e2510f1d0a7e5ec18a9511e7c76e277b0c",
+      "local_index_ordinal_theorem": "s190_199ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "5d6aeb84e1e741ce9f795cdb6d1f09e89f500b66f5c87e3751c509f252238238",
+        "smallcofactor": "5f350f8f7f47176aee31f3b6b9540feeebf0b426aa8fe7e5f05fb116056b8646"
+      },
+      "row_count": 17006,
+      "slice_id": "s190_199",
+      "slice_max": 199,
+      "slice_min": 190,
+      "slice_range": "s=190..199",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS190_199SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s190_199_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS200_209AtomList.lean",
+      "atomlist_route_theorem": "s200_209_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS200_209.lean",
+      "full_slice_file_sha256": "3815fac645791ef62e120181c1e0d9b4cc832a49201ca68e37fbf6caaf8407a3",
+      "full_slice_source_commit": "2e0b84f9dcd6d882b9e04ef21827825880ba2f49",
+      "full_slice_theorem": "s200_209_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S200_209.lean",
+      "local_index_equiv": "s200_209ConcreteIndexEquiv",
+      "local_index_file_sha256": "38eeb234f9d63825132660f86cc70be25367274d7b4d62377793c553a6f08515",
+      "local_index_ordinal_theorem": "s200_209ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "fe12549977b29c5af3d14ffebf2d699d3e767acc465d8f7fd8a9f72d905c04e2",
+        "smallcofactor": "a2436ffde03f7df1dbf1bd8baa957caffe49ac238fcbbdda52adc4c54394d929"
+      },
+      "row_count": 16552,
+      "slice_id": "s200_209",
+      "slice_max": 209,
+      "slice_min": 200,
+      "slice_range": "s=200..209",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS200_209SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s200_209_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS210_219AtomList.lean",
+      "atomlist_route_theorem": "s210_219_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS210_219.lean",
+      "full_slice_file_sha256": "c6281ae1eb21a7f1efba141b763ff92ecdb36d8a75255894e171ddb73c89682e",
+      "full_slice_source_commit": "4ccd8a22b7b06e3c14327c8c37e66a6bd3377d66",
+      "full_slice_theorem": "s210_219_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S210_219.lean",
+      "local_index_equiv": "s210_219ConcreteIndexEquiv",
+      "local_index_file_sha256": "b0655cbe77653b54e3ff9452209e4f9300a1fdf7a7e926841d248fd98e9d0299",
+      "local_index_ordinal_theorem": "s210_219ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "97d53d1d19df77e4b07206fab9ff5179b5dd56a516737d9cb7757b00d97f8d1b",
+        "smallcofactor": "54b334218598e2a65a073cf333e8de5b53b5aff2c2ba600a894a0b92e2e571fa"
+      },
+      "row_count": 17114,
+      "slice_id": "s210_219",
+      "slice_max": 219,
+      "slice_min": 210,
+      "slice_range": "s=210..219",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS210_219SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s210_219_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS220_229AtomList.lean",
+      "atomlist_route_theorem": "s220_229_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS220_229.lean",
+      "full_slice_file_sha256": "db469d88fd1b95ef568fed83978f6c83de027f6e93fc83ec62d085c34adabfd1",
+      "full_slice_source_commit": "6f822a9fce0d109f5aacaaa8bda86226fa0294e4",
+      "full_slice_theorem": "s220_229_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S220_229.lean",
+      "local_index_equiv": "s220_229ConcreteIndexEquiv",
+      "local_index_file_sha256": "6a1be9b32b7dc53fb9ae001446fdb8aeba3b936867a2c6d9d87a44b8d20d1ed1",
+      "local_index_ordinal_theorem": "s220_229ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "e1e5a2926b760fc336cc72cc47a135db740e923f4d74d3a2ae86a7ee409b052b",
+        "smallcofactor": "785858726ff50df4b31e714ef494674a24470a8b503d516272d57d9a959159ce"
+      },
+      "row_count": 16706,
+      "slice_id": "s220_229",
+      "slice_max": 229,
+      "slice_min": 220,
+      "slice_range": "s=220..229",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS220_229SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s220_229_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS230_239AtomList.lean",
+      "atomlist_route_theorem": "s230_239_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS230_239.lean",
+      "full_slice_file_sha256": "085ece1e6ad4e666014213d7715f08788ee93fa1597c34c6830467330f9400ff",
+      "full_slice_source_commit": "6e473e24d2381176a934cf60adab174e411ae6f0",
+      "full_slice_theorem": "s230_239_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S230_239.lean",
+      "local_index_equiv": "s230_239ConcreteIndexEquiv",
+      "local_index_file_sha256": "2a3ba20ea645aa472bd1c07626d7f58e790d23c80f2705b7e8fd96cda085584d",
+      "local_index_ordinal_theorem": "s230_239ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "5adfe09399b289f1bdbcf9a888418c03786d625f6595f6413cf78bf666ec72c0",
+        "smallcofactor": "911aae44c38851f78b00c19c057ea0ed30eef1ba4e284eeac3b80d78b1a44658"
+      },
+      "row_count": 17136,
+      "slice_id": "s230_239",
+      "slice_max": 239,
+      "slice_min": 230,
+      "slice_range": "s=230..239",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS230_239SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s230_239_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS240_249AtomList.lean",
+      "atomlist_route_theorem": "s240_249_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS240_249.lean",
+      "full_slice_file_sha256": "e5103b73b2f618e0a3373f5d7091dc3e6e290600084e5f481e7289395ba48751",
+      "full_slice_source_commit": "4db72666537805302f5a358e60b831b52e8f6894",
+      "full_slice_theorem": "s240_249_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S240_249.lean",
+      "local_index_equiv": "s240_249ConcreteIndexEquiv",
+      "local_index_file_sha256": "e3d0b1ab8dd9106166d82feb45630a5e2022a717928004a83e05bbfabb0311fa",
+      "local_index_ordinal_theorem": "s240_249ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "7024ccffbb364fa5963cd0a8f5f389d1cf635e949dc9b69b6ce0872a53b70dfa",
+        "smallcofactor": "c3b3e7bb39167d9016efe01d977444dfd3a267b0ef87466082d5b51204c5ee40"
+      },
+      "row_count": 17280,
+      "slice_id": "s240_249",
+      "slice_max": 249,
+      "slice_min": 240,
+      "slice_range": "s=240..249",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS240_249SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s240_249_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS250_259AtomList.lean",
+      "atomlist_route_theorem": "s250_259_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS250_259.lean",
+      "full_slice_file_sha256": "560e97b7e9a56ff07a5ce1f992561432cf1b3d89be141566f4b1c72437ba1d82",
+      "full_slice_source_commit": "c049ff05ebd3756e037fdde7d4abace256e2698b",
+      "full_slice_theorem": "s250_259_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S250_259.lean",
+      "local_index_equiv": "s250_259ConcreteIndexEquiv",
+      "local_index_file_sha256": "f63d29d3a8333a44f76d359e334a57760f54fa1e19d0dcf7cc11edbf302a788e",
+      "local_index_ordinal_theorem": "s250_259ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "50ddf947e3e99c529cef0f762bac0c00f651f42f8529f86a480c245fe72ea012",
+        "smallcofactor": "6d242bb00b4b7b89f16d1213c68dc1014f8f4eae5e05fd99bd97e45d7b9e1db5"
+      },
+      "row_count": 16654,
+      "slice_id": "s250_259",
+      "slice_max": 259,
+      "slice_min": 250,
+      "slice_range": "s=250..259",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS250_259SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s250_259_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS260_269AtomList.lean",
+      "atomlist_route_theorem": "s260_269_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS260_269.lean",
+      "full_slice_file_sha256": "32d7803300c518c00f9c4a6d1fca31245aa9cfca7571b7490dab1b683df478bc",
+      "full_slice_source_commit": "b163718280aaace6040fd94b8bd6d688044de5e9",
+      "full_slice_theorem": "s260_269_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S260_269.lean",
+      "local_index_equiv": "s260_269ConcreteIndexEquiv",
+      "local_index_file_sha256": "fe5b7e02a75a2ce34144d0a9c160ee7b19764d833d26b9a55414ff0a5d434055",
+      "local_index_ordinal_theorem": "s260_269ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "13a8cfaa60aec880f6e933440f3cdc12083d8f2ba12fbac6bb554fb6813a4a5f",
+        "smallcofactor": "e66060b5746c6e913d1220b7ea015470fa8179f7ecbc07918a2aa675bbd19a3c"
+      },
+      "row_count": 17290,
+      "slice_id": "s260_269",
+      "slice_max": 269,
+      "slice_min": 260,
+      "slice_range": "s=260..269",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS260_269SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s260_269_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS270_279AtomList.lean",
+      "atomlist_route_theorem": "s270_279_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS270_279.lean",
+      "full_slice_file_sha256": "7a55ef1ee3ccf03ad279a1e2bfb102fa651b894d10b18ad32ebcef89cae9210e",
+      "full_slice_source_commit": "af0a76c583d73440b512933d6d0c12672b54776b",
+      "full_slice_theorem": "s270_279_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S270_279.lean",
+      "local_index_equiv": "s270_279ConcreteIndexEquiv",
+      "local_index_file_sha256": "917972dc3eeb32743d5e5f833fef344c1f215e68d7ef4af8492770025904906a",
+      "local_index_ordinal_theorem": "s270_279ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "66816602bc58034cb6541d93925a12236347083c29054a5e462de6878e7b64e0",
+        "smallcofactor": "480c2c1cee0a8d6439b62385c7db80beccd24fd1119b8661cd3b44acf6c131ec"
+      },
+      "row_count": 17336,
+      "slice_id": "s270_279",
+      "slice_max": 279,
+      "slice_min": 270,
+      "slice_range": "s=270..279",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS270_279SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s270_279_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS280_289AtomList.lean",
+      "atomlist_route_theorem": "s280_289_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS280_289.lean",
+      "full_slice_file_sha256": "942f3673b2dc260b4bab89bb27ab760c7f3237e41e6dc597efd55ebece828d81",
+      "full_slice_source_commit": "cc5f6a615c237f30de559ece39188c828c59a825",
+      "full_slice_theorem": "s280_289_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S280_289.lean",
+      "local_index_equiv": "s280_289ConcreteIndexEquiv",
+      "local_index_file_sha256": "4e13d03a007dae34237fa75c02d3e194597f485d1e3f118ff284fb8b9524dd5f",
+      "local_index_ordinal_theorem": "s280_289ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "8512e796c4e70df8dd0d24e23fd9dd46fa3ca9b42130ce2c5f587804a5e6d2a5",
+        "smallcofactor": "3ee0b0873825e9f8868f3b3c0964e6d4b5fc990a92a37b6bfb0ea65c24fed07c"
+      },
+      "row_count": 16978,
+      "slice_id": "s280_289",
+      "slice_max": 289,
+      "slice_min": 280,
+      "slice_range": "s=280..289",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS280_289SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s280_289_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS290_299AtomList.lean",
+      "atomlist_route_theorem": "s290_299_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS290_299.lean",
+      "full_slice_file_sha256": "9574396d8bda3a816b6e2c0e381ee081eb569c64dcd96536459c9f6b8a61cc8e",
+      "full_slice_source_commit": "9489a747b3c1cf3b4cb0f95ddff6b145f7f35698",
+      "full_slice_theorem": "s290_299_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S290_299.lean",
+      "local_index_equiv": "s290_299ConcreteIndexEquiv",
+      "local_index_file_sha256": "3b86e8f5c26887159d27cdcbb9716f52a5a5ecce519ca3a0f198aeb902e24f1b",
+      "local_index_ordinal_theorem": "s290_299ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "fef7401484eb2fbcdab38fa62cc0a42b27d7e67ddc791d1f95326c22d0c1ccdb",
+        "smallcofactor": "2cbcf03328a5708790acfe6266c79995acc1d4b0371eb79d9e4699bf7f33bfad"
+      },
+      "row_count": 16828,
+      "slice_id": "s290_299",
+      "slice_max": 299,
+      "slice_min": 290,
+      "slice_range": "s=290..299",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS290_299SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s290_299_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS300_309AtomList.lean",
+      "atomlist_route_theorem": "s300_309_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS300_309.lean",
+      "full_slice_file_sha256": "b46ffe107c27c5dff11799663360d8e2250c95f406b3e6a0c1f6fed300f55e7e",
+      "full_slice_source_commit": "20b79dd6a91a2fde46670bbcba1255b287c82562",
+      "full_slice_theorem": "s300_309_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S300_309.lean",
+      "local_index_equiv": "s300_309ConcreteIndexEquiv",
+      "local_index_file_sha256": "e94f6f529e835c78ba590b71761457744f3bfe9ef04293c2df9ac3904959b4df",
+      "local_index_ordinal_theorem": "s300_309ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "c7ec9aa1f83daeb4cebb9723be64043c007135db20762ac434e799c7e1b13d04",
+        "smallcofactor": "e857bf02f97994ed7f093fa9dcfa4951176035b39d17be38cd8941e969654d42"
+      },
+      "row_count": 16950,
+      "slice_id": "s300_309",
+      "slice_max": 309,
+      "slice_min": 300,
+      "slice_range": "s=300..309",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS300_309SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s300_309_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS310_319AtomList.lean",
+      "atomlist_route_theorem": "s310_319_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS310_319.lean",
+      "full_slice_file_sha256": "8b489dfdf3ccc09565a1d3a41ed3b29a1de267fd0b07f0af4d789c26cc57a268",
+      "full_slice_source_commit": "ffeb3a56d13533045ba509488a92f469d0ca7abf",
+      "full_slice_theorem": "s310_319_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S310_319.lean",
+      "local_index_equiv": "s310_319ConcreteIndexEquiv",
+      "local_index_file_sha256": "066289ca1925019ec487d51bbfcddbc1b8082f28e829b2607712af52300b23ac",
+      "local_index_ordinal_theorem": "s310_319ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "932a2df553c4140e11ad7f67b53b0217995314cf72a658531f003026cd97dbd3",
+        "smallcofactor": "9e435f08c372ea78d641afc7aff6d4b7a2fad2b1374d0dc7c9dd2ad763b4ead9"
+      },
+      "row_count": 16938,
+      "slice_id": "s310_319",
+      "slice_max": 319,
+      "slice_min": 310,
+      "slice_range": "s=310..319",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS310_319SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s310_319_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS320_329AtomList.lean",
+      "atomlist_route_theorem": "s320_329_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS320_329.lean",
+      "full_slice_file_sha256": "19c0c2992baf6cff98ca6d6f5e5d3cbcc3628c5cb26d647d33e0f9a6008c71e4",
+      "full_slice_source_commit": "900c81c99b3b8e4cee556aa30435c6fb5e230557",
+      "full_slice_theorem": "s320_329_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S320_329.lean",
+      "local_index_equiv": "s320_329ConcreteIndexEquiv",
+      "local_index_file_sha256": "f5813671965d639eb60cde72aa63ea52f2c523470b54dd9cfbe928564993257d",
+      "local_index_ordinal_theorem": "s320_329ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "fef1a44b291a4a18f8a0ae30eac59c02550a19bfb2c7d56737aa741142e814be",
+        "smallcofactor": "73b330f96a3def12a45f7dd887bbb38e5957f3b6c2417f9082fd05f6eac8f775"
+      },
+      "row_count": 16934,
+      "slice_id": "s320_329",
+      "slice_max": 329,
+      "slice_min": 320,
+      "slice_range": "s=320..329",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS320_329SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s320_329_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS330_339AtomList.lean",
+      "atomlist_route_theorem": "s330_339_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS330_339.lean",
+      "full_slice_file_sha256": "eae735b85b2819ca2b48f3bd6e7a52b99d4131558e92bbcf55629740e6bbb148",
+      "full_slice_source_commit": "7c5a4f1e122b1e67ca91c3c202b24d5479ad3034",
+      "full_slice_theorem": "s330_339_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S330_339.lean",
+      "local_index_equiv": "s330_339ConcreteIndexEquiv",
+      "local_index_file_sha256": "cc591fa34027a1efde4837e88e108f678ffc2ee03bde2242da0b01a38eb694b7",
+      "local_index_ordinal_theorem": "s330_339ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "83b7cadce832f6cb05274992be73a2cf5560a85809d49e40cb5fc27893f49c02",
+        "smallcofactor": "9ebf45426953c385eb9662de9f5cfa8ee0afac34e414ef5c483cee099360c2cb"
+      },
+      "row_count": 17288,
+      "slice_id": "s330_339",
+      "slice_max": 339,
+      "slice_min": 330,
+      "slice_range": "s=330..339",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS330_339SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s330_339_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS340_349AtomList.lean",
+      "atomlist_route_theorem": "s340_349_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS340_349.lean",
+      "full_slice_file_sha256": "63854d04309573abded726813a4ba71a804b4267790ca1eea7a42dba6a3a9c6b",
+      "full_slice_source_commit": "ad0f3ae1b58e7ed49733696601c415691baeff52",
+      "full_slice_theorem": "s340_349_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S340_349.lean",
+      "local_index_equiv": "s340_349ConcreteIndexEquiv",
+      "local_index_file_sha256": "8d75489246bfaa22138aff3fa924f6962f6fa0704995c1d023460c811439bb18",
+      "local_index_ordinal_theorem": "s340_349ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "56328febe49c062a9c5bcfb5cdd2fff00036db057b56f286057778d52fe21a30",
+        "smallcofactor": "03178c5734c5ed57e6754e2b45f925f949f9cdd0d9beac327c7bdb79916739f0"
+      },
+      "row_count": 16904,
+      "slice_id": "s340_349",
+      "slice_max": 349,
+      "slice_min": 340,
+      "slice_range": "s=340..349",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS340_349SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s340_349_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS350_359AtomList.lean",
+      "atomlist_route_theorem": "s350_359_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS350_359.lean",
+      "full_slice_file_sha256": "40d48f638e7ed974b4fb4aa45554e58bafea2069f7d02ebee8af1241a658a8d1",
+      "full_slice_source_commit": "45f6e0456229976f040b07810bd7daaa8ed67a2c",
+      "full_slice_theorem": "s350_359_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S350_359.lean",
+      "local_index_equiv": "s350_359ConcreteIndexEquiv",
+      "local_index_file_sha256": "59da9b01d44221fff7b77baae6ecf1c3595144d2e2b7e06be556e53f22c91cc1",
+      "local_index_ordinal_theorem": "s350_359ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "93c740c0dcd0a390009bfec0fe3a73b8fd55a0d79434d3d12523a0c1160d475a",
+        "smallcofactor": "a5155e2e241e8ef7fb058bf49317e88289b4c43663ba012a38fa345a65f4c652"
+      },
+      "row_count": 17040,
+      "slice_id": "s350_359",
+      "slice_max": 359,
+      "slice_min": 350,
+      "slice_range": "s=350..359",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS350_359SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s350_359_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS360_369AtomList.lean",
+      "atomlist_route_theorem": "s360_369_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS360_369.lean",
+      "full_slice_file_sha256": "8e6076e2d9138d1c3c8582db41fec66bda7421237550f884ebf4eff5491bb3bd",
+      "full_slice_source_commit": "ae7b944fec211b7daae70797fe65ef5a2db1592f",
+      "full_slice_theorem": "s360_369_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S360_369.lean",
+      "local_index_equiv": "s360_369ConcreteIndexEquiv",
+      "local_index_file_sha256": "5c40d2b8f9b40d0f2f6826f5b08eadbe1c299da9c73eb8d302c4e54952c65929",
+      "local_index_ordinal_theorem": "s360_369ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "4ced107e262d5dde1b5894973185d33ade68ceae2d8d31ac3a2aeb0f1bd6ae2e",
+        "smallcofactor": "2e58f5211dc423648e92d82c9e433e750dcda1450ce04e3da77432819147dbf1"
+      },
+      "row_count": 16816,
+      "slice_id": "s360_369",
+      "slice_max": 369,
+      "slice_min": 360,
+      "slice_range": "s=360..369",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS360_369SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s360_369_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS370_379AtomList.lean",
+      "atomlist_route_theorem": "s370_379_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS370_379.lean",
+      "full_slice_file_sha256": "b29c7e519efca68670f7263c85cecb6958dada2ef6e8166d8174653470f104b4",
+      "full_slice_source_commit": "f869634ef50706909c3185e6f591b8b388a0d532",
+      "full_slice_theorem": "s370_379_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S370_379.lean",
+      "local_index_equiv": "s370_379ConcreteIndexEquiv",
+      "local_index_file_sha256": "f62f51a0ac09109d692b3a52a37d9fa6a74e9b863bf8d1a698ced9e19ce570bd",
+      "local_index_ordinal_theorem": "s370_379ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "93d8def07c89d44e496aae41a643c48fda06397543accc3472f31dbbf3dbbffa",
+        "smallcofactor": "8fa6482cb31a7344e9988b796b03b93173455ab440253b32b512646e351cb170"
+      },
+      "row_count": 16932,
+      "slice_id": "s370_379",
+      "slice_max": 379,
+      "slice_min": 370,
+      "slice_range": "s=370..379",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS370_379SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s370_379_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS380_389AtomList.lean",
+      "atomlist_route_theorem": "s380_389_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS380_389.lean",
+      "full_slice_file_sha256": "3ef530f47de56de28a8f84f7d70cbb3683b4f7c56f742c360a8813b7c5f8e60c",
+      "full_slice_source_commit": "34f8bf7ada6c05f355e7597550bcfbeefb5bd40d",
+      "full_slice_theorem": "s380_389_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S380_389.lean",
+      "local_index_equiv": "s380_389ConcreteIndexEquiv",
+      "local_index_file_sha256": "f7627f935a8300d80dac05527491104a8be24e317c7ea8f6db564d7437f0fd0d",
+      "local_index_ordinal_theorem": "s380_389ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "9476ea7deea160d57a58fdf078058cd5ff9a0df73d5fd813025c3001a4652926",
+        "smallcofactor": "8c5b9e5a38efa8aafea8ea8531664c28e4590d07b87b613a17e8a96c1c65ccdd"
+      },
+      "row_count": 16948,
+      "slice_id": "s380_389",
+      "slice_max": 389,
+      "slice_min": 380,
+      "slice_range": "s=380..389",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS380_389SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s380_389_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS390_399AtomList.lean",
+      "atomlist_route_theorem": "s390_399_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS390_399.lean",
+      "full_slice_file_sha256": "4319d3d73833fc1ce42909c6f46c66989e512355bcbc15110dbd95aff76d7310",
+      "full_slice_source_commit": "7cd4b668da0e52b3881e2a78f31bba5e68e9b633",
+      "full_slice_theorem": "s390_399_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S390_399.lean",
+      "local_index_equiv": "s390_399ConcreteIndexEquiv",
+      "local_index_file_sha256": "35df09e49d9b9cfb4aae000a723c96e33709fcb324c9b4c6932d2dcb4bd2f958",
+      "local_index_ordinal_theorem": "s390_399ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "91155179d9611b69b2592f2eff041a0add6d4ceefdbcd20efabd3bbbbe81f241",
+        "smallcofactor": "21fc210d2eecac44e79c7101f4fec0401804b8d056312406b01f11ffa88fe229"
+      },
+      "row_count": 16890,
+      "slice_id": "s390_399",
+      "slice_max": 399,
+      "slice_min": 390,
+      "slice_range": "s=390..399",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS390_399SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s390_399_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS400_409AtomList.lean",
+      "atomlist_route_theorem": "s400_409_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS400_409.lean",
+      "full_slice_file_sha256": "5e691590eafb4248a2e4406c73b66c9508094d736c5acd26a1bb53c2ddf2a643",
+      "full_slice_source_commit": "8a6cd502b940670147727c805d8942efa81fb7c1",
+      "full_slice_theorem": "s400_409_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S400_409.lean",
+      "local_index_equiv": "s400_409ConcreteIndexEquiv",
+      "local_index_file_sha256": "8150ca4c4f100ef74b1b66dcfcc37863bf953d33f2850000cb11934d995a4d6e",
+      "local_index_ordinal_theorem": "s400_409ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "9e9aeb3d3e6ae6a4636f4304c1663d68fbe4a74fda260d93cb6a5e7a6d7a5281",
+        "smallcofactor": "2c5a8e6cae98e06e340a3429e91e88b4bf3ce2b8af5a3a6832c813ea2c9fd6d5"
+      },
+      "row_count": 17308,
+      "slice_id": "s400_409",
+      "slice_max": 409,
+      "slice_min": 400,
+      "slice_range": "s=400..409",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS400_409SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s400_409_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS410_419AtomList.lean",
+      "atomlist_route_theorem": "s410_419_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS410_419.lean",
+      "full_slice_file_sha256": "dc1112152c0442d46acf9055048e8119f51a5ca1b0a158784b2ab1bcaf3813c1",
+      "full_slice_source_commit": "332649babf6d187787e0676da51d553599a77392",
+      "full_slice_theorem": "s410_419_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S410_419.lean",
+      "local_index_equiv": "s410_419ConcreteIndexEquiv",
+      "local_index_file_sha256": "27e2d6ceb359f6a7d256c2f7dc5dd25a844fa30ffa416b6fd9870924a7f11a20",
+      "local_index_ordinal_theorem": "s410_419ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "20a40f370d7531250f9f36cc0551498907b715f17d65699e4fb38e361a304c18",
+        "smallcofactor": "a191be9fb8ac63af0e1d14d1635348b2c09caa746829191d245921525d02e6bc"
+      },
+      "row_count": 17042,
+      "slice_id": "s410_419",
+      "slice_max": 419,
+      "slice_min": 410,
+      "slice_range": "s=410..419",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS410_419SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s410_419_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS420_429AtomList.lean",
+      "atomlist_route_theorem": "s420_429_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS420_429.lean",
+      "full_slice_file_sha256": "a3ba66361a374fead0d8a6b4d7ff02fba985fcd5643d3165d1a5e3e03471e6d0",
+      "full_slice_source_commit": "ec2ee340b2c3f0d8e1f60f17dc999235261bba8e",
+      "full_slice_theorem": "s420_429_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S420_429.lean",
+      "local_index_equiv": "s420_429ConcreteIndexEquiv",
+      "local_index_file_sha256": "21fac018fea4364ad12cbc7eb39c77866bd1e8603cba7481d4821f59419a985c",
+      "local_index_ordinal_theorem": "s420_429ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "fea70465397e5c7d5935be0de48accc38b1665999e8501be2c915d8499ba208c",
+        "smallcofactor": "c1ef65cf9fc8b61ec0cef665fceca440c350777d1f01cc2269b361d228a25b89"
+      },
+      "row_count": 17130,
+      "slice_id": "s420_429",
+      "slice_max": 429,
+      "slice_min": 420,
+      "slice_range": "s=420..429",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS420_429SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s420_429_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS430_439AtomList.lean",
+      "atomlist_route_theorem": "s430_439_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS430_439.lean",
+      "full_slice_file_sha256": "44efecff78629577322a6e24d052af4a62d2320e2d7bfc3a6e06d400aa1fe48f",
+      "full_slice_source_commit": "19f3ef108908edc277e3e9c611ee49b583628066",
+      "full_slice_theorem": "s430_439_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S430_439.lean",
+      "local_index_equiv": "s430_439ConcreteIndexEquiv",
+      "local_index_file_sha256": "c97307455b63856d0573a19a037a0aaad2db78b5c0cf2ba6c1ba37c1d16673c3",
+      "local_index_ordinal_theorem": "s430_439ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "b358eb07a0e3ccecce407b0d475dad92db0be42c37fd3e1917d35d479c60eb50",
+        "smallcofactor": "b60fd2861827f37c6790bddb7c13d8bc5b4e8ac27c6ed12c15b1d6f3ba54f63e"
+      },
+      "row_count": 17094,
+      "slice_id": "s430_439",
+      "slice_max": 439,
+      "slice_min": 430,
+      "slice_range": "s=430..439",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS430_439SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s430_439_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS440_449AtomList.lean",
+      "atomlist_route_theorem": "s440_449_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS440_449.lean",
+      "full_slice_file_sha256": "13ee049351871f5d044bf3bbcfbaa6ef957a9287dcc12e91d613fcea22555538",
+      "full_slice_source_commit": "f22243c761456f08db7f4661684b468b28945a56",
+      "full_slice_theorem": "s440_449_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S440_449.lean",
+      "local_index_equiv": "s440_449ConcreteIndexEquiv",
+      "local_index_file_sha256": "03528e249e4a86733c559cb8c4021f245d77cd2f5a66d254e5e4f587c77aa64c",
+      "local_index_ordinal_theorem": "s440_449ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "b34ee0baaf6d06548ca05777eb4dc138b92941fe20aaa405624c0a6c07c07181",
+        "smallcofactor": "f6346cb0a7ea7a009fecb06fb4f372bdaab4d641d425f46edb094e3cecd38f11"
+      },
+      "row_count": 17062,
+      "slice_id": "s440_449",
+      "slice_max": 449,
+      "slice_min": 440,
+      "slice_range": "s=440..449",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS440_449SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s440_449_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS450_459AtomList.lean",
+      "atomlist_route_theorem": "s450_459_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS450_459.lean",
+      "full_slice_file_sha256": "9d89772ebbcb9b6122e034e10fdaac67be62605ecb12eac05c3aecce307c61fc",
+      "full_slice_source_commit": "9288d461dc5e95c40b96d680d0da0013efe78f9b",
+      "full_slice_theorem": "s450_459_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S450_459.lean",
+      "local_index_equiv": "s450_459ConcreteIndexEquiv",
+      "local_index_file_sha256": "594e95eecd8718271742ffee158c22a910dbb1d7139e82599c373e5e479a8fc0",
+      "local_index_ordinal_theorem": "s450_459ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "533e003f5ed1cc7f7901893d78a2fadc43343798bac9c50bd737efcd91582535",
+        "smallcofactor": "db7799a9913ba1be3c37143b5aaea80c42b17aad9cecdaf5f34c2415b7759494"
+      },
+      "row_count": 17148,
+      "slice_id": "s450_459",
+      "slice_max": 459,
+      "slice_min": 450,
+      "slice_range": "s=450..459",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS450_459SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s450_459_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS460_469AtomList.lean",
+      "atomlist_route_theorem": "s460_469_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS460_469.lean",
+      "full_slice_file_sha256": "61766fb628d07a97d0584a8142cdf7de41a1c0be4b30295a2f074dd61df937fc",
+      "full_slice_source_commit": "f2514fab27c60370ab4e0f8e78023dcd29166a11",
+      "full_slice_theorem": "s460_469_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S460_469.lean",
+      "local_index_equiv": "s460_469ConcreteIndexEquiv",
+      "local_index_file_sha256": "c1b34ae8dd05287499432d73222a44105f16e57f850c3104ca3b08ad4497396d",
+      "local_index_ordinal_theorem": "s460_469ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "8fcfbd8bcf3239c0408a8c55ef11fb2b9b700547fae3176afbcf729f9246cf64",
+        "smallcofactor": "f3eeac8d31f2242e522e0943da3a1f61b4e7309ae9407bec704cbe5feb0a7191"
+      },
+      "row_count": 16798,
+      "slice_id": "s460_469",
+      "slice_max": 469,
+      "slice_min": 460,
+      "slice_range": "s=460..469",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS460_469SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s460_469_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS470_479AtomList.lean",
+      "atomlist_route_theorem": "s470_479_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS470_479.lean",
+      "full_slice_file_sha256": "8de1a9c0945d49a329a2cf1806766ccfc08ce783b1a862fe56d204b5619f0f41",
+      "full_slice_source_commit": "220c10825704c1f0051bfad017fa4af005c6282e",
+      "full_slice_theorem": "s470_479_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S470_479.lean",
+      "local_index_equiv": "s470_479ConcreteIndexEquiv",
+      "local_index_file_sha256": "d1966648aad88c058ae44ccc0f1bc6abebf30aaec2b3f483ac570321c8a996f6",
+      "local_index_ordinal_theorem": "s470_479ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "612357a3c9e96015adb02d9a725a1592245dd38ac276f8058c447fd9145e149e",
+        "smallcofactor": "b1175e70e6ad17b8c9e569164783446c7dbd8a050ad035b197ca9562c78351f0"
+      },
+      "row_count": 16882,
+      "slice_id": "s470_479",
+      "slice_max": 479,
+      "slice_min": 470,
+      "slice_range": "s=470..479",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS470_479SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s470_479_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS480_489AtomList.lean",
+      "atomlist_route_theorem": "s480_489_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS480_489.lean",
+      "full_slice_file_sha256": "d5c1fdfa4e09dcc51db6a0885b24ace636062bdfd9c77ef8a66f28af23dacd2d",
+      "full_slice_source_commit": "37fcd599ac63cc78179132297fe4b75134dae0ad",
+      "full_slice_theorem": "s480_489_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S480_489.lean",
+      "local_index_equiv": "s480_489ConcreteIndexEquiv",
+      "local_index_file_sha256": "065087d3385a7ef8baa8d596628d48474ee669ecf06381d3e064ec5647d77bd1",
+      "local_index_ordinal_theorem": "s480_489ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "d6ec5f546a9ae0600ce58a96b60c472a8b95ccb0c1ec43a5f16bcf5d97208de8",
+        "smallcofactor": "b608ce8f565d53eef6727d92acb88feeaadda078072148a368779497440cc1af"
+      },
+      "row_count": 16888,
+      "slice_id": "s480_489",
+      "slice_max": 489,
+      "slice_min": 480,
+      "slice_range": "s=480..489",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS480_489SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s480_489_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS490_499AtomList.lean",
+      "atomlist_route_theorem": "s490_499_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS490_499.lean",
+      "full_slice_file_sha256": "923add228e0fda828d06cd927acf8e77cd8f787549283da5167ace30779fc38e",
+      "full_slice_source_commit": "eb56c6ac19631d8de76f5209b228c4442a69b0d1",
+      "full_slice_theorem": "s490_499_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S490_499.lean",
+      "local_index_equiv": "s490_499ConcreteIndexEquiv",
+      "local_index_file_sha256": "08059fe55f2e6b4c8965b42dbbabdcb6767da8ab1451e1515b8de931b176553e",
+      "local_index_ordinal_theorem": "s490_499ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "a93285e6e2582143b92f3199069fc5a514662174c0499d0d517c660607af0e8a",
+        "smallcofactor": "2c70cb03f989a4ce3a1e46683f406cef7c33645b43ebd5d2bcc6719efdcf6b9d"
+      },
+      "row_count": 17308,
+      "slice_id": "s490_499",
+      "slice_max": 499,
+      "slice_min": 490,
+      "slice_range": "s=490..499",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS490_499SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s490_499_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS500_509AtomList.lean",
+      "atomlist_route_theorem": "s500_509_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS500_509.lean",
+      "full_slice_file_sha256": "3ec9a635c8e6971bbbd471663c051eec6e9e8b3070e50856a49e3a7b3c65b47c",
+      "full_slice_source_commit": "27e09d4ab09ed2d0b771d4966c48ccc95e61af06",
+      "full_slice_theorem": "s500_509_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S500_509.lean",
+      "local_index_equiv": "s500_509ConcreteIndexEquiv",
+      "local_index_file_sha256": "f76f80bd57baa75c2178eceb27bc7c37475cf2bd8833560b62863042d643be83",
+      "local_index_ordinal_theorem": "s500_509ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "29101eb29bbf2fb0f24a04f390acb4046d5665f5fb374420e3755504f9d5e8f6",
+        "smallcofactor": "4575190b6865f2bf8637f404dd19cac59f71fd34bc87d392d3cddd7971954c38"
+      },
+      "row_count": 17024,
+      "slice_id": "s500_509",
+      "slice_max": 509,
+      "slice_min": 500,
+      "slice_range": "s=500..509",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS500_509SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s500_509_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS510_519AtomList.lean",
+      "atomlist_route_theorem": "s510_519_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS510_519.lean",
+      "full_slice_file_sha256": "52dbbd36295bc30a79eb836afacbadfa19721dc7b4af7b789a5717e930d6be56",
+      "full_slice_source_commit": "e4a745fa59c391da6b05e62d49cb61e2ac399cbd",
+      "full_slice_theorem": "s510_519_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S510_519.lean",
+      "local_index_equiv": "s510_519ConcreteIndexEquiv",
+      "local_index_file_sha256": "c1ec13c5fa8e6660c9c8dcdb1253f5c1bddc464e479d3d1371874d7903e9ec58",
+      "local_index_ordinal_theorem": "s510_519ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "235adba509cf409c15cb0275015138e0fdecd2945837657fef82656710d81a9f",
+        "smallcofactor": "ff32ca207ba2eca8b08716c91acd76d35e529689730a68b8b8a4e584b88e232a"
+      },
+      "row_count": 17212,
+      "slice_id": "s510_519",
+      "slice_max": 519,
+      "slice_min": 510,
+      "slice_range": "s=510..519",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS510_519SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s510_519_smallcofactor_route_tailKill_coverage"
+    },
+    {
+      "atomlist_route_file": "lean/Erdos647TailKillSliceCoverageS520_528AtomList.lean",
+      "atomlist_route_theorem": "s520_528_atomlist_route_tailKill_coverage",
+      "full_slice_file": "lean/Erdos647TailKillSliceCoverageS520_528.lean",
+      "full_slice_file_sha256": "50186c56fa52b8501adad6fea424ef6d8fcf574c2a2c2ba1b95df151238f0732",
+      "full_slice_source_commit": "23e4b7a30665daff2a2081f7be4aed4201654f63",
+      "full_slice_theorem": "s520_528_tailKill_slice_coverage",
+      "local_index_bridge_file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S520_528.lean",
+      "local_index_equiv": "s520_528ConcreteIndexEquiv",
+      "local_index_file_sha256": "15d06ee219911dd36f78fda4364996855c7c9845c5f3d500b5255385e5e14eec",
+      "local_index_ordinal_theorem": "s520_528ConcreteIndex_ordinal_preserved",
+      "local_index_source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+      "route_file_hashes": {
+        "atomlist": "b3eaea17add2471c011378dceb27a0d6dd44895657d3b9b8ed939f8f2b2a51cb",
+        "smallcofactor": "2b63aa377ee0c07f89d99e39e937331c4d8641373db20507de521018fd369b23"
+      },
+      "row_count": 15436,
+      "slice_id": "s520_528",
+      "slice_max": 528,
+      "slice_min": 520,
+      "slice_range": "s=520..528",
+      "smallcofactor_route_file": "lean/Erdos647TailKillSliceCoverageS520_528SmallCofactor.lean",
+      "smallcofactor_route_theorem": "s520_528_smallcofactor_route_tailKill_coverage"
+    }
+  ],
+  "local_index_bridge_root": {
+    "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge.lean",
+    "file_sha256": "09912263668230ef1ffd2fdf18418f03fc2c4143808d7fe4cea699b33dc2c964",
+    "source_commit": "b1138039271bb445c30c473b619e1e51b526c1f2",
+    "theorem": "tailKillMasterSliceLocalIndexBridgeModule_count"
+  },
+  "master_partition_bridge": {
+    "file": "lean/Erdos647TailKillMasterSlicePartitionBridge.lean",
+    "file_sha256": "1681da91294cd8091bc9f055563dee0650416ae4d1ae6ad3a77dfa7d7311bdb7",
+    "source_commit": "188a89d2cf3882d9ba1ed47236a792b192e3fb67",
+    "theorems": [
+      "tailKillMasterSliceIds_length",
+      "tailKillMasterSliceRowCount_sum",
+      "tailKillMasterSliceMembership_unique",
+      "tailKillMasterSliceMembership_eq",
+      "tailKillMasterRowIndex_sigma_left_inverse",
+      "tailKillMasterRowIndex_sigma_right_inverse"
+    ]
+  },
+  "non_claims": {
+    "axiom_removed": false,
+    "finite_prefix_theorem": false,
+    "global_K": false,
+    "global_theorem": false,
+    "local_layer_theorem": false,
+    "mechanism_cover": false,
+    "monolithic_aggregate_theorem": false,
+    "shifted_prime_theorem": false,
+    "theorem_level_U0": false
+  },
+  "recommendation": "RECOMMEND_ACCEPT_DISTRIBUTED_CERTIFICATE_AS_TAILKILLUPTO_FORMAL_ENDPOINT",
+  "row_count_sum": 901696,
+  "rows_remaining": 0,
+  "slice_count": 53,
+  "status": "SHIFTED_PRIME_LOCAL_U0_100_S0_528_TAILKILL_DISTRIBUTED_FORMAL_CERTIFICATE_COMPLETE_BANKED",
+  "verification": {
+    "full_slice_files": [
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS0_9.lean"
+        ],
+        "elapsed_seconds": 149.178,
+        "file": "lean/Erdos647TailKillSliceCoverageS0_9.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS10_19.lean"
+        ],
+        "elapsed_seconds": 155.927,
+        "file": "lean/Erdos647TailKillSliceCoverageS10_19.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS20_29.lean"
+        ],
+        "elapsed_seconds": 152.33,
+        "file": "lean/Erdos647TailKillSliceCoverageS20_29.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS30_39.lean"
+        ],
+        "elapsed_seconds": 158.276,
+        "file": "lean/Erdos647TailKillSliceCoverageS30_39.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS40_49.lean"
+        ],
+        "elapsed_seconds": 154.499,
+        "file": "lean/Erdos647TailKillSliceCoverageS40_49.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS50_59.lean"
+        ],
+        "elapsed_seconds": 158.422,
+        "file": "lean/Erdos647TailKillSliceCoverageS50_59.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS60_69.lean"
+        ],
+        "elapsed_seconds": 155.628,
+        "file": "lean/Erdos647TailKillSliceCoverageS60_69.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS70_79.lean"
+        ],
+        "elapsed_seconds": 152.096,
+        "file": "lean/Erdos647TailKillSliceCoverageS70_79.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS80_89.lean"
+        ],
+        "elapsed_seconds": 159.581,
+        "file": "lean/Erdos647TailKillSliceCoverageS80_89.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS90_99.lean"
+        ],
+        "elapsed_seconds": 193.492,
+        "file": "lean/Erdos647TailKillSliceCoverageS90_99.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS100_109.lean"
+        ],
+        "elapsed_seconds": 171.392,
+        "file": "lean/Erdos647TailKillSliceCoverageS100_109.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS110_119.lean"
+        ],
+        "elapsed_seconds": 160.674,
+        "file": "lean/Erdos647TailKillSliceCoverageS110_119.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS120_129.lean"
+        ],
+        "elapsed_seconds": 173.997,
+        "file": "lean/Erdos647TailKillSliceCoverageS120_129.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS130_139.lean"
+        ],
+        "elapsed_seconds": 175.391,
+        "file": "lean/Erdos647TailKillSliceCoverageS130_139.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS140_149.lean"
+        ],
+        "elapsed_seconds": 199.289,
+        "file": "lean/Erdos647TailKillSliceCoverageS140_149.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS150_159.lean"
+        ],
+        "elapsed_seconds": 205.13,
+        "file": "lean/Erdos647TailKillSliceCoverageS150_159.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS160_169.lean"
+        ],
+        "elapsed_seconds": 186.378,
+        "file": "lean/Erdos647TailKillSliceCoverageS160_169.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS170_179.lean"
+        ],
+        "elapsed_seconds": 147.248,
+        "file": "lean/Erdos647TailKillSliceCoverageS170_179.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS180_189.lean"
+        ],
+        "elapsed_seconds": 154.294,
+        "file": "lean/Erdos647TailKillSliceCoverageS180_189.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS190_199.lean"
+        ],
+        "elapsed_seconds": 155.03,
+        "file": "lean/Erdos647TailKillSliceCoverageS190_199.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS200_209.lean"
+        ],
+        "elapsed_seconds": 150.082,
+        "file": "lean/Erdos647TailKillSliceCoverageS200_209.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS210_219.lean"
+        ],
+        "elapsed_seconds": 149.684,
+        "file": "lean/Erdos647TailKillSliceCoverageS210_219.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS220_229.lean"
+        ],
+        "elapsed_seconds": 167.189,
+        "file": "lean/Erdos647TailKillSliceCoverageS220_229.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS230_239.lean"
+        ],
+        "elapsed_seconds": 132.104,
+        "file": "lean/Erdos647TailKillSliceCoverageS230_239.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS240_249.lean"
+        ],
+        "elapsed_seconds": 49.093,
+        "file": "lean/Erdos647TailKillSliceCoverageS240_249.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS250_259.lean"
+        ],
+        "elapsed_seconds": 44.378,
+        "file": "lean/Erdos647TailKillSliceCoverageS250_259.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS260_269.lean"
+        ],
+        "elapsed_seconds": 286.72,
+        "file": "lean/Erdos647TailKillSliceCoverageS260_269.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS270_279.lean"
+        ],
+        "elapsed_seconds": 61.669,
+        "file": "lean/Erdos647TailKillSliceCoverageS270_279.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS280_289.lean"
+        ],
+        "elapsed_seconds": 65.417,
+        "file": "lean/Erdos647TailKillSliceCoverageS280_289.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS290_299.lean"
+        ],
+        "elapsed_seconds": 76.242,
+        "file": "lean/Erdos647TailKillSliceCoverageS290_299.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS300_309.lean"
+        ],
+        "elapsed_seconds": 56.466,
+        "file": "lean/Erdos647TailKillSliceCoverageS300_309.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS310_319.lean"
+        ],
+        "elapsed_seconds": 55.966,
+        "file": "lean/Erdos647TailKillSliceCoverageS310_319.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS320_329.lean"
+        ],
+        "elapsed_seconds": 53.438,
+        "file": "lean/Erdos647TailKillSliceCoverageS320_329.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS330_339.lean"
+        ],
+        "elapsed_seconds": 55.205,
+        "file": "lean/Erdos647TailKillSliceCoverageS330_339.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS340_349.lean"
+        ],
+        "elapsed_seconds": 58.136,
+        "file": "lean/Erdos647TailKillSliceCoverageS340_349.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS350_359.lean"
+        ],
+        "elapsed_seconds": 55.702,
+        "file": "lean/Erdos647TailKillSliceCoverageS350_359.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS360_369.lean"
+        ],
+        "elapsed_seconds": 55.112,
+        "file": "lean/Erdos647TailKillSliceCoverageS360_369.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS370_379.lean"
+        ],
+        "elapsed_seconds": 54.526,
+        "file": "lean/Erdos647TailKillSliceCoverageS370_379.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS380_389.lean"
+        ],
+        "elapsed_seconds": 54.808,
+        "file": "lean/Erdos647TailKillSliceCoverageS380_389.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS390_399.lean"
+        ],
+        "elapsed_seconds": 53.429,
+        "file": "lean/Erdos647TailKillSliceCoverageS390_399.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS400_409.lean"
+        ],
+        "elapsed_seconds": 58.646,
+        "file": "lean/Erdos647TailKillSliceCoverageS400_409.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS410_419.lean"
+        ],
+        "elapsed_seconds": 53.981,
+        "file": "lean/Erdos647TailKillSliceCoverageS410_419.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS420_429.lean"
+        ],
+        "elapsed_seconds": 57.022,
+        "file": "lean/Erdos647TailKillSliceCoverageS420_429.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS430_439.lean"
+        ],
+        "elapsed_seconds": 35.715,
+        "file": "lean/Erdos647TailKillSliceCoverageS430_439.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS440_449.lean"
+        ],
+        "elapsed_seconds": 36.683,
+        "file": "lean/Erdos647TailKillSliceCoverageS440_449.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS450_459.lean"
+        ],
+        "elapsed_seconds": 35.284,
+        "file": "lean/Erdos647TailKillSliceCoverageS450_459.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS460_469.lean"
+        ],
+        "elapsed_seconds": 38.288,
+        "file": "lean/Erdos647TailKillSliceCoverageS460_469.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS470_479.lean"
+        ],
+        "elapsed_seconds": 29.679,
+        "file": "lean/Erdos647TailKillSliceCoverageS470_479.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS480_489.lean"
+        ],
+        "elapsed_seconds": 36.397,
+        "file": "lean/Erdos647TailKillSliceCoverageS480_489.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS490_499.lean"
+        ],
+        "elapsed_seconds": 36.2,
+        "file": "lean/Erdos647TailKillSliceCoverageS490_499.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS500_509.lean"
+        ],
+        "elapsed_seconds": 35.367,
+        "file": "lean/Erdos647TailKillSliceCoverageS500_509.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS510_519.lean"
+        ],
+        "elapsed_seconds": 37.121,
+        "file": "lean/Erdos647TailKillSliceCoverageS510_519.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillSliceCoverageS520_528.lean"
+        ],
+        "elapsed_seconds": 32.172,
+        "file": "lean/Erdos647TailKillSliceCoverageS520_528.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      }
+    ],
+    "full_slice_pass_count": 53,
+    "lean_checks_skipped": false,
+    "local_index_helpers": [
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S0_9.lean"
+        ],
+        "elapsed_seconds": 183.254,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S0_9.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S10_19.lean"
+        ],
+        "elapsed_seconds": 183.884,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S10_19.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S20_29.lean"
+        ],
+        "elapsed_seconds": 178.011,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S20_29.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S30_39.lean"
+        ],
+        "elapsed_seconds": 182.051,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S30_39.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S40_49.lean"
+        ],
+        "elapsed_seconds": 175.497,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S40_49.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S50_59.lean"
+        ],
+        "elapsed_seconds": 164.503,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S50_59.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S60_69.lean"
+        ],
+        "elapsed_seconds": 149.194,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S60_69.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S70_79.lean"
+        ],
+        "elapsed_seconds": 164.928,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S70_79.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S80_89.lean"
+        ],
+        "elapsed_seconds": 154.738,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S80_89.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S90_99.lean"
+        ],
+        "elapsed_seconds": 182.839,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S90_99.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S100_109.lean"
+        ],
+        "elapsed_seconds": 159.854,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S100_109.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S110_119.lean"
+        ],
+        "elapsed_seconds": 186.638,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S110_119.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S120_129.lean"
+        ],
+        "elapsed_seconds": 174.853,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S120_129.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S130_139.lean"
+        ],
+        "elapsed_seconds": 165.417,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S130_139.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S140_149.lean"
+        ],
+        "elapsed_seconds": 161.684,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S140_149.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S150_159.lean"
+        ],
+        "elapsed_seconds": 152.779,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S150_159.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S160_169.lean"
+        ],
+        "elapsed_seconds": 140.065,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S160_169.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S170_179.lean"
+        ],
+        "elapsed_seconds": 152.907,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S170_179.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S180_189.lean"
+        ],
+        "elapsed_seconds": 147.721,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S180_189.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S190_199.lean"
+        ],
+        "elapsed_seconds": 160.046,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S190_199.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S200_209.lean"
+        ],
+        "elapsed_seconds": 159.102,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S200_209.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S210_219.lean"
+        ],
+        "elapsed_seconds": 151.885,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S210_219.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S220_229.lean"
+        ],
+        "elapsed_seconds": 153.443,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S220_229.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S230_239.lean"
+        ],
+        "elapsed_seconds": 175.427,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S230_239.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S240_249.lean"
+        ],
+        "elapsed_seconds": 171.59,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S240_249.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S250_259.lean"
+        ],
+        "elapsed_seconds": 146.698,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S250_259.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S260_269.lean"
+        ],
+        "elapsed_seconds": 212.717,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S260_269.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S270_279.lean"
+        ],
+        "elapsed_seconds": 204.068,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S270_279.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S280_289.lean"
+        ],
+        "elapsed_seconds": 173.976,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S280_289.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S290_299.lean"
+        ],
+        "elapsed_seconds": 177.849,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S290_299.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S300_309.lean"
+        ],
+        "elapsed_seconds": 172.813,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S300_309.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S310_319.lean"
+        ],
+        "elapsed_seconds": 179.334,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S310_319.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S320_329.lean"
+        ],
+        "elapsed_seconds": 161.337,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S320_329.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S330_339.lean"
+        ],
+        "elapsed_seconds": 193.416,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S330_339.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S340_349.lean"
+        ],
+        "elapsed_seconds": 155.275,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S340_349.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S350_359.lean"
+        ],
+        "elapsed_seconds": 168.938,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S350_359.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S360_369.lean"
+        ],
+        "elapsed_seconds": 171.299,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S360_369.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S370_379.lean"
+        ],
+        "elapsed_seconds": 184.042,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S370_379.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S380_389.lean"
+        ],
+        "elapsed_seconds": 179.971,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S380_389.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S390_399.lean"
+        ],
+        "elapsed_seconds": 178.15,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S390_399.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S400_409.lean"
+        ],
+        "elapsed_seconds": 201.727,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S400_409.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S410_419.lean"
+        ],
+        "elapsed_seconds": 180.849,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S410_419.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S420_429.lean"
+        ],
+        "elapsed_seconds": 186.84,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S420_429.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S430_439.lean"
+        ],
+        "elapsed_seconds": 157.356,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S430_439.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S440_449.lean"
+        ],
+        "elapsed_seconds": 174.055,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S440_449.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S450_459.lean"
+        ],
+        "elapsed_seconds": 175.076,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S450_459.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S460_469.lean"
+        ],
+        "elapsed_seconds": 175.826,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S460_469.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S470_479.lean"
+        ],
+        "elapsed_seconds": 165.332,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S470_479.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S480_489.lean"
+        ],
+        "elapsed_seconds": 173.278,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S480_489.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S490_499.lean"
+        ],
+        "elapsed_seconds": 143.472,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S490_499.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S500_509.lean"
+        ],
+        "elapsed_seconds": 151.371,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S500_509.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S510_519.lean"
+        ],
+        "elapsed_seconds": 154.134,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S510_519.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      },
+      {
+        "cmd": [
+          "lake",
+          "env",
+          "lean",
+          "Erdos647TailKillMasterSliceLocalIndexBridge/S520_528.lean"
+        ],
+        "elapsed_seconds": 151.156,
+        "file": "lean/Erdos647TailKillMasterSliceLocalIndexBridge/S520_528.lean",
+        "returncode": 0,
+        "status": "pass",
+        "stderr_tail": "",
+        "stdout_tail": ""
+      }
+    ],
+    "local_index_pass_count": 53,
+    "partition_bridge": {
+      "cmd": [
+        "lake",
+        "env",
+        "lean",
+        "Erdos647TailKillMasterSlicePartitionBridge.lean"
+      ],
+      "elapsed_seconds": 17.384,
+      "returncode": 0,
+      "status": "pass",
+      "stderr_tail": "",
+      "stdout_tail": ""
+    },
+    "sorry_axiom_hits": []
+  }
+}

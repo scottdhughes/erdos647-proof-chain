@@ -16,5 +16,7 @@ jobs:
         with:
           lake-package-directory: lean
           build: true
+      - name: Build shifted-prime axiom-audit module
+        run: cd lean && lake build Erdos647ShiftedPrimeChannel
       - name: Axiom audit
         run: bash scripts/axiom_audit.sh

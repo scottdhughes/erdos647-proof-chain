@@ -47,6 +47,16 @@ The active formal boundary is:
 
 For the exact axiom trail, see [AXIOM_AUDIT.md](AXIOM_AUDIT.md).
 
+This repository also contains a TailKill finite-prefix certificate package.
+The top-level entry point is
+[`TAILKILL_FINITE_PREFIX_CERTIFICATE.md`](TAILKILL_FINITE_PREFIX_CERTIFICATE.md);
+the package itself is under
+[`docs/public/tailkill-finite-prefix/`](docs/public/tailkill-finite-prefix/).
+It verifies the finite-prefix interface
+`FinitePrefixMechanismVerifiedBy K (fun _ _ => 101)` for the TailKill
+reduction, records the exact theorem map and manifests, and states its
+non-claims separately from the Stage-1 boundary above.
+
 ## What the repo proves
 
 For `n > 84`, the active proof path reduces the problem to numbers of
@@ -120,6 +130,7 @@ docs/             theorem map, frontier notes, and related memos
 scripts/          reproducible computations and audits for this package
 data/             compact machine-readable artifacts cited by this package
 paper/            consolidation paper (main.tex, main.pdf); archive/ holds the earlier preprint
+docs/public/      public certificate packages and verification entry points
 ```
 
 Useful entry points:
@@ -129,6 +140,8 @@ Useful entry points:
 * [docs/conditional_finite_window.md](docs/conditional_finite_window.md)
 * [docs/relation_to_formal_conjectures.md](docs/relation_to_formal_conjectures.md)
 * [docs/theorem_map.md](docs/theorem_map.md)
+* [TAILKILL_FINITE_PREFIX_CERTIFICATE.md](TAILKILL_FINITE_PREFIX_CERTIFICATE.md)
+* [docs/public/tailkill-finite-prefix/README.md](docs/public/tailkill-finite-prefix/README.md)
 
 ## Quick start
 

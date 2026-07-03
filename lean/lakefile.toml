@@ -103,3 +103,99 @@ name = "Bridge3"
 
 [[lean_lib]]
 name = "ShapeDecomposition"
+
+[[lean_lib]]
+name = "Erdos647ShiftedPrimeChannel"
+
+[[lean_lib]]
+name = "Erdos647ShiftedPrimeTailMechanismCover"
+
+[[lean_lib]]
+name = "Erdos647TailKillMasterSlicePartitionBridge"
+
+[[lean_lib]]
+name = "Erdos647TailKillMasterSliceLocalIndexBridge"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauLowerCertificate"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauOpenResidueBridge"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauProofChunks"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixSemantic"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup00"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup01"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup02"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup03"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup04"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup05"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup06"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup07"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup08"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup09"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup10"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup11"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup12"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup13"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup14"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup15"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup16"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup17"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup18"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup19"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup20"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixGroup21"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixMechanism"
+
+[[lean_lib]]
+name = "Erdos647TailKillTauFinitePrefixComposition"
