@@ -47,9 +47,12 @@ The active formal boundary is:
 
 For the exact axiom trail, see [AXIOM_AUDIT.md](AXIOM_AUDIT.md).
 
-This repository also contains a TailKill finite-prefix certificate package at
+This repository also contains a TailKill finite-prefix certificate package.
+The top-level entry point is
+[`TAILKILL_FINITE_PREFIX_CERTIFICATE.md`](TAILKILL_FINITE_PREFIX_CERTIFICATE.md);
+the package itself is under
 [`docs/public/tailkill-finite-prefix/`](docs/public/tailkill-finite-prefix/).
-That package verifies the finite-prefix interface
+It verifies the finite-prefix interface
 `FinitePrefixMechanismVerifiedBy K (fun _ _ => 101)` for the TailKill
 reduction, records the exact theorem map and manifests, and states its
 non-claims separately from the Stage-1 boundary above.
@@ -137,6 +140,7 @@ Useful entry points:
 * [docs/conditional_finite_window.md](docs/conditional_finite_window.md)
 * [docs/relation_to_formal_conjectures.md](docs/relation_to_formal_conjectures.md)
 * [docs/theorem_map.md](docs/theorem_map.md)
+* [TAILKILL_FINITE_PREFIX_CERTIFICATE.md](TAILKILL_FINITE_PREFIX_CERTIFICATE.md)
 * [docs/public/tailkill-finite-prefix/README.md](docs/public/tailkill-finite-prefix/README.md)
 
 ## Quick start
