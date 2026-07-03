@@ -1,0 +1,2040 @@
+{
+  "K": "fun _ _ _ => 10",
+  "U0": "fun _ _ => 101",
+  "chunk_count": 220,
+  "chunk_mappings": [
+    {
+      "chunk_index": 0,
+      "end_exclusive": 10000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0000.lean",
+      "length": 10000,
+      "start": 0
+    },
+    {
+      "chunk_index": 1,
+      "end_exclusive": 20000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0001.lean",
+      "length": 10000,
+      "start": 10000
+    },
+    {
+      "chunk_index": 2,
+      "end_exclusive": 30000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0002.lean",
+      "length": 10000,
+      "start": 20000
+    },
+    {
+      "chunk_index": 3,
+      "end_exclusive": 40000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0003.lean",
+      "length": 10000,
+      "start": 30000
+    },
+    {
+      "chunk_index": 4,
+      "end_exclusive": 50000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0004.lean",
+      "length": 10000,
+      "start": 40000
+    },
+    {
+      "chunk_index": 5,
+      "end_exclusive": 60000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0005.lean",
+      "length": 10000,
+      "start": 50000
+    },
+    {
+      "chunk_index": 6,
+      "end_exclusive": 70000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0006.lean",
+      "length": 10000,
+      "start": 60000
+    },
+    {
+      "chunk_index": 7,
+      "end_exclusive": 80000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0007.lean",
+      "length": 10000,
+      "start": 70000
+    },
+    {
+      "chunk_index": 8,
+      "end_exclusive": 90000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0008.lean",
+      "length": 10000,
+      "start": 80000
+    },
+    {
+      "chunk_index": 9,
+      "end_exclusive": 100000,
+      "group": 0,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup00.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0009.lean",
+      "length": 10000,
+      "start": 90000
+    },
+    {
+      "chunk_index": 10,
+      "end_exclusive": 110000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0010.lean",
+      "length": 10000,
+      "start": 100000
+    },
+    {
+      "chunk_index": 11,
+      "end_exclusive": 120000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0011.lean",
+      "length": 10000,
+      "start": 110000
+    },
+    {
+      "chunk_index": 12,
+      "end_exclusive": 130000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0012.lean",
+      "length": 10000,
+      "start": 120000
+    },
+    {
+      "chunk_index": 13,
+      "end_exclusive": 140000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0013.lean",
+      "length": 10000,
+      "start": 130000
+    },
+    {
+      "chunk_index": 14,
+      "end_exclusive": 150000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0014.lean",
+      "length": 10000,
+      "start": 140000
+    },
+    {
+      "chunk_index": 15,
+      "end_exclusive": 160000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0015.lean",
+      "length": 10000,
+      "start": 150000
+    },
+    {
+      "chunk_index": 16,
+      "end_exclusive": 170000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0016.lean",
+      "length": 10000,
+      "start": 160000
+    },
+    {
+      "chunk_index": 17,
+      "end_exclusive": 180000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0017.lean",
+      "length": 10000,
+      "start": 170000
+    },
+    {
+      "chunk_index": 18,
+      "end_exclusive": 190000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0018.lean",
+      "length": 10000,
+      "start": 180000
+    },
+    {
+      "chunk_index": 19,
+      "end_exclusive": 200000,
+      "group": 1,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup01.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0019.lean",
+      "length": 10000,
+      "start": 190000
+    },
+    {
+      "chunk_index": 20,
+      "end_exclusive": 210000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0020.lean",
+      "length": 10000,
+      "start": 200000
+    },
+    {
+      "chunk_index": 21,
+      "end_exclusive": 220000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0021.lean",
+      "length": 10000,
+      "start": 210000
+    },
+    {
+      "chunk_index": 22,
+      "end_exclusive": 230000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0022.lean",
+      "length": 10000,
+      "start": 220000
+    },
+    {
+      "chunk_index": 23,
+      "end_exclusive": 240000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0023.lean",
+      "length": 10000,
+      "start": 230000
+    },
+    {
+      "chunk_index": 24,
+      "end_exclusive": 250000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0024.lean",
+      "length": 10000,
+      "start": 240000
+    },
+    {
+      "chunk_index": 25,
+      "end_exclusive": 260000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0025.lean",
+      "length": 10000,
+      "start": 250000
+    },
+    {
+      "chunk_index": 26,
+      "end_exclusive": 270000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0026.lean",
+      "length": 10000,
+      "start": 260000
+    },
+    {
+      "chunk_index": 27,
+      "end_exclusive": 280000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0027.lean",
+      "length": 10000,
+      "start": 270000
+    },
+    {
+      "chunk_index": 28,
+      "end_exclusive": 290000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0028.lean",
+      "length": 10000,
+      "start": 280000
+    },
+    {
+      "chunk_index": 29,
+      "end_exclusive": 300000,
+      "group": 2,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup02.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0029.lean",
+      "length": 10000,
+      "start": 290000
+    },
+    {
+      "chunk_index": 30,
+      "end_exclusive": 310000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0030.lean",
+      "length": 10000,
+      "start": 300000
+    },
+    {
+      "chunk_index": 31,
+      "end_exclusive": 320000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0031.lean",
+      "length": 10000,
+      "start": 310000
+    },
+    {
+      "chunk_index": 32,
+      "end_exclusive": 330000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0032.lean",
+      "length": 10000,
+      "start": 320000
+    },
+    {
+      "chunk_index": 33,
+      "end_exclusive": 340000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0033.lean",
+      "length": 10000,
+      "start": 330000
+    },
+    {
+      "chunk_index": 34,
+      "end_exclusive": 350000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0034.lean",
+      "length": 10000,
+      "start": 340000
+    },
+    {
+      "chunk_index": 35,
+      "end_exclusive": 360000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0035.lean",
+      "length": 10000,
+      "start": 350000
+    },
+    {
+      "chunk_index": 36,
+      "end_exclusive": 370000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0036.lean",
+      "length": 10000,
+      "start": 360000
+    },
+    {
+      "chunk_index": 37,
+      "end_exclusive": 380000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0037.lean",
+      "length": 10000,
+      "start": 370000
+    },
+    {
+      "chunk_index": 38,
+      "end_exclusive": 390000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0038.lean",
+      "length": 10000,
+      "start": 380000
+    },
+    {
+      "chunk_index": 39,
+      "end_exclusive": 400000,
+      "group": 3,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup03.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0039.lean",
+      "length": 10000,
+      "start": 390000
+    },
+    {
+      "chunk_index": 40,
+      "end_exclusive": 410000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0040.lean",
+      "length": 10000,
+      "start": 400000
+    },
+    {
+      "chunk_index": 41,
+      "end_exclusive": 420000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0041.lean",
+      "length": 10000,
+      "start": 410000
+    },
+    {
+      "chunk_index": 42,
+      "end_exclusive": 430000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0042.lean",
+      "length": 10000,
+      "start": 420000
+    },
+    {
+      "chunk_index": 43,
+      "end_exclusive": 440000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0043.lean",
+      "length": 10000,
+      "start": 430000
+    },
+    {
+      "chunk_index": 44,
+      "end_exclusive": 450000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0044.lean",
+      "length": 10000,
+      "start": 440000
+    },
+    {
+      "chunk_index": 45,
+      "end_exclusive": 460000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0045.lean",
+      "length": 10000,
+      "start": 450000
+    },
+    {
+      "chunk_index": 46,
+      "end_exclusive": 470000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0046.lean",
+      "length": 10000,
+      "start": 460000
+    },
+    {
+      "chunk_index": 47,
+      "end_exclusive": 480000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0047.lean",
+      "length": 10000,
+      "start": 470000
+    },
+    {
+      "chunk_index": 48,
+      "end_exclusive": 490000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0048.lean",
+      "length": 10000,
+      "start": 480000
+    },
+    {
+      "chunk_index": 49,
+      "end_exclusive": 500000,
+      "group": 4,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup04.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0049.lean",
+      "length": 10000,
+      "start": 490000
+    },
+    {
+      "chunk_index": 50,
+      "end_exclusive": 510000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0050.lean",
+      "length": 10000,
+      "start": 500000
+    },
+    {
+      "chunk_index": 51,
+      "end_exclusive": 520000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0051.lean",
+      "length": 10000,
+      "start": 510000
+    },
+    {
+      "chunk_index": 52,
+      "end_exclusive": 530000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0052.lean",
+      "length": 10000,
+      "start": 520000
+    },
+    {
+      "chunk_index": 53,
+      "end_exclusive": 540000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0053.lean",
+      "length": 10000,
+      "start": 530000
+    },
+    {
+      "chunk_index": 54,
+      "end_exclusive": 550000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0054.lean",
+      "length": 10000,
+      "start": 540000
+    },
+    {
+      "chunk_index": 55,
+      "end_exclusive": 560000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0055.lean",
+      "length": 10000,
+      "start": 550000
+    },
+    {
+      "chunk_index": 56,
+      "end_exclusive": 570000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0056.lean",
+      "length": 10000,
+      "start": 560000
+    },
+    {
+      "chunk_index": 57,
+      "end_exclusive": 580000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0057.lean",
+      "length": 10000,
+      "start": 570000
+    },
+    {
+      "chunk_index": 58,
+      "end_exclusive": 590000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0058.lean",
+      "length": 10000,
+      "start": 580000
+    },
+    {
+      "chunk_index": 59,
+      "end_exclusive": 600000,
+      "group": 5,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup05.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0059.lean",
+      "length": 10000,
+      "start": 590000
+    },
+    {
+      "chunk_index": 60,
+      "end_exclusive": 610000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0060.lean",
+      "length": 10000,
+      "start": 600000
+    },
+    {
+      "chunk_index": 61,
+      "end_exclusive": 620000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0061.lean",
+      "length": 10000,
+      "start": 610000
+    },
+    {
+      "chunk_index": 62,
+      "end_exclusive": 630000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0062.lean",
+      "length": 10000,
+      "start": 620000
+    },
+    {
+      "chunk_index": 63,
+      "end_exclusive": 640000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0063.lean",
+      "length": 10000,
+      "start": 630000
+    },
+    {
+      "chunk_index": 64,
+      "end_exclusive": 650000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0064.lean",
+      "length": 10000,
+      "start": 640000
+    },
+    {
+      "chunk_index": 65,
+      "end_exclusive": 660000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0065.lean",
+      "length": 10000,
+      "start": 650000
+    },
+    {
+      "chunk_index": 66,
+      "end_exclusive": 670000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0066.lean",
+      "length": 10000,
+      "start": 660000
+    },
+    {
+      "chunk_index": 67,
+      "end_exclusive": 680000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0067.lean",
+      "length": 10000,
+      "start": 670000
+    },
+    {
+      "chunk_index": 68,
+      "end_exclusive": 690000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0068.lean",
+      "length": 10000,
+      "start": 680000
+    },
+    {
+      "chunk_index": 69,
+      "end_exclusive": 700000,
+      "group": 6,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup06.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0069.lean",
+      "length": 10000,
+      "start": 690000
+    },
+    {
+      "chunk_index": 70,
+      "end_exclusive": 710000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0070.lean",
+      "length": 10000,
+      "start": 700000
+    },
+    {
+      "chunk_index": 71,
+      "end_exclusive": 720000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0071.lean",
+      "length": 10000,
+      "start": 710000
+    },
+    {
+      "chunk_index": 72,
+      "end_exclusive": 730000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0072.lean",
+      "length": 10000,
+      "start": 720000
+    },
+    {
+      "chunk_index": 73,
+      "end_exclusive": 740000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0073.lean",
+      "length": 10000,
+      "start": 730000
+    },
+    {
+      "chunk_index": 74,
+      "end_exclusive": 750000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0074.lean",
+      "length": 10000,
+      "start": 740000
+    },
+    {
+      "chunk_index": 75,
+      "end_exclusive": 760000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0075.lean",
+      "length": 10000,
+      "start": 750000
+    },
+    {
+      "chunk_index": 76,
+      "end_exclusive": 770000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0076.lean",
+      "length": 10000,
+      "start": 760000
+    },
+    {
+      "chunk_index": 77,
+      "end_exclusive": 780000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0077.lean",
+      "length": 10000,
+      "start": 770000
+    },
+    {
+      "chunk_index": 78,
+      "end_exclusive": 790000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0078.lean",
+      "length": 10000,
+      "start": 780000
+    },
+    {
+      "chunk_index": 79,
+      "end_exclusive": 800000,
+      "group": 7,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup07.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0079.lean",
+      "length": 10000,
+      "start": 790000
+    },
+    {
+      "chunk_index": 80,
+      "end_exclusive": 810000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0080.lean",
+      "length": 10000,
+      "start": 800000
+    },
+    {
+      "chunk_index": 81,
+      "end_exclusive": 820000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0081.lean",
+      "length": 10000,
+      "start": 810000
+    },
+    {
+      "chunk_index": 82,
+      "end_exclusive": 830000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0082.lean",
+      "length": 10000,
+      "start": 820000
+    },
+    {
+      "chunk_index": 83,
+      "end_exclusive": 840000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0083.lean",
+      "length": 10000,
+      "start": 830000
+    },
+    {
+      "chunk_index": 84,
+      "end_exclusive": 850000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0084.lean",
+      "length": 10000,
+      "start": 840000
+    },
+    {
+      "chunk_index": 85,
+      "end_exclusive": 860000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0085.lean",
+      "length": 10000,
+      "start": 850000
+    },
+    {
+      "chunk_index": 86,
+      "end_exclusive": 870000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0086.lean",
+      "length": 10000,
+      "start": 860000
+    },
+    {
+      "chunk_index": 87,
+      "end_exclusive": 880000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0087.lean",
+      "length": 10000,
+      "start": 870000
+    },
+    {
+      "chunk_index": 88,
+      "end_exclusive": 890000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0088.lean",
+      "length": 10000,
+      "start": 880000
+    },
+    {
+      "chunk_index": 89,
+      "end_exclusive": 900000,
+      "group": 8,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup08.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0089.lean",
+      "length": 10000,
+      "start": 890000
+    },
+    {
+      "chunk_index": 90,
+      "end_exclusive": 910000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0090.lean",
+      "length": 10000,
+      "start": 900000
+    },
+    {
+      "chunk_index": 91,
+      "end_exclusive": 920000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0091.lean",
+      "length": 10000,
+      "start": 910000
+    },
+    {
+      "chunk_index": 92,
+      "end_exclusive": 930000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0092.lean",
+      "length": 10000,
+      "start": 920000
+    },
+    {
+      "chunk_index": 93,
+      "end_exclusive": 940000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0093.lean",
+      "length": 10000,
+      "start": 930000
+    },
+    {
+      "chunk_index": 94,
+      "end_exclusive": 950000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0094.lean",
+      "length": 10000,
+      "start": 940000
+    },
+    {
+      "chunk_index": 95,
+      "end_exclusive": 960000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0095.lean",
+      "length": 10000,
+      "start": 950000
+    },
+    {
+      "chunk_index": 96,
+      "end_exclusive": 970000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0096.lean",
+      "length": 10000,
+      "start": 960000
+    },
+    {
+      "chunk_index": 97,
+      "end_exclusive": 980000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0097.lean",
+      "length": 10000,
+      "start": 970000
+    },
+    {
+      "chunk_index": 98,
+      "end_exclusive": 990000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0098.lean",
+      "length": 10000,
+      "start": 980000
+    },
+    {
+      "chunk_index": 99,
+      "end_exclusive": 1000000,
+      "group": 9,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup09.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0099.lean",
+      "length": 10000,
+      "start": 990000
+    },
+    {
+      "chunk_index": 100,
+      "end_exclusive": 1010000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0100.lean",
+      "length": 10000,
+      "start": 1000000
+    },
+    {
+      "chunk_index": 101,
+      "end_exclusive": 1020000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0101.lean",
+      "length": 10000,
+      "start": 1010000
+    },
+    {
+      "chunk_index": 102,
+      "end_exclusive": 1030000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0102.lean",
+      "length": 10000,
+      "start": 1020000
+    },
+    {
+      "chunk_index": 103,
+      "end_exclusive": 1040000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0103.lean",
+      "length": 10000,
+      "start": 1030000
+    },
+    {
+      "chunk_index": 104,
+      "end_exclusive": 1050000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0104.lean",
+      "length": 10000,
+      "start": 1040000
+    },
+    {
+      "chunk_index": 105,
+      "end_exclusive": 1060000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0105.lean",
+      "length": 10000,
+      "start": 1050000
+    },
+    {
+      "chunk_index": 106,
+      "end_exclusive": 1070000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0106.lean",
+      "length": 10000,
+      "start": 1060000
+    },
+    {
+      "chunk_index": 107,
+      "end_exclusive": 1080000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0107.lean",
+      "length": 10000,
+      "start": 1070000
+    },
+    {
+      "chunk_index": 108,
+      "end_exclusive": 1090000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0108.lean",
+      "length": 10000,
+      "start": 1080000
+    },
+    {
+      "chunk_index": 109,
+      "end_exclusive": 1100000,
+      "group": 10,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup10.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0109.lean",
+      "length": 10000,
+      "start": 1090000
+    },
+    {
+      "chunk_index": 110,
+      "end_exclusive": 1110000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0110.lean",
+      "length": 10000,
+      "start": 1100000
+    },
+    {
+      "chunk_index": 111,
+      "end_exclusive": 1120000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0111.lean",
+      "length": 10000,
+      "start": 1110000
+    },
+    {
+      "chunk_index": 112,
+      "end_exclusive": 1130000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0112.lean",
+      "length": 10000,
+      "start": 1120000
+    },
+    {
+      "chunk_index": 113,
+      "end_exclusive": 1140000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0113.lean",
+      "length": 10000,
+      "start": 1130000
+    },
+    {
+      "chunk_index": 114,
+      "end_exclusive": 1150000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0114.lean",
+      "length": 10000,
+      "start": 1140000
+    },
+    {
+      "chunk_index": 115,
+      "end_exclusive": 1160000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0115.lean",
+      "length": 10000,
+      "start": 1150000
+    },
+    {
+      "chunk_index": 116,
+      "end_exclusive": 1170000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0116.lean",
+      "length": 10000,
+      "start": 1160000
+    },
+    {
+      "chunk_index": 117,
+      "end_exclusive": 1180000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0117.lean",
+      "length": 10000,
+      "start": 1170000
+    },
+    {
+      "chunk_index": 118,
+      "end_exclusive": 1190000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0118.lean",
+      "length": 10000,
+      "start": 1180000
+    },
+    {
+      "chunk_index": 119,
+      "end_exclusive": 1200000,
+      "group": 11,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup11.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0119.lean",
+      "length": 10000,
+      "start": 1190000
+    },
+    {
+      "chunk_index": 120,
+      "end_exclusive": 1210000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0120.lean",
+      "length": 10000,
+      "start": 1200000
+    },
+    {
+      "chunk_index": 121,
+      "end_exclusive": 1220000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0121.lean",
+      "length": 10000,
+      "start": 1210000
+    },
+    {
+      "chunk_index": 122,
+      "end_exclusive": 1230000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0122.lean",
+      "length": 10000,
+      "start": 1220000
+    },
+    {
+      "chunk_index": 123,
+      "end_exclusive": 1240000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0123.lean",
+      "length": 10000,
+      "start": 1230000
+    },
+    {
+      "chunk_index": 124,
+      "end_exclusive": 1250000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0124.lean",
+      "length": 10000,
+      "start": 1240000
+    },
+    {
+      "chunk_index": 125,
+      "end_exclusive": 1260000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0125.lean",
+      "length": 10000,
+      "start": 1250000
+    },
+    {
+      "chunk_index": 126,
+      "end_exclusive": 1270000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0126.lean",
+      "length": 10000,
+      "start": 1260000
+    },
+    {
+      "chunk_index": 127,
+      "end_exclusive": 1280000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0127.lean",
+      "length": 10000,
+      "start": 1270000
+    },
+    {
+      "chunk_index": 128,
+      "end_exclusive": 1290000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0128.lean",
+      "length": 10000,
+      "start": 1280000
+    },
+    {
+      "chunk_index": 129,
+      "end_exclusive": 1300000,
+      "group": 12,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup12.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0129.lean",
+      "length": 10000,
+      "start": 1290000
+    },
+    {
+      "chunk_index": 130,
+      "end_exclusive": 1310000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0130.lean",
+      "length": 10000,
+      "start": 1300000
+    },
+    {
+      "chunk_index": 131,
+      "end_exclusive": 1320000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0131.lean",
+      "length": 10000,
+      "start": 1310000
+    },
+    {
+      "chunk_index": 132,
+      "end_exclusive": 1330000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0132.lean",
+      "length": 10000,
+      "start": 1320000
+    },
+    {
+      "chunk_index": 133,
+      "end_exclusive": 1340000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0133.lean",
+      "length": 10000,
+      "start": 1330000
+    },
+    {
+      "chunk_index": 134,
+      "end_exclusive": 1350000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0134.lean",
+      "length": 10000,
+      "start": 1340000
+    },
+    {
+      "chunk_index": 135,
+      "end_exclusive": 1360000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0135.lean",
+      "length": 10000,
+      "start": 1350000
+    },
+    {
+      "chunk_index": 136,
+      "end_exclusive": 1370000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0136.lean",
+      "length": 10000,
+      "start": 1360000
+    },
+    {
+      "chunk_index": 137,
+      "end_exclusive": 1380000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0137.lean",
+      "length": 10000,
+      "start": 1370000
+    },
+    {
+      "chunk_index": 138,
+      "end_exclusive": 1390000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0138.lean",
+      "length": 10000,
+      "start": 1380000
+    },
+    {
+      "chunk_index": 139,
+      "end_exclusive": 1400000,
+      "group": 13,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup13.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0139.lean",
+      "length": 10000,
+      "start": 1390000
+    },
+    {
+      "chunk_index": 140,
+      "end_exclusive": 1410000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0140.lean",
+      "length": 10000,
+      "start": 1400000
+    },
+    {
+      "chunk_index": 141,
+      "end_exclusive": 1420000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0141.lean",
+      "length": 10000,
+      "start": 1410000
+    },
+    {
+      "chunk_index": 142,
+      "end_exclusive": 1430000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0142.lean",
+      "length": 10000,
+      "start": 1420000
+    },
+    {
+      "chunk_index": 143,
+      "end_exclusive": 1440000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0143.lean",
+      "length": 10000,
+      "start": 1430000
+    },
+    {
+      "chunk_index": 144,
+      "end_exclusive": 1450000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0144.lean",
+      "length": 10000,
+      "start": 1440000
+    },
+    {
+      "chunk_index": 145,
+      "end_exclusive": 1460000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0145.lean",
+      "length": 10000,
+      "start": 1450000
+    },
+    {
+      "chunk_index": 146,
+      "end_exclusive": 1470000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0146.lean",
+      "length": 10000,
+      "start": 1460000
+    },
+    {
+      "chunk_index": 147,
+      "end_exclusive": 1480000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0147.lean",
+      "length": 10000,
+      "start": 1470000
+    },
+    {
+      "chunk_index": 148,
+      "end_exclusive": 1490000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0148.lean",
+      "length": 10000,
+      "start": 1480000
+    },
+    {
+      "chunk_index": 149,
+      "end_exclusive": 1500000,
+      "group": 14,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup14.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0149.lean",
+      "length": 10000,
+      "start": 1490000
+    },
+    {
+      "chunk_index": 150,
+      "end_exclusive": 1510000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0150.lean",
+      "length": 10000,
+      "start": 1500000
+    },
+    {
+      "chunk_index": 151,
+      "end_exclusive": 1520000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0151.lean",
+      "length": 10000,
+      "start": 1510000
+    },
+    {
+      "chunk_index": 152,
+      "end_exclusive": 1530000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0152.lean",
+      "length": 10000,
+      "start": 1520000
+    },
+    {
+      "chunk_index": 153,
+      "end_exclusive": 1540000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0153.lean",
+      "length": 10000,
+      "start": 1530000
+    },
+    {
+      "chunk_index": 154,
+      "end_exclusive": 1550000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0154.lean",
+      "length": 10000,
+      "start": 1540000
+    },
+    {
+      "chunk_index": 155,
+      "end_exclusive": 1560000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0155.lean",
+      "length": 10000,
+      "start": 1550000
+    },
+    {
+      "chunk_index": 156,
+      "end_exclusive": 1570000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0156.lean",
+      "length": 10000,
+      "start": 1560000
+    },
+    {
+      "chunk_index": 157,
+      "end_exclusive": 1580000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0157.lean",
+      "length": 10000,
+      "start": 1570000
+    },
+    {
+      "chunk_index": 158,
+      "end_exclusive": 1590000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0158.lean",
+      "length": 10000,
+      "start": 1580000
+    },
+    {
+      "chunk_index": 159,
+      "end_exclusive": 1600000,
+      "group": 15,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup15.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0159.lean",
+      "length": 10000,
+      "start": 1590000
+    },
+    {
+      "chunk_index": 160,
+      "end_exclusive": 1610000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0160.lean",
+      "length": 10000,
+      "start": 1600000
+    },
+    {
+      "chunk_index": 161,
+      "end_exclusive": 1620000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0161.lean",
+      "length": 10000,
+      "start": 1610000
+    },
+    {
+      "chunk_index": 162,
+      "end_exclusive": 1630000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0162.lean",
+      "length": 10000,
+      "start": 1620000
+    },
+    {
+      "chunk_index": 163,
+      "end_exclusive": 1640000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0163.lean",
+      "length": 10000,
+      "start": 1630000
+    },
+    {
+      "chunk_index": 164,
+      "end_exclusive": 1650000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0164.lean",
+      "length": 10000,
+      "start": 1640000
+    },
+    {
+      "chunk_index": 165,
+      "end_exclusive": 1660000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0165.lean",
+      "length": 10000,
+      "start": 1650000
+    },
+    {
+      "chunk_index": 166,
+      "end_exclusive": 1670000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0166.lean",
+      "length": 10000,
+      "start": 1660000
+    },
+    {
+      "chunk_index": 167,
+      "end_exclusive": 1680000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0167.lean",
+      "length": 10000,
+      "start": 1670000
+    },
+    {
+      "chunk_index": 168,
+      "end_exclusive": 1690000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0168.lean",
+      "length": 10000,
+      "start": 1680000
+    },
+    {
+      "chunk_index": 169,
+      "end_exclusive": 1700000,
+      "group": 16,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup16.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0169.lean",
+      "length": 10000,
+      "start": 1690000
+    },
+    {
+      "chunk_index": 170,
+      "end_exclusive": 1710000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0170.lean",
+      "length": 10000,
+      "start": 1700000
+    },
+    {
+      "chunk_index": 171,
+      "end_exclusive": 1720000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0171.lean",
+      "length": 10000,
+      "start": 1710000
+    },
+    {
+      "chunk_index": 172,
+      "end_exclusive": 1730000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0172.lean",
+      "length": 10000,
+      "start": 1720000
+    },
+    {
+      "chunk_index": 173,
+      "end_exclusive": 1740000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0173.lean",
+      "length": 10000,
+      "start": 1730000
+    },
+    {
+      "chunk_index": 174,
+      "end_exclusive": 1750000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0174.lean",
+      "length": 10000,
+      "start": 1740000
+    },
+    {
+      "chunk_index": 175,
+      "end_exclusive": 1760000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0175.lean",
+      "length": 10000,
+      "start": 1750000
+    },
+    {
+      "chunk_index": 176,
+      "end_exclusive": 1770000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0176.lean",
+      "length": 10000,
+      "start": 1760000
+    },
+    {
+      "chunk_index": 177,
+      "end_exclusive": 1780000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0177.lean",
+      "length": 10000,
+      "start": 1770000
+    },
+    {
+      "chunk_index": 178,
+      "end_exclusive": 1790000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0178.lean",
+      "length": 10000,
+      "start": 1780000
+    },
+    {
+      "chunk_index": 179,
+      "end_exclusive": 1800000,
+      "group": 17,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup17.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0179.lean",
+      "length": 10000,
+      "start": 1790000
+    },
+    {
+      "chunk_index": 180,
+      "end_exclusive": 1810000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0180.lean",
+      "length": 10000,
+      "start": 1800000
+    },
+    {
+      "chunk_index": 181,
+      "end_exclusive": 1820000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0181.lean",
+      "length": 10000,
+      "start": 1810000
+    },
+    {
+      "chunk_index": 182,
+      "end_exclusive": 1830000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0182.lean",
+      "length": 10000,
+      "start": 1820000
+    },
+    {
+      "chunk_index": 183,
+      "end_exclusive": 1840000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0183.lean",
+      "length": 10000,
+      "start": 1830000
+    },
+    {
+      "chunk_index": 184,
+      "end_exclusive": 1850000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0184.lean",
+      "length": 10000,
+      "start": 1840000
+    },
+    {
+      "chunk_index": 185,
+      "end_exclusive": 1860000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0185.lean",
+      "length": 10000,
+      "start": 1850000
+    },
+    {
+      "chunk_index": 186,
+      "end_exclusive": 1870000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0186.lean",
+      "length": 10000,
+      "start": 1860000
+    },
+    {
+      "chunk_index": 187,
+      "end_exclusive": 1880000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0187.lean",
+      "length": 10000,
+      "start": 1870000
+    },
+    {
+      "chunk_index": 188,
+      "end_exclusive": 1890000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0188.lean",
+      "length": 10000,
+      "start": 1880000
+    },
+    {
+      "chunk_index": 189,
+      "end_exclusive": 1900000,
+      "group": 18,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup18.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0189.lean",
+      "length": 10000,
+      "start": 1890000
+    },
+    {
+      "chunk_index": 190,
+      "end_exclusive": 1910000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0190.lean",
+      "length": 10000,
+      "start": 1900000
+    },
+    {
+      "chunk_index": 191,
+      "end_exclusive": 1920000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0191.lean",
+      "length": 10000,
+      "start": 1910000
+    },
+    {
+      "chunk_index": 192,
+      "end_exclusive": 1930000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0192.lean",
+      "length": 10000,
+      "start": 1920000
+    },
+    {
+      "chunk_index": 193,
+      "end_exclusive": 1940000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0193.lean",
+      "length": 10000,
+      "start": 1930000
+    },
+    {
+      "chunk_index": 194,
+      "end_exclusive": 1950000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0194.lean",
+      "length": 10000,
+      "start": 1940000
+    },
+    {
+      "chunk_index": 195,
+      "end_exclusive": 1960000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0195.lean",
+      "length": 10000,
+      "start": 1950000
+    },
+    {
+      "chunk_index": 196,
+      "end_exclusive": 1970000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0196.lean",
+      "length": 10000,
+      "start": 1960000
+    },
+    {
+      "chunk_index": 197,
+      "end_exclusive": 1980000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0197.lean",
+      "length": 10000,
+      "start": 1970000
+    },
+    {
+      "chunk_index": 198,
+      "end_exclusive": 1990000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0198.lean",
+      "length": 10000,
+      "start": 1980000
+    },
+    {
+      "chunk_index": 199,
+      "end_exclusive": 2000000,
+      "group": 19,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup19.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0199.lean",
+      "length": 10000,
+      "start": 1990000
+    },
+    {
+      "chunk_index": 200,
+      "end_exclusive": 2010000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0200.lean",
+      "length": 10000,
+      "start": 2000000
+    },
+    {
+      "chunk_index": 201,
+      "end_exclusive": 2020000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0201.lean",
+      "length": 10000,
+      "start": 2010000
+    },
+    {
+      "chunk_index": 202,
+      "end_exclusive": 2030000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0202.lean",
+      "length": 10000,
+      "start": 2020000
+    },
+    {
+      "chunk_index": 203,
+      "end_exclusive": 2040000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0203.lean",
+      "length": 10000,
+      "start": 2030000
+    },
+    {
+      "chunk_index": 204,
+      "end_exclusive": 2050000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0204.lean",
+      "length": 10000,
+      "start": 2040000
+    },
+    {
+      "chunk_index": 205,
+      "end_exclusive": 2060000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0205.lean",
+      "length": 10000,
+      "start": 2050000
+    },
+    {
+      "chunk_index": 206,
+      "end_exclusive": 2070000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0206.lean",
+      "length": 10000,
+      "start": 2060000
+    },
+    {
+      "chunk_index": 207,
+      "end_exclusive": 2080000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0207.lean",
+      "length": 10000,
+      "start": 2070000
+    },
+    {
+      "chunk_index": 208,
+      "end_exclusive": 2090000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0208.lean",
+      "length": 10000,
+      "start": 2080000
+    },
+    {
+      "chunk_index": 209,
+      "end_exclusive": 2100000,
+      "group": 20,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup20.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0209.lean",
+      "length": 10000,
+      "start": 2090000
+    },
+    {
+      "chunk_index": 210,
+      "end_exclusive": 2110000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0210.lean",
+      "length": 10000,
+      "start": 2100000
+    },
+    {
+      "chunk_index": 211,
+      "end_exclusive": 2120000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0211.lean",
+      "length": 10000,
+      "start": 2110000
+    },
+    {
+      "chunk_index": 212,
+      "end_exclusive": 2130000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0212.lean",
+      "length": 10000,
+      "start": 2120000
+    },
+    {
+      "chunk_index": 213,
+      "end_exclusive": 2140000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0213.lean",
+      "length": 10000,
+      "start": 2130000
+    },
+    {
+      "chunk_index": 214,
+      "end_exclusive": 2150000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0214.lean",
+      "length": 10000,
+      "start": 2140000
+    },
+    {
+      "chunk_index": 215,
+      "end_exclusive": 2160000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0215.lean",
+      "length": 10000,
+      "start": 2150000
+    },
+    {
+      "chunk_index": 216,
+      "end_exclusive": 2170000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0216.lean",
+      "length": 10000,
+      "start": 2160000
+    },
+    {
+      "chunk_index": 217,
+      "end_exclusive": 2180000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0217.lean",
+      "length": 10000,
+      "start": 2170000
+    },
+    {
+      "chunk_index": 218,
+      "end_exclusive": 2190000,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0218.lean",
+      "length": 10000,
+      "start": 2180000
+    },
+    {
+      "chunk_index": 219,
+      "end_exclusive": 2190589,
+      "group": 21,
+      "group_file": "lean/Erdos647TailKillTauFinitePrefixGroup21.lean",
+      "lean_file": "lean/Erdos647TailKillTauProofChunks/Chunk0219.lean",
+      "length": 589,
+      "start": 2190000
+    }
+  ],
+  "domain_entries": 2190589,
+  "finite_prefix_theorem": "Erdos647TailKillTauProofChunks.FinitePrefixMechanism.tailKillFinitePrefixMechanismVerified",
+  "group_count": 22,
+  "non_claims": {
+    "axiom_removed": false,
+    "eventual_u_theorem_proved": false,
+    "evidence_or_chunk_modified": false,
+    "global_K_claimed": false,
+    "global_theorem_proved": false,
+    "lakefile_modified": false,
+    "local_layer_theorem_proved": false,
+    "shifted_prime_theorem_proved": false
+  },
+  "prime_implies_theorem": "Erdos647TailKillTauProofChunks.FinitePrefixMechanism.tailKillFinitePrefix_prime_implies_mechanismWitness",
+  "status": "SHIFTED_PRIME_TAILKILL_TAU_FINITE_PREFIX_MECHANISM_COMPLETE_BANKED",
+  "validation": {
+    "axiom_census_seconds": 105.53,
+    "axiom_footprint": {
+      "expectedResidueIndexOfGlobal_globalIndex": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "expectedSOfGlobal_globalIndex": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "expectedUOfGlobal_globalIndex": [
+        "propext"
+      ],
+      "globalIndexOfResidueIndex_lt": [
+        "propext",
+        "Quot.sound"
+      ],
+      "tailKillFinitePrefixMechanismVerified": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "tailKillFinitePrefix_prime_implies_mechanismWitness": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "tailKillTauFinitePrefix_certificate_at": [
+        "propext",
+        "Quot.sound"
+      ]
+    },
+    "lean_compile_seconds": 578.5
+  },
+  "verdict": "TAILKILL_FINITE_PREFIX_MECHANISM_GREEN_COMPLETE"
+}

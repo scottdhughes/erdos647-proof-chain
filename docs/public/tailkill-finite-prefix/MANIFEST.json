@@ -1,0 +1,114 @@
+{
+  "package": "tailkill-finite-prefix",
+  "package_path": "docs/public/tailkill-finite-prefix",
+  "date": "2026-07-01",
+  "status": "TAILKILL_FINITE_PREFIX_PUBLIC_PACKAGE_STAGED",
+  "scope": {
+    "finite_prefix_u_bound": 101,
+    "base_witness_bound": 10,
+    "slice_count": 53,
+    "tailkill_obligated_rows": 901696,
+    "tau_domain_entries": 2190589,
+    "tau_witness_entries": 450848,
+    "tau_complement_entries": 1739741,
+    "tau_chunk_count": 220
+  },
+  "primary_theorems": {
+    "finite_prefix": "Erdos647TailKillTauProofChunks.FinitePrefixMechanism.tailKillFinitePrefixMechanismVerified",
+    "finite_prefix_lift": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillFinitePrefixMechanismVerified_of_bound",
+    "patched_bound": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.patchedK",
+    "finite_plus_eventual_scaffold": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillMechanismCoverWithFinitePrefixBy_patchedK_of_eventual"
+  },
+  "remaining_theorem": "ShiftedPrimeMechanismCoverEventuallyBy K (fun _ _ => 101)",
+  "non_claims": [
+    "not a solution of Erdos Problem 647",
+    "no eventual-u theorem",
+    "no local-layer theorem",
+    "no global theorem",
+    "no shifted-prime theorem",
+    "no global constant K",
+    "no mechanism cover for all u",
+    "no monolithic aggregate theorem over all proof trees",
+    "no axiom or assumption removal"
+  ],
+  "sources": [
+    {
+      "path": "lean/Erdos647TailKillTauFinitePrefixMechanism.lean",
+      "sha256": "c851b2a223280201d25473357157ea68a0df69d2890ff2fdcd933d486b7ac6b7"
+    },
+    {
+      "path": "lean/Erdos647TailKillTauFinitePrefixComposition.lean",
+      "sha256": "50496e26af9d78f7f91bd2455b65de21ee14b7cbc3a69ab7534dcdedc8f107c7"
+    },
+    {
+      "path": "lean/Erdos647ShiftedPrimeTailMechanismCover.lean",
+      "sha256": "cb8f6e4cff8bc0a707733e4370e1d23725f0cbc264742d2f45a9dc201cf44fee"
+    },
+    {
+      "path": "lean/Erdos647TailKillMasterSlicePartitionBridge.lean",
+      "sha256": "1681da91294cd8091bc9f055563dee0650416ae4d1ae6ad3a77dfa7d7311bdb7"
+    },
+    {
+      "path": "lean/Erdos647TailKillMasterSliceLocalIndexBridge.lean",
+      "sha256": "09912263668230ef1ffd2fdf18418f03fc2c4143808d7fe4cea699b33dc2c964"
+    },
+    {
+      "path": "data/residue_attack/channel_b_shifted_prime_tail_local_u0_100_s0_528_tailkill_distributed_certificate_manifest_20260603.json",
+      "sha256": "984782c958a08840695b03f0f371b022737b7805cb4d061ddffe7eede49fba85"
+    },
+    {
+      "path": "data/residue_attack/channel_b_shifted_prime_tail_tau_proof_chunks_production_20260624.json",
+      "sha256": "3e30d95a2f2516cc55ec65a63757fa6eb117f27c938cc6f8ec68bfd4169aa567"
+    },
+    {
+      "path": "data/residue_attack/channel_b_shifted_prime_tail_tau_finite_prefix_mechanism_20260625.json",
+      "sha256": "bc5fc05c21c12b03a773f0a8919d1bc3fc7d96831f4bb7bfae69e2f073a6da3c"
+    },
+    {
+      "path": "data/residue_attack/channel_b_shifted_prime_tail_tau_finite_prefix_composition_ready_20260625.json",
+      "sha256": "b5d71485a96b74fbaed5d0b0af0ce7c781bc4a6ace856dadae24610783745b9b"
+    },
+    {
+      "path": "docs/audits/channel_b_shifted_prime_tail_local_u0_100_s0_528_tailkill_distributed_certificate_closeout_20260603.md",
+      "sha256": "0f1036e8f7af8a5af2326b2df5db41ed3976534844895d2e05d90080a2ed7f76"
+    },
+    {
+      "path": "docs/audits/channel_b_shifted_prime_tail_tau_finite_prefix_mechanism_20260625.md",
+      "sha256": "cbd6cc30ffdf5648a3c906384694ad94652becd45b743cddc616456d3cba0577"
+    },
+    {
+      "path": "docs/audits/channel_b_shifted_prime_tail_tau_finite_prefix_composition_ready_20260625.md",
+      "sha256": "01b3ec4aa0191f14b805fcaf9209065fef47f50aa0b22e66a557d4de1190a3ac"
+    },
+    {
+      "path": "scripts/channel_b_shifted_prime_tail_local_u0_100_s0_528_tailkill_distributed_certificate_verify_20260603.py",
+      "sha256": "acb2b151b995fda656373b91d783daff38f0d08ec96da35bc0ff13934ea0719d"
+    },
+    {
+      "path": "scripts/channel_b_shifted_prime_tail_tau_proof_chunks_production_20260624.py",
+      "sha256": "3d1da8526fd89cea93add626c6679dce3b94b0ec54dd123bd12b85925ec95c63"
+    },
+    {
+      "path": "lean/lean-toolchain",
+      "sha256": "1098ca8368e0db12138f33b070187e1f6527984ae0451a587b20e3e661f96a76"
+    },
+    {
+      "path": "lean/lake-manifest.json",
+      "sha256": "33d2e1c892f9a8641cfd1a5c7a3116f7f164ab44142b3c821d6f4977f5398074"
+    },
+    {
+      "path": "lean/lakefile.toml",
+      "sha256": "a084bca10fadb49f08849b95a477a79bfc374a22de475986cc5158fded1b467f"
+    },
+    {
+      "path": "lean/Erdos647ReductionChain.lean",
+      "sha256": "1219fa81b150673212e2ab55b24f1ee9330914fb0da9ba33319f68790aee2f27"
+    }
+  ],
+  "expected_statuses": {
+    "distributed_certificate_manifest": "SHIFTED_PRIME_LOCAL_U0_100_S0_528_TAILKILL_DISTRIBUTED_FORMAL_CERTIFICATE_COMPLETE_BANKED",
+    "tau_proof_chunks_verdict": "TAILKILL_TAU_PROOF_CHUNKS_GREEN_DISTRIBUTED_COMPLETE_IMPORT_PRACTICAL",
+    "finite_prefix_mechanism_verdict": "TAILKILL_FINITE_PREFIX_MECHANISM_GREEN_COMPLETE",
+    "finite_prefix_composition_verdict": "TAILKILL_FINITE_PREFIX_COMPOSITION_READY_GREEN"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "status": "SHIFTED_PRIME_TAILKILL_TAU_FINITE_PREFIX_COMPOSITION_READY_BANKED",
+  "verdict": "TAILKILL_FINITE_PREFIX_COMPOSITION_READY_GREEN",
+  "lean_module": "lean/Erdos647TailKillTauFinitePrefixComposition.lean",
+  "base_theorem": "Erdos647TailKillTauProofChunks.FinitePrefixMechanism.tailKillFinitePrefixMechanismVerified",
+  "base_K": "fun _ _ _ => 10",
+  "U0": "fun _ _ => 101",
+  "allowable_K_dependence": "K may depend on r, s, and u.",
+  "theorems": [
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillUpTo_bound_mono",
+      "statement_summary": "TailKillUpTo r s u k -> k <= K -> TailKillUpTo r s u K",
+      "role": "numeric TailKillUpTo bound monotonicity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.shiftedPrimeMechanismWitness_mono",
+      "statement_summary": "ShiftedPrimeMechanismWitness K C u -> K C.r C.s u <= K' C.r C.s u -> ShiftedPrimeMechanismWitness K' C u",
+      "role": "pointwise mechanism witness monotonicity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillFinitePrefixMechanismVerified_of_bound",
+      "statement_summary": "If 10 <= K r s u for u < 101, then FinitePrefixMechanismVerifiedBy K (fun _ _ => 101).",
+      "role": "finite-prefix lift from constant 10 to pointwise larger K",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillMechanismCoverWithFinitePrefixBy_of_eventual_and_bound",
+      "statement_summary": "Eventual cover for K after 101 plus finite-prefix domination yields ShiftedPrimeMechanismCoverWithFinitePrefixBy K (fun _ _ => 101).",
+      "role": "composition scaffold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.patchedK",
+      "statement_summary": "patchedK K r s u is max 10 (K r s u) on u < 101, and K r s u on u >= 101.",
+      "role": "automatic finite-prefix floor for an eventual bound",
+      "axioms": []
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.patchedK_prefix_bound",
+      "statement_summary": "For u < 101, 10 <= patchedK K r s u.",
+      "role": "finite-prefix domination for patchedK",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.patchedK_eq_of_prefix_le",
+      "statement_summary": "For 101 <= u, patchedK K r s u = K r s u.",
+      "role": "eventual-range preservation for patchedK",
+      "axioms": [
+        "propext"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillMechanismCoverEventually_patchedK_of_eventual",
+      "statement_summary": "An eventual cover for K after 101 is an eventual cover for patchedK K after 101.",
+      "role": "eventual cover transfer to patchedK",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    },
+    {
+      "name": "Erdos647TailKillTauProofChunks.FinitePrefixComposition.tailKillMechanismCoverWithFinitePrefixBy_patchedK_of_eventual",
+      "statement_summary": "An eventual cover for K after 101 yields ShiftedPrimeMechanismCoverWithFinitePrefixBy (patchedK K) (fun _ _ => 101).",
+      "role": "final patched composition scaffold",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ]
+    }
+  ],
+  "remaining_eventual_theorem_schema": "For a chosen K : Nat -> Nat -> Nat -> Nat, prove ShiftedPrimeMechanismCoverEventuallyBy K (fun _ _ => 101).",
+  "validation": {
+    "lean_compile_command": "cd lean && /usr/bin/time -p lake env lean -o .lake/build/lib/lean/Erdos647TailKillTauFinitePrefixComposition.olean Erdos647TailKillTauFinitePrefixComposition.lean",
+    "lean_compile_real_seconds": 164.88,
+    "source_scan_command": "rg -n \"sorry|axiom|native_decide|extern|implemented_by\" lean/Erdos647TailKillTauFinitePrefixComposition.lean",
+    "source_scan_hits": 0,
+    "print_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "lean4checker_command": "cd lean && lake env lean4checker --help",
+    "lean4checker_available": false,
+    "lean4checker_result": "could not execute external process 'lean4checker'"
+  },
+  "non_claims": {
+    "eventual_u_theorem_proved": false,
+    "local_layer_theorem_proved": false,
+    "global_theorem_proved": false,
+    "shifted_prime_theorem_proved": false,
+    "finite_prefix_interface_recomputed": false,
+    "proof_chunks_modified": false,
+    "generated_evidence_modified": false,
+    "lakefile_modified": false,
+    "protected_files_modified": false
+  }
+}

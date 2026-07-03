@@ -40,7 +40,7 @@ def survives (r : ℕ) : Bool :=
 /-- If `a ∣ b` and `b ≠ 0`, then `τ(a) ≤ τ(b)`. -/
 lemma Nat.divisors_card_le_of_dvd {a b : ℕ} (hab : a ∣ b) (hb : b ≠ 0) :
     a.divisors.card ≤ b.divisors.card :=
-  Finset.card_mono fun _x hx =>
+  Finset.card_mono fun x hx =>
     Nat.mem_divisors.mpr ⟨dvd_trans (Nat.dvd_of_mem_divisors hx) hab, hb⟩
 
 /-- Multiplicativity of divisor count for coprime arguments. -/
@@ -75,7 +75,7 @@ lemma four_tau_k_ge (k : ℕ) (hk : k ∈ [1, 2, 3, 4, 5, 6, 8, 9, 10, 12, 18, 2
 lemma not_survives_witness {r : ℕ} (h : survives r = false) :
     ∃ d ∈ coeffs, ∃ q ∈ sievePrimes, d * r % q = 1 := by
   by_contra h'
-  push Not at h'
+  push_neg at h'
   have : survives r = true := by
     simp only [survives]
     rw [List.all_eq_true]
@@ -124,18 +124,18 @@ lemma d_pos (d : ℕ) (hd : d ∈ coeffs) : d ≥ 1 := by
 `d * r ≡ 1 (mod q)` and `q ∣ M` and `N % M = r` imply `q ∣ (d * N - 1)`.
 -/
 lemma mod_transfer {d q r N : ℕ} (hdq : d * r % q = 1) (hqM : q ∣ M)
-    (hNr : N % M = r) (_hq_pos : q ≥ 2) (_hdN_pos : d * N ≥ 1) :
+    (hNr : N % M = r) (hq_pos : q ≥ 2) (hdN_pos : d * N ≥ 1) :
     q ∣ (d * N - 1) := by
   -- Since $N \equiv r \pmod{M}$ and $q \mid M$, we have $N \equiv r \pmod{q}$.
   have hN_mod_q : N % q = r % q := by
     rw [ ← hNr, Nat.mod_mod_of_dvd _ hqM ];
   rw [ ← Nat.mod_add_div ( d * N ) q, Nat.mul_mod, hN_mod_q ];
-  simp +decide [ hdq ]
+  simp +decide [ ← Nat.mul_mod, hdq ]
 
 /-
 `d ∣ (n + 1)` implies `Nat.Coprime n d`.
 -/
-lemma coprime_of_congr_neg_one {n d : ℕ} (_hd : d ≥ 1) (h : d ∣ (n + 1)) :
+lemma coprime_of_congr_neg_one {n d : ℕ} (hd : d ≥ 1) (h : d ∣ (n + 1)) :
     Nat.Coprime n d := by
   exact Nat.Coprime.symm ( Nat.Coprime.coprime_dvd_left h ( by norm_num ) )
 
@@ -222,7 +222,7 @@ lemma tau_ge_large_coprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ sievePr
   -- Since τ(n) ≤ 3 and n > 20000, n must be a prime power.
   have h_prime_power : ∃ p k : ℕ, Nat.Prime p ∧ n = p^k := by
     have h_prime_power : ∀ p ∈ Nat.primeFactors n, ∀ q ∈ Nat.primeFactors n, p = q := by
-      intros p hp q hq; contrapose! h_tau_n_le_3; simp_all +decide ;
+      intros p hp q hq; contrapose! h_tau_n_le_3; simp_all +decide [ Nat.divisors_prime_pow ] ;
       -- Since $p$ and $q$ are distinct primes dividing $n$, $n$ has at least the divisors $1$, $p$, $q$, and $pq$.
       have h_divisors : n.divisors ⊇ {1, p, q, p * q} := by
         simp +decide [ Finset.insert_subset_iff ];
@@ -316,7 +316,7 @@ lemma n_eq_pa_qb {p q n : ℕ} (hp : p.Prime) (hq : q.Prime) (hpq : p ≠ q)
       · exact hp_in
       · exact hq_in
     have h_prod : ∏ r ∈ n.factorization.support, r ^ n.factorization r = n :=
-      Nat.prod_factorization_pow_eq_self n_ne_zero
+      Nat.factorization_prod_pow_eq_self n_ne_zero
     rw [h_supp_eq] at h_prod
     rw [Finset.prod_insert (by simp [hpq])] at h_prod
     rw [Finset.prod_singleton] at h_prod
@@ -415,7 +415,7 @@ lemma tau_kn_bound_pa_qb (d q a b : ℕ)
     1260, 2520}: primes(k) ⊆ primes(d), so Coprime n d implies Coprime k n,
     contradicting `hkn_not_cop` (vacuous cases). For the remaining 6 "hard" d
     ∈ {105, 140, 252, 280, 315, 504}: k has a prime p not in d, and we use the
-    case analysis of the archived proof sketch. -/
+    case analysis of Aristotle's proof sketch. -/
 lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ sievePrimes)
     (hn_gt : n > 20000) (hn : n ≥ 1) (hqn : q ∣ n) (hcop : Nat.Coprime n d)
     (hdiv : d ∣ (n + 1))
@@ -435,7 +435,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
   simp only [coeffs, List.mem_cons, List.mem_nil_iff, or_false] at hd
   rcases hd with rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl | rfl
   /- HARD CASES (TODO, ~6h of per-case Lean work). For each, the
-     mathematical proof is laid out in the original comment
+     mathematical proof is laid out in Aristotle's original comment
      block. Per-case extra prime p:
        d=105, k=24, p=2
        d=140, k=18, p=3
@@ -515,7 +515,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       have h_only : ∀ r, r.Prime → r ∣ n → r = 2 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h2_ne_q : (2 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -528,7 +528,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       · -- b ∈ {1, 2}: derive a ≥ a_min from n > 20000 via a_min_characterization
         have ha_min : a ≥ a_min_of 105 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           -- h_neg : a < a_min_of 105 q
           -- So 2^a ≤ 2^(a_min - 1), and q^b ≤ q^2
           have h_pow_a : (2 : ℕ)^a ≤ 2^(a_min_of 105 q - 1) :=
@@ -550,7 +550,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         rw [show (2 : ℕ) ^ a = (extra_prime_of 105) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 105 q a b (by decide) hq ha_min hb hb_le
       · -- b ≥ 3: q^3 ∣ n, use tau_kq3_ge + monotonicity
-        push Not at hb_le
+        push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -612,7 +612,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
     · have h_only : ∀ r, r.Prime → r ∣ n → r = 3 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h3_ne_q : (3 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -623,7 +623,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       by_cases hb_le : b ≤ 2
       · have ha_min : a ≥ a_min_of 140 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           have h_pow_a : (3 : ℕ)^a ≤ 3^(a_min_of 140 q - 1) :=
             Nat.pow_le_pow_right (by norm_num) (Nat.le_sub_one_of_lt h_neg)
           have h_pow_b : q^b ≤ q^2 := Nat.pow_le_pow_right hq_pos hb_le
@@ -639,7 +639,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         have h_extra : extra_prime_of 140 = 3 := by decide
         rw [show (3 : ℕ) ^ a = (extra_prime_of 140) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 140 q a b (by decide) hq ha_min hb hb_le
-      · push Not at hb_le
+      · push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -702,7 +702,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
     · have h_only : ∀ r, r.Prime → r ∣ n → r = 5 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h5_ne_q : (5 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -713,7 +713,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       by_cases hb_le : b ≤ 2
       · have ha_min : a ≥ a_min_of 252 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           have h_pow_a : (5 : ℕ)^a ≤ 5^(a_min_of 252 q - 1) :=
             Nat.pow_le_pow_right (by norm_num) (Nat.le_sub_one_of_lt h_neg)
           have h_pow_b : q^b ≤ q^2 := Nat.pow_le_pow_right hq_pos hb_le
@@ -729,7 +729,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         have h_extra : extra_prime_of 252 = 5 := by decide
         rw [show (5 : ℕ) ^ a = (extra_prime_of 252) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 252 q a b (by decide) hq ha_min hb hb_le
-      · push Not at hb_le
+      · push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -780,7 +780,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
     · have h_only : ∀ r, r.Prime → r ∣ n → r = 3 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h3_ne_q : (3 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -791,7 +791,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       by_cases hb_le : b ≤ 2
       · have ha_min : a ≥ a_min_of 280 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           have h_pow_a : (3 : ℕ)^a ≤ 3^(a_min_of 280 q - 1) :=
             Nat.pow_le_pow_right (by norm_num) (Nat.le_sub_one_of_lt h_neg)
           have h_pow_b : q^b ≤ q^2 := Nat.pow_le_pow_right hq_pos hb_le
@@ -807,7 +807,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         have h_extra : extra_prime_of 280 = 3 := by decide
         rw [show (3 : ℕ) ^ a = (extra_prime_of 280) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 280 q a b (by decide) hq ha_min hb hb_le
-      · push Not at hb_le
+      · push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -857,7 +857,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
     · have h_only : ∀ r, r.Prime → r ∣ n → r = 2 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h2_ne_q : (2 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -868,7 +868,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       by_cases hb_le : b ≤ 2
       · have ha_min : a ≥ a_min_of 315 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           have h_pow_a : (2 : ℕ)^a ≤ 2^(a_min_of 315 q - 1) :=
             Nat.pow_le_pow_right (by norm_num) (Nat.le_sub_one_of_lt h_neg)
           have h_pow_b : q^b ≤ q^2 := Nat.pow_le_pow_right hq_pos hb_le
@@ -884,7 +884,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         have h_extra : extra_prime_of 315 = 2 := by decide
         rw [show (2 : ℕ) ^ a = (extra_prime_of 315) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 315 q a b (by decide) hq ha_min hb hb_le
-      · push Not at hb_le
+      · push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -936,7 +936,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
     · have h_only : ∀ r, r.Prime → r ∣ n → r = 5 ∨ r = q := by
         intro r hr_prime hr_dvd
         by_contra h_ne
-        push Not at h_ne
+        push_neg at h_ne
         exact h_new ⟨r, hr_prime, hr_dvd, h_ne.1, h_ne.2⟩
       have h5_ne_q : (5 : ℕ) ≠ q := by
         simp only [sievePrimes, List.mem_cons, List.mem_nil_iff, or_false] at hq
@@ -947,7 +947,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
       by_cases hb_le : b ≤ 2
       · have ha_min : a ≥ a_min_of 504 q := by
           by_contra h_neg
-          push Not at h_neg
+          push_neg at h_neg
           have h_pow_a : (5 : ℕ)^a ≤ 5^(a_min_of 504 q - 1) :=
             Nat.pow_le_pow_right (by norm_num) (Nat.le_sub_one_of_lt h_neg)
           have h_pow_b : q^b ≤ q^2 := Nat.pow_le_pow_right hq_pos hb_le
@@ -963,7 +963,7 @@ lemma tau_ge_large_noncoprime {d q n : ℕ} (hd : d ∈ coeffs) (hq : q ∈ siev
         have h_extra : extra_prime_of 504 = 5 := by decide
         rw [show (5 : ℕ) ^ a = (extra_prime_of 504) ^ a from by rw [h_extra]]
         exact tau_kn_bound_pa_qb 504 q a b (by decide) hq ha_min hb hb_le
-      · push Not at hb_le
+      · push_neg at hb_le
         have hb_gt : 3 ≤ b := hb_le
         have hq3_dvd_n : q^3 ∣ n := by
           rw [hn_eq]
@@ -1023,7 +1023,7 @@ theorem bridge_isErdos647_to_sieve (N : ℕ) (hN : 84 < 2520 * N)
     exact Nat.Prime.two_le ( sievePrime_prime q hq )) (by
     exact Nat.mul_pos ( Nat.pos_of_ne_zero ( by rintro rfl; contradiction ) ) ( Nat.pos_of_ne_zero ( by rintro rfl; contradiction ) ))
     have h_coprime : Nat.Coprime (d * N - 1) d := by
-      cases N <;> cases d <;> simp_all +decide [ mul_add ]
+      cases N <;> cases d <;> simp_all +decide [ Nat.succ_eq_add_one, mul_add ]
     have h_tau : (Nat.divisors (k * (d * N - 1))).card ≥ k + 3 := by
       apply tau_ge_for_pair hd hq (by
       rcases N with ( _ | _ | N ) <;> simp_all +arith +decide;

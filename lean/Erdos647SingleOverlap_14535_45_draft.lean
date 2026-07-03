@@ -424,7 +424,7 @@ theorem family_14535_45_closes (N : ℕ)
             rw [divisors_card_72675] at hge
             omega
           · -- eval = 5^s for some s; Case B τ-forcing
-            push Not at hpow
+            push_neg at hpow
             obtain ⟨s, hs⟩ := hpow
             rcases Nat.lt_or_ge s 2 with hs_lt | hs_ge
             · interval_cases s
